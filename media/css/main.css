@@ -1,0 +1,80 @@
+.mystyle {}
+
+html, body {
+	color: black;
+	background-color: #FEFFFF;
+}
+	
+a {
+	color: #6C61D5;
+}
+
+a:hover, a:focus {
+	text-decoration:none;
+}
+
+header {
+	text-transform: uppercase;
+	border-bottom:1px solid #808080;
+}
+
+header h1 {
+	font-size: 50px;
+}
+
+header h2 {
+	font-size: 28px;
+}
+
+nav#main_nav {
+    float:left;
+    width: 175px;
+    text-align: right;
+    font-family: Anton, Tahoma, sans-serif;
+}
+
+nav#main_nav a,
+nav#main_nav a:visited {
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+    font-size: 1.5em;
+}
+
+nav#main_nav a.selected {
+    color: #888;
+}
+
+nav#main_nav a:hover {
+    color: #6C61D5;
+}
+
+nav#main_nav ul li {
+    list-style-type: none;
+}
+
+
+#content {
+    line-height: 1em;
+    margin-left:200px;
+	max-width:36em;
+}
+
+#content h1 {
+    font-weight: normal;
+    font-size: 1.6em;
+    margin-bottom: 0.8em;
+}
+
+#content h2 {
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-bottom: .33em;
+}
+
+footer {
+	clear:both;
+	border-top:1px solid #808080;
+	margin:0;
+	padding:0.5em;
+}
