@@ -3,6 +3,7 @@
 html, body {
 	color: black;
 	background-color: #FEFFFF;
+	font-family: Lucida Console, Monaco5, monospace;
 }
 	
 a {
@@ -30,7 +31,6 @@ nav#main_nav {
     float:left;
     width: 175px;
     text-align: right;
-    font-family: Anton, Tahoma, sans-serif;
 }
 
 nav#main_nav a,
