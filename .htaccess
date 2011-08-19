@@ -1,1 +1,1 @@
-RedirectMatch 301 ^/blog/.*$ http://domain.tld/target.html
+RewriteRule ^blog/(.+)$ http://quotidianquest.com/$1 [R=301,L]
