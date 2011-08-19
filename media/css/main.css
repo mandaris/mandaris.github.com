@@ -1,7 +1,7 @@
 html, body {
 	color: black;
 	background-color: #FEFFFF;
-	font-family: Lucida Console, Monaco5, monospace;
+	#font-family: Lucida Console, Monaco5, monospace;
 }
 
 a {
@@ -13,7 +13,6 @@ a:hover, a:focus {
 }
 
 header {
-	text-transform: uppercase;
 	border-bottom: 1px solid #808080;
 }
 
@@ -69,6 +68,17 @@ nav#main_nav ul li {
 	font-weight: bold;
 	font-size: 1.2em;
 	margin-bottom: .33em;
+}
+
+#blog_excerpt {
+	border-top: 1px solid #808080;
+	border-left: 1px solid #808080;
+	font-family: Lucida Console, Monaco5, monospace;
+}
+	
+ul.tags li{
+    list-style-type: none;
+    display: inline;
 }
 
 footer {
