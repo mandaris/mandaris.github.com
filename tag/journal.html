@@ -1,104 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=endge, chrome=IE8" />
-    <meta name="viewport" content="initial-scale=1.0, width=device-width, user-scalable=no" />
-    <title>Quotidian Quest — Articles with taged with  « journal »</title>
-    <!--[if lte IE 8]><script type="text/javascript" src="/theme/js/html5shiv.js"></script><![endif]-->
-    <link rel="stylesheet" type="text/css" href="/theme/css/skeleton.css" />
-    <link rel="stylesheet" type="text/css" href="/theme/css/theme.css" />
-    <link rel="shortcut icon" type="image/png" href="/favicon.png" />
-    <!--[if lte IE 8]><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" /><![endif]-->
-    <link rel="alternate" type="application/atom+xml"
-                           title="Quotidian Quest — Flux Atom"
-                           href="/" /> 
-  </head>
-  <body>
-    <div id="page">
-      <header id="page-head">
-        <h1>
-          <a href="/index.html">Quotidian Quest</a>
-        </h1>
-      </header>
-      
-      <div id="page-body">
-        <section id="page-main" role="main">
-      <h1 class="small-title">Articles that are tagged with  « journal » :</h1>
-     
-        
-      <article class="post">
-        <header class="post-header">
-          <h1>
-            <a rel="bookmark"
-               href="/2013/10/an-accomplishment.html"
-               title="Permanent link to «An accomplishment»">
-               An accomplishment
-            </a>
-          </h1>
-          <div class="meta">
-<!-- includes/article_meta.html -->
-            Created: <time datetime="2013-10-13T22:50:29">2013-10-13</time>
-            Category: «<a href="/category/personal.html">personal</a>»              <br />Tags:              <a rel="tag" href="/tag/journal.html">journal</a>,               <a rel="tag" href="/tag/accomplishments.html">accomplishments</a>,               <a rel="tag" href="/tag/keyboard-maestro.html">keyboard maestro</a>          </div>
-        </header>
-        <div class="post-content"> 
-          <p>I've had a little idea going on in the back of my head for the last couple of months about a simple application that would pop up after a given keyboard shortcut. It's a simple idea and never got around to doing it because I didn't sit ...</p>
-        </div>
-        <footer class="post-footer">
-          <a class="readmore" href="/2013/10/an-accomplishment.html">Read More...</a>
-        </footer>
-      </article>
+<head>
+  <meta charset="utf-8" />
+  <title>journal - Quotidian Quest</title>
+  <base href="..">
+  <link rel="stylesheet" type="text/css" href="/theme/tufte-css/tufte.css" />
+  <link rel="stylesheet" type="text/css" href="/theme/css/main.css" />
+  <link rel="shortcut icon" type="text/css" href="/favicon.ico" />
+</head>
+
+<body>
+<header>
+  <h1 class="websitetitle"><a href="..">Quotidian Quest</a></h1>
+  <nav class="navmenu" id="navmenu">
+    <li><a class="navitemlink" href="../archives.html">Archive</a></li>
+    <li><a class="navitemlink" href="../pages/about.html">About</a></li>
+    <li><a class="navitemlink" href="../pages/projects.html">Projects</a></li>
+   </nav>
+ </header>
+<main class="articlelisting">
+
+<article class="post">
+
+<header class="post-header">
+<h1>
+<a rel="bookmark"
+   href="2013/10/an-accomplishment.html"
+   title="An accomplishment «Quotidian Quest»">
+   An accomplishment
+</a>
+</h1>
+<p class="subtitle"><time datetime="2013-10-13T22:50:29-07:00">Sun 13 October 2013</time><label for="an-accomplishment" class="margin-toggle"> ⊕</label><input type="checkbox" id="an-accomplishment" class="margin-toggle" /><span class="marginnote">Category: <a href="../category/personal.html">personal</a><br />
+ #<a href="../tag/journal.html">journal</a> #<a href="../tag/accomplishments.html">accomplishments</a> #<a href="../tag/keyboard-maestro.html">keyboard maestro</a></span></p>
+</header><p>I've had a little idea going on in the back of my head for the last couple of months about a simple application that would pop up after a given keyboard shortcut. It's a simple idea and never got around to doing it because I didn't sit down and do it. Even on the days, where I thought "Hey,If I had an easy way to keep track of all the good things that I've done, I'd feel better about myself". Normally, I just look at the todo item that I had in OmniFocus and just push it back a couple days or weeks because of priorities.</p>
+<p>But today, I sat down and decided that if I wanted to really follow my own words about controlling my life I've got to make good on the commitments that I make to myself big or small. </p>
+<p>So I sat down behind my laptop opened up my AppleScript 1-2-3<sup id="fnref:unused"><a class="footnote-ref" href="#fn:unused" rel="footnote">1</a></sup> and started searching the internet after not seeing a solution to my problems on the first page.</p>
+<div class="highlight"><pre><span class="k">set</span> <span class="nv">theSumm</span> <span class="k">to</span> <span class="na">text returned</span> <span class="k">of</span> <span class="p">(</span><span class="nb">display dialog</span> <span class="s2">&quot;Latest Accomplishment&quot;</span> <span class="nb">buttons</span> <span class="s2">&quot;OK&quot;</span> <span class="nv">default</span> <span class="nv">answer</span> <span class="s2">&quot;A step forward&quot;</span> <span class="nv">default</span> <span class="nb">button</span> <span class="s2">&quot;OK&quot;</span><span class="p">)</span>
+
+<span class="k">tell</span> <span class="nb">application</span> <span class="s2">&quot;Calendar&quot;</span>
+    <span class="nb">make</span> <span class="nv">todo</span> <span class="nb">at</span> <span class="k">end</span> <span class="k">of</span> <span class="nv">todos</span> <span class="k">of</span> <span class="nv">calendar</span> <span class="s2">&quot;Accomplishments&quot;</span> <span class="nv">with</span> <span class="na">properties</span> <span class="p">{</span><span class="nv">summary</span><span class="p">:</span><span class="nv">theSumm</span><span class="p">,</span> <span class="nv">completion</span> <span class="nv">date</span><span class="p">:</span><span class="nb">current date</span><span class="p">}</span>
+<span class="k">end</span> <span class="k">tell</span>
+</pre></div>
+
+
+<p>At first, I was just going to put this in a script file and then run it from a service, but I decided that the easiest way of doing this was to use <a href="http://www.keyboardmaestro.com/main/" title="An app that I've been using more and more to get things moving quickly.">Keyboard Maestro</a>. It was really cool that I got to move the entire script into the application so I didn't have to move between the different applications.</p>
+<p><a href="http://www.flickr.com/photos/mandaris/10540756656/" title="A screenshot of my first keyboard maestro attempt to make a short cut to log my accomplishments"><img src="http://farm4.staticflickr.com/3783/10540756656_0d7bd92af3.jpg" width="427" height="500" alt="A copy of my first keyboard maestro attempt to make a short cut to log my accomplishments"></a></p>
+<p>This is what I had originally envisioned, but I started to think about the limitations of keeping all of this in reminders. All the applications that use the system built <a href="https://www.apple.com/osx/apps/#reminders" title="The default todo application on Mac OSX">task management tools</a> have a focus on what needs to be done and if I want to have way to look at this stuff quickly and I wasn't sure how to look at accomplishments that were marked as completed a month ago.</p>
+<p>I took a look at what I was doing on a daily basis and saw that I've been doing more and more journaling using <a href="http://dayoneapp.com" title="Day One is a great simple application that allows you to have a journal that syncs with all my devices">Day One</a><sup id="fnref:dayoneshortcut"><a class="footnote-ref" href="#fn:dayoneshortcut" rel="footnote">2</a></sup>. </p>
+<p>I didn't want to make the Day One application open up every time that I finished something new so I looked at the <a href="http://dayoneapp.com/tools/cli-man/" title="Day One command line interface">command line interface</a> and came up with this.</p>
+<p><a href="http://www.flickr.com/photos/mandaris/10543020504/" title="Screenshot of my keyboard maestro macro to log accomplishments quickly using the command line interface for Day One"><img src="http://farm6.staticflickr.com/5487/10543020504_5edfa7b7ba.jpg" width="387" height="500" alt="Screenshot of my keyboard maestro macro to log accomplishments quickly using the command line interface for Day One"></a></p>
+<p>So far, the only downside is that I have to go into Day One to make all the hashtags turn into tags and I have to do a search for that tag if I want to see all my accomplishments in a given time.</p>
+<p>I think for the next iteration, I might set up <a href="http://projects.tynsoe.org/en/geektool/" title="GeekTool: A tool to show information from files and commands on the desktop">GeekTool</a> to show my latest accomplishment on my desktop, but I'm just happy that I finished this initial task.</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:unused">
+<p>I bought this <a href="http://www.amazon.com/Apple-Training-AppleScript-1-2-3-ebook/dp/B000SEI7EO/ref=sr_1_1?ie=UTF8&amp;qid=1381753150&amp;sr=8-1&amp;keywords=applescript+1-2-3">book</a> almost a year ago so that I could start teaching myself to do more automation on my computer. Turns out, I just needed to take the time and focus on something that I really wanted to create. It felt good and I think I'll actually get through it... when I get the time.&#160;<a class="footnote-backref" href="#fnref:unused" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:dayoneshortcut">
+<p>I'd already had a specific keyboard shortcut for opening up the menubar pop up for quick writing of thoughts and feelings, but I didn't want to add a <a href="http://smilesoftware.com/TextExpander/index.html" title="Textexpander is a tool that I use when I'm writing things over and over again.">textexpander</a> snippet to add an accomplishment tag.&#160;<a class="footnote-backref" href="#fnref:dayoneshortcut" rev="footnote" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>	
+</article>
+</main>
       <nav id="pagination">   <!-- <span id="first_page" class="a inactive">&#60;&#60;</span>
         <span id="first_page" class="a inactive">&#60;</span> -->
         <span class="a active">1</span>
    <!-- <span id="next_page" class="a inactive">&#62;</span>
         <span id="next_page" class="a inactive">&#62;&#62;</span> -->
-</nav>      </section> <!-- /#page-main -->
-
-        <aside id="page-side">
-          <!-- begin includes/sidebar.html -->
-          <nav>
-            <h3>Pages</h3>
-            <ul>
-              <li><a href="">Home</a></li>
-              <li><a href="/categories.html">Categories</a></li>
-              <li><a href="/archives.html">Archives</a></li>
-              <li><a href="/tags.html">Tags</a></li>
-            </ul>
-          </nav>
-
-          <nav>
-            <h3>Categories</h3>
-            <ul>
-              <li><a href="/category/blogging.html">blogging</a></li>
-              <li><a href="/category/misc.html">misc</a></li>
-              <li><a href="/category/parenting.html">parenting</a></li>
-              <li><a href="/category/personal.html">personal</a></li>
-              <li><a href="/category/productivity.html">productivity</a></li>
-              <li><a href="/category/review.html">review</a></li>
-              <li><a href="/category/tech.html">tech</a></li>
-              <li><a href="/category/writing.html">writing</a></li>
-            </ul>
-          </nav>
-
-          <nav>
-            <h3>Links</h3>
-            <ul>
-              <li><a href="https://alpha.app.net/mandaris">App.net</a></li>
-              <li><a href="http://twitter.com/mandaris">twitter</a></li>
-              <li><a href="https://pinboard.in/u:mandaris/public">Pinboard</a></li>
-              <li><a href="http://github.com/mandaris">github</a></li>
-              <li><a href="http://www.linkedin.com/pub/mandaris-moore/8/67a/1">linkedin</a></li>
-              <li><a href="http://www.prinedesigns.com">Sierra</a></li>
-              <li><a href="http://www.hiphopnoxygen.com">Timm</a></li>
-            </ul>
-          </nav>
-          <!-- end includes/sidebar.html --></aside> <!-- /#page-side -->
-      </div>  <!-- /#page-body -->
-
-      <footer id="page-foot">
-        <p> Powered by <a href="http://pelican.readthedocs.org">Pelican</a></p>
-      </footer>
-    </div> <!-- /#page -->
-  </body>
+</nav><footer>
+  <p>Powered by <a href="http://pelican.readthedocs.org">Pelican</a></p>
+</footer>
+</body>
 </html>

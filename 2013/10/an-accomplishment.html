@@ -1,55 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-        <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=endge, chrome=IE8" />
-    <meta name="viewport" content="initial-scale=1.0, width=device-width, user-scalable=no" />
-    <title>An accomplishment — Quotidian Quest</title>
-    <!--[if lte IE 8]><script type="text/javascript" src="/theme/js/html5shiv.js"></script><![endif]-->
-    <link rel="stylesheet" type="text/css" href="/theme/css/skeleton.css" />
-    <link rel="stylesheet" type="text/css" href="/theme/css/theme.css" />
-    <link rel="shortcut icon" type="image/png" href="/favicon.png" />
-    <!--[if lte IE 8]><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" /><![endif]-->
-    <link rel="alternate" type="application/atom+xml"
-                           title="Quotidian Quest — Flux Atom"
-                           href="/" /> 
+<head>
+  <meta charset="utf-8" />
+  <title>An accomplishment</title>
+  <base href="../..">
+  <link rel="stylesheet" type="text/css" href="/theme/tufte-css/tufte.css" />
+  <link rel="stylesheet" type="text/css" href="/theme/css/main.css" />
+  <link rel="shortcut icon" type="text/css" href="/favicon.ico" />
+</head>
 
-    <meta name="author"   content="Mandaris" />
-    <meta name="keywords" content="journal, accomplishments, keyboard maestro" />
-    <link rel="stylesheet" media="not print" type="text/css" href="/theme/css/pygments.css" /> 
-  </head>
-  <body>
-    <div id="page">
-      <header id="page-head">
-        <h1>
-          <a href="/index.html">Quotidian Quest</a>
-        </h1>
-      </header>
-      
-      <div id="page-body">
-        <article class="post" id="page-main" role="main">
-      <header class="post-header">
-        <h1>
-          <a rel="bookmark"
-             href="/2013/10/an-accomplishment.html"
-             title="Permanent Link to «An accomplishment»">
-             An accomplishment
-          </a>
-        </h1>
-        <div class="meta">
-<!-- includes/article_meta.html -->
-            Created: <time datetime="2013-10-13T22:50:29">2013-10-13</time>
-            Category: «<a href="/category/personal.html">personal</a>»              <br />Tags:              <a rel="tag" href="/tag/journal.html">journal</a>,               <a rel="tag" href="/tag/accomplishments.html">accomplishments</a>,               <a rel="tag" href="/tag/keyboard-maestro.html">keyboard maestro</a>        </div>
-      </header>
-      <div class="post-content"> 
-        <p>I've had a little idea going on in the back of my head for the last couple of months about a simple application that would pop up after a given keyboard shortcut. It's a simple idea and never got around to doing it because I didn't sit down and do it. Even on the days, where I thought "Hey,If I had an easy way to keep track of all the good things that I've done, I'd feel better about myself". Normally, I just look at the todo item that I had in OmniFocus and just push it back a couple days or weeks because of priorities.</p>
+<body>
+<header>
+  <h1 class="websitetitle"><a href="../..">Quotidian Quest</a></h1>
+  <nav class="navmenu" id="navmenu">
+    <li><a class="navitemlink" href="../../archives.html">Archive</a></li>
+    <li><a class="navitemlink" href="../../pages/about.html">About</a></li>
+    <li><a class="navitemlink" href="../../pages/projects.html">Projects</a></li>
+   </nav>
+ </header>
+<article>
+
+<header class="post-header">
+<h1>
+<a rel="bookmark"
+   href="2013/10/an-accomplishment.html"
+   title="An accomplishment «Quotidian Quest»">
+   An accomplishment
+</a>
+</h1>
+<p class="subtitle"><time datetime="2013-10-13T22:50:29-07:00">Sun 13 October 2013</time><label for="an-accomplishment" class="margin-toggle"> ⊕</label><input type="checkbox" id="an-accomplishment" class="margin-toggle" /><span class="marginnote">Category: <a href="../../category/personal.html">personal</a><br />
+ #<a href="../../tag/journal.html">journal</a> #<a href="../../tag/accomplishments.html">accomplishments</a> #<a href="../../tag/keyboard-maestro.html">keyboard maestro</a></span></p>
+</header><p>I've had a little idea going on in the back of my head for the last couple of months about a simple application that would pop up after a given keyboard shortcut. It's a simple idea and never got around to doing it because I didn't sit down and do it. Even on the days, where I thought "Hey,If I had an easy way to keep track of all the good things that I've done, I'd feel better about myself". Normally, I just look at the todo item that I had in OmniFocus and just push it back a couple days or weeks because of priorities.</p>
 <p>But today, I sat down and decided that if I wanted to really follow my own words about controlling my life I've got to make good on the commitments that I make to myself big or small. </p>
 <p>So I sat down behind my laptop opened up my AppleScript 1-2-3<sup id="fnref:unused"><a class="footnote-ref" href="#fn:unused" rel="footnote">1</a></sup> and started searching the internet after not seeing a solution to my problems on the first page.</p>
-<div class="highlight"><pre><span class="n">set</span> <span class="n">theSumm</span> <span class="n">to</span> <span class="n">text</span> <span class="n">returned</span> <span class="n">of</span> <span class="p">(</span><span class="n">display</span> <span class="n">dialog</span> <span class="s">&quot;Latest Accomplishment&quot;</span> <span class="n">buttons</span> <span class="s">&quot;OK&quot;</span> <span class="k">default</span> <span class="n">answer</span> <span class="s">&quot;A step forward&quot;</span> <span class="k">default</span> <span class="n">button</span> <span class="s">&quot;OK&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span class="k">set</span> <span class="nv">theSumm</span> <span class="k">to</span> <span class="na">text returned</span> <span class="k">of</span> <span class="p">(</span><span class="nb">display dialog</span> <span class="s2">&quot;Latest Accomplishment&quot;</span> <span class="nb">buttons</span> <span class="s2">&quot;OK&quot;</span> <span class="nv">default</span> <span class="nv">answer</span> <span class="s2">&quot;A step forward&quot;</span> <span class="nv">default</span> <span class="nb">button</span> <span class="s2">&quot;OK&quot;</span><span class="p">)</span>
 
-<span class="n">tell</span> <span class="n">application</span> <span class="s">&quot;Calendar&quot;</span>
-    <span class="n">make</span> <span class="n">todo</span> <span class="n">at</span> <span class="n">end</span> <span class="n">of</span> <span class="n">todos</span> <span class="n">of</span> <span class="n">calendar</span> <span class="s">&quot;Accomplishments&quot;</span> <span class="n">with</span> <span class="n">properties</span> <span class="p">{</span><span class="n">summary</span><span class="o">:</span><span class="n">theSumm</span><span class="p">,</span> <span class="n">completion</span> <span class="n">date</span><span class="o">:</span><span class="n">current</span> <span class="n">date</span><span class="p">}</span>
-<span class="n">end</span> <span class="n">tell</span>
+<span class="k">tell</span> <span class="nb">application</span> <span class="s2">&quot;Calendar&quot;</span>
+    <span class="nb">make</span> <span class="nv">todo</span> <span class="nb">at</span> <span class="k">end</span> <span class="k">of</span> <span class="nv">todos</span> <span class="k">of</span> <span class="nv">calendar</span> <span class="s2">&quot;Accomplishments&quot;</span> <span class="nv">with</span> <span class="na">properties</span> <span class="p">{</span><span class="nv">summary</span><span class="p">:</span><span class="nv">theSumm</span><span class="p">,</span> <span class="nv">completion</span> <span class="nv">date</span><span class="p">:</span><span class="nb">current date</span><span class="p">}</span>
+<span class="k">end</span> <span class="k">tell</span>
 </pre></div>
 
 
@@ -72,58 +60,9 @@
 </li>
 </ol>
 </div>
-      </div>
-      <footer class="post-footer">
-        <div class="meta">
-            Posted in «<a href="/category/personal.html">personal</a>» 
-            Tags:  #<a href="/tag/journal.html">journal</a> #<a href="/tag/accomplishments.html">accomplishments</a> #<a href="/tag/keyboard-maestro.html">keyboard maestro</a>        </div>
-      </footer>
-      </article> <!-- /#page-main -->
-
-        <aside id="page-side">
-          <!-- begin includes/sidebar.html -->
-          <nav>
-            <h3>Pages</h3>
-            <ul>
-              <li><a href="">Home</a></li>
-              <li><a href="/categories.html">Categories</a></li>
-              <li><a href="/archives.html">Archives</a></li>
-              <li><a href="/tags.html">Tags</a></li>
-            </ul>
-          </nav>
-
-          <nav>
-            <h3>Categories</h3>
-            <ul>
-              <li><a href="/category/blogging.html">blogging</a></li>
-              <li><a href="/category/misc.html">misc</a></li>
-              <li><a href="/category/parenting.html">parenting</a></li>
-              <li class="active"><a href="/category/personal.html">personal</a></li>
-              <li><a href="/category/productivity.html">productivity</a></li>
-              <li><a href="/category/review.html">review</a></li>
-              <li><a href="/category/tech.html">tech</a></li>
-              <li><a href="/category/writing.html">writing</a></li>
-            </ul>
-          </nav>
-
-          <nav>
-            <h3>Links</h3>
-            <ul>
-              <li><a href="https://alpha.app.net/mandaris">App.net</a></li>
-              <li><a href="http://twitter.com/mandaris">twitter</a></li>
-              <li><a href="https://pinboard.in/u:mandaris/public">Pinboard</a></li>
-              <li><a href="http://github.com/mandaris">github</a></li>
-              <li><a href="http://www.linkedin.com/pub/mandaris-moore/8/67a/1">linkedin</a></li>
-              <li><a href="http://www.prinedesigns.com">Sierra</a></li>
-              <li><a href="http://www.hiphopnoxygen.com">Timm</a></li>
-            </ul>
-          </nav>
-          <!-- end includes/sidebar.html --></aside> <!-- /#page-side -->
-      </div>  <!-- /#page-body -->
-
-      <footer id="page-foot">
-        <p> Powered by <a href="http://pelican.readthedocs.org">Pelican</a></p>
-      </footer>
-    </div> <!-- /#page -->
-  </body>
+</article>
+<footer>
+  <p>Powered by <a href="http://pelican.readthedocs.org">Pelican</a></p>
+</footer>
+</body>
 </html>
