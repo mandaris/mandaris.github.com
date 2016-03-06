@@ -3,21 +3,28 @@
 <head>
   <meta charset="utf-8" />
   <title>blog - Quotidian Quest</title>
-  <base href="..">
+  <meta name="author" content="Mandaris" />
+  <base href="http://quotidianquest.com">
   <link rel="stylesheet" type="text/css" href="/theme/tufte-css/tufte.css" />
   <link rel="stylesheet" type="text/css" href="/theme/css/main.css" />
   <link rel="shortcut icon" type="text/css" href="/favicon.ico" />
   <link href="http://quotidianquest.com/feeds/atom.xml" type="application/atom+xml"
-        rel="alternate" title="Quotidian Quest Atom Feed" />
+        rel="alternate" title="Quotidian Quest ALL Atom Feed" />
+
+  <!-- OpenGraph Info -->
+  <meta property="og:title" content="Quotidian Quest"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:description" content="The personal website for Mandaris Moore."/>
+  <meta property="og:url" content="http://quotidianquest.com"/>
 </head>
 
 <body>
 <header>
-  <h1 class="websitetitle"><a href="..">Quotidian Quest</a></h1>
+  <h1 class="websitetitle"><a href="http://quotidianquest.com">Quotidian Quest</a></h1>
   <nav class="navmenu" id="navmenu">
-    <li><a class="navitemlink" href="../archives.html">Archive</a></li>
-    <li><a class="navitemlink" href="../pages/about.html">About</a></li>
-    <li><a class="navitemlink" href="../pages/projects.html">Projects</a></li>
+    <li><a class="navitemlink" href="http://quotidianquest.com/archives.html">Archive</a></li>
+    <li><a class="navitemlink" href="http://quotidianquest.com/pages/about.html">About</a></li>
+    <li><a class="navitemlink" href="http://quotidianquest.com/pages/projects.html">Projects</a></li>
    </nav>
  </header>
 <main class="articlelisting">
@@ -27,42 +34,71 @@
 <header class="post-header">
 <h1>
 <a rel="bookmark"
-   href="2016/02/pushing-the-button.html"
-   title="Pushing the button «Quotidian Quest»">
-   Pushing the button
+   href="2016/03/finished-open-graph.html"
+   title="Finished open graph «Quotidian Quest»">
+   Finished open graph
 </a>
 </h1>
-<p class="subtitle"><time datetime="2016-02-04T22:06:26-08:00">Thu 04 February 2016</time><label for="pushing-the-button" class="margin-toggle"> ⊕</label><input type="checkbox" id="pushing-the-button" class="margin-toggle" /><span class="marginnote">Category: <a href="../category/blogging.html">blogging</a><br />
- #<a href="../tag/tufte.html">tufte</a> #<a href="../tag/blog.html">blog</a></span></p>
-</header><p>Well, tonight is the night. I got the site design to where I'd like it to be. It's simple, easy to read and very fast. I tried looking at it in a couple of different view ports using <a href="https://developer.apple.com/videos/play/wwdc2015-505/">Safari's Responsive Design Mode</a> and it made me even more sure about what I'm doing here. </p>
-<p>I understand that there are a lot of css/javascript frameworks out there and it would have been <strong>A LOT</strong> easier just to pick something like that and start posting. There is something to be said about just focusing on the actual words that go in the blog instead of how it looks like. I wanted my site to reflect me and what I'm about.</p>
-<p><span class='newthought'>This is a message to me</span> that I can complete the goals that I set out to do. It might take me a while but this has been so worth it.</p>
-<h1>Next up</h1>
-<p>Well, the initial design is done but there are a couple more things that I should probably finish up. </p>
-<ol>
-<li>Finish the rest of the tags (marginimage, columnimage)</li>
-<li>Add the analytics <label for="analytical" class="margin-toggle sidenote-number"></label><input type="checkbox" id="analytical" class="margin-toggle" /><span class="sidenote">Not a real priority because I don</span></li>
-<li>Clean up the Archive page</li>
-<li>Create a 404 page</li>
-<li>Decrease the spacing between multiple footnotes<sup id="fnref:footnotes"><a class="footnote-ref" href="#fn:footnotes" rel="footnote">1</a></sup></li>
-<li>Clean up the regular expressions used to parse for the plugins <label for="irregular" class="margin-toggle">&#8853;</label><input type="checkbox" id="irregular" class="margin-toggle" /><span class="marginnote">During the process of trying to figure out how to do this theme, I spent a lot of time whether to do this in pelican as a plugin or the python markdown. I am happy that it is working but I am not happy with how fragile it is.</span></li>
-<li>Discuss Comments</li>
-<li>Create options to make it easier to go to categories and tags</li>
-<li>OpenGraph</li>
-</ol>
-<p>I've done a couple comparisons with other pelican templates and I feel that I should have some of this ready for other users who want to try out the Tufte style without worry so much about how it fits with what a website is supposed to do<sup id="fnref:goals"><a class="footnote-ref" href="#fn:goals" rel="footnote">2</a></sup>.</p>
-<p>Well, it is getting kind of late for me here and I've got to push the button to make this public to the world.</p>
+<p class="subtitle"><time datetime="2016-03-06T13:16:22-08:00">Sun 06 March 2016</time><label for="finished-open-graph" class="margin-toggle"> ⊕</label><input type="checkbox" id="finished-open-graph" class="margin-toggle" /><span class="marginnote">Category: <a href="http://quotidianquest.com/category/coding.html">coding</a><br />
+ #<a href="http://quotidianquest.com/tag/blog.html">blog</a> #<a href="http://quotidianquest.com/tag/open-graph.html">open graph</a></span></p>
+</header><p>So,  I spent about 3 hours working on getting Open Graph tags to work in the theme that I created. I've got mixed feeling about it because I started off by adding the tags myself to the base template.</p>
+<div class="highlight"><pre><span class="cp">{%</span> <span class="k">if</span> <span class="nv">OPEN_GRAPH</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">&lt;meta property=&quot;og:title&quot; content=&quot;</span><span class="cp">{{</span> <span class="nv">SITENAME</span> <span class="cp">}}</span><span class="x">&quot;/&gt;</span>
+<span class="x">&lt;meta property=&quot;og:type&quot; content=&quot;website&quot;/&gt;</span>
+<span class="x">&lt;meta property=&quot;og:description&quot; content=&quot;</span><span class="cp">{{</span> <span class="nv">SITE_DESCRIPTION</span> <span class="cp">}}</span><span class="x">&quot;/&gt;</span>
+<span class="x">&lt;meta property=&quot;og:url&quot; content=&quot;</span><span class="cp">{%</span> <span class="k">SITE_URL</span> <span class="cp">%}</span><span class="x">&quot;/&gt;</span>
+<span class="cp">{%</span> <span class="k">endif</span> <span class="nv">OPEN_GRAPH</span> <span class="cp">%}</span><span class="x"></span>
+</pre></div>
+
+
+<p>This worked for the site in general but doesn't translate to all the articles and this caused me to go into a some what deep dive into how Pelican and Jinja parses blocks and if statements. I started off with putting all the tags into the base and then doing individual changes to tags that need to be changed for. </p>
+<p><strong>BAH!!!</strong></p>
+<p>So, took a step back and looked into what plugins were already available. And there is was! <a href="https://github.com/whiskyechobravo/pelican-open_graph">Pelican-open_graph</a>! I was home free! Or so I thought, until I tried to use it. The plugin has three problems. </p>
+<h2>It doesn't  account for when someone does <em>not</em> have a modified date on their articles.</h2>
+<p><a href="https://github.com/AntoineVe/pelican-open_graph">Luckily, someone had put a solution up</a>. The change was forked about 7 months ago today and it looks like whoever created the open graph plugin has taken a break to work on other things.</p>
+<h2>It's a year old and hasn't made the changes for pelican regarding summaries of articles.</h2>
+<p>So, I had to do some debugging to find out that the code needed to be changed in the following way<sup id="fnref:payitforward"><a class="footnote-ref" href="#fn:payitforward" rel="footnote">1</a></sup>.</p>
+<div class="highlight"><pre><span class="n">ogtags</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s">&#39;og:description&#39;</span><span class="p">,</span> <span class="n">instance</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;og_description&#39;</span><span class="p">,</span>
+                                                           <span class="n">instance</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;summary&#39;</span><span class="p">,</span>
+                                                                                 <span class="n">instance</span><span class="o">.</span><span class="n">summary</span><span class="p">))))</span>
+</pre></div>
+
+
+<h2>It also assumed that every article has some kind of tag.</h2>
+<p>I've decided to just punt this problem and add the tags to the 6 articles that don't have them, but than I took a second look at the problem because the perfectionist in me doesn't like to leave problems unsolved and I didn't want to track down what the particular articles were.</p>
+<p>So, I just wrapped the code in a try block to make sure that I got this particular exception.</p>
+<div class="highlight"><pre><span class="k">try</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">tag</span> <span class="ow">in</span> <span class="n">instance</span><span class="o">.</span><span class="n">tags</span><span class="p">:</span>
+            <span class="n">ogtags</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s">&#39;article:tag&#39;</span><span class="p">,</span> <span class="n">tag</span><span class="o">.</span><span class="n">name</span><span class="p">))</span>
+    <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+            <span class="n">ogtags</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s">&#39;article:tag&#39;</span><span class="p">,</span> <span class="s">&#39;untagged&#39;</span><span class="p">))</span>
+</pre></div>
+
+
+<h2>Results</h2>
+<p>Ultimately, I got to learn a little bit more about using pelican and knocked off a major milestone on getting this blog to where I'd like it to be.</p>
 <div class="footnote">
 <hr />
 <ol>
-<li id="fn:footnotes">
-<p>When I was first introduced to markdown, one of the things I thought was the coolest was the fact that you could have these little babies to put on the bottom of the page. If you look through my archieves you'll see that I use them off and on to do my writing. Some websites have them at the end or use a popup to show them when you click on them. I think I'll probably move to side and margin notes. Either way, when you get two or more they really start eating up space.&#160;<a class="footnote-backref" href="#fnref:footnotes" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
-</li>
-<li id="fn:goals">
-<p>It took me a lot of time to pick a template when I first came to pelican and even then I found myself modifying it. &#160;<a class="footnote-backref" href="#fnref:goals" rev="footnote" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+<li id="fn:payitforward">
+<p>I've got to branch and push this fix. I don't know how many other people are using pelican or this plugin but if I can save them or future me some time...&#160;<a class="footnote-backref" href="#fnref:payitforward" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>	
+</article>
+<article class="post">
+
+<header class="post-header">
+<h1>
+<a rel="bookmark"
+   href="2012/05/blogging-workshop.html"
+   title="Blogging workshop «Quotidian Quest»">
+   Blogging workshop
+</a>
+</h1>
+<p class="subtitle"><time datetime="2012-05-16T22:12:30-07:00">Wed 16 May 2012</time><label for="blogging-workshop" class="margin-toggle"> ⊕</label><input type="checkbox" id="blogging-workshop" class="margin-toggle" /><span class="marginnote">Category: <a href="http://quotidianquest.com/category/blogging.html">blogging</a><br />
+ #<a href="http://quotidianquest.com/tag/blog.html">blog</a> #<a href="http://quotidianquest.com/tag/writing.html">writing</a></span></p>
+</header><p>Today I went to a blogging workshop and I found it really interesting. At first, I was worried that it would filled with the standard novice information like how to get on the internet being taught by someone took 15 minutes to get some information off the internet and put it into a powerpoint presentation to read to use.</p>	
 </article>
 <article class="post">
 
@@ -74,8 +110,8 @@
    Creating New Website
 </a>
 </h1>
-<p class="subtitle"><time datetime="2010-06-03T18:05:37-07:00">Thu 03 June 2010</time><label for="creating-new-website" class="margin-toggle"> ⊕</label><input type="checkbox" id="creating-new-website" class="margin-toggle" /><span class="marginnote">Category: <a href="../category/blogging.html">blogging</a><br />
- #<a href="../tag/website.html">website</a> #<a href="../tag/blog.html">blog</a></span></p>
+<p class="subtitle"><time datetime="2010-06-03T18:05:37-07:00">Thu 03 June 2010</time><label for="creating-new-website" class="margin-toggle"> ⊕</label><input type="checkbox" id="creating-new-website" class="margin-toggle" /><span class="marginnote">Category: <a href="http://quotidianquest.com/category/blogging.html">blogging</a><br />
+ #<a href="http://quotidianquest.com/tag/website.html">website</a> #<a href="http://quotidianquest.com/tag/blog.html">blog</a></span></p>
 </header><p>Despite all of my <em>hard work</em> on facebook, it's time that I also have some kind of static site as well.</p>	
 </article>
 </main>
