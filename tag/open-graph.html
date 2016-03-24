@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <title>open graph - Quotidian Quest</title>
   <meta name="author" content="Mandaris" />
-  <base href="http://quotidianquest.com">
+  <base href="..">
   <link rel="stylesheet" type="text/css" href="/theme/tufte-css/tufte.css" />
   <link rel="stylesheet" type="text/css" href="/theme/css/main.css" />
   <link rel="shortcut icon" type="text/css" href="/favicon.ico" />
@@ -15,16 +15,16 @@
   <meta property="og:title" content="Quotidian Quest"/>
   <meta property="og:type" content="website"/>
   <meta property="og:description" content="The personal website for Mandaris Moore."/>
-  <meta property="og:url" content="http://quotidianquest.com"/>
+  <meta property="og:url" content=".."/>
 </head>
 
 <body>
 <header>
-  <h1 class="websitetitle"><a href="http://quotidianquest.com">Quotidian Quest</a></h1>
+  <h1 class="websitetitle"><a href="..">Quotidian Quest</a></h1>
   <nav class="navmenu" id="navmenu">
-    <li><a class="navitemlink" href="http://quotidianquest.com/archives.html">Archive</a></li>
-    <li><a class="navitemlink" href="http://quotidianquest.com/pages/about.html">About</a></li>
-    <li><a class="navitemlink" href="http://quotidianquest.com/pages/projects.html">Projects</a></li>
+    <li><a class="navitemlink" href="../archives.html">Archive</a></li>
+    <li><a class="navitemlink" href="../pages/about.html">About</a></li>
+    <li><a class="navitemlink" href="../pages/projects.html">Projects</a></li>
    </nav>
  </header>
 <main class="articlelisting">
@@ -39,9 +39,9 @@
    Finished open graph
 </a>
 </h1>
-<p class="subtitle"><time datetime="2016-03-06T13:16:22-08:00">Sun 06 March 2016</time><label for="finished-open-graph" class="margin-toggle"> ⊕</label><input type="checkbox" id="finished-open-graph" class="margin-toggle" /><span class="marginnote">Category: <a href="http://quotidianquest.com/category/coding.html">coding</a><br />
- #<a href="http://quotidianquest.com/tag/blog.html">blog</a> #<a href="http://quotidianquest.com/tag/open-graph.html">open graph</a></span></p>
-</header><p>So,  I spent about 3 hours working on getting Open Graph tags to work in the theme that I created. I've got mixed feeling about it because I started off by adding the tags myself to the base template.</p>
+<p class="subtitle"><time datetime="2016-03-06T13:16:22-08:00">Sun 06 March 2016</time><label for="finished-open-graph" class="margin-toggle"> ⊕</label><input type="checkbox" id="finished-open-graph" class="margin-toggle" /><span class="marginnote">Category: <a href="../category/coding.html">coding</a><br />
+ #<a href="../tag/blog.html">blog</a> #<a href="../tag/open-graph.html">open graph</a></span></p>
+</header><p>So,  I spent about 3 hours working on getting Open Graph tags to work in the theme that I created. I've got mixed feeling about it because I started off by adding the tags to the base html template using an if statement and it seemed a little clunky.</p>
 <div class="highlight"><pre><span class="cp">{%</span> <span class="k">if</span> <span class="nv">OPEN_GRAPH</span> <span class="cp">%}</span><span class="x"></span>
 <span class="x">&lt;meta property=&quot;og:title&quot; content=&quot;</span><span class="cp">{{</span> <span class="nv">SITENAME</span> <span class="cp">}}</span><span class="x">&quot;/&gt;</span>
 <span class="x">&lt;meta property=&quot;og:type&quot; content=&quot;website&quot;/&gt;</span>
