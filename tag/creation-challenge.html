@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>creation challenge - Quotidian Quest</title>
+  <meta name="author" content="Mandaris" />
+  <base href="http://quotidianquest.com">
+  <link rel="stylesheet" type="text/css" href="/theme/tufte-css/tufte.css" />
+  <link rel="stylesheet" type="text/css" href="/theme/css/main.css" />
+  <!--
+  Original link to favicon
+  <link rel="shortcut icon" type="text/css" href="/favicon.ico" />
+  -->
+  <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <!-- <link rel="mask-icon" href="/favicon.svg" color="#50c878" /> -->
+  <link href="http://quotidianquest.com/feeds/atom.xml" type="application/atom+xml"
+        rel="alternate" title="Quotidian Quest ALL Atom Feed" />
+
+  <!-- OpenGraph Info -->
+  <meta property="og:title" content="Quotidian Quest"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:description" content="The personal website for Mandaris Moore."/>
+  <meta property="og:url" content="http://quotidianquest.com"/>
+</head>
+
+<body>
+<header>
+  <h1 class="websitetitle"><a href="http://quotidianquest.com">Quotidian Quest</a></h1>
+  <nav class="navmenu" id="navmenu">
+    <li><a class="navitemlink" href="http://quotidianquest.com/archives.html">Archive</a></li>
+    <li><a class="navitemlink" href="http://quotidianquest.com/pages/about.html">About</a></li>
+    <li><a class="navitemlink" href="http://quotidianquest.com/pages/projects.html">Projects</a></li>
+   </nav>
+ </header>
+<main class="articlelisting">
+
+<article class="post">
+
+<header class="post-header">
+<h1> <a rel="external"
+   title="Creation Challenge: Enable linked-list post «Quotidian Quest»"
+   href="https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types">
+   Creation Challenge: Enable linked-list post
+</a>
+</h1>
+<p class="subtitle"><time datetime="2016-12-01T17:46:45-08:00">Thu 01 December 2016</time><label for="creation-challenge-enable-linked-list-post" class="margin-toggle"> ⊕</label><input type="checkbox" id="creation-challenge-enable-linked-list-post" class="margin-toggle" /><span class="marginnote">Category: <a href="http://quotidianquest.com/category/misc.html">misc</a><br />
+ #<a href="http://quotidianquest.com/tag/misc.html">misc</a> #<a href="http://quotidianquest.com/tag/creation-challenge.html">creation challenge</a></span></p>
+</header><p>The first thing that I'd like to work on is getting the article header that I'm using to be more capable of handing meta data for individual entries. Currently, it points to the specific url for the article but I'd like it to take my current header.</p>
+<div class="highlight"><pre><span class="n">title</span><span class="o">:</span> <span class="n">Where</span> <span class="n">to</span> <span class="n">put</span> <span class="n">the</span> <span class="n">maybe</span><span class="o">-</span><span class="n">someday</span>  
+<span class="n">date</span><span class="o">:</span> <span class="mi">2016</span><span class="o">-</span><span class="mi">09</span><span class="o">-</span><span class="mi">05</span> <span class="mi">22</span><span class="o">:</span><span class="mi">10</span><span class="o">:</span><span class="mi">08</span>  
+<span class="n">category</span><span class="o">:</span> <span class="n">personal</span>  
+<span class="n">tags</span><span class="o">:</span> <span class="n">tech</span><span class="o">,</span> <span class="n">notes</span><span class="o">,</span> <span class="n">evernote</span>  
+<span class="n">status</span><span class="o">:</span> <span class="n">published</span>    
+</pre></div>
+
+
+<p>and add the <code>link</code> attribute</p>
+<div class="highlight"><pre><span class="n">title</span><span class="o">:</span> <span class="n">Where</span> <span class="n">to</span> <span class="n">put</span> <span class="n">the</span> <span class="n">maybe</span><span class="o">-</span><span class="n">someday</span>  
+<span class="n">date</span><span class="o">:</span> <span class="mi">2016</span><span class="o">-</span><span class="mi">09</span><span class="o">-</span><span class="mi">05</span> <span class="mi">22</span><span class="o">:</span><span class="mi">10</span><span class="o">:</span><span class="mi">08</span>  
+<span class="n">category</span><span class="o">:</span> <span class="n">personal</span>  
+<span class="n">tags</span><span class="o">:</span> <span class="n">tech</span><span class="o">,</span> <span class="n">notes</span><span class="o">,</span> <span class="n">evernote</span>  
+<span class="n">status</span><span class="o">:</span> <span class="n">published</span>    
+<span class="n">link</span><span class="o">:</span> <span class="n">some_other_place</span><span class="o">.</span><span class="na">com</span>
+</pre></div>
+
+
+<p>I started off with the following jinja heading.</p>
+<div class="highlight"><pre><span class="x">&lt;h1&gt;</span>
+<span class="x">&lt;a rel=&quot;bookmark&quot;</span>
+<span class="x">   href=&quot;</span><span class="cp">{{</span> <span class="nv">article.url</span> <span class="cp">}}</span><span class="x">&quot;</span>
+<span class="x">   title=&quot;</span><span class="cp">{{</span> <span class="nv">article.title</span><span class="o">|</span><span class="nf">striptags</span> <span class="cp">}}</span><span class="x"> «</span><span class="cp">{{</span> <span class="nv">SITENAME</span> <span class="cp">}}</span><span class="x">»&quot;&gt;</span>
+<span class="x">   </span><span class="cp">{{</span> <span class="nv">article.title</span><span class="cp">}}</span><span class="x"></span>
+<span class="x">&lt;/a&gt;</span>
+<span class="x">&lt;/h1&gt;</span>
+</pre></div>
+
+
+<p>To be honest, I don't do development on the blog that often so I used my own code to look up how to do an <code>if</code> statement in jinja and wrote a little test line to see if it worked.</p>
+<div class="highlight"><pre><span class="cp">{{</span> <span class="nv">article.title</span><span class="cp">}}</span><span class="x"> </span><span class="cp">{%</span> <span class="k">if</span> <span class="nv">article.link</span> <span class="cp">%}</span><span class="x"> </span><span class="cp">{{</span> <span class="nv">article.link</span><span class="cp">}}</span><span class="x"> </span><span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span><span class="x"></span>
+</pre></div>
+
+
+<p>After editing the page a number of times and doing more research that I should have into which kind of <code>rel</code> tag I should use for book marks versus external links, I finished up with this.</p>
+<div class="highlight"><pre><span class="x">&lt;a rel=&quot;external&quot;</span>
+<span class="x">   title=&quot;</span><span class="cp">{{</span> <span class="nv">article.title</span><span class="o">|</span><span class="nf">striptags</span> <span class="cp">}}</span><span class="x"> «</span><span class="cp">{{</span> <span class="nv">SITENAME</span> <span class="cp">}}</span><span class="x">»&quot;</span>
+<span class="x">   href=&quot;</span><span class="cp">{{</span> <span class="nv">article.link</span> <span class="cp">}}</span><span class="x">&quot;&gt;</span>
+<span class="x">   </span><span class="cp">{{</span> <span class="nv">article.title</span><span class="cp">}}</span><span class="x"></span>
+<span class="x">&lt;/a&gt;</span>
+<span class="cp">{%</span> <span class="k">else</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">&lt;a rel=&quot;bookmark&quot;</span>
+<span class="x">   title=&quot;</span><span class="cp">{{</span> <span class="nv">article.title</span><span class="o">|</span><span class="nf">striptags</span> <span class="cp">}}</span><span class="x"> «</span><span class="cp">{{</span> <span class="nv">SITENAME</span> <span class="cp">}}</span><span class="x">»&quot;</span>
+<span class="x">   href=&quot;</span><span class="cp">{{</span> <span class="nv">article.url</span> <span class="cp">}}</span><span class="x">&quot;&gt;</span>
+<span class="x">   </span><span class="cp">{{</span> <span class="nv">article.title</span><span class="cp">}}</span><span class="x"></span>
+<span class="x">&lt;/a&gt;</span>
+<span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span><span class="x"></span>
+</pre></div>	
+</article>
+<article class="post">
+
+<header class="post-header">
+<h1> <a rel="bookmark"
+   title="Creating something everyday «Quotidian Quest»"
+   href="2016/12/creating-something-everyday.html">
+   Creating something everyday
+</a>
+</h1>
+<p class="subtitle"><time datetime="2016-12-01T17:29:37-08:00">Thu 01 December 2016</time><label for="creating-something-everyday" class="margin-toggle"> ⊕</label><input type="checkbox" id="creating-something-everyday" class="margin-toggle" /><span class="marginnote">Category: <a href="http://quotidianquest.com/category/misc.html">misc</a><br />
+ #<a href="http://quotidianquest.com/tag/making.html">making</a> #<a href="http://quotidianquest.com/tag/creation-challenge.html">creation challenge</a></span></p>
+</header><p>So, I'm making a commitment to myself to create something every day until Christmas without the limitation/structure of saying what I'm going to be making during this period of time.  I suspect that it will mostly be blog posts and tutorials but I think I'll make a push to clean up the code for this blog and add a number of things that I've been putting on the back burner.</p>	
+</article>
+</main>
+      <nav id="pagination">   <!-- <span id="first_page" class="a inactive">&#60;&#60;</span>
+        <span id="first_page" class="a inactive">&#60;</span> -->
+        <span class="a active">1</span>
+   <!-- <span id="next_page" class="a inactive">&#62;</span>
+        <span id="next_page" class="a inactive">&#62;&#62;</span> -->
+</nav><footer>
+  <p>Powered by <a href="http://pelican.readthedocs.org">Pelican</a></p>
+</footer>
+</body>
+</html>

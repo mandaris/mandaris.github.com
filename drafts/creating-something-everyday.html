@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Creating something everyday</title>
+  <meta name="author" content="Mandaris" />
+  <base href="http://quotidianquest.com">
+  <link rel="stylesheet" type="text/css" href="/theme/tufte-css/tufte.css" />
+  <link rel="stylesheet" type="text/css" href="/theme/css/main.css" />
+  <!--
+  Original link to favicon
+  <link rel="shortcut icon" type="text/css" href="/favicon.ico" />
+  -->
+  <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <!-- <link rel="mask-icon" href="/favicon.svg" color="#50c878" /> -->
+  <link href="http://quotidianquest.com/feeds/atom.xml" type="application/atom+xml"
+        rel="alternate" title="Quotidian Quest ALL Atom Feed" />
+
+  <!-- OpenGraph Info -->
+</head>
+
+<body>
+<header>
+  <h1 class="websitetitle"><a href="http://quotidianquest.com">Quotidian Quest</a></h1>
+  <nav class="navmenu" id="navmenu">
+    <li><a class="navitemlink" href="http://quotidianquest.com/archives.html">Archive</a></li>
+    <li><a class="navitemlink" href="http://quotidianquest.com/pages/about.html">About</a></li>
+    <li><a class="navitemlink" href="http://quotidianquest.com/pages/projects.html">Projects</a></li>
+   </nav>
+ </header>
+<article>
+
+<header class="post-header">
+<h1>
+<a rel="bookmark"
+   href="drafts/creating-something-everyday.html"
+   title="Creating something everyday «Quotidian Quest»">
+   Creating something everyday
+</a>
+</h1>
+<p class="subtitle"><time datetime="2016-12-01T17:29:37-08:00">Thu 01 December 2016</time><label for="creating-something-everyday" class="margin-toggle"> ⊕</label><input type="checkbox" id="creating-something-everyday" class="margin-toggle" /><span class="marginnote">Category: <a href="http://quotidianquest.com/category/misc.html">misc</a><br />
+ #<a href="http://quotidianquest.com/tag/making.html">making</a> #<a href="http://quotidianquest.com/tag/jinja.html">jinja</a></span></p>
+</header><p>So, I'm making a commitment to myself to create something every day until Christmas without the limitation/structure of saying what I'm going to be making during this period of time.  I suspect that it will mostly be blog posts and tutorials but I think I'll make a push to clean up the code for this blog and add a number of things that I've been putting on the back burner.</p>
+<p>The first thing that I'd like to work on is getting the article header that I'm using to be more capable of handing meta data for individual entries. Currently, it points to the specific url for the article but I'd like it to take my current header.</p>
+<p>```(python)
+title: Where to put the maybe-someday<br />
+date: 2016-09-05 22:10:08<br />
+category: personal<br />
+tags: tech, notes, evernote<br />
+status: published    </p>
+<div class="highlight"><pre>and add the `link` attribute
+
+```(python)
+title: Where to put the maybe-someday  
+date: 2016-09-05 22:10:08  
+category: personal  
+tags: tech, notes, evernote  
+status: published    
+link: some_other_place.com
+</pre></div>
+</article>
+<footer>
+  <p>Powered by <a href="http://pelican.readthedocs.org">Pelican</a></p>
+</footer>
+</body>
+</html>

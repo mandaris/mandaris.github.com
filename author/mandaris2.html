@@ -39,10 +39,107 @@
 <article class="post">
 
 <header class="post-header">
-<h1>
-<a rel="bookmark"
-   href="2016/02/a-small-return.html"
-   title="A small return «Quotidian Quest»">
+<h1> <a rel="bookmark"
+   title="Tufte margin figure and column images «Quotidian Quest»"
+   href="2016/03/tufte-margin-figure-and-column-images.html">
+   Tufte margin figure and column images
+</a>
+</h1>
+<p class="subtitle"><time datetime="2016-03-16T11:02:52-07:00">Wed 16 March 2016</time><label for="tufte-margin-figure-and-column-images" class="margin-toggle"> ⊕</label><input type="checkbox" id="tufte-margin-figure-and-column-images" class="margin-toggle" /><span class="marginnote">Category: <a href="http://quotidianquest.com/category/blogging.html">blogging</a><br />
+ #<a href="http://quotidianquest.com/tag/misc.html">misc</a></span></p>
+</header><p>There are a couple things that I still have to finish for the website theme plugin. They are margin images and images in the main column. It should be to hard and in fact this post that you are reading is an example of me using it.</p>
+<p>In fact, I'm going to put a margin image here on the side followed by a small table of what I had for breakfast the last three days.</p>
+<p><label for="margin-figure-id" class="margin-toggle">&#8853;</label><input type="checkbox" id="margin-figure-id" class="margin-toggle" /><span class="marginnote"><img class="fullwidth" src="../../images/small_me.jpg" alt="This is guy keeps getting better!"/><br/>This is guy keeps getting better!</span></p>
+<table>
+<thead>
+<tr>
+<th align="left">Day of week</th>
+<th align="left">Breakfast</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Sunday</td>
+<td align="left">Eggs and fruit</td>
+</tr>
+<tr>
+<td align="left">Monday</td>
+<td align="left">Protein Shake</td>
+</tr>
+<tr>
+<td align="left">Tuesday</td>
+<td align="left">Leftover serial</td>
+</tr>
+</tbody>
+</table>
+<p>Wow, wasn't that amazing<label for="reflection" class="margin-toggle">&#8853;</label><input type="checkbox" id="reflection" class="margin-toggle" /><span class="marginnote">Although this all looks nice, I think this might be the last update to the code for a while.</span>
+. Now that we got that working we can get the column images working too.</p>
+<p>Now to follow up with the column image. I hope that it looks cool in your browser of choice.</p>
+<p><figure><figcaption>This example was lefted directly from the Tufte website. I hope that it works.</figcaption><img src="../../images/napoleons-march.png"/></figure></p>
+<p>Well, until next time!</p>	
+</article>
+<article class="post">
+
+<header class="post-header">
+<h1> <a rel="bookmark"
+   title="Finished open graph «Quotidian Quest»"
+   href="2016/03/finished-open-graph.html">
+   Finished open graph
+</a>
+</h1>
+<p class="subtitle"><time datetime="2016-03-06T13:16:22-08:00">Sun 06 March 2016</time><label for="finished-open-graph" class="margin-toggle"> ⊕</label><input type="checkbox" id="finished-open-graph" class="margin-toggle" /><span class="marginnote">Category: <a href="http://quotidianquest.com/category/coding.html">coding</a><br />
+ #<a href="http://quotidianquest.com/tag/blog.html">blog</a> #<a href="http://quotidianquest.com/tag/open-graph.html">open graph</a></span></p>
+</header><p>So,  I spent about 3 hours working on getting Open Graph tags to work in the theme that I created. I've got mixed feeling about it because I started off by adding the tags to the base html template using an if statement and it seemed a little clunky.</p>
+<div class="highlight"><pre><span class="cp">{%</span> <span class="k">if</span> <span class="nv">OPEN_GRAPH</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">&lt;meta property=&quot;og:title&quot; content=&quot;</span><span class="cp">{{</span> <span class="nv">SITENAME</span> <span class="cp">}}</span><span class="x">&quot;/&gt;</span>
+<span class="x">&lt;meta property=&quot;og:type&quot; content=&quot;website&quot;/&gt;</span>
+<span class="x">&lt;meta property=&quot;og:description&quot; content=&quot;</span><span class="cp">{{</span> <span class="nv">SITE_DESCRIPTION</span> <span class="cp">}}</span><span class="x">&quot;/&gt;</span>
+<span class="x">&lt;meta property=&quot;og:url&quot; content=&quot;</span><span class="cp">{%</span> <span class="k">SITE_URL</span> <span class="cp">%}</span><span class="x">&quot;/&gt;</span>
+<span class="cp">{%</span> <span class="k">endif</span> <span class="nv">OPEN_GRAPH</span> <span class="cp">%}</span><span class="x"></span>
+</pre></div>
+
+
+<p>This worked for the site in general but doesn't translate to all the articles and this caused me to go into a some what deep dive into how Pelican and Jinja parses blocks and if statements. I started off with putting all the tags into the base and then doing individual changes to tags that need to be changed for. </p>
+<p><strong>BAH!!!</strong></p>
+<p>So, took a step back and looked into what plugins were already available. And there is was! <a href="https://github.com/whiskyechobravo/pelican-open_graph">Pelican-open_graph</a>! I was home free! Or so I thought, until I tried to use it. The plugin has three problems. </p>
+<h2>It doesn't  account for when someone does <em>not</em> have a modified date on their articles.</h2>
+<p><a href="https://github.com/AntoineVe/pelican-open_graph">Luckily, someone had put a solution up</a>. The change was forked about 7 months ago today and it looks like whoever created the open graph plugin has taken a break to work on other things.</p>
+<h2>It's a year old and hasn't made the changes for pelican regarding summaries of articles.</h2>
+<p>So, I had to do some debugging to find out that the code needed to be changed in the following way<sup id="fnref:payitforward"><a class="footnote-ref" href="#fn:payitforward" rel="footnote">1</a></sup>.</p>
+<div class="highlight"><pre><span class="n">ogtags</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s">&#39;og:description&#39;</span><span class="p">,</span> <span class="n">instance</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;og_description&#39;</span><span class="p">,</span>
+                                                           <span class="n">instance</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;summary&#39;</span><span class="p">,</span>
+                                                                                 <span class="n">instance</span><span class="o">.</span><span class="n">summary</span><span class="p">))))</span>
+</pre></div>
+
+
+<h2>It also assumed that every article has some kind of tag.</h2>
+<p>I've decided to just punt this problem and add the tags to the 6 articles that don't have them, but than I took a second look at the problem because the perfectionist in me doesn't like to leave problems unsolved and I didn't want to track down what the particular articles were.</p>
+<p>So, I just wrapped the code in a try block to make sure that I got this particular exception.</p>
+<div class="highlight"><pre><span class="k">try</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">tag</span> <span class="ow">in</span> <span class="n">instance</span><span class="o">.</span><span class="n">tags</span><span class="p">:</span>
+            <span class="n">ogtags</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s">&#39;article:tag&#39;</span><span class="p">,</span> <span class="n">tag</span><span class="o">.</span><span class="n">name</span><span class="p">))</span>
+    <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+            <span class="n">ogtags</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s">&#39;article:tag&#39;</span><span class="p">,</span> <span class="s">&#39;untagged&#39;</span><span class="p">))</span>
+</pre></div>
+
+
+<h2>Results</h2>
+<p>Ultimately, I got to learn a little bit more about using pelican and knocked off a major milestone on getting this blog to where I'd like it to be.</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:payitforward">
+<p>I've got to branch and push this fix. I don't know how many other people are using pelican or this plugin but if I can save them or future me some time...&#160;<a class="footnote-backref" href="#fnref:payitforward" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>	
+</article>
+<article class="post">
+
+<header class="post-header">
+<h1> <a rel="bookmark"
+   title="A small return «Quotidian Quest»"
+   href="2016/02/a-small-return.html">
    A small return
 </a>
 </h1>
@@ -69,10 +166,9 @@
 <article class="post">
 
 <header class="post-header">
-<h1>
-<a rel="bookmark"
-   href="2016/02/publishing-incompletes.html"
-   title="Publishing incompletes «Quotidian Quest»">
+<h1> <a rel="bookmark"
+   title="Publishing incompletes «Quotidian Quest»"
+   href="2016/02/publishing-incompletes.html">
    Publishing incompletes
 </a>
 </h1>
@@ -84,10 +180,9 @@
 <article class="post">
 
 <header class="post-header">
-<h1>
-<a rel="bookmark"
-   href="2015/12/researching-without-wifi.html"
-   title="Researching without wifi «Quotidian Quest»">
+<h1> <a rel="bookmark"
+   title="Researching without wifi «Quotidian Quest»"
+   href="2015/12/researching-without-wifi.html">
    Researching without wifi
 </a>
 </h1>
@@ -102,10 +197,9 @@
 <article class="post">
 
 <header class="post-header">
-<h1>
-<a rel="bookmark"
-   href="2015/12/testing-the-plugins.html"
-   title="Testing the plugins «Quotidian Quest»">
+<h1> <a rel="bookmark"
+   title="Testing the plugins «Quotidian Quest»"
+   href="2015/12/testing-the-plugins.html">
    Testing the plugins
 </a>
 </h1>
@@ -124,10 +218,9 @@
 <article class="post">
 
 <header class="post-header">
-<h1>
-<a rel="bookmark"
-   href="2015/10/silver-bullets-pedestals.html"
-   title="Silver Bullets & Pedestals «Quotidian Quest»">
+<h1> <a rel="bookmark"
+   title="Silver Bullets & Pedestals «Quotidian Quest»"
+   href="2015/10/silver-bullets-pedestals.html">
    Silver Bullets & Pedestals
 </a>
 </h1>
@@ -162,10 +255,9 @@
 <article class="post">
 
 <header class="post-header">
-<h1>
-<a rel="bookmark"
-   href="2014/04/why-keep-my-site.html"
-   title="Why Keep My Site? «Quotidian Quest»">
+<h1> <a rel="bookmark"
+   title="Why Keep My Site? «Quotidian Quest»"
+   href="2014/04/why-keep-my-site.html">
    Why Keep My Site?
 </a>
 </h1>
@@ -189,10 +281,9 @@
 <article class="post">
 
 <header class="post-header">
-<h1>
-<a rel="bookmark"
-   href="2013/11/wednesday-challenge-milk.html"
-   title="Wednesday Challenge: Milk «Quotidian Quest»">
+<h1> <a rel="bookmark"
+   title="Wednesday Challenge: Milk «Quotidian Quest»"
+   href="2013/11/wednesday-challenge-milk.html">
    Wednesday Challenge: Milk
 </a>
 </h1>
@@ -205,10 +296,9 @@
 <article class="post">
 
 <header class="post-header">
-<h1>
-<a rel="bookmark"
-   href="2013/10/figure-testing.html"
-   title="Figure testing «Quotidian Quest»">
+<h1> <a rel="bookmark"
+   title="Figure testing «Quotidian Quest»"
+   href="2013/10/figure-testing.html">
    Figure testing
 </a>
 </h1>
@@ -218,57 +308,16 @@
 <p><img alt="Simple Picture of me" src="http://farm8.staticflickr.com/7420/10482027083_3f98e13418.jpg" /></p>
 <p>I hope that this works properly.</p>	
 </article>
-<article class="post">
-
-<header class="post-header">
-<h1>
-<a rel="bookmark"
-   href="2013/10/mussing-about-christian-music.html"
-   title="Mussing about christian music «Quotidian Quest»">
-   Mussing about christian music
-</a>
-</h1>
-<p class="subtitle"><time datetime="2013-10-30T10:00:06-07:00">Wed 30 October 2013</time><label for="mussing-about-christian-music" class="margin-toggle"> ⊕</label><input type="checkbox" id="mussing-about-christian-music" class="margin-toggle" /><span class="marginnote">Category: <a href="http://quotidianquest.com/category/personal.html">personal</a><br />
- #<a href="http://quotidianquest.com/tag/music.html">music</a></span></p>
-</header><p>One of my favorite things about Christian music is that it is encouraging with a lot of popular music, you only hear about:</p>
-<ul>
-<li>money</li>
-<li>heartbreak</li>
-<li>sex</li>
-<li>drugs</li>
-</ul>
-<p>Today, I was listening and I head a song that asked a simple question</p>
-<blockquote>
-<p>Are you happy where your life is?</p>
-</blockquote>
-<p>I don't hear that question on other stations.</p>	
-</article>
-<article class="post">
-
-<header class="post-header">
-<h1>
-<a rel="bookmark"
-   href="2013/10/shadowslayer-dawn-of-the-lightforge.html"
-   title="Shadowslayer: Dawn of the Lightforge «Quotidian Quest»">
-   Shadowslayer: Dawn of the Lightforge
-</a>
-</h1>
-<p class="subtitle"><time datetime="2013-10-15T12:05:50-07:00">Tue 15 October 2013</time><label for="shadowslayer-dawn-of-the-lightforge" class="margin-toggle"> ⊕</label><input type="checkbox" id="shadowslayer-dawn-of-the-lightforge" class="margin-toggle" /><span class="marginnote">Category: <a href="http://quotidianquest.com/category/review.html">review</a><br />
- #<a href="http://quotidianquest.com/tag/games.html">games</a></span></p>
-</header><p>When I saw this in the app store, I thought this was an alright game. It had a fairly high rating, but I think that the developers must have gamed the rating system because anyone who has gotten passed the initial tutorial would be quickly bored by the tedious amount of grinding and the amount of in-app purchases that you get hammered with every time you want to do something.</p>
-<p>The game has two different kinds of currency: One that proves pointless after 20 minutes and a true currency that you can only get by paying with real money. </p>
-<p>Listen, if you're looking for a game that you only play once a day without paying $2-3, then this is it.</p>	
-</article>
 </main>
       <nav id="pagination">        <a id="first_page" href="http://quotidianquest.com/author/mandaris.html">&#60;&#60;</a>
-        <a id="prev_page" href="http://quotidianquest.com/author/mandaris.html">&#60;</a>
+        <a id="prev_page" rel="prev" href="http://quotidianquest.com/author/mandaris.html">&#60;</a>
         <a href="http://quotidianquest.com/author/mandaris.html">1</a>
         <span class="a active">2</span>
         <a href="http://quotidianquest.com/author/mandaris3.html">3</a>
         <a href="http://quotidianquest.com/author/mandaris4.html">4</a>
         <a href="http://quotidianquest.com/author/mandaris5.html">5</a>
         <a href="http://quotidianquest.com/author/mandaris6.html">6</a>
-        <a id="next_page" href="http://quotidianquest.com/author/mandaris3.html">&#62;</a>
+        <a id="next_page" rel="next" href="http://quotidianquest.com/author/mandaris3.html">&#62;</a>
         <a id="last_page" href="http://quotidianquest.com/author/mandaris15.html">&#62;&#62;</a>
 </nav><footer>
   <p>Powered by <a href="http://pelican.readthedocs.org">Pelican</a></p>

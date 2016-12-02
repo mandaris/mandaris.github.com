@@ -39,10 +39,70 @@
 <article class="post">
 
 <header class="post-header">
-<h1>
-<a rel="bookmark"
-   href="2016/06/where-have-i-been.html"
-   title="Where have I been? «Quotidian Quest»">
+<h1> <a rel="external"
+   title="Creation Challenge: Enable linked-list post «Quotidian Quest»"
+   href="https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types">
+   Creation Challenge: Enable linked-list post
+</a>
+</h1>
+<p class="subtitle"><time datetime="2016-12-01T17:46:45-08:00">Thu 01 December 2016</time><label for="creation-challenge-enable-linked-list-post" class="margin-toggle"> ⊕</label><input type="checkbox" id="creation-challenge-enable-linked-list-post" class="margin-toggle" /><span class="marginnote">Category: <a href="http://quotidianquest.com/category/misc.html">misc</a><br />
+ #<a href="http://quotidianquest.com/tag/misc.html">misc</a> #<a href="http://quotidianquest.com/tag/creation-challenge.html">creation challenge</a></span></p>
+</header><p>The first thing that I'd like to work on is getting the article header that I'm using to be more capable of handing meta data for individual entries. Currently, it points to the specific url for the article but I'd like it to take my current header.</p>
+<div class="highlight"><pre><span class="n">title</span><span class="o">:</span> <span class="n">Where</span> <span class="n">to</span> <span class="n">put</span> <span class="n">the</span> <span class="n">maybe</span><span class="o">-</span><span class="n">someday</span>  
+<span class="n">date</span><span class="o">:</span> <span class="mi">2016</span><span class="o">-</span><span class="mi">09</span><span class="o">-</span><span class="mi">05</span> <span class="mi">22</span><span class="o">:</span><span class="mi">10</span><span class="o">:</span><span class="mi">08</span>  
+<span class="n">category</span><span class="o">:</span> <span class="n">personal</span>  
+<span class="n">tags</span><span class="o">:</span> <span class="n">tech</span><span class="o">,</span> <span class="n">notes</span><span class="o">,</span> <span class="n">evernote</span>  
+<span class="n">status</span><span class="o">:</span> <span class="n">published</span>    
+</pre></div>
+
+
+<p>and add the <code>link</code> attribute</p>
+<div class="highlight"><pre><span class="n">title</span><span class="o">:</span> <span class="n">Where</span> <span class="n">to</span> <span class="n">put</span> <span class="n">the</span> <span class="n">maybe</span><span class="o">-</span><span class="n">someday</span>  
+<span class="n">date</span><span class="o">:</span> <span class="mi">2016</span><span class="o">-</span><span class="mi">09</span><span class="o">-</span><span class="mi">05</span> <span class="mi">22</span><span class="o">:</span><span class="mi">10</span><span class="o">:</span><span class="mi">08</span>  
+<span class="n">category</span><span class="o">:</span> <span class="n">personal</span>  
+<span class="n">tags</span><span class="o">:</span> <span class="n">tech</span><span class="o">,</span> <span class="n">notes</span><span class="o">,</span> <span class="n">evernote</span>  
+<span class="n">status</span><span class="o">:</span> <span class="n">published</span>    
+<span class="n">link</span><span class="o">:</span> <span class="n">some_other_place</span><span class="o">.</span><span class="na">com</span>
+</pre></div>
+
+
+<p>I started off with the following jinja heading.</p>
+<div class="highlight"><pre><span class="x">&lt;h1&gt;</span>
+<span class="x">&lt;a rel=&quot;bookmark&quot;</span>
+<span class="x">   href=&quot;</span><span class="cp">{{</span> <span class="nv">article.url</span> <span class="cp">}}</span><span class="x">&quot;</span>
+<span class="x">   title=&quot;</span><span class="cp">{{</span> <span class="nv">article.title</span><span class="o">|</span><span class="nf">striptags</span> <span class="cp">}}</span><span class="x"> «</span><span class="cp">{{</span> <span class="nv">SITENAME</span> <span class="cp">}}</span><span class="x">»&quot;&gt;</span>
+<span class="x">   </span><span class="cp">{{</span> <span class="nv">article.title</span><span class="cp">}}</span><span class="x"></span>
+<span class="x">&lt;/a&gt;</span>
+<span class="x">&lt;/h1&gt;</span>
+</pre></div>
+
+
+<p>To be honest, I don't do development on the blog that often so I used my own code to look up how to do an <code>if</code> statement in jinja and wrote a little test line to see if it worked.</p>
+<div class="highlight"><pre><span class="cp">{{</span> <span class="nv">article.title</span><span class="cp">}}</span><span class="x"> </span><span class="cp">{%</span> <span class="k">if</span> <span class="nv">article.link</span> <span class="cp">%}</span><span class="x"> </span><span class="cp">{{</span> <span class="nv">article.link</span><span class="cp">}}</span><span class="x"> </span><span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span><span class="x"></span>
+</pre></div>
+
+
+<p>After editing the page a number of times and doing more research that I should have into which kind of <code>rel</code> tag I should use for book marks versus external links, I finished up with this.</p>
+<div class="highlight"><pre><span class="x">&lt;a rel=&quot;external&quot;</span>
+<span class="x">   title=&quot;</span><span class="cp">{{</span> <span class="nv">article.title</span><span class="o">|</span><span class="nf">striptags</span> <span class="cp">}}</span><span class="x"> «</span><span class="cp">{{</span> <span class="nv">SITENAME</span> <span class="cp">}}</span><span class="x">»&quot;</span>
+<span class="x">   href=&quot;</span><span class="cp">{{</span> <span class="nv">article.link</span> <span class="cp">}}</span><span class="x">&quot;&gt;</span>
+<span class="x">   </span><span class="cp">{{</span> <span class="nv">article.title</span><span class="cp">}}</span><span class="x"></span>
+<span class="x">&lt;/a&gt;</span>
+<span class="cp">{%</span> <span class="k">else</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">&lt;a rel=&quot;bookmark&quot;</span>
+<span class="x">   title=&quot;</span><span class="cp">{{</span> <span class="nv">article.title</span><span class="o">|</span><span class="nf">striptags</span> <span class="cp">}}</span><span class="x"> «</span><span class="cp">{{</span> <span class="nv">SITENAME</span> <span class="cp">}}</span><span class="x">»&quot;</span>
+<span class="x">   href=&quot;</span><span class="cp">{{</span> <span class="nv">article.url</span> <span class="cp">}}</span><span class="x">&quot;&gt;</span>
+<span class="x">   </span><span class="cp">{{</span> <span class="nv">article.title</span><span class="cp">}}</span><span class="x"></span>
+<span class="x">&lt;/a&gt;</span>
+<span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span><span class="x"></span>
+</pre></div>	
+</article>
+<article class="post">
+
+<header class="post-header">
+<h1> <a rel="bookmark"
+   title="Where have I been? «Quotidian Quest»"
+   href="2016/06/where-have-i-been.html">
    Where have I been?
 </a>
 </h1>
@@ -53,10 +113,9 @@
 <article class="post">
 
 <header class="post-header">
-<h1>
-<a rel="bookmark"
-   href="2016/03/starting-with-hazel.html"
-   title="Starting with Hazel «Quotidian Quest»">
+<h1> <a rel="bookmark"
+   title="Starting with Hazel «Quotidian Quest»"
+   href="2016/03/starting-with-hazel.html">
    Starting with Hazel
 </a>
 </h1>
@@ -90,10 +149,9 @@ I write all of my blog post in markdown and store them in a folder in dropbox. F
 <article class="post">
 
 <header class="post-header">
-<h1>
-<a rel="bookmark"
-   href="2016/03/tufte-margin-figure-and-column-images.html"
-   title="Tufte margin figure and column images «Quotidian Quest»">
+<h1> <a rel="bookmark"
+   title="Tufte margin figure and column images «Quotidian Quest»"
+   href="2016/03/tufte-margin-figure-and-column-images.html">
    Tufte margin figure and column images
 </a>
 </h1>
@@ -133,10 +191,9 @@ I write all of my blog post in markdown and store them in a folder in dropbox. F
 <article class="post">
 
 <header class="post-header">
-<h1>
-<a rel="bookmark"
-   href="2016/02/a-small-return.html"
-   title="A small return «Quotidian Quest»">
+<h1> <a rel="bookmark"
+   title="A small return «Quotidian Quest»"
+   href="2016/02/a-small-return.html">
    A small return
 </a>
 </h1>
@@ -163,10 +220,9 @@ I write all of my blog post in markdown and store them in a folder in dropbox. F
 <article class="post">
 
 <header class="post-header">
-<h1>
-<a rel="bookmark"
-   href="2016/02/publishing-incompletes.html"
-   title="Publishing incompletes «Quotidian Quest»">
+<h1> <a rel="bookmark"
+   title="Publishing incompletes «Quotidian Quest»"
+   href="2016/02/publishing-incompletes.html">
    Publishing incompletes
 </a>
 </h1>
@@ -178,10 +234,9 @@ I write all of my blog post in markdown and store them in a folder in dropbox. F
 <article class="post">
 
 <header class="post-header">
-<h1>
-<a rel="bookmark"
-   href="2015/10/silver-bullets-pedestals.html"
-   title="Silver Bullets & Pedestals «Quotidian Quest»">
+<h1> <a rel="bookmark"
+   title="Silver Bullets & Pedestals «Quotidian Quest»"
+   href="2015/10/silver-bullets-pedestals.html">
    Silver Bullets & Pedestals
 </a>
 </h1>
@@ -216,10 +271,9 @@ I write all of my blog post in markdown and store them in a folder in dropbox. F
 <article class="post">
 
 <header class="post-header">
-<h1>
-<a rel="bookmark"
-   href="2014/04/why-keep-my-site.html"
-   title="Why Keep My Site? «Quotidian Quest»">
+<h1> <a rel="bookmark"
+   title="Why Keep My Site? «Quotidian Quest»"
+   href="2014/04/why-keep-my-site.html">
    Why Keep My Site?
 </a>
 </h1>
@@ -243,10 +297,9 @@ I write all of my blog post in markdown and store them in a folder in dropbox. F
 <article class="post">
 
 <header class="post-header">
-<h1>
-<a rel="bookmark"
-   href="2013/06/n-word.html"
-   title="N-Word «Quotidian Quest»">
+<h1> <a rel="bookmark"
+   title="N-Word «Quotidian Quest»"
+   href="2013/06/n-word.html">
    N-Word
 </a>
 </h1>
@@ -307,10 +360,9 @@ I write all of my blog post in markdown and store them in a folder in dropbox. F
 <article class="post">
 
 <header class="post-header">
-<h1>
-<a rel="bookmark"
-   href="2013/02/served.html"
-   title="Served «Quotidian Quest»">
+<h1> <a rel="bookmark"
+   title="Served «Quotidian Quest»"
+   href="2013/02/served.html">
    Served
 </a>
 </h1>
@@ -321,33 +373,13 @@ I write all of my blog post in markdown and store them in a folder in dropbox. F
 <p>And then the boom dropped.</p>
 <p>I found myself constantly mixing batter to keep up with a constant stream of hungry customers. In fact, I heard that there was a story of people who went through the line 3 times.</p>	
 </article>
-<article class="post">
-
-<header class="post-header">
-<h1>
-<a rel="bookmark"
-   href="2013/02/night-wrap-up.html"
-   title="Night wrap up «Quotidian Quest»">
-   Night wrap up
-</a>
-</h1>
-<p class="subtitle"><time datetime="2013-02-21T23:10:06-08:00">Thu 21 February 2013</time><label for="night-wrap-up" class="margin-toggle"> ⊕</label><input type="checkbox" id="night-wrap-up" class="margin-toggle" /><span class="marginnote">Category: <a href="http://quotidianquest.com/category/personal.html">personal</a><br />
- #<a href="http://quotidianquest.com/tag/misc.html">misc</a></span></p>
-</header><p>Tomorrow, I’m going to be leading the parents of my daughter’s kindergarten class in our first and only fundraiser. </p>
-<p>The (in)famous pancake breakfast.</p>
-<p>This was an activity that they told us about at the very beginning of the school year (6 months ago) and I’ve honestly have been kind of dreading that this day would come. </p>
-<p>It’s not so much volunteering to do it as it is getting the parents to help out. Although our school has a policy where every parent is required to volunteer 40 hours over the entire school year or donate 20 bucks per hour, I feel that not everyone is able to jump on board and help support us with this. </p>
-<p>I’m not angry and I understand that not everyone can help this week, but since I’m the one who is responsible for this if it fails...</p>
-<p>I’m just happy that the class that my daughter is in has a lot of top notch parents who really want this to succeed and understand that even the little bit of help can go a long way. </p>
-<p>Especially if you tell me about it so I don’t go crazy thinking about what could go wrong.</p>
-<p>One thing of personal note is that all the stress of the pancake breakfast has gotten me back in front of the computer to write again.  There have been a number of moments that I’ve been wishing for my journal and tonight is one of them.</p>	
-</article>
 </main>
       <nav id="pagination">   <!-- <span id="first_page" class="a inactive">&#60;&#60;</span>
         <span id="first_page" class="a inactive">&#60;</span> -->
         <span class="a active">1</span>
-   <!-- <span id="next_page" class="a inactive">&#62;</span>
-        <span id="next_page" class="a inactive">&#62;&#62;</span> -->
+        <a href="http://quotidianquest.com/tag/misc2.html">2</a>
+        <a id="next_page" rel="next" href="http://quotidianquest.com/tag/misc2.html">&#62;</a>
+        <a id="last_page" href="http://quotidianquest.com/tag/misc2.html">&#62;&#62;</a>
 </nav><footer>
   <p>Powered by <a href="http://pelican.readthedocs.org">Pelican</a></p>
 </footer>
