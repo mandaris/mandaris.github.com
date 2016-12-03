@@ -39,13 +39,58 @@
 <article class="post">
 
 <header class="post-header">
-<h1> <a rel="external"
-   title="Creation Challenge: Enable linked-list post «Quotidian Quest»"
-   href="https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types">
+<h1>
+<a rel="bookmark"
+   href="2016/12/why-create-something-everday.html"
+   title="Why create something everday? «Quotidian Quest»">
+   Why create something everday?
+</a>
+</h1>
+<p class="subtitle"><time datetime="2016-12-02T18:24:49-08:00">Fri 02 December 2016</time><label for="why-create-something-everday" class="margin-toggle"> ⊕</label><input type="checkbox" id="why-create-something-everday" class="margin-toggle" /> <span class="marginnote">Category: <a href="http://quotidianquest.com/category/misc.html">misc</a><br />
+ #<a href="http://quotidianquest.com/tag/misc.html">misc</a> #<a href="http://quotidianquest.com/tag/creation-challenge.html">creation challenge</a></span></p>
+</header><p>So this post is more of a follow up to explain my logic for what I'm doing. Sometimes, it's just good to write out your thoughts.</p>
+<p><figure><figcaption>I find myself putting more and more of my thoughts into mindmaps. I will have to come up with a way to put them into better drafts.</figcaption><img src="../../images/Create_something_everyday.png"/></figure></p>
+<h2>Why?</h2>
+<p>What would making something every day do for me?  That was the question that I asked myself. I've been missing something for months if not years and it was the satisfaction that I was creating something meaningful outside of being a parent. I was feeling helpless and I was slowly seeing things not getting done. </p>
+<p>I was losing control.</p>
+<p>I feel that this will allow me a jump start into taking some control. </p>
+<p>As opposed to learning to control my body via exercise and meditation<sup id="fnref:meditation"><a class="footnote-ref" href="#fn:meditation" rel="footnote">1</a></sup>.</p>
+<h2>What Counts</h2>
+<p>The last two are things that I've never made before and I'd like to make it part of my challenge to get something in front of other people. Honestly, I don't know how many people read my blog anyway.</p>
+<ul>
+<li>Blog Entries</li>
+<li>Tutorials</li>
+<li>Code</li>
+<li>Examples</li>
+<li>Animations</li>
+<li>Vlog</li>
+</ul>
+<h2>What doesn’t count</h2>
+<p>These are things that I was doing anyway and I don't want to make it part of the challenge.</p>
+<ul>
+<li>Journal Entries</li>
+<li>Tweets</li>
+</ul>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:meditation">
+<p>I'm also doing those things as well, but I'm not going to focus on those changes.&#160;<a class="footnote-backref" href="#fnref:meditation" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>	
+</article>
+<article class="post">
+
+<header class="post-header">
+<h1>
+<a rel="bookmark"
+   href="2016/12/creation-challenge-enable-linked-list-post.html"
+   title="Creation Challenge: Enable linked-list post «Quotidian Quest»">
    Creation Challenge: Enable linked-list post
 </a>
 </h1>
-<p class="subtitle"><time datetime="2016-12-01T17:46:45-08:00">Thu 01 December 2016</time><label for="creation-challenge-enable-linked-list-post" class="margin-toggle"> ⊕</label><input type="checkbox" id="creation-challenge-enable-linked-list-post" class="margin-toggle" /><span class="marginnote">Category: <a href="http://quotidianquest.com/category/misc.html">misc</a><br />
+<p class="subtitle"><time datetime="2016-12-01T17:46:45-08:00">Thu 01 December 2016</time><label for="creation-challenge-enable-linked-list-post" class="margin-toggle"> ⊕</label><input type="checkbox" id="creation-challenge-enable-linked-list-post" class="margin-toggle" /> <span class="marginnote">Category: <a href="http://quotidianquest.com/category/misc.html">misc</a><br />
  #<a href="http://quotidianquest.com/tag/misc.html">misc</a> #<a href="http://quotidianquest.com/tag/creation-challenge.html">creation challenge</a></span></p>
 </header><p>The first thing that I'd like to work on is getting the article header that I'm using to be more capable of handing meta data for individual entries. Currently, it points to the specific url for the article but I'd like it to take my current header.</p>
 <div class="highlight"><pre><span class="n">title</span><span class="o">:</span> <span class="n">Where</span> <span class="n">to</span> <span class="n">put</span> <span class="n">the</span> <span class="n">maybe</span><span class="o">-</span><span class="n">someday</span>  
@@ -83,7 +128,8 @@
 
 
 <p>After editing the page a number of times and doing more research that I should have into which kind of <code>rel</code> tag I should use for book marks versus external links, I finished up with this.</p>
-<div class="highlight"><pre><span class="x">&lt;a rel=&quot;external&quot;</span>
+<div class="highlight"><pre><span class="cp">{%</span> <span class="k">if</span> <span class="nv">article.link</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">&lt;a rel=&quot;external&quot;</span>
 <span class="x">   title=&quot;</span><span class="cp">{{</span> <span class="nv">article.title</span><span class="o">|</span><span class="nf">striptags</span> <span class="cp">}}</span><span class="x"> «</span><span class="cp">{{</span> <span class="nv">SITENAME</span> <span class="cp">}}</span><span class="x">»&quot;</span>
 <span class="x">   href=&quot;</span><span class="cp">{{</span> <span class="nv">article.link</span> <span class="cp">}}</span><span class="x">&quot;&gt;</span>
 <span class="x">   </span><span class="cp">{{</span> <span class="nv">article.title</span><span class="cp">}}</span><span class="x"></span>
@@ -100,26 +146,28 @@
 <article class="post">
 
 <header class="post-header">
-<h1> <a rel="bookmark"
-   title="Creating something everyday «Quotidian Quest»"
-   href="2016/12/creating-something-everyday.html">
+<h1>
+<a rel="bookmark"
+   href="2016/12/creating-something-everyday.html"
+   title="Creating something everyday «Quotidian Quest»">
    Creating something everyday
 </a>
 </h1>
-<p class="subtitle"><time datetime="2016-12-01T17:29:37-08:00">Thu 01 December 2016</time><label for="creating-something-everyday" class="margin-toggle"> ⊕</label><input type="checkbox" id="creating-something-everyday" class="margin-toggle" /><span class="marginnote">Category: <a href="http://quotidianquest.com/category/misc.html">misc</a><br />
+<p class="subtitle"><time datetime="2016-12-01T17:29:37-08:00">Thu 01 December 2016</time><label for="creating-something-everyday" class="margin-toggle"> ⊕</label><input type="checkbox" id="creating-something-everyday" class="margin-toggle" /> <span class="marginnote">Category: <a href="http://quotidianquest.com/category/misc.html">misc</a><br />
  #<a href="http://quotidianquest.com/tag/making.html">making</a> #<a href="http://quotidianquest.com/tag/creation-challenge.html">creation challenge</a></span></p>
 </header><p>So, I'm making a commitment to myself to create something every day until Christmas without the limitation/structure of saying what I'm going to be making during this period of time.  I suspect that it will mostly be blog posts and tutorials but I think I'll make a push to clean up the code for this blog and add a number of things that I've been putting on the back burner.</p>	
 </article>
 <article class="post">
 
 <header class="post-header">
-<h1> <a rel="bookmark"
-   title="What am I going to do in this moment? «Quotidian Quest»"
-   href="2012/11/what-am-i-going-to-do-in-this-moment.html">
+<h1>
+<a rel="bookmark"
+   href="2012/11/what-am-i-going-to-do-in-this-moment.html"
+   title="What am I going to do in this moment? «Quotidian Quest»">
    What am I going to do in this moment?
 </a>
 </h1>
-<p class="subtitle"><time datetime="2012-11-12T21:35:32-08:00">Mon 12 November 2012</time><label for="what-am-i-going-to-do-in-this-moment" class="margin-toggle"> ⊕</label><input type="checkbox" id="what-am-i-going-to-do-in-this-moment" class="margin-toggle" /><span class="marginnote">Category: <a href="http://quotidianquest.com/category/misc.html">misc</a><br />
+<p class="subtitle"><time datetime="2012-11-12T21:35:32-08:00">Mon 12 November 2012</time><label for="what-am-i-going-to-do-in-this-moment" class="margin-toggle"> ⊕</label><input type="checkbox" id="what-am-i-going-to-do-in-this-moment" class="margin-toggle" /> <span class="marginnote">Category: <a href="http://quotidianquest.com/category/misc.html">misc</a><br />
  #<a href="http://quotidianquest.com/tag/observation.html">observation</a></span></p>
 </header><p>I’ve thought about it. The desires of my life. About what I would I would do if I could do it in an instant. What would I do if I were to snap my fingers and the thing that I wanted were to magically happen; whether it was instantly get into shape or finish that book.</p>
 <p>It is in these moments of clarity that I come closer to the reality that if I want to realize these hopes and dreams that I must first start towards them.</p>
@@ -138,13 +186,14 @@
 <article class="post">
 
 <header class="post-header">
-<h1> <a rel="bookmark"
-   title="Another day «Quotidian Quest»"
-   href="2011/02/another-day.html">
+<h1>
+<a rel="bookmark"
+   href="2011/02/another-day.html"
+   title="Another day «Quotidian Quest»">
    Another day
 </a>
 </h1>
-<p class="subtitle"><time datetime="2011-02-06T10:11:12-08:00">Sun 06 February 2011</time><label for="another-day" class="margin-toggle"> ⊕</label><input type="checkbox" id="another-day" class="margin-toggle" /><span class="marginnote">Category: <a href="http://quotidianquest.com/category/misc.html">misc</a><br />
+<p class="subtitle"><time datetime="2011-02-06T10:11:12-08:00">Sun 06 February 2011</time><label for="another-day" class="margin-toggle"> ⊕</label><input type="checkbox" id="another-day" class="margin-toggle" /> <span class="marginnote">Category: <a href="http://quotidianquest.com/category/misc.html">misc</a><br />
 </span></p>
 </header><p>Hello, World.<br />
 I'm alive for another year. </p>	

@@ -39,13 +39,58 @@
 <article class="post">
 
 <header class="post-header">
-<h1> <a rel="external"
-   title="Creation Challenge: Enable linked-list post «Quotidian Quest»"
-   href="https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types">
+<h1>
+<a rel="bookmark"
+   href="2016/12/why-create-something-everday.html"
+   title="Why create something everday? «Quotidian Quest»">
+   Why create something everday?
+</a>
+</h1>
+<p class="subtitle"><time datetime="2016-12-02T18:24:49-08:00">Fri 02 December 2016</time><label for="why-create-something-everday" class="margin-toggle"> ⊕</label><input type="checkbox" id="why-create-something-everday" class="margin-toggle" /> <span class="marginnote">Category: <a href="http://quotidianquest.com/category/misc.html">misc</a><br />
+ #<a href="http://quotidianquest.com/tag/misc.html">misc</a> #<a href="http://quotidianquest.com/tag/creation-challenge.html">creation challenge</a></span></p>
+</header><p>So this post is more of a follow up to explain my logic for what I'm doing. Sometimes, it's just good to write out your thoughts.</p>
+<p><figure><figcaption>I find myself putting more and more of my thoughts into mindmaps. I will have to come up with a way to put them into better drafts.</figcaption><img src="../../images/Create_something_everyday.png"/></figure></p>
+<h2>Why?</h2>
+<p>What would making something every day do for me?  That was the question that I asked myself. I've been missing something for months if not years and it was the satisfaction that I was creating something meaningful outside of being a parent. I was feeling helpless and I was slowly seeing things not getting done. </p>
+<p>I was losing control.</p>
+<p>I feel that this will allow me a jump start into taking some control. </p>
+<p>As opposed to learning to control my body via exercise and meditation<sup id="fnref:meditation"><a class="footnote-ref" href="#fn:meditation" rel="footnote">1</a></sup>.</p>
+<h2>What Counts</h2>
+<p>The last two are things that I've never made before and I'd like to make it part of my challenge to get something in front of other people. Honestly, I don't know how many people read my blog anyway.</p>
+<ul>
+<li>Blog Entries</li>
+<li>Tutorials</li>
+<li>Code</li>
+<li>Examples</li>
+<li>Animations</li>
+<li>Vlog</li>
+</ul>
+<h2>What doesn’t count</h2>
+<p>These are things that I was doing anyway and I don't want to make it part of the challenge.</p>
+<ul>
+<li>Journal Entries</li>
+<li>Tweets</li>
+</ul>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:meditation">
+<p>I'm also doing those things as well, but I'm not going to focus on those changes.&#160;<a class="footnote-backref" href="#fnref:meditation" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>	
+</article>
+<article class="post">
+
+<header class="post-header">
+<h1>
+<a rel="bookmark"
+   href="2016/12/creation-challenge-enable-linked-list-post.html"
+   title="Creation Challenge: Enable linked-list post «Quotidian Quest»">
    Creation Challenge: Enable linked-list post
 </a>
 </h1>
-<p class="subtitle"><time datetime="2016-12-01T17:46:45-08:00">Thu 01 December 2016</time><label for="creation-challenge-enable-linked-list-post" class="margin-toggle"> ⊕</label><input type="checkbox" id="creation-challenge-enable-linked-list-post" class="margin-toggle" /><span class="marginnote">Category: <a href="http://quotidianquest.com/category/misc.html">misc</a><br />
+<p class="subtitle"><time datetime="2016-12-01T17:46:45-08:00">Thu 01 December 2016</time><label for="creation-challenge-enable-linked-list-post" class="margin-toggle"> ⊕</label><input type="checkbox" id="creation-challenge-enable-linked-list-post" class="margin-toggle" /> <span class="marginnote">Category: <a href="http://quotidianquest.com/category/misc.html">misc</a><br />
  #<a href="http://quotidianquest.com/tag/misc.html">misc</a> #<a href="http://quotidianquest.com/tag/creation-challenge.html">creation challenge</a></span></p>
 </header><p>The first thing that I'd like to work on is getting the article header that I'm using to be more capable of handing meta data for individual entries. Currently, it points to the specific url for the article but I'd like it to take my current header.</p>
 <div class="highlight"><pre><span class="n">title</span><span class="o">:</span> <span class="n">Where</span> <span class="n">to</span> <span class="n">put</span> <span class="n">the</span> <span class="n">maybe</span><span class="o">-</span><span class="n">someday</span>  
@@ -83,7 +128,8 @@
 
 
 <p>After editing the page a number of times and doing more research that I should have into which kind of <code>rel</code> tag I should use for book marks versus external links, I finished up with this.</p>
-<div class="highlight"><pre><span class="x">&lt;a rel=&quot;external&quot;</span>
+<div class="highlight"><pre><span class="cp">{%</span> <span class="k">if</span> <span class="nv">article.link</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">&lt;a rel=&quot;external&quot;</span>
 <span class="x">   title=&quot;</span><span class="cp">{{</span> <span class="nv">article.title</span><span class="o">|</span><span class="nf">striptags</span> <span class="cp">}}</span><span class="x"> «</span><span class="cp">{{</span> <span class="nv">SITENAME</span> <span class="cp">}}</span><span class="x">»&quot;</span>
 <span class="x">   href=&quot;</span><span class="cp">{{</span> <span class="nv">article.link</span> <span class="cp">}}</span><span class="x">&quot;&gt;</span>
 <span class="x">   </span><span class="cp">{{</span> <span class="nv">article.title</span><span class="cp">}}</span><span class="x"></span>
@@ -100,26 +146,28 @@
 <article class="post">
 
 <header class="post-header">
-<h1> <a rel="bookmark"
-   title="Creating something everyday «Quotidian Quest»"
-   href="2016/12/creating-something-everyday.html">
+<h1>
+<a rel="bookmark"
+   href="2016/12/creating-something-everyday.html"
+   title="Creating something everyday «Quotidian Quest»">
    Creating something everyday
 </a>
 </h1>
-<p class="subtitle"><time datetime="2016-12-01T17:29:37-08:00">Thu 01 December 2016</time><label for="creating-something-everyday" class="margin-toggle"> ⊕</label><input type="checkbox" id="creating-something-everyday" class="margin-toggle" /><span class="marginnote">Category: <a href="http://quotidianquest.com/category/misc.html">misc</a><br />
+<p class="subtitle"><time datetime="2016-12-01T17:29:37-08:00">Thu 01 December 2016</time><label for="creating-something-everyday" class="margin-toggle"> ⊕</label><input type="checkbox" id="creating-something-everyday" class="margin-toggle" /> <span class="marginnote">Category: <a href="http://quotidianquest.com/category/misc.html">misc</a><br />
  #<a href="http://quotidianquest.com/tag/making.html">making</a> #<a href="http://quotidianquest.com/tag/creation-challenge.html">creation challenge</a></span></p>
 </header><p>So, I'm making a commitment to myself to create something every day until Christmas without the limitation/structure of saying what I'm going to be making during this period of time.  I suspect that it will mostly be blog posts and tutorials but I think I'll make a push to clean up the code for this blog and add a number of things that I've been putting on the back burner.</p>	
 </article>
 <article class="post">
 
 <header class="post-header">
-<h1> <a rel="bookmark"
-   title="Where to put the maybe-someday «Quotidian Quest»"
-   href="2016/09/where-to-put-the-maybe-someday.html">
+<h1>
+<a rel="bookmark"
+   href="2016/09/where-to-put-the-maybe-someday.html"
+   title="Where to put the maybe-someday «Quotidian Quest»">
    Where to put the maybe-someday
 </a>
 </h1>
-<p class="subtitle"><time datetime="2016-09-05T22:10:08-07:00">Mon 05 September 2016</time><label for="where-to-put-the-maybe-someday" class="margin-toggle"> ⊕</label><input type="checkbox" id="where-to-put-the-maybe-someday" class="margin-toggle" /><span class="marginnote">Category: <a href="http://quotidianquest.com/category/personal.html">personal</a><br />
+<p class="subtitle"><time datetime="2016-09-05T22:10:08-07:00">Mon 05 September 2016</time><label for="where-to-put-the-maybe-someday" class="margin-toggle"> ⊕</label><input type="checkbox" id="where-to-put-the-maybe-someday" class="margin-toggle" /> <span class="marginnote">Category: <a href="http://quotidianquest.com/category/personal.html">personal</a><br />
  #<a href="http://quotidianquest.com/tag/tech.html">tech</a> #<a href="http://quotidianquest.com/tag/notes.html">notes</a> #<a href="http://quotidianquest.com/tag/evernote.html">evernote</a></span></p>
 </header><p><figure class="fullwidth"><img src="http://quotidianquest.com/images/omnifocus_printout_256.png"><figcaption>I felt I needed to unplug so I printed out what is in Omnifocus</figcation></figure></p>
 <p>Today, I did a review of my projects in OmniFocus. And thought about if I really, really wanted to keep certain things in there. The key to any good productivity system is having trust in that it is working correctly. If I have things in the system that I'm not going to do, then a part of me is going to subconsciencely fight against it.</p>
@@ -135,7 +183,7 @@
 <p>The reason that I'm not a fan of this is because I don't know what is going to happen with the future of the business. Although I have a premium membership, I don't think the new price is worth it for what I use it for. Nor do I think I can afford it the next time that renewal is up.</p>
 <p>This leaves, me with Apple's Notes.app. It has really been making the rounds as far as praise from a lot of the people that I respect and has been fairly easy to use. The only problems that I'm worried about going forward with this the ability to add something to a pre-existing note when the list of notes starts to get longer. I like the fact that everything I put in it gets pushed to the server and is then on my device. I also like the idea of being able to have an easy way of sharing notes with my wife and look forward to more features in the future.</p>
 <h2>In conclusion, where am I going to put my notes.</h2>
-<p>I think I'll be giving evernote another chance for being the place that I keep my maybe-someday list for projects<label for="maybe_evernote" "http://quotidianquest.com/images/maybe_someday_evernote.png" class="margin-toggle">&#8853;</label><input type="checkbox" id="maybe_evernote" "http://quotidianquest.com/images/maybe_someday_evernote.png" class="margin-toggle" /><span class="marginnote"><img class="fullwidth" src="Evernote allows me a place to sort things that I do not want to see in my review" alt="Evernote showing projects that I want to do some day in the future."/><br/>Evernote showing projects that I want to do some day in the future.</span>. Although there is some uncertainty in the future of the service, it still works at this point and I don't imagine that it will be difficult to leave it in the future. I even went back and tried linking some notes together and I think I can come up with some really nice uses for that going forward.</p>
+<p>I think I'll be giving evernote another chance for being the place that I keep my maybe-someday list for projects<label for="maybe_evernote" class="margin-toggle">&#8853;</label><input type="checkbox" id="maybe_evernote" class="margin-toggle" /><span class="marginnote"><img class="fullwidth" src="/images/maybe_someday_evernote.png" alt="Evernote allows me a place to sort things that I do not want to see in my review"/><br/>Evernote allows me a place to sort things that I do not want to see in my review</span>. Although there is some uncertainty in the future of the service, it still works at this point and I don't imagine that it will be difficult to leave it in the future. I even went back and tried linking some notes together and I think I can come up with some really nice uses for that going forward.</p>
 <div class="footnote">
 <hr />
 <ol>
@@ -148,13 +196,14 @@
 <article class="post">
 
 <header class="post-header">
-<h1> <a rel="bookmark"
-   title="Diagrams in the post «Quotidian Quest»"
-   href="2016/08/diagrams-in-the-post.html">
+<h1>
+<a rel="bookmark"
+   href="2016/08/diagrams-in-the-post.html"
+   title="Diagrams in the post «Quotidian Quest»">
    Diagrams in the post
 </a>
 </h1>
-<p class="subtitle"><time datetime="2016-08-03T00:08:15-07:00">Wed 03 August 2016</time><label for="diagrams-in-the-post" class="margin-toggle"> ⊕</label><input type="checkbox" id="diagrams-in-the-post" class="margin-toggle" /><span class="marginnote">Category: <a href="http://quotidianquest.com/category/blogging.html">blogging</a><br />
+<p class="subtitle"><time datetime="2016-08-03T00:08:15-07:00">Wed 03 August 2016</time><label for="diagrams-in-the-post" class="margin-toggle"> ⊕</label><input type="checkbox" id="diagrams-in-the-post" class="margin-toggle" /> <span class="marginnote">Category: <a href="http://quotidianquest.com/category/blogging.html">blogging</a><br />
  #<a href="http://quotidianquest.com/tag/pelican.html">pelican</a> #<a href="http://quotidianquest.com/tag/diagrams.html">diagrams</a> #<a href="http://quotidianquest.com/tag/plantuml.html">plantuml</a></span></p>
 </header><p>I thought I would switch gears for a second and see if I could get pelican to make certain diagrams for my blog posts.</p>
 <img alt="Sample sequence diagram" classes="sequence" src="http://quotidianquest.com/images/17033b95.svg" /><p>I hope that works.</p>	
@@ -162,13 +211,14 @@
 <article class="post">
 
 <header class="post-header">
-<h1> <a rel="bookmark"
-   title="Opening up on the internet «Quotidian Quest»"
-   href="2016/07/opening-up-on-the-internet.html">
+<h1>
+<a rel="bookmark"
+   href="2016/07/opening-up-on-the-internet.html"
+   title="Opening up on the internet «Quotidian Quest»">
    Opening up on the internet
 </a>
 </h1>
-<p class="subtitle"><time datetime="2016-07-20T13:38:12-07:00">Wed 20 July 2016</time><label for="opening-up-on-the-internet" class="margin-toggle"> ⊕</label><input type="checkbox" id="opening-up-on-the-internet" class="margin-toggle" /><span class="marginnote">Category: <a href="http://quotidianquest.com/category/personal.html">personal</a><br />
+<p class="subtitle"><time datetime="2016-07-20T13:38:12-07:00">Wed 20 July 2016</time><label for="opening-up-on-the-internet" class="margin-toggle"> ⊕</label><input type="checkbox" id="opening-up-on-the-internet" class="margin-toggle" /> <span class="marginnote">Category: <a href="http://quotidianquest.com/category/personal.html">personal</a><br />
  #<a href="http://quotidianquest.com/tag/blog.html">blog</a> #<a href="http://quotidianquest.com/tag/slack.html">slack</a></span></p>
 </header><p>I recently spent some time chatting on the internet about some of the problems that I've been having with getting things done since my "fun-employment" the last couple of months. It is very hard for me, because I've been told that I'm smart and have potential all of my life and here I am in my mid 30's and there aren't a line of people knocking on my door to give me money.</p>
 <p>When I did this, I felt good. </p>
@@ -178,13 +228,14 @@
 <article class="post">
 
 <header class="post-header">
-<h1> <a rel="bookmark"
-   title="Why not me? «Quotidian Quest»"
-   href="2016/06/why-not-me.html">
+<h1>
+<a rel="bookmark"
+   href="2016/06/why-not-me.html"
+   title="Why not me? «Quotidian Quest»">
    Why not me?
 </a>
 </h1>
-<p class="subtitle"><time datetime="2016-06-26T15:29:00-07:00">Sun 26 June 2016</time><label for="why-not-me" class="margin-toggle"> ⊕</label><input type="checkbox" id="why-not-me" class="margin-toggle" /><span class="marginnote">Category: <a href="http://quotidianquest.com/category/personal.html">personal</a><br />
+<p class="subtitle"><time datetime="2016-06-26T15:29:00-07:00">Sun 26 June 2016</time><label for="why-not-me" class="margin-toggle"> ⊕</label><input type="checkbox" id="why-not-me" class="margin-toggle" /> <span class="marginnote">Category: <a href="http://quotidianquest.com/category/personal.html">personal</a><br />
  #<a href="http://quotidianquest.com/tag/starting-over.html">starting over</a> #<a href="http://quotidianquest.com/tag/change.html">change</a></span></p>
 </header><p>We don't get a chance to start our lives over again. Even if we could, there is no garuntee that what we do will be better.</p>
 <p>What we can do is move on and change ourselves even by a little to make our lives better. I'm going to do that publicly and you are more than welcome to keep reading along. </p>	
@@ -192,26 +243,28 @@
 <article class="post">
 
 <header class="post-header">
-<h1> <a rel="bookmark"
-   title="Where have I been? «Quotidian Quest»"
-   href="2016/06/where-have-i-been.html">
+<h1>
+<a rel="bookmark"
+   href="2016/06/where-have-i-been.html"
+   title="Where have I been? «Quotidian Quest»">
    Where have I been?
 </a>
 </h1>
-<p class="subtitle"><time datetime="2016-06-21T20:54:03-07:00">Tue 21 June 2016</time><label for="where-have-i-been" class="margin-toggle"> ⊕</label><input type="checkbox" id="where-have-i-been" class="margin-toggle" /><span class="marginnote">Category: <a href="http://quotidianquest.com/category/personal.html">personal</a><br />
+<p class="subtitle"><time datetime="2016-06-21T20:54:03-07:00">Tue 21 June 2016</time><label for="where-have-i-been" class="margin-toggle"> ⊕</label><input type="checkbox" id="where-have-i-been" class="margin-toggle" /> <span class="marginnote">Category: <a href="http://quotidianquest.com/category/personal.html">personal</a><br />
  #<a href="http://quotidianquest.com/tag/misc.html">misc</a></span></p>
 </header><p>Ok, it is time to get back into writing on my blog. I think I'm going to track my progress with learning swift 3 and my other tutorials that I come across.</p>	
 </article>
 <article class="post">
 
 <header class="post-header">
-<h1> <a rel="bookmark"
-   title="Further thoughts on text expander «Quotidian Quest»"
-   href="2016/04/further-thoughts-on-text-expander.html">
+<h1>
+<a rel="bookmark"
+   href="2016/04/further-thoughts-on-text-expander.html"
+   title="Further thoughts on text expander «Quotidian Quest»">
    Further thoughts on text expander
 </a>
 </h1>
-<p class="subtitle"><time datetime="2016-04-11T18:53:05-07:00">Mon 11 April 2016</time><label for="further-thoughts-on-text-expander" class="margin-toggle"> ⊕</label><input type="checkbox" id="further-thoughts-on-text-expander" class="margin-toggle" /><span class="marginnote">Category: <a href="http://quotidianquest.com/category/tech.html">tech</a><br />
+<p class="subtitle"><time datetime="2016-04-11T18:53:05-07:00">Mon 11 April 2016</time><label for="further-thoughts-on-text-expander" class="margin-toggle"> ⊕</label><input type="checkbox" id="further-thoughts-on-text-expander" class="margin-toggle" /> <span class="marginnote">Category: <a href="http://quotidianquest.com/category/tech.html">tech</a><br />
  #<a href="http://quotidianquest.com/tag/text-expander.html">text expander</a> #<a href="http://quotidianquest.com/tag/response.html">response</a></span></p>
 </header><p>Recently, <a href="http://quotidianquest.com/2016/04/my-thoughts-on-text-expander.html">I posted about my thoughts on Text Expander</a> after they announced that they were going to be moving to a subscription. And I got some feedback regarding what I wrote. I've pasted it below because I honestly don't get any feed back regarding any of my writing<label for="feedback" class="margin-toggle sidenote-number"></label><input type="checkbox" id="feedback" class="margin-toggle" /><span class="sidenote">Most likely because I do not have comments on the site</span>. </p>
 <blockquote>
@@ -263,13 +316,14 @@
 <article class="post">
 
 <header class="post-header">
-<h1> <a rel="bookmark"
-   title="My thoughts on Text Expander «Quotidian Quest»"
-   href="2016/04/my-thoughts-on-text-expander.html">
+<h1>
+<a rel="bookmark"
+   href="2016/04/my-thoughts-on-text-expander.html"
+   title="My thoughts on Text Expander «Quotidian Quest»">
    My thoughts on Text Expander
 </a>
 </h1>
-<p class="subtitle"><time datetime="2016-04-10T20:39:34-07:00">Sun 10 April 2016</time><label for="my-thoughts-on-text-expander" class="margin-toggle"> ⊕</label><input type="checkbox" id="my-thoughts-on-text-expander" class="margin-toggle" /><span class="marginnote">Category: <a href="http://quotidianquest.com/category/tech.html">tech</a><br />
+<p class="subtitle"><time datetime="2016-04-10T20:39:34-07:00">Sun 10 April 2016</time><label for="my-thoughts-on-text-expander" class="margin-toggle"> ⊕</label><input type="checkbox" id="my-thoughts-on-text-expander" class="margin-toggle" /> <span class="marginnote">Category: <a href="http://quotidianquest.com/category/tech.html">tech</a><br />
  #<a href="http://quotidianquest.com/tag/text-expander.html">text expander</a></span></p>
 </header><p><a href="https://textexpander.com">TextExpander</a> is a tool that I forget that I have. Actually, TextExpander is a tool that I forget to use. In the last couple of years, I've moved to a workflow that really isn't working for me day to day. I have a laptop, an imac, a couple ipads and all the work computers<sup id="fnref:windows"><a class="footnote-ref" href="#fn:windows" rel="footnote">1</a></sup> that have been supplied for me to use in the last couple of years.</p>
 <p>Recently, the people at Smile software have switch the software to be a subscription model. On one hand, I understand that some companies need to do this to keep their businesses afloat; the monthly revenue is better to budget against versus someone purchasing the software every major release (maybe). On the other hand, this means that as a user I don't "own" the software; I'm leasing<label for="leasing" class="margin-toggle">&#8853;</label><input type="checkbox" id="leasing" class="margin-toggle" /><span class="marginnote">It seems to be the trend nowadays that people pay a fee to use things from homes(rent), cars and music. I do not have a problem with it, but it seems like a lot of money is going to things that we will not be able to get some equity back from.</span> it.</p>
@@ -285,42 +339,6 @@
 </ol>
 </div>	
 </article>
-<article class="post">
-
-<header class="post-header">
-<h1> <a rel="bookmark"
-   title="Starting with Hazel «Quotidian Quest»"
-   href="2016/03/starting-with-hazel.html">
-   Starting with Hazel
-</a>
-</h1>
-<p class="subtitle"><time datetime="2016-03-22T10:41:11-07:00">Tue 22 March 2016</time><label for="starting-with-hazel" class="margin-toggle"> ⊕</label><input type="checkbox" id="starting-with-hazel" class="margin-toggle" /><span class="marginnote">Category: <a href="http://quotidianquest.com/category/productivity.html">productivity</a><br />
- #<a href="http://quotidianquest.com/tag/misc.html">misc</a></span></p>
-</header><p><img alt="Initial Creation of Hazel rule" src="../../images/initial_hazel.png" /> 
-I write all of my blog post in markdown and store them in a folder in dropbox. From there, I use pelican to turn the files into a webpage.  The steps would be...</p>
-<ol>
-<li>Open Byword or <a href="http://multimarkdown.com/index.html">MultiMarkdown Composer</a></li>
-<li>Write the post</li>
-<li>Remember the textexpander snippet that I created for post headers because I don't post as often as I used to</li>
-<li>Save the file</li>
-<li>Copy the file to location where I have pelican looking<sup id="fnref:publish"><a class="footnote-ref" href="#fn:publish" rel="footnote">1</a></sup></li>
-<li>Generate the site</li>
-<li>Publish the site by copying the generated file to the proper git repository</li>
-<li>Push the repository</li>
-<li>Check that all the links work</li>
-</ol>
-<p>Anyway, I decided that I've already bought tons of productivity tools and should use them for what they are for. I had a couple workflows in the past but not saving them while I switch between betas causes the system to falter. </p>
-<p>It's not the complicated rule set, but it certainly a start and makes me happy that I'm actual using the things that I've bought. </p>
-<p><img alt="Completed rule set for moving my posts to get processed" src="../../images/sorting_cloning_with_hazel.png" /></p>
-<div class="footnote">
-<hr />
-<ol>
-<li id="fn:publish">
-<p>This is my fault for not setting up pelican to auto publish. I just want to make sure that everything works locally before I send it out to my millions of fans.&#160;<a class="footnote-backref" href="#fnref:publish" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
-</li>
-</ol>
-</div>	
-</article>
 </main>
       <nav id="pagination">   <!-- <span id="first_page" class="a inactive">&#60;&#60;</span>
         <span id="first_page" class="a inactive">&#60;</span> -->
@@ -329,7 +347,7 @@ I write all of my blog post in markdown and store them in a folder in dropbox. F
         <a href="http://quotidianquest.com/index3.html">3</a>
         <a href="http://quotidianquest.com/index4.html">4</a>
         <a href="http://quotidianquest.com/index5.html">5</a>
-        <a id="next_page" rel="next" href="http://quotidianquest.com/index2.html">&#62;</a>
+        <a id="next_page" href="http://quotidianquest.com/index2.html">&#62;</a>
         <a id="last_page" href="http://quotidianquest.com/index15.html">&#62;&#62;</a>
 </nav><footer>
   <p>Powered by <a href="http://pelican.readthedocs.org">Pelican</a></p>
