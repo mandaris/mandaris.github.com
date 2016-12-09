@@ -1,5 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Quotidian Quest</title><link href="http://quotidianquest.com/" rel="alternate"></link><link href="http://quotidianquest.com/feeds/atom.xml" rel="self"></link><id>http://quotidianquest.com/</id><updated>2016-12-07T22:34:43-08:00</updated><entry><title>First impressions on Setapp</title><link href="http://quotidianquest.com/2016/12/first-impressions-on-setapp.html" rel="alternate"></link><updated>2016-12-07T22:34:43-08:00</updated><author><name>Mandaris</name></author><id>tag:quotidianquest.com,2016-12-07:2016/12/first-impressions-on-setapp.html</id><summary type="html">&lt;p&gt;I think this is it. This is what the Apple App Store should look and feel like going forward. It's easy to install with all the possible apps just living in a folder until you double click to install.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Quotidian Quest</title><link href="http://quotidianquest.com/" rel="alternate"></link><link href="http://quotidianquest.com/feeds/atom.xml" rel="self"></link><id>http://quotidianquest.com/</id><updated>2016-12-08T17:08:11-08:00</updated><entry><title>A simple alias</title><link href="http://quotidianquest.com/2016/12/a-simple-alias.html" rel="alternate"></link><updated>2016-12-08T17:08:11-08:00</updated><author><name>Mandaris</name></author><id>tag:quotidianquest.com,2016-12-08:2016/12/a-simple-alias.html</id><summary type="html">&lt;p&gt;Today, I thought I'd document something simple like how I created an alias to render the blog and then port it to my website. I'm writing it out in hopes that something will pop up and say "There is an easier way of doing it!"&lt;/p&gt;
+&lt;p&gt;The first thing I do for most posts is I open up Byword to write the words that you are seeing before you. If it's something a little more complicated, I might start off in MindNode&lt;sup id="fnref:MindNode"&gt;&lt;a class="footnote-ref" href="#fn:MindNode" rel="footnote"&gt;1&lt;/a&gt;&lt;/sup&gt; and export to Markdown. &lt;/p&gt;
+&lt;p&gt;I use a TextExpander snippet to set the header and then just start writing and save the file in dropbox.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="The popup window for the TextExpander header for my website." src="../../images/textexpander_window_header_for_post.png" /&gt;&lt;/p&gt;
+&lt;p&gt;The part that I feel needs improvement is finishing the draft. I have a virtual environment set up for pelican that has all the templates and plugins that I've been tweaking to make the site look and behave in the way that I want. This means that any extra syntax or themes don't show up unless I process the markdown&lt;sup id="fnref:marked"&gt;&lt;a class="footnote-ref" href="#fn:marked" rel="footnote"&gt;2&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;p&gt;To solve this, I've set up a hazel rule&lt;sup id="fnref:rule"&gt;&lt;a class="footnote-ref" href="#fn:rule" rel="footnote"&gt;3&lt;/a&gt;&lt;/sup&gt; to copy over all the files. &lt;/p&gt;
+&lt;p&gt;&lt;img alt="Hazel rule to clone over all the posts and images for the blog" src="../../images/hazel_rule_to_clone_posts.png" /&gt;&lt;/p&gt;
+&lt;p&gt;After that, I can run a local server to see what the post looks like after being processed.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="An iTerm window with the commands that I use to run the development server" src="../../images/running_local_server.png" /&gt;&lt;/p&gt;
+&lt;p&gt;Which leads us to the thing that I created. An alias in my environment to rsync the finished website and push it to github to host.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;alias pub=&amp;quot;pelican; rsync -r /Users/mandaris/Projects/quotidian/output/* ~/Projects/mandaris.github.com&amp;quot;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Well, that was a longer explanation that I was thinking it would be. &lt;/p&gt;
+&lt;div class="footnote"&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li id="fn:MindNode"&gt;
+&lt;p&gt;I do have iThoughts as well, but MindNode is better looking.&amp;#160;&lt;a class="footnote-backref" href="#fnref:MindNode" rev="footnote" title="Jump back to footnote 1 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:marked"&gt;
+&lt;p&gt;Although, I do use Marked.app to look at the post as I'm writing it. I haven't commited myself to making the my theme and processors work in the appplication.&amp;#160;&lt;a class="footnote-backref" href="#fnref:marked" rev="footnote" title="Jump back to footnote 2 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:rule"&gt;
+&lt;p&gt;To be honest, this hasn't been working like I want it to. I have to manually run the rule. I'll make it a OmniFocus project to get the rules to work properly. I tried using rsync, but got some weird errors when I attempted to put the configuration into github.&amp;#160;&lt;a class="footnote-backref" href="#fnref:rule" rev="footnote" title="Jump back to footnote 3 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</summary><category term="unix"></category><category term="creative challenge"></category></entry><entry><title>First impressions on Setapp</title><link href="http://quotidianquest.com/2016/12/first-impressions-on-setapp.html" rel="alternate"></link><updated>2016-12-07T22:34:43-08:00</updated><author><name>Mandaris</name></author><id>tag:quotidianquest.com,2016-12-07:2016/12/first-impressions-on-setapp.html</id><summary type="html">&lt;p&gt;I think this is it. This is what the Apple App Store should look and feel like going forward. It's easy to install with all the possible apps just living in a folder until you double click to install.&lt;/p&gt;
 &lt;p&gt;&lt;img alt="The Setapp menue looks like a regular folder of application. They are really just small applications that show a preview of what the app is." src="../../images/setapp_selection.png" /&gt;&lt;/p&gt;
 &lt;p&gt;Honestly, I don't know how to put it into words because it was so, so simple and it had all the little applications that I wanted but couldn't bring myself to buy because of the price[^budge].&lt;/p&gt;
 &lt;p&gt;&lt;img alt="A preview of the TaskPaper app in Setapp" src="../../images/setapp_application_preview.png" /&gt;&lt;/p&gt;
