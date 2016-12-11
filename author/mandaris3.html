@@ -41,6 +41,63 @@
 <header class="post-header">
 <h1>
 <a rel="bookmark"
+   href="2016/03/finished-open-graph.html"
+   title="Finished open graph «Quotidian Quest»">
+   Finished open graph
+</a>
+</h1>
+<p class="subtitle"><time datetime="2016-03-06T13:16:22-08:00">Sun 06 March 2016</time><label for="finished-open-graph" class="margin-toggle"> ⊕</label><input type="checkbox" id="finished-open-graph" class="margin-toggle" /> <span class="marginnote">Category: <a href="http://quotidianquest.com/category/coding.html">coding</a><br />
+ #<a href="http://quotidianquest.com/tag/blog.html">blog</a> #<a href="http://quotidianquest.com/tag/open-graph.html">open graph</a></span></p>
+</header><p>So,  I spent about 3 hours working on getting Open Graph tags to work in the theme that I created. I've got mixed feeling about it because I started off by adding the tags to the base html template using an if statement and it seemed a little clunky.</p>
+<div class="highlight"><pre><span class="cp">{%</span> <span class="k">if</span> <span class="nv">OPEN_GRAPH</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">&lt;meta property=&quot;og:title&quot; content=&quot;</span><span class="cp">{{</span> <span class="nv">SITENAME</span> <span class="cp">}}</span><span class="x">&quot;/&gt;</span>
+<span class="x">&lt;meta property=&quot;og:type&quot; content=&quot;website&quot;/&gt;</span>
+<span class="x">&lt;meta property=&quot;og:description&quot; content=&quot;</span><span class="cp">{{</span> <span class="nv">SITE_DESCRIPTION</span> <span class="cp">}}</span><span class="x">&quot;/&gt;</span>
+<span class="x">&lt;meta property=&quot;og:url&quot; content=&quot;</span><span class="cp">{%</span> <span class="k">SITE_URL</span> <span class="cp">%}</span><span class="x">&quot;/&gt;</span>
+<span class="cp">{%</span> <span class="k">endif</span> <span class="nv">OPEN_GRAPH</span> <span class="cp">%}</span><span class="x"></span>
+</pre></div>
+
+
+<p>This worked for the site in general but doesn't translate to all the articles and this caused me to go into a some what deep dive into how Pelican and Jinja parses blocks and if statements. I started off with putting all the tags into the base and then doing individual changes to tags that need to be changed for. </p>
+<p><strong>BAH!!!</strong></p>
+<p>So, took a step back and looked into what plugins were already available. And there is was! <a href="https://github.com/whiskyechobravo/pelican-open_graph">Pelican-open_graph</a>! I was home free! Or so I thought, until I tried to use it. The plugin has three problems. </p>
+<h2>It doesn't  account for when someone does <em>not</em> have a modified date on their articles.</h2>
+<p><a href="https://github.com/AntoineVe/pelican-open_graph">Luckily, someone had put a solution up</a>. The change was forked about 7 months ago today and it looks like whoever created the open graph plugin has taken a break to work on other things.</p>
+<h2>It's a year old and hasn't made the changes for pelican regarding summaries of articles.</h2>
+<p>So, I had to do some debugging to find out that the code needed to be changed in the following way<sup id="fnref:payitforward"><a class="footnote-ref" href="#fn:payitforward" rel="footnote">1</a></sup>.</p>
+<div class="highlight"><pre><span class="n">ogtags</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s">&#39;og:description&#39;</span><span class="p">,</span> <span class="n">instance</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;og_description&#39;</span><span class="p">,</span>
+                                                           <span class="n">instance</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;summary&#39;</span><span class="p">,</span>
+                                                                                 <span class="n">instance</span><span class="o">.</span><span class="n">summary</span><span class="p">))))</span>
+</pre></div>
+
+
+<h2>It also assumed that every article has some kind of tag.</h2>
+<p>I've decided to just punt this problem and add the tags to the 6 articles that don't have them, but than I took a second look at the problem because the perfectionist in me doesn't like to leave problems unsolved and I didn't want to track down what the particular articles were.</p>
+<p>So, I just wrapped the code in a try block to make sure that I got this particular exception.</p>
+<div class="highlight"><pre><span class="k">try</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">tag</span> <span class="ow">in</span> <span class="n">instance</span><span class="o">.</span><span class="n">tags</span><span class="p">:</span>
+            <span class="n">ogtags</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s">&#39;article:tag&#39;</span><span class="p">,</span> <span class="n">tag</span><span class="o">.</span><span class="n">name</span><span class="p">))</span>
+    <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+            <span class="n">ogtags</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s">&#39;article:tag&#39;</span><span class="p">,</span> <span class="s">&#39;untagged&#39;</span><span class="p">))</span>
+</pre></div>
+
+
+<h2>Results</h2>
+<p>Ultimately, I got to learn a little bit more about using pelican and knocked off a major milestone on getting this blog to where I'd like it to be.</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:payitforward">
+<p>I've got to branch and push this fix. I don't know how many other people are using pelican or this plugin but if I can save them or future me some time...&#160;<a class="footnote-backref" href="#fnref:payitforward" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>	
+</article>
+<article class="post">
+
+<header class="post-header">
+<h1>
+<a rel="bookmark"
    href="2016/02/a-small-return.html"
    title="A small return «Quotidian Quest»">
    A small return
@@ -242,22 +299,6 @@
 <p>Are you happy where your life is?</p>
 </blockquote>
 <p>I don't hear that question on other stations.</p>	
-</article>
-<article class="post">
-
-<header class="post-header">
-<h1>
-<a rel="bookmark"
-   href="2013/10/shadowslayer-dawn-of-the-lightforge.html"
-   title="Shadowslayer: Dawn of the Lightforge «Quotidian Quest»">
-   Shadowslayer: Dawn of the Lightforge
-</a>
-</h1>
-<p class="subtitle"><time datetime="2013-10-15T12:05:50-07:00">Tue 15 October 2013</time><label for="shadowslayer-dawn-of-the-lightforge" class="margin-toggle"> ⊕</label><input type="checkbox" id="shadowslayer-dawn-of-the-lightforge" class="margin-toggle" /> <span class="marginnote">Category: <a href="http://quotidianquest.com/category/review.html">review</a><br />
- #<a href="http://quotidianquest.com/tag/games.html">games</a></span></p>
-</header><p>When I saw this in the app store, I thought this was an alright game. It had a fairly high rating, but I think that the developers must have gamed the rating system because anyone who has gotten passed the initial tutorial would be quickly bored by the tedious amount of grinding and the amount of in-app purchases that you get hammered with every time you want to do something.</p>
-<p>The game has two different kinds of currency: One that proves pointless after 20 minutes and a true currency that you can only get by paying with real money. </p>
-<p>Listen, if you're looking for a game that you only play once a day without paying $2-3, then this is it.</p>	
 </article>
 </main>
       <nav id="pagination">        <a id="first_page" href="http://quotidianquest.com/author/mandaris.html">&#60;&#60;</a>
