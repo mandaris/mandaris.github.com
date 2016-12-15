@@ -41,6 +41,28 @@
 <header class="post-header">
 <h1>
 <a rel="bookmark"
+   href="2016/12/switching-over-to-dashes.html"
+   title="switching over to dashes «Quotidian Quest»">
+   switching over to dashes
+</a>
+</h1>
+<p class="subtitle"><time datetime="2016-12-14T23:19:19-08:00">Wed 14 December 2016</time><label for="switching-over-to-dashes" class="margin-toggle"> ⊕</label><input type="checkbox" id="switching-over-to-dashes" class="margin-toggle" /> <span class="marginnote">Category: <a href="http://quotidianquest.com/category/tech.html">tech</a><br />
+ #<a href="http://quotidianquest.com/tag/blog.html">blog</a> #<a href="http://quotidianquest.com/tag/creative-challenge.html">creative challenge</a></span></p>
+</header><p>Today, I wanted to find out why urls used dash (-) instead of underscores (_). Personally, I perfer to use underscores because they are easier for me to read when looking at a <code>long_title_that_signals_something</code> and thought that the reason it didn't work out was because of someone thinking the opposite. </p>
+<p>Turns out that it has more to do with how computers seperate words. <a href="https://blog.codinghorror.com/of-spaces-underscores-and-dashes/">Joel Atwood had a nice piece</a> that points out that the <code>w</code> used in regular expressions matches up with the under score so what I view as multiple words would be counted as one.</p>
+<p>The best example was in the comments when someone wrote:</p>
+<blockquote>
+<p>This_is_a_single_word<br />
+but this-is-multiple-words<br />
+-- Jeff Atwood</p>
+</blockquote>
+<p>I don't think I'll be changing my old files but going forward, I'll probably use this convention.</p>	
+</article>
+<article class="post">
+
+<header class="post-header">
+<h1>
+<a rel="bookmark"
    href="2016/12/setting-aside-research.html"
    title="Setting aside research «Quotidian Quest»">
    Setting aside research
@@ -249,24 +271,6 @@ Today, we bought our first Christmas Tree. For me, Christmas hasn't been my favo
 <video width="460" height="259" controls>
   <source src="../../images/creepy_walking.mp4" type="video/mp4">
 Your browser does not support the video tag. This is a video of a character that I tried to model after myself walking on the street towards the viewer.
-</video>	
-</article>
-<article class="post">
-
-<header class="post-header">
-<h1>
-<a rel="bookmark"
-   href="2016/12/working-with-animation.html"
-   title="Working with animation «Quotidian Quest»">
-   Working with animation
-</a>
-</h1>
-<p class="subtitle"><time datetime="2016-12-05T22:52:19-08:00">Mon 05 December 2016</time><label for="working-with-animation" class="margin-toggle"> ⊕</label><input type="checkbox" id="working-with-animation" class="margin-toggle" /> <span class="marginnote">Category: <a href="http://quotidianquest.com/category/misc.html">misc</a><br />
- #<a href="http://quotidianquest.com/tag/animation.html">animation</a> #<a href="http://quotidianquest.com/tag/creation-challenge.html">creation challenge</a></span></p>
-</header><p>Well, I've been wanting do something with CrazyTalk Animator for a while and I thought that this was a great time to look into it because the latest version has come out.</p>
-<video width="320" height="240" controls>
-  <source src="../../images/walter_test.mp4" type="video/mp4">
-Your browser does not support the video tag. This is a video 
 </video>	
 </article>
 </main>
