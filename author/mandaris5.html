@@ -41,6 +41,65 @@
 <header class="post-header">
 <h1>
 <a rel="bookmark"
+   href="2013/10/shadowslayer-dawn-of-the-lightforge.html"
+   title="Shadowslayer: Dawn of the Lightforge «Quotidian Quest»">
+   Shadowslayer: Dawn of the Lightforge
+</a>
+</h1>
+<p class="subtitle"><time datetime="2013-10-15T12:05:50-07:00">Tue 15 October 2013</time><label for="shadowslayer-dawn-of-the-lightforge" class="margin-toggle"> ⊕</label><input type="checkbox" id="shadowslayer-dawn-of-the-lightforge" class="margin-toggle" /> <span class="marginnote">Category: <a href="http://quotidianquest.com/category/review.html">review</a><br />
+ #<a href="http://quotidianquest.com/tag/games.html">games</a></span></p>
+</header><p>When I saw this in the app store, I thought this was an alright game. It had a fairly high rating, but I think that the developers must have gamed the rating system because anyone who has gotten passed the initial tutorial would be quickly bored by the tedious amount of grinding and the amount of in-app purchases that you get hammered with every time you want to do something.</p>
+<p>The game has two different kinds of currency: One that proves pointless after 20 minutes and a true currency that you can only get by paying with real money. </p>
+<p>Listen, if you're looking for a game that you only play once a day without paying $2-3, then this is it.</p>	
+</article>
+<article class="post">
+
+<header class="post-header">
+<h1>
+<a rel="bookmark"
+   href="2013/10/an-accomplishment.html"
+   title="An accomplishment «Quotidian Quest»">
+   An accomplishment
+</a>
+</h1>
+<p class="subtitle"><time datetime="2013-10-13T22:50:29-07:00">Sun 13 October 2013</time><label for="an-accomplishment" class="margin-toggle"> ⊕</label><input type="checkbox" id="an-accomplishment" class="margin-toggle" /> <span class="marginnote">Category: <a href="http://quotidianquest.com/category/personal.html">personal</a><br />
+ #<a href="http://quotidianquest.com/tag/journal.html">journal</a> #<a href="http://quotidianquest.com/tag/accomplishments.html">accomplishments</a> #<a href="http://quotidianquest.com/tag/keyboard-maestro.html">keyboard maestro</a></span></p>
+</header><p>I've had a little idea going on in the back of my head for the last couple of months about a simple application that would pop up after a given keyboard shortcut. It's a simple idea and never got around to doing it because I didn't sit down and do it. Even on the days, where I thought "Hey,If I had an easy way to keep track of all the good things that I've done, I'd feel better about myself". Normally, I just look at the todo item that I had in OmniFocus and just push it back a couple days or weeks because of priorities.</p>
+<p>But today, I sat down and decided that if I wanted to really follow my own words about controlling my life I've got to make good on the commitments that I make to myself big or small. </p>
+<p>So I sat down behind my laptop opened up my AppleScript 1-2-3<sup id="fnref:unused"><a class="footnote-ref" href="#fn:unused" rel="footnote">1</a></sup> and started searching the internet after not seeing a solution to my problems on the first page.</p>
+<div class="highlight"><pre><span class="k">set</span> <span class="nv">theSumm</span> <span class="k">to</span> <span class="na">text returned</span> <span class="k">of</span> <span class="p">(</span><span class="nb">display dialog</span> <span class="s2">&quot;Latest Accomplishment&quot;</span> <span class="nb">buttons</span> <span class="s2">&quot;OK&quot;</span> <span class="nv">default</span> <span class="nv">answer</span> <span class="s2">&quot;A step forward&quot;</span> <span class="nv">default</span> <span class="nb">button</span> <span class="s2">&quot;OK&quot;</span><span class="p">)</span>
+
+<span class="k">tell</span> <span class="nb">application</span> <span class="s2">&quot;Calendar&quot;</span>
+    <span class="nb">make</span> <span class="nv">todo</span> <span class="nb">at</span> <span class="k">end</span> <span class="k">of</span> <span class="nv">todos</span> <span class="k">of</span> <span class="nv">calendar</span> <span class="s2">&quot;Accomplishments&quot;</span> <span class="nv">with</span> <span class="na">properties</span> <span class="p">{</span><span class="nv">summary</span><span class="p">:</span><span class="nv">theSumm</span><span class="p">,</span> <span class="nv">completion</span> <span class="nv">date</span><span class="p">:</span><span class="nb">current date</span><span class="p">}</span>
+<span class="k">end</span> <span class="k">tell</span>
+</pre></div>
+
+
+<p>At first, I was just going to put this in a script file and then run it from a service, but I decided that the easiest way of doing this was to use <a href="http://www.keyboardmaestro.com/main/" title="An app that I've been using more and more to get things moving quickly.">Keyboard Maestro</a>. It was really cool that I got to move the entire script into the application so I didn't have to move between the different applications.</p>
+<p><a href="http://www.flickr.com/photos/mandaris/10540756656/" title="A screenshot of my first keyboard maestro attempt to make a short cut to log my accomplishments"><img src="http://farm4.staticflickr.com/3783/10540756656_0d7bd92af3.jpg" width="427" height="500" alt="A copy of my first keyboard maestro attempt to make a short cut to log my accomplishments"></a></p>
+<p>This is what I had originally envisioned, but I started to think about the limitations of keeping all of this in reminders. All the applications that use the system built <a href="https://www.apple.com/osx/apps/#reminders" title="The default todo application on Mac OSX">task management tools</a> have a focus on what needs to be done and if I want to have way to look at this stuff quickly and I wasn't sure how to look at accomplishments that were marked as completed a month ago.</p>
+<p>I took a look at what I was doing on a daily basis and saw that I've been doing more and more journaling using <a href="http://dayoneapp.com" title="Day One is a great simple application that allows you to have a journal that syncs with all my devices">Day One</a><sup id="fnref:dayoneshortcut"><a class="footnote-ref" href="#fn:dayoneshortcut" rel="footnote">2</a></sup>. </p>
+<p>I didn't want to make the Day One application open up every time that I finished something new so I looked at the <a href="http://dayoneapp.com/tools/cli-man/" title="Day One command line interface">command line interface</a> and came up with this.</p>
+<p><a href="http://www.flickr.com/photos/mandaris/10543020504/" title="Screenshot of my keyboard maestro macro to log accomplishments quickly using the command line interface for Day One"><img src="http://farm6.staticflickr.com/5487/10543020504_5edfa7b7ba.jpg" width="387" height="500" alt="Screenshot of my keyboard maestro macro to log accomplishments quickly using the command line interface for Day One"></a></p>
+<p>So far, the only downside is that I have to go into Day One to make all the hashtags turn into tags and I have to do a search for that tag if I want to see all my accomplishments in a given time.</p>
+<p>I think for the next iteration, I might set up <a href="http://projects.tynsoe.org/en/geektool/" title="GeekTool: A tool to show information from files and commands on the desktop">GeekTool</a> to show my latest accomplishment on my desktop, but I'm just happy that I finished this initial task.</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:unused">
+<p>I bought this <a href="http://www.amazon.com/Apple-Training-AppleScript-1-2-3-ebook/dp/B000SEI7EO/ref=sr_1_1?ie=UTF8&amp;qid=1381753150&amp;sr=8-1&amp;keywords=applescript+1-2-3">book</a> almost a year ago so that I could start teaching myself to do more automation on my computer. Turns out, I just needed to take the time and focus on something that I really wanted to create. It felt good and I think I'll actually get through it... when I get the time.&#160;<a class="footnote-backref" href="#fnref:unused" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:dayoneshortcut">
+<p>I'd already had a specific keyboard shortcut for opening up the menubar pop up for quick writing of thoughts and feelings, but I didn't want to add a <a href="http://smilesoftware.com/TextExpander/index.html" title="Textexpander is a tool that I use when I'm writing things over and over again.">textexpander</a> snippet to add an accomplishment tag.&#160;<a class="footnote-backref" href="#fnref:dayoneshortcut" rev="footnote" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>	
+</article>
+<article class="post">
+
+<header class="post-header">
+<h1>
+<a rel="bookmark"
    href="2013/09/messing-around-with-sublime-text.html"
    title="Messing around with Sublime Text «Quotidian Quest»">
    Messing around with Sublime Text
@@ -304,44 +363,6 @@
 <p class="subtitle"><time datetime="2013-02-25T20:10:00-08:00">Mon 25 February 2013</time><label for="recollecting" class="margin-toggle"> ⊕</label><input type="checkbox" id="recollecting" class="margin-toggle" /> <span class="marginnote">Category: <a href="http://quotidianquest.com/category/productivity.html">productivity</a><br />
  #<a href="http://quotidianquest.com/tag/collection.html">collection</a></span></p>
 </header><p>I really like doing a brain dump/collection in the GTD sense. It gives me a feeling that I can actually control it all. That I'm going to rediscover every last commitment that I've got to make and then be able to make my world just a little bit better. I think that I've finally reached the point when I'm no longer running from all my insecurities.</p>	
-</article>
-<article class="post">
-
-<header class="post-header">
-<h1>
-<a rel="bookmark"
-   href="2013/02/served.html"
-   title="Served «Quotidian Quest»">
-   Served
-</a>
-</h1>
-<p class="subtitle"><time datetime="2013-02-22T23:21:00-08:00">Fri 22 February 2013</time><label for="served" class="margin-toggle"> ⊕</label><input type="checkbox" id="served" class="margin-toggle" /> <span class="marginnote">Category: <a href="http://quotidianquest.com/category/parenting.html">parenting</a><br />
- #<a href="http://quotidianquest.com/tag/misc.html">misc</a></span></p>
-</header><p>Well after having nightmares about it for the last couple of nights, I can now rest easy now that the pancake breakfast is over. </p>
-<p>And what a breakfast it was, at first things were moving really slowly as the people trickled two and three at a time and I was actually afraid that we wouldn't be able to make enough money to break even with the costs of all the supplies.</p>
-<p>And then the boom dropped.</p>
-<p>I found myself constantly mixing batter to keep up with a constant stream of hungry customers. In fact, I heard that there was a story of people who went through the line 3 times.</p>	
-</article>
-<article class="post">
-
-<header class="post-header">
-<h1>
-<a rel="bookmark"
-   href="2013/02/night-wrap-up.html"
-   title="Night wrap up «Quotidian Quest»">
-   Night wrap up
-</a>
-</h1>
-<p class="subtitle"><time datetime="2013-02-21T23:10:06-08:00">Thu 21 February 2013</time><label for="night-wrap-up" class="margin-toggle"> ⊕</label><input type="checkbox" id="night-wrap-up" class="margin-toggle" /> <span class="marginnote">Category: <a href="http://quotidianquest.com/category/personal.html">personal</a><br />
- #<a href="http://quotidianquest.com/tag/misc.html">misc</a></span></p>
-</header><p>Tomorrow, I’m going to be leading the parents of my daughter’s kindergarten class in our first and only fundraiser. </p>
-<p>The (in)famous pancake breakfast.</p>
-<p>This was an activity that they told us about at the very beginning of the school year (6 months ago) and I’ve honestly have been kind of dreading that this day would come. </p>
-<p>It’s not so much volunteering to do it as it is getting the parents to help out. Although our school has a policy where every parent is required to volunteer 40 hours over the entire school year or donate 20 bucks per hour, I feel that not everyone is able to jump on board and help support us with this. </p>
-<p>I’m not angry and I understand that not everyone can help this week, but since I’m the one who is responsible for this if it fails...</p>
-<p>I’m just happy that the class that my daughter is in has a lot of top notch parents who really want this to succeed and understand that even the little bit of help can go a long way. </p>
-<p>Especially if you tell me about it so I don’t go crazy thinking about what could go wrong.</p>
-<p>One thing of personal note is that all the stress of the pancake breakfast has gotten me back in front of the computer to write again.  There have been a number of moments that I’ve been wishing for my journal and tonight is one of them.</p>	
 </article>
 </main>
       <nav id="pagination">        <a id="first_page" href="http://quotidianquest.com/author/mandaris.html">&#60;&#60;</a>
