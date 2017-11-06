@@ -14,7 +14,8 @@
   <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png" />
   <link rel="shortcut icon" href="/favicon.ico" />
   <link rel="icon" type="image/png" href="/favicon.png" />
-  <!-- <link rel="mask-icon" href="/favicon.svg" color="#50c878" /> -->
+  <link rel="mask-icon" href="/favicon.svg" color="black" />
+
   <link href="http://quotidianquest.com/feeds/atom.xml" type="application/atom+xml"
         rel="alternate" title="Quotidian Quest ALL Atom Feed" />
 
@@ -41,6 +42,67 @@
 <header class="post-header">
 <h1>
 <a rel="bookmark"
+   href="2013/10/an-accomplishment.html"
+   title="An accomplishment «Quotidian Quest»">
+   An accomplishment
+</a>
+</h1>
+<p class="subtitle"><time datetime="2013-10-13T22:50:29-07:00">Sun 13 October 2013</time><label for="an-accomplishment" class="margin-toggle"> ⊕</label><input type="checkbox" id="an-accomplishment" class="margin-toggle" /> <span class="marginnote">Category: <a href="http://quotidianquest.com/category/personal.html">personal</a><br />
+ #<a href="http://quotidianquest.com/tag/journal.html">journal</a> #<a href="http://quotidianquest.com/tag/accomplishments.html">accomplishments</a> #<a href="http://quotidianquest.com/tag/keyboard-maestro.html">keyboard maestro</a></span></p>
+</header><p>I've had a little idea going on in the back of my head for the last couple of months about a simple application that would pop up after a given keyboard shortcut. It's a simple idea and never got around to doing it because I didn't sit down and do it. Even on the days, where I thought "Hey,If I had an easy way to keep track of all the good things that I've done, I'd feel better about myself". Normally, I just look at the todo item that I had in OmniFocus and just push it back a couple days or weeks because of priorities.</p>
+<p>But today, I sat down and decided that if I wanted to really follow my own words about controlling my life I've got to make good on the commitments that I make to myself big or small. </p>
+<p>So I sat down behind my laptop opened up my AppleScript 1-2-3<sup id="fnref-unused"><a class="footnote-ref" href="#fn-unused">1</a></sup> and started searching the internet after not seeing a solution to my problems on the first page.</p>
+<div class="highlight"><pre><span></span><span class="k">set</span> <span class="nv">theSumm</span> <span class="k">to</span> <span class="na">text returned</span> <span class="k">of</span> <span class="p">(</span><span class="nb">display dialog</span> <span class="s2">&quot;Latest Accomplishment&quot;</span> <span class="nb">buttons</span> <span class="s2">&quot;OK&quot;</span> <span class="nv">default</span> <span class="nv">answer</span> <span class="s2">&quot;A step forward&quot;</span> <span class="nv">default</span> <span class="nb">button</span> <span class="s2">&quot;OK&quot;</span><span class="p">)</span>
+
+<span class="k">tell</span> <span class="nb">application</span> <span class="s2">&quot;Calendar&quot;</span>
+    <span class="nb">make</span> <span class="nv">todo</span> <span class="nb">at</span> <span class="k">end</span> <span class="k">of</span> <span class="nv">todos</span> <span class="k">of</span> <span class="nv">calendar</span> <span class="s2">&quot;Accomplishments&quot;</span> <span class="nv">with</span> <span class="na">properties</span> <span class="p">{</span><span class="nv">summary</span><span class="p">:</span><span class="nv">theSumm</span><span class="p">,</span> <span class="nv">completion</span> <span class="nv">date</span><span class="p">:</span><span class="nb">current date</span><span class="p">}</span>
+<span class="k">end</span> <span class="k">tell</span>
+</pre></div>
+
+
+<p>At first, I was just going to put this in a script file and then run it from a service, but I decided that the easiest way of doing this was to use <a href="http://www.keyboardmaestro.com/main/" title="An app that I've been using more and more to get things moving quickly.">Keyboard Maestro</a>. It was really cool that I got to move the entire script into the application so I didn't have to move between the different applications.</p>
+<p><a href="http://www.flickr.com/photos/mandaris/10540756656/" title="A screenshot of my first keyboard maestro attempt to make a short cut to log my accomplishments"><img src="http://farm4.staticflickr.com/3783/10540756656_0d7bd92af3.jpg" width="427" height="500" alt="A copy of my first keyboard maestro attempt to make a short cut to log my accomplishments"></a></p>
+<p>This is what I had originally envisioned, but I started to think about the limitations of keeping all of this in reminders. All the applications that use the system built <a href="https://www.apple.com/osx/apps/#reminders" title="The default todo application on Mac OSX">task management tools</a> have a focus on what needs to be done and if I want to have way to look at this stuff quickly and I wasn't sure how to look at accomplishments that were marked as completed a month ago.</p>
+<p>I took a look at what I was doing on a daily basis and saw that I've been doing more and more journaling using <a href="http://dayoneapp.com" title="Day One is a great simple application that allows you to have a journal that syncs with all my devices">Day One</a><sup id="fnref-dayoneshortcut"><a class="footnote-ref" href="#fn-dayoneshortcut">2</a></sup>. </p>
+<p>I didn't want to make the Day One application open up every time that I finished something new so I looked at the <a href="http://dayoneapp.com/tools/cli-man/" title="Day One command line interface">command line interface</a> and came up with this.</p>
+<p><a href="http://www.flickr.com/photos/mandaris/10543020504/" title="Screenshot of my keyboard maestro macro to log accomplishments quickly using the command line interface for Day One"><img src="http://farm6.staticflickr.com/5487/10543020504_5edfa7b7ba.jpg" width="387" height="500" alt="Screenshot of my keyboard maestro macro to log accomplishments quickly using the command line interface for Day One"></a></p>
+<p>So far, the only downside is that I have to go into Day One to make all the hashtags turn into tags and I have to do a search for that tag if I want to see all my accomplishments in a given time.</p>
+<p>I think for the next iteration, I might set up <a href="http://projects.tynsoe.org/en/geektool/" title="GeekTool: A tool to show information from files and commands on the desktop">GeekTool</a> to show my latest accomplishment on my desktop, but I'm just happy that I finished this initial task.</p>
+<div class="footnote">
+<hr>
+<ol>
+<li id="fn-unused">
+<p>I bought this <a href="http://www.amazon.com/Apple-Training-AppleScript-1-2-3-ebook/dp/B000SEI7EO/ref=sr_1_1?ie=UTF8&amp;qid=1381753150&amp;sr=8-1&amp;keywords=applescript+1-2-3">book</a> almost a year ago so that I could start teaching myself to do more automation on my computer. Turns out, I just needed to take the time and focus on something that I really wanted to create. It felt good and I think I'll actually get through it... when I get the time.&#160;<a class="footnote-backref" href="#fnref-unused" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn-dayoneshortcut">
+<p>I'd already had a specific keyboard shortcut for opening up the menubar pop up for quick writing of thoughts and feelings, but I didn't want to add a <a href="http://smilesoftware.com/TextExpander/index.html" title="Textexpander is a tool that I use when I'm writing things over and over again.">textexpander</a> snippet to add an accomplishment tag.&#160;<a class="footnote-backref" href="#fnref-dayoneshortcut" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>	
+</article>
+<article class="post">
+
+<header class="post-header">
+<h1>
+<a rel="bookmark"
+   href="2013/09/messing-around-with-sublime-text.html"
+   title="Messing around with Sublime Text «Quotidian Quest»">
+   Messing around with Sublime Text
+</a>
+</h1>
+<p class="subtitle"><time datetime="2013-09-16T10:56:13-07:00">Mon 16 September 2013</time><label for="messing-around-with-sublime-text" class="margin-toggle"> ⊕</label><input type="checkbox" id="messing-around-with-sublime-text" class="margin-toggle" /> <span class="marginnote">Category: <a href="http://quotidianquest.com/category/tech.html">tech</a><br />
+ #<a href="http://quotidianquest.com/tag/software.html">software</a> #<a href="http://quotidianquest.com/tag/sublime-text.html">sublime text</a></span></p>
+</header><p>Honestly, a lot of people that I respect are talking about it. I think I'm going to have to step through the tutorial again. But honestly, I'd like to think about what I want to do with it. </p>
+<p>I already have a couple text editors but I love messing around with the tools more than doing the job sometimes. </p>
+<p>The only reason that I don't use sublime text is because of the price. The "free" demo allows you to use it as long as you want but you see a pop up reminding you that it hasn't been purchased yet. I'm not at a point where I can justify the price and being someone who works in the industry, I want to encourage people to pay for software.</p>
+<p>I've talked to some other people and it seems like they are proud of the being able to mentally blockout the popup and dismiss it without missing a beat.</p>
+<p>To me, that just seems wrong on so many levels.</p>	
+</article>
+<article class="post">
+
+<header class="post-header">
+<h1>
+<a rel="bookmark"
    href="2013/09/qa-questions.html"
    title="QA Questions «Quotidian Quest»">
    QA Questions
@@ -49,7 +111,7 @@
 <p class="subtitle"><time datetime="2013-09-12T22:09:38-07:00">Thu 12 September 2013</time><label for="qa-questions" class="margin-toggle"> ⊕</label><input type="checkbox" id="qa-questions" class="margin-toggle" /> <span class="marginnote">Category: <a href="http://quotidianquest.com/category/personal.html">personal</a><br />
  #<a href="http://quotidianquest.com/tag/qa.html">QA</a> #<a href="http://quotidianquest.com/tag/employment.html">employment</a></span></p>
 </header><p>I was recently asked to write a little something about my thoughts on doing QA and some questions about my experience. I was told to only write two sentences but I made three so that I could delete a paragraph later. I thought it would be ok to post them on my site. I hope that you get something out of reading it.</p>
-<hr />
+<hr>
 <p>I'm a little bit of a perfectionist when it comes to my work. I find myself agonizing over details and often have multiple drafts and versions of emails, code examples and tutorials that I'm going to publish right after I change that one or two critical things that will make my point. This has been one of the reasons that I've been in Quality Assurance for as long as I have; I don't want people to run into problems.</p>
 <p>When I first started working, I was put in charge of creating and automating test suites for an application development tool. The mission was to simulate how a user would create a smaller application using the different components and options available. I quickly learned that automation is only good if you have a clear goal of what you want to accomplish. When the automation breaks, something should happen other than changing the automation. Since then, I've worked with a variety of systems that reported an issue when something goes wrong, either a problem in the build system or a change in functionality. </p>
 <p>A lot of companies are attempting to be agile and it is important that a QA engineer keep up to date with where the company wants to go with the product and have an idea for how people are actually going to be using it. I've been in a couple of situations where companies have been so focused on the features of the product, that they loose track of how everything is supposed to come together for the user. There can be difficulty in communicating (development in remote parts of the world or just don't see it the same way), but I feel that I've learned a lot of different ways of getting my point across (detailed bug reports, screenshots and videos) and understanding where other people are coming from.</p>
@@ -90,7 +152,7 @@
  #<a href="http://quotidianquest.com/tag/mmd.html">mmd</a> #<a href="http://quotidianquest.com/tag/beta.html">beta</a></span></p>
 </header><p>I'm pretty excited about the latest changes in <a href="http://multimarkdown.com/messages/v24b2">MultiMarkdown Composer</a>!</p>
 <p>It's going to have some things like: </p>
-<div class="highlight"><pre><span class="n">some</span> <span class="n">perl</span> <span class="n">code</span>
+<div class="highlight"><pre><span></span><span class="n">some</span> <span class="n">perl</span> <span class="n">code</span>
 </pre></div>
 
 
@@ -128,7 +190,7 @@
 <p>I wonder if the kids are mimicking TV or just there life at home and feel sad for them that this is what they do when their parents are around.</p>
 <h3>Entertainment</h3>
 <p>I enjoy a lot of things, like music and movies. One of my favorite things to do is to watch a movie or listen to some stand up. In fact, some of my favorite comedians are Eddie Murphy, Chris Rock and Dave Chappelle.</p>
-<p>All three of them have had jokes that can be considered derogatory<sup id="fnref:unfunny"><a class="footnote-ref" href="#fn:unfunny" rel="footnote">1</a></sup>. </p>
+<p>All three of them have had jokes that can be considered derogatory<sup id="fnref-unfunny"><a class="footnote-ref" href="#fn-unfunny">1</a></sup>. </p>
 <p>When it comes to movies, a lot of the "black films" that I've seen in recent years have had the phrase "Nigga, please" or some kind of derivative. </p>
 <p>I remember a couple times, when I've had "discussions" with my parents about how I don't "talk black".</p>
 <h3>Conference</h3>
@@ -147,19 +209,19 @@
 <h2>Don't hide it</h2>
 <p>I feel we all need to be a little more open to the fact that people are going to say things that we don't like.</p>
 <p>And honestly, there are people out there that even the worst words are too good for them. </p>
-<p>It is up to all of us to be a little understanding and let people express themselves<sup id="fnref:DontBeStupid"><a class="footnote-ref" href="#fn:DontBeStupid" rel="footnote">2</a></sup> to a degree.</p>
+<p>It is up to all of us to be a little understanding and let people express themselves<sup id="fnref-DontBeStupid"><a class="footnote-ref" href="#fn-DontBeStupid">2</a></sup> to a degree.</p>
 <p>Otherwise, how are they going to learn? And how are we going to know?</p>
 <h1>Conclusion</h1>
 <p>We have a long way to go in race relations. I consider myself very lucky to be in America and even more lucky to be in California. I know we've made huge strides in equality and learning to live with other ethnic groups. </p>
 <p>Still, there is more to this case than just the N-word. The lawsuit that brought this to light talks about other forms of harassment and I think that as human beings we should focus on that in regards to Paula Deen.</p>
 <div class="footnote">
-<hr />
+<hr>
 <ol>
-<li id="fn:unfunny">
-<p>I think this might actually be why Eddie Murphy doesn't do stand up any more. I went back and listened to some of his earlier stuff and shook my head to hear how many "faggot" jokes he used to say.&#160;<a class="footnote-backref" href="#fnref:unfunny" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<li id="fn-unfunny">
+<p>I think this might actually be why Eddie Murphy doesn't do stand up any more. I went back and listened to some of his earlier stuff and shook my head to hear how many "faggot" jokes he used to say.&#160;<a class="footnote-backref" href="#fnref-unfunny" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
-<li id="fn:DontBeStupid">
-<p>Don't be that guy who went to his child custody appearance dressed as <a href="http://nymag.com/daily/intelligencer/2013/06/hitler-dad-fights-for-custody-in-nazi-uniform.html">Hitler</a>.&#160;<a class="footnote-backref" href="#fnref:DontBeStupid" rev="footnote" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+<li id="fn-DontBeStupid">
+<p>Don't be that guy who went to his child custody appearance dressed as <a href="http://nymag.com/daily/intelligencer/2013/06/hitler-dad-fights-for-custody-in-nazi-uniform.html">Hitler</a>.&#160;<a class="footnote-backref" href="#fnref-DontBeStupid" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>	
@@ -195,14 +257,14 @@
 </h1>
 <p class="subtitle"><time datetime="2013-03-17T22:42:31-07:00">Sun 17 March 2013</time><label for="bully-bully" class="margin-toggle"> ⊕</label><input type="checkbox" id="bully-bully" class="margin-toggle" /> <span class="marginnote">Category: <a href="http://quotidianquest.com/category/parenting.html">parenting</a><br />
  #<a href="http://quotidianquest.com/tag/bullying.html">bullying</a></span></p>
-</header><p>Tonight, my wife told me that our daughter has an exclusive girl club in her kindergarten class that she isn't allowed to be in. This club has one particular girl in it that is being mean to my daughter. She doesn't like being there <sup id="fnref:aha"><a class="footnote-ref" href="#fn:aha" rel="footnote">1</a></sup>.</p>
+</header><p>Tonight, my wife told me that our daughter has an exclusive girl club in her kindergarten class that she isn't allowed to be in. This club has one particular girl in it that is being mean to my daughter. She doesn't like being there <sup id="fnref-aha"><a class="footnote-ref" href="#fn-aha">1</a></sup>.</p>
 <p>It's something that no parent wants to hear, but should listen to now more than ever. <a href="http://www.cbsnews.com/2100-204_162-3239837.html" title="Girl's Suicide Rate Rise Dramatically">The suicide rate for girls has increased to an alarming level</a> with articles and news clips talking about how girls are being ambushed and beaten by their peers. Then, to add more humiliation, someone records it and puts it on the internet.</p>
 <p>Some would say that it's just girls being mean, but I've been bullied and I know how these things can affect you. I only pray that I can help my daughter find the strength that she needs in order to get past this.</p>
 <div class="footnote">
-<hr />
+<hr>
 <ol>
-<li id="fn:aha">
-<p>It also makes since to why I see her playing by herself when I come into her class and why she's been acting up when she's at home.&#160;<a class="footnote-backref" href="#fnref:aha" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<li id="fn-aha">
+<p>It also makes since to why I see her playing by herself when I come into her class and why she's been acting up when she's at home.&#160;<a class="footnote-backref" href="#fnref-aha" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>	
@@ -226,28 +288,28 @@
 </blockquote>
 <p>It seemed like perfect timing that at the same time that I'm putting more effort into getting things together, one of flagship calendar applications - BusyCal - came out with a <a href="https://support.busymac.com/tickets/15755" title="What's New in BusyCal 2.0">new version</a>.</p>
 <h2>Getting Organized</h2>
-<p>In the effort to become more organized, I decided that it would be easier on me to start off by placing recurring events and events that I know that I will certainly be attending. The only problem being that I need to review my calendar to make sure that it is up to date and that all the activities on my computer are reflected on the family calendar hanging on the wall of the kitchen. I'm slowly building up the habit of making sure that the two are in sync and in a way this works as a little review of what is going on in my life for the purpose of time management. Another benefit is that I don't commit to a lot of different things because of the hassle it would take to make sure that I'm available at a certain time<sup id="fnref:punctual"><a class="footnote-ref" href="#fn:punctual" rel="footnote">1</a></sup>.</p>
+<p>In the effort to become more organized, I decided that it would be easier on me to start off by placing recurring events and events that I know that I will certainly be attending. The only problem being that I need to review my calendar to make sure that it is up to date and that all the activities on my computer are reflected on the family calendar hanging on the wall of the kitchen. I'm slowly building up the habit of making sure that the two are in sync and in a way this works as a little review of what is going on in my life for the purpose of time management. Another benefit is that I don't commit to a lot of different things because of the hassle it would take to make sure that I'm available at a certain time<sup id="fnref-punctual"><a class="footnote-ref" href="#fn-punctual">1</a></sup>.</p>
 <p>In a way, this has improved how I function in my day to day life because I don't have as much stress about missing appointments. The stress I do have is generated because of my desire to do more things at once. The problem is that I'm getting a better idea of what I want/should be doing and it is kind of scary to see all the different things that are vying for my attention. I've been using <a href="http://www.omnigroup.com/products/omnifocus" title="One of the most powerful/popular GTD applications in the world.">OmniFocus</a> to help me manage all the projects and I think I've moved a little bit past just pushing things around and doing busy work. I'm learning where things are getting lost and I think thats one of the key things you need to find if you really want to improve your life.</p>
-<p>Ultimately, this has really shown me that there isn't a silver bullet to being productive and getting things done. It's a bunch of little bullets being fired from the gun called willpower<sup id="fnref:willpower"><a class="footnote-ref" href="#fn:willpower" rel="footnote">2</a></sup>. And I am starting to trust in myself to follow the plan that I have set out. I'm still working on making sure that I do some kind of as often as possible and get things out of my inbox.</p>
+<p>Ultimately, this has really shown me that there isn't a silver bullet to being productive and getting things done. It's a bunch of little bullets being fired from the gun called willpower<sup id="fnref-willpower"><a class="footnote-ref" href="#fn-willpower">2</a></sup>. And I am starting to trust in myself to follow the plan that I have set out. I'm still working on making sure that I do some kind of as often as possible and get things out of my inbox.</p>
 <p>But that leads us back to the main point of this post.</p>
 <h2>Why did/didn't buy BusyCal 2?</h2>
-<p>Honestly, I'm on a budget. When you're constantly checking your balance to make sure that you have enough for food/rent/kids/spouse, it is hard to justify $30<sup id="fnref:cash"><a class="footnote-ref" href="#fn:cash" rel="footnote">3</a></sup>. </p>
-<p>The other reason is that I already have the first version of <a href="http://www.busymac.com/busycal/index.html" title="BusyCal is an award winning calendar app that provides powerful time-saving productivity tools in a friendly, personalized, easy-to-use package.">BusyCal</a> and <a href="http://flexibits.com/fantastical" title="The Mac calendar you'll actually enjoy using">fantastical</a>. Both of these products provide me with all the calendar information that I need at this point. For the current date and to add things, I use fantastical<sup id="fnref:problem"><a class="footnote-ref" href="#fn:problem" rel="footnote">4</a></sup>. When it comes to a wider view, BusyCal does that way better that iCal in the sense that it isn't a nightmare to look at.</p>
+<p>Honestly, I'm on a budget. When you're constantly checking your balance to make sure that you have enough for food/rent/kids/spouse, it is hard to justify $30<sup id="fnref-cash"><a class="footnote-ref" href="#fn-cash">3</a></sup>. </p>
+<p>The other reason is that I already have the first version of <a href="http://www.busymac.com/busycal/index.html" title="BusyCal is an award winning calendar app that provides powerful time-saving productivity tools in a friendly, personalized, easy-to-use package.">BusyCal</a> and <a href="http://flexibits.com/fantastical" title="The Mac calendar you'll actually enjoy using">fantastical</a>. Both of these products provide me with all the calendar information that I need at this point. For the current date and to add things, I use fantastical<sup id="fnref-problem"><a class="footnote-ref" href="#fn-problem">4</a></sup>. When it comes to a wider view, BusyCal does that way better that iCal in the sense that it isn't a nightmare to look at.</p>
 <p>If I had the money, I'd buy the new version as it looks really nice and company is focused on bringing a great mac experience.</p>
 <div class="footnote">
-<hr />
+<hr>
 <ol>
-<li id="fn:punctual">
-<p>For a while, I would stress out about meeting people up at a given time. I wanted my word to mean something when it came to not being late. If I said 8AM, I meant 8AM. In my mind, I would chant "Punctual is not being on time, it's being respectful of other peoples time". I still think that, but I don't stress about it.&#160;<a class="footnote-backref" href="#fnref:punctual" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<li id="fn-punctual">
+<p>For a while, I would stress out about meeting people up at a given time. I wanted my word to mean something when it came to not being late. If I said 8AM, I meant 8AM. In my mind, I would chant "Punctual is not being on time, it's being respectful of other peoples time". I still think that, but I don't stress about it.&#160;<a class="footnote-backref" href="#fnref-punctual" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
-<li id="fn:willpower">
-<p>That has to be one of the corniest things I've written in the last couple of weeks. &#160;<a class="footnote-backref" href="#fnref:willpower" rev="footnote" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+<li id="fn-willpower">
+<p>That has to be one of the corniest things I've written in the last couple of weeks. &#160;<a class="footnote-backref" href="#fnref-willpower" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
-<li id="fn:cash">
-<p>It's currently on sale until the end of the month. &#160;<a class="footnote-backref" href="#fnref:cash" rev="footnote" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+<li id="fn-cash">
+<p>It's currently on sale until the end of the month. &#160;<a class="footnote-backref" href="#fnref-cash" title="Jump back to footnote 3 in the text">&#8617;</a></p>
 </li>
-<li id="fn:problem">
-<p>Although, I do have  a problem adding repeating events. I'm going to give the software the benefit of the doubt for not being able to read me…  Maybe next release.&#160;<a class="footnote-backref" href="#fnref:problem" rev="footnote" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+<li id="fn-problem">
+<p>Although, I do have  a problem adding repeating events. I'm going to give the software the benefit of the doubt for not being able to read me…  Maybe next release.&#160;<a class="footnote-backref" href="#fnref-problem" title="Jump back to footnote 4 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>	
@@ -264,30 +326,30 @@
 </h1>
 <p class="subtitle"><time datetime="2013-03-02T20:51:09-08:00">Sat 02 March 2013</time><label for="what-do-i-want-in-an-email-client" class="margin-toggle"> ⊕</label><input type="checkbox" id="what-do-i-want-in-an-email-client" class="margin-toggle" /> <span class="marginnote">Category: <a href="http://quotidianquest.com/category/productivity.html">productivity</a><br />
  #<a href="http://quotidianquest.com/tag/email.html">email</a></span></p>
-</header><p>I've been thinking about email a lot more than I would like to during the last couple of days due to my latest attempt to have a GTD based workflow and eliminate some of the friction<sup id="fnref:wonders"><a class="footnote-ref" href="#fn:wonders" rel="footnote">1</a></sup> in my life. </p>
+</header><p>I've been thinking about email a lot more than I would like to during the last couple of days due to my latest attempt to have a GTD based workflow and eliminate some of the friction<sup id="fnref-wonders"><a class="footnote-ref" href="#fn-wonders">1</a></sup> in my life. </p>
 <p>I know for a fact that email is not really the problem when it comes to managing my life and the thoughts about how to handle the incoming maybe just my minds way of just "moving the food around on my plate".</p>
 <p><strong>BUT</strong> </p>
 <p>This has been a problem for me every time that I get organized. I've been blessed to have two computers and it seems like a lot of trouble trying to get the two to have the same set up because I share one with the rest of the family and the other is my "work" computer that has all the latest do dads and what nots in it.</p>
-<p>Right now, I'm at a crossroads when it comes to my feelings about Mail.app and email/Gmail. I have multiple account (3 gmail accounts and 1 iCloud/me.com/MobileMe<sup id="fnref:mobilemess"><a class="footnote-ref" href="#fn:mobilemess" rel="footnote">2</a></sup>). I feel that if I can't control this kind of input into my life than I'm not going to be able to trust any kind of system that I set up.  So made a little wish list of all the things that I need from an email client.</p>
+<p>Right now, I'm at a crossroads when it comes to my feelings about Mail.app and email/Gmail. I have multiple account (3 gmail accounts and 1 iCloud/me.com/MobileMe<sup id="fnref-mobilemess"><a class="footnote-ref" href="#fn-mobilemess">2</a></sup>). I feel that if I can't control this kind of input into my life than I'm not going to be able to trust any kind of system that I set up.  So made a little wish list of all the things that I need from an email client.</p>
 <ul>
 <li>Keyboard Shortcuts </li>
-<li>IMAP/POP for when I "eventually" leave gmail<sup id="fnref:free"><a class="footnote-ref" href="#fn:free" rel="footnote">3</a></sup>.  </li>
+<li>IMAP/POP for when I "eventually" leave gmail<sup id="fnref-free"><a class="footnote-ref" href="#fn-free">3</a></sup>.  </li>
 <li>Scriptable/extendable - I want an easy way to send a link to a message to OmniFocus</li>
 <li>Stable - I want the app to do all of this without using plug-ins.</li>
 </ul>
 <p>So where does this put me? Do I take the time to find that "Perfect" email client? Do I go back to Mail.app attempt to make it fit my imaginary workflow?</p>
 <p>After writing all this, I think I'm just wasting my time with a first world problem.</p>
 <div class="footnote">
-<hr />
+<hr>
 <ol>
-<li id="fn:wonders">
-<p>More like distractions. I don't think I had a problem focusing on things until I had was able to get on the internet for longer than two hours in a row.&#160;<a class="footnote-backref" href="#fnref:wonders" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<li id="fn-wonders">
+<p>More like distractions. I don't think I had a problem focusing on things until I had was able to get on the internet for longer than two hours in a row.&#160;<a class="footnote-backref" href="#fnref-wonders" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
-<li id="fn:mobilemess">
-<p>For the longest time, it seemed like the service was constantly going down for hours or days at a time. I haven't heard of any problems in a while, but that could just mean that people don't care anymore.&#160;<a class="footnote-backref" href="#fnref:mobilemess" rev="footnote" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+<li id="fn-mobilemess">
+<p>For the longest time, it seemed like the service was constantly going down for hours or days at a time. I haven't heard of any problems in a while, but that could just mean that people don't care anymore.&#160;<a class="footnote-backref" href="#fnref-mobilemess" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
-<li id="fn:free">
-<p>It is hard to beat free. Although I'm paying for it by being a small aggregated blip on some data profile, I'm having trouble fighting "the good fight" and yes, I know that all the third party apps are using IMAP to connect to gmail.&#160;<a class="footnote-backref" href="#fnref:free" rev="footnote" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+<li id="fn-free">
+<p>It is hard to beat free. Although I'm paying for it by being a small aggregated blip on some data profile, I'm having trouble fighting "the good fight" and yes, I know that all the third party apps are using IMAP to connect to gmail.&#160;<a class="footnote-backref" href="#fnref-free" title="Jump back to footnote 3 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>	
@@ -305,44 +367,6 @@
 <p class="subtitle"><time datetime="2013-02-25T20:10:00-08:00">Mon 25 February 2013</time><label for="recollecting" class="margin-toggle"> ⊕</label><input type="checkbox" id="recollecting" class="margin-toggle" /> <span class="marginnote">Category: <a href="http://quotidianquest.com/category/productivity.html">productivity</a><br />
  #<a href="http://quotidianquest.com/tag/collection.html">collection</a></span></p>
 </header><p>I really like doing a brain dump/collection in the GTD sense. It gives me a feeling that I can actually control it all. That I'm going to rediscover every last commitment that I've got to make and then be able to make my world just a little bit better. I think that I've finally reached the point when I'm no longer running from all my insecurities.</p>	
-</article>
-<article class="post">
-
-<header class="post-header">
-<h1>
-<a rel="bookmark"
-   href="2013/02/served.html"
-   title="Served «Quotidian Quest»">
-   Served
-</a>
-</h1>
-<p class="subtitle"><time datetime="2013-02-22T23:21:00-08:00">Fri 22 February 2013</time><label for="served" class="margin-toggle"> ⊕</label><input type="checkbox" id="served" class="margin-toggle" /> <span class="marginnote">Category: <a href="http://quotidianquest.com/category/parenting.html">parenting</a><br />
- #<a href="http://quotidianquest.com/tag/misc.html">misc</a></span></p>
-</header><p>Well after having nightmares about it for the last couple of nights, I can now rest easy now that the pancake breakfast is over. </p>
-<p>And what a breakfast it was, at first things were moving really slowly as the people trickled two and three at a time and I was actually afraid that we wouldn't be able to make enough money to break even with the costs of all the supplies.</p>
-<p>And then the boom dropped.</p>
-<p>I found myself constantly mixing batter to keep up with a constant stream of hungry customers. In fact, I heard that there was a story of people who went through the line 3 times.</p>	
-</article>
-<article class="post">
-
-<header class="post-header">
-<h1>
-<a rel="bookmark"
-   href="2013/02/night-wrap-up.html"
-   title="Night wrap up «Quotidian Quest»">
-   Night wrap up
-</a>
-</h1>
-<p class="subtitle"><time datetime="2013-02-21T23:10:06-08:00">Thu 21 February 2013</time><label for="night-wrap-up" class="margin-toggle"> ⊕</label><input type="checkbox" id="night-wrap-up" class="margin-toggle" /> <span class="marginnote">Category: <a href="http://quotidianquest.com/category/personal.html">personal</a><br />
- #<a href="http://quotidianquest.com/tag/misc.html">misc</a></span></p>
-</header><p>Tomorrow, I’m going to be leading the parents of my daughter’s kindergarten class in our first and only fundraiser. </p>
-<p>The (in)famous pancake breakfast.</p>
-<p>This was an activity that they told us about at the very beginning of the school year (6 months ago) and I’ve honestly have been kind of dreading that this day would come. </p>
-<p>It’s not so much volunteering to do it as it is getting the parents to help out. Although our school has a policy where every parent is required to volunteer 40 hours over the entire school year or donate 20 bucks per hour, I feel that not everyone is able to jump on board and help support us with this. </p>
-<p>I’m not angry and I understand that not everyone can help this week, but since I’m the one who is responsible for this if it fails...</p>
-<p>I’m just happy that the class that my daughter is in has a lot of top notch parents who really want this to succeed and understand that even the little bit of help can go a long way. </p>
-<p>Especially if you tell me about it so I don’t go crazy thinking about what could go wrong.</p>
-<p>One thing of personal note is that all the stress of the pancake breakfast has gotten me back in front of the computer to write again.  There have been a number of moments that I’ve been wishing for my journal and tonight is one of them.</p>	
 </article>
 </main>
       <nav id="pagination">        <a id="first_page" href="http://quotidianquest.com/author/mandaris.html">&#60;&#60;</a>

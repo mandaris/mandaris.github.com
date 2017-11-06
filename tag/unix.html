@@ -14,7 +14,8 @@
   <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png" />
   <link rel="shortcut icon" href="/favicon.ico" />
   <link rel="icon" type="image/png" href="/favicon.png" />
-  <!-- <link rel="mask-icon" href="/favicon.svg" color="#50c878" /> -->
+  <link rel="mask-icon" href="/favicon.svg" color="black" />
+
   <link href="http://quotidianquest.com/feeds/atom.xml" type="application/atom+xml"
         rel="alternate" title="Quotidian Quest ALL Atom Feed" />
 
@@ -49,31 +50,31 @@
 <p class="subtitle"><time datetime="2016-12-08T17:08:11-08:00">Thu 08 December 2016</time><label for="a-simple-alias" class="margin-toggle"> ⊕</label><input type="checkbox" id="a-simple-alias" class="margin-toggle" /> <span class="marginnote">Category: <a href="http://quotidianquest.com/category/tech.html">tech</a><br />
  #<a href="http://quotidianquest.com/tag/unix.html">unix</a> #<a href="http://quotidianquest.com/tag/creative-challenge.html">creative challenge</a></span></p>
 </header><p>Today, I thought I'd document something simple like how I created an alias to render the blog and then port it to my website. I'm writing it out in hopes that something will pop up and say "There is an easier way of doing it!"</p>
-<p>The first thing I do for most posts is I open up Byword to write the words that you are seeing before you. If it's something a little more complicated, I might start off in MindNode<sup id="fnref:MindNode"><a class="footnote-ref" href="#fn:MindNode" rel="footnote">1</a></sup> and export to Markdown. </p>
+<p>The first thing I do for most posts is I open up Byword to write the words that you are seeing before you. If it's something a little more complicated, I might start off in MindNode<sup id="fnref-MindNode"><a class="footnote-ref" href="#fn-MindNode">1</a></sup> and export to Markdown. </p>
 <p>I use a TextExpander snippet to set the header and then just start writing and save the file in dropbox.</p>
-<p><img alt="The popup window for the TextExpander header for my website." src="../../images/textexpander_window_header_for_post.png" /></p>
-<p>The part that I feel needs improvement is finishing the draft. I have a virtual environment set up for pelican that has all the templates and plugins that I've been tweaking to make the site look and behave in the way that I want. This means that any extra syntax or themes don't show up unless I process the markdown<sup id="fnref:marked"><a class="footnote-ref" href="#fn:marked" rel="footnote">2</a></sup>.</p>
-<p>To solve this, I've set up a hazel rule<sup id="fnref:rule"><a class="footnote-ref" href="#fn:rule" rel="footnote">3</a></sup> to copy over all the files. </p>
-<p><img alt="Hazel rule to clone over all the posts and images for the blog" src="../../images/hazel_rule_to_clone_posts.png" /></p>
+<p><img alt="The popup window for the TextExpander header for my website." src="../../images/textexpander_window_header_for_post.png"></p>
+<p>The part that I feel needs improvement is finishing the draft. I have a virtual environment set up for pelican that has all the templates and plugins that I've been tweaking to make the site look and behave in the way that I want. This means that any extra syntax or themes don't show up unless I process the markdown<sup id="fnref-marked"><a class="footnote-ref" href="#fn-marked">2</a></sup>.</p>
+<p>To solve this, I've set up a hazel rule<sup id="fnref-rule"><a class="footnote-ref" href="#fn-rule">3</a></sup> to copy over all the files. </p>
+<p><img alt="Hazel rule to clone over all the posts and images for the blog" src="../../images/hazel_rule_to_clone_posts.png"></p>
 <p>After that, I can run a local server to see what the post looks like after being processed.</p>
-<p><img alt="An iTerm window with the commands that I use to run the development server" src="../../images/running_local_server.png" /></p>
+<p><img alt="An iTerm window with the commands that I use to run the development server" src="../../images/running_local_server.png"></p>
 <p>Which leads us to the thing that I created. An alias in my environment to rsync the finished website and push it to github to host.</p>
-<div class="highlight"><pre>alias pub=&quot;pelican; rsync -r /Users/mandaris/Projects/quotidian/output/* ~/Projects/mandaris.github.com&quot;
+<div class="highlight"><pre><span></span>alias pub=&quot;pelican; rsync -r /Users/mandaris/Projects/quotidian/output/* ~/Projects/mandaris.github.com&quot;
 </pre></div>
 
 
 <p>Well, that was a longer explanation that I was thinking it would be. </p>
 <div class="footnote">
-<hr />
+<hr>
 <ol>
-<li id="fn:MindNode">
-<p>I do have iThoughts as well, but MindNode is better looking.&#160;<a class="footnote-backref" href="#fnref:MindNode" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<li id="fn-MindNode">
+<p>I do have iThoughts as well, but MindNode is better looking.&#160;<a class="footnote-backref" href="#fnref-MindNode" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
-<li id="fn:marked">
-<p>Although, I do use Marked.app to look at the post as I'm writing it. I haven't commited myself to making the my theme and processors work in the appplication.&#160;<a class="footnote-backref" href="#fnref:marked" rev="footnote" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+<li id="fn-marked">
+<p>Although, I do use Marked.app to look at the post as I'm writing it. I haven't commited myself to making the my theme and processors work in the appplication.&#160;<a class="footnote-backref" href="#fnref-marked" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
-<li id="fn:rule">
-<p>To be honest, this hasn't been working like I want it to. I have to manually run the rule. I'll make it a OmniFocus project to get the rules to work properly. I tried using rsync, but got some weird errors when I attempted to put the configuration into github.&#160;<a class="footnote-backref" href="#fnref:rule" rev="footnote" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+<li id="fn-rule">
+<p>To be honest, this hasn't been working like I want it to. I have to manually run the rule. I'll make it a OmniFocus project to get the rules to work properly. I tried using rsync, but got some weird errors when I attempted to put the configuration into github.&#160;<a class="footnote-backref" href="#fnref-rule" title="Jump back to footnote 3 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>	

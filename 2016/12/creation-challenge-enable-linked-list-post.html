@@ -14,7 +14,8 @@
   <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png" />
   <link rel="shortcut icon" href="/favicon.ico" />
   <link rel="icon" type="image/png" href="/favicon.png" />
-  <!-- <link rel="mask-icon" href="/favicon.svg" color="#50c878" /> -->
+  <link rel="mask-icon" href="/favicon.svg" color="black" />
+
   <link href="http://quotidianquest.com/feeds/atom.xml" type="application/atom+xml"
         rel="alternate" title="Quotidian Quest ALL Atom Feed" />
 
@@ -53,7 +54,7 @@
 <p class="subtitle"><time datetime="2016-12-01T17:46:45-08:00">Thu 01 December 2016</time><label for="creation-challenge-enable-linked-list-post" class="margin-toggle"> ⊕</label><input type="checkbox" id="creation-challenge-enable-linked-list-post" class="margin-toggle" /> <span class="marginnote">Category: <a href="http://quotidianquest.com/category/misc.html">misc</a><br />
  #<a href="http://quotidianquest.com/tag/misc.html">misc</a> #<a href="http://quotidianquest.com/tag/creation-challenge.html">creation challenge</a></span></p>
 </header><p>The first thing that I'd like to work on is getting the article header that I'm using to be more capable of handing meta data for individual entries. Currently, it points to the specific url for the article but I'd like it to take my current header.</p>
-<div class="highlight"><pre><span class="n">title</span><span class="o">:</span> <span class="n">Where</span> <span class="n">to</span> <span class="n">put</span> <span class="n">the</span> <span class="n">maybe</span><span class="o">-</span><span class="n">someday</span>  
+<div class="highlight"><pre><span></span><span class="n">title</span><span class="o">:</span> <span class="n">Where</span> <span class="n">to</span> <span class="n">put</span> <span class="n">the</span> <span class="n">maybe</span><span class="o">-</span><span class="n">someday</span>  
 <span class="n">date</span><span class="o">:</span> <span class="mi">2016</span><span class="o">-</span><span class="mi">09</span><span class="o">-</span><span class="mi">05</span> <span class="mi">22</span><span class="o">:</span><span class="mi">10</span><span class="o">:</span><span class="mi">08</span>  
 <span class="n">category</span><span class="o">:</span> <span class="n">personal</span>  
 <span class="n">tags</span><span class="o">:</span> <span class="n">tech</span><span class="o">,</span> <span class="n">notes</span><span class="o">,</span> <span class="n">evernote</span>  
@@ -62,7 +63,7 @@
 
 
 <p>and add the <code>link</code> attribute</p>
-<div class="highlight"><pre><span class="n">title</span><span class="o">:</span> <span class="n">Where</span> <span class="n">to</span> <span class="n">put</span> <span class="n">the</span> <span class="n">maybe</span><span class="o">-</span><span class="n">someday</span>  
+<div class="highlight"><pre><span></span><span class="n">title</span><span class="o">:</span> <span class="n">Where</span> <span class="n">to</span> <span class="n">put</span> <span class="n">the</span> <span class="n">maybe</span><span class="o">-</span><span class="n">someday</span>  
 <span class="n">date</span><span class="o">:</span> <span class="mi">2016</span><span class="o">-</span><span class="mi">09</span><span class="o">-</span><span class="mi">05</span> <span class="mi">22</span><span class="o">:</span><span class="mi">10</span><span class="o">:</span><span class="mi">08</span>  
 <span class="n">category</span><span class="o">:</span> <span class="n">personal</span>  
 <span class="n">tags</span><span class="o">:</span> <span class="n">tech</span><span class="o">,</span> <span class="n">notes</span><span class="o">,</span> <span class="n">evernote</span>  
@@ -72,7 +73,7 @@
 
 
 <p>I started off with the following jinja heading.</p>
-<div class="highlight"><pre><span class="x">&lt;h1&gt;</span>
+<div class="highlight"><pre><span></span><span class="x">&lt;h1&gt;</span>
 <span class="x">&lt;a rel=&quot;bookmark&quot;</span>
 <span class="x">   href=&quot;</span><span class="cp">{{</span> <span class="nv">article.url</span> <span class="cp">}}</span><span class="x">&quot;</span>
 <span class="x">   title=&quot;</span><span class="cp">{{</span> <span class="nv">article.title</span><span class="o">|</span><span class="nf">striptags</span> <span class="cp">}}</span><span class="x"> «</span><span class="cp">{{</span> <span class="nv">SITENAME</span> <span class="cp">}}</span><span class="x">»&quot;&gt;</span>
@@ -83,12 +84,12 @@
 
 
 <p>To be honest, I don't do development on the blog that often so I used my own code to look up how to do an <code>if</code> statement in jinja and wrote a little test line to see if it worked.</p>
-<div class="highlight"><pre><span class="cp">{{</span> <span class="nv">article.title</span><span class="cp">}}</span><span class="x"> </span><span class="cp">{%</span> <span class="k">if</span> <span class="nv">article.link</span> <span class="cp">%}</span><span class="x"> </span><span class="cp">{{</span> <span class="nv">article.link</span><span class="cp">}}</span><span class="x"> </span><span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span><span class="x"></span>
+<div class="highlight"><pre><span></span><span class="cp">{{</span> <span class="nv">article.title</span><span class="cp">}}</span><span class="x"> </span><span class="cp">{%</span> <span class="k">if</span> <span class="nv">article.link</span> <span class="cp">%}</span><span class="x"> </span><span class="cp">{{</span> <span class="nv">article.link</span><span class="cp">}}</span><span class="x"> </span><span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span><span class="x"></span>
 </pre></div>
 
 
 <p>After editing the page a number of times and doing more research that I should have into which kind of <code>rel</code> tag I should use for book marks versus external links, I finished up with this.</p>
-<div class="highlight"><pre><span class="cp">{%</span> <span class="k">if</span> <span class="nv">article.link</span> <span class="cp">%}</span><span class="x"></span>
+<div class="highlight"><pre><span></span><span class="cp">{%</span> <span class="k">if</span> <span class="nv">article.link</span> <span class="cp">%}</span><span class="x"></span>
 <span class="x">&lt;a rel=&quot;external&quot;</span>
 <span class="x">   title=&quot;</span><span class="cp">{{</span> <span class="nv">article.title</span><span class="o">|</span><span class="nf">striptags</span> <span class="cp">}}</span><span class="x"> «</span><span class="cp">{{</span> <span class="nv">SITENAME</span> <span class="cp">}}</span><span class="x">»&quot;</span>
 <span class="x">   href=&quot;</span><span class="cp">{{</span> <span class="nv">article.link</span> <span class="cp">}}</span><span class="x">&quot;&gt;</span>

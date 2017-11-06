@@ -14,7 +14,8 @@
   <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png" />
   <link rel="shortcut icon" href="/favicon.ico" />
   <link rel="icon" type="image/png" href="/favicon.png" />
-  <!-- <link rel="mask-icon" href="/favicon.svg" color="#50c878" /> -->
+  <link rel="mask-icon" href="/favicon.svg" color="black" />
+
   <link href="http://quotidianquest.com/feeds/atom.xml" type="application/atom+xml"
         rel="alternate" title="Quotidian Quest ALL Atom Feed" />
 
@@ -49,7 +50,13 @@
 <p class="subtitle"><time datetime="2016-08-03T00:08:15-07:00">Wed 03 August 2016</time><label for="diagrams-in-the-post" class="margin-toggle"> ⊕</label><input type="checkbox" id="diagrams-in-the-post" class="margin-toggle" /> <span class="marginnote">Category: <a href="http://quotidianquest.com/category/blogging.html">blogging</a><br />
  #<a href="http://quotidianquest.com/tag/pelican.html">pelican</a> #<a href="http://quotidianquest.com/tag/diagrams.html">diagrams</a> #<a href="http://quotidianquest.com/tag/plantuml.html">plantuml</a></span></p>
 </header><p>I thought I would switch gears for a second and see if I could get pelican to make certain diagrams for my blog posts.</p>
-<img alt="Sample sequence diagram" classes="sequence" src="http://quotidianquest.com/images/17033b95.svg" /><p>I hope that works.</p>	
+<p>::uml:: format="svg"  classes="sequence" alt="Sample sequence diagram"
+  Alice -&gt; Bob: Authentication Request
+  Bob --&gt; Alice: Authentication Response</p>
+<p>Alice -&gt; Bob: Another authentication Request
+  Alice &lt;-- Bob: another authentication Response
+::end-uml::</p>
+<p>I hope that works.</p>	
 </article>
 <article class="post">
 
@@ -65,7 +72,7 @@
  #<a href="http://quotidianquest.com/tag/misc.html">misc</a></span></p>
 </header><p>There are a couple things that I still have to finish for the website theme plugin. They are margin images and images in the main column. It should be to hard and in fact this post that you are reading is an example of me using it.</p>
 <p>In fact, I'm going to put a margin image here on the side followed by a small table of what I had for breakfast the last three days.</p>
-<p><label for="margin-figure-id" class="margin-toggle">&#8853;</label><input type="checkbox" id="margin-figure-id" class="margin-toggle" /><span class="marginnote"><img class="fullwidth" src="../../images/small_me.jpg" alt="This is guy keeps getting better!"/><br/>This is guy keeps getting better!</span></p>
+<p>{% marginfigure "margin-figure-id" "../../images/small_me.jpg" "This is guy keeps getting better!" %}</p>
 <table>
 <thead>
 <tr>
@@ -88,10 +95,10 @@
 </tr>
 </tbody>
 </table>
-<p>Wow, wasn't that amazing<label for="reflection" class="margin-toggle">&#8853;</label><input type="checkbox" id="reflection" class="margin-toggle" /><span class="marginnote">Although this all looks nice, I think this might be the last update to the code for a while.</span>
+<p>Wow, wasn't that amazing{% marginnote "reflection" "Although this all looks nice, I think this might be the last update to the code for a while." %}
 . Now that we got that working we can get the column images working too.</p>
 <p>Now to follow up with the column image. I hope that it looks cool in your browser of choice.</p>
-<p><figure><figcaption>This example was lefted directly from the Tufte website. I hope that it works.</figcaption><img src="../../images/napoleons-march.png"/></figure></p>
+<p>{% maincolumn "../../images/napoleons-march.png" "This example was lefted directly from the Tufte website. I hope that it works."%}</p>
 <p>Well, until next time!</p>	
 </article>
 <article class="post">
@@ -109,17 +116,17 @@
 </header><p>I recently pushed the button to update my site and push my new theme to the world. It felt good to get it out there because it has been dormant for years now and I had thought about shutting it down sometimes. During the time that I had <em>NOT</em> updated, I had switched jobs and kind of doubted everything I was working on.</p>
 <p>In a lot of ways, the doubt in my own abilities was part of the reason that it took so long to update because I just didn't think that it was good enough. In my mind, I thought "If it's not perfect than I won't show anything at all".</p>
 <p>This is the wrong way of thinking about it. </p>
-<p>It's almost childish in a way and reminds me of how I'd refuse to write the steps when I was doing my math homework<sup id="fnref:homework"><a class="footnote-ref" href="#fn:homework" rel="footnote">1</a></sup>.</p>
+<p>It's almost childish in a way and reminds me of how I'd refuse to write the steps when I was doing my math homework<sup id="fnref-homework"><a class="footnote-ref" href="#fn-homework">1</a></sup>.</p>
 <h1>So now what?</h1>
 <p>Well, I've got a new redesign that loads really fast and looks pretty cool. The next steps outside of the technical details that I put in my previous post is to find my direction of the site again.</p>
 <p>Currently, I'm using <a href="https://dayone.me">Day One</a> for my journal entries and although this is my personal site I don't think I'll be putting entries from there here (more likely is that this entry will be an entry).</p>
 <p>I think I'll probably put links to things that are really cool or some tutorials that I've been thinking about making.</p>
 <p>We'll have to see.</p>
 <div class="footnote">
-<hr />
+<hr>
 <ol>
-<li id="fn:homework">
-<p>It was something that a couple of high school friends would do. We thought it was cool to get the answer completely in our head without writing all the steps of logic down on paper. It was stupid because the teacher would give you partial credit if you showed your work. &#160;<a class="footnote-backref" href="#fnref:homework" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<li id="fn-homework">
+<p>It was something that a couple of high school friends would do. We thought it was cool to get the answer completely in our head without writing all the steps of logic down on paper. It was stupid because the teacher would give you partial credit if you showed your work. &#160;<a class="footnote-backref" href="#fnref-homework" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>	
@@ -136,35 +143,35 @@
 </h1>
 <p class="subtitle"><time datetime="2016-02-04T22:06:26-08:00">Thu 04 February 2016</time><label for="pushing-the-button" class="margin-toggle"> ⊕</label><input type="checkbox" id="pushing-the-button" class="margin-toggle" /> <span class="marginnote">Category: <a href="http://quotidianquest.com/category/blogging.html">blogging</a><br />
  #<a href="http://quotidianquest.com/tag/misc.html">misc</a></span></p>
-</header><p>category: blogging <br />
-tags: tufte, blog<br />
+</header><p>category: blogging <br>
+tags: tufte, blog<br>
 status: published    </p>
 <p>Well, tonight is the night. I got the site design to where I'd like it to be. It's simple, easy to read and very fast. I tried looking at it in a couple of different view ports using <a href="https://developer.apple.com/videos/play/wwdc2015-505/">Safari's Responsive Design Mode</a> and it made me even more sure about what I'm doing here. </p>
 <p>I understand that there are a lot of css/javascript frameworks out there and it would have been <strong>A LOT</strong> easier just to pick something like that and start posting. There is something to be said about just focusing on the actual words that go in the blog instead of how it looks like. I wanted my site to reflect me and what I'm about.</p>
-<p><span class='newthought'>This is a message to me</span> that I can complete the goals that I set out to do. It might take me a while but this has been so worth it.</p>
+<p>{% newthought This is a message to me%} that I can complete the goals that I set out to do. It might take me a while but this has been so worth it.</p>
 <h1>Next up</h1>
 <p>Well, the initial design is done but there are a couple more things that I should probably finish up. </p>
 <ol>
 <li>Finish the rest of the tags (marginimage, columnimage)</li>
-<li>Add the analytics <label for="analytical" class="margin-toggle sidenote-number"></label><input type="checkbox" id="analytical" class="margin-toggle" /><span class="sidenote">Not a real priority because I don</span></li>
+<li>Add the analytics {% sidenote "analytical" "Not a real priority because I don't feel a need to know how many people have visited the site at this point in time. " %}</li>
 <li>Clean up the Archive page</li>
 <li>Create a 404 page</li>
-<li>Decrease the spacing between multiple footnotes<sup id="fnref:footnotes"><a class="footnote-ref" href="#fn:footnotes" rel="footnote">1</a></sup></li>
-<li>Clean up the regular expressions used to parse for the plugins <label for="irregular" class="margin-toggle">&#8853;</label><input type="checkbox" id="irregular" class="margin-toggle" /><span class="marginnote">During the process of trying to figure out how to do this theme, I spent a lot of time whether to do this in pelican as a plugin or the python markdown. I am happy that it is working but I am not happy with how fragile it is.</span></li>
+<li>Decrease the spacing between multiple footnotes<sup id="fnref-footnotes"><a class="footnote-ref" href="#fn-footnotes">1</a></sup></li>
+<li>Clean up the regular expressions used to parse for the plugins {% marginnote "irregular" "During the process of trying to figure out how to do this theme, I spent a lot of time whether to do this in pelican as a plugin or the python markdown. I am happy that it is working but I am not happy with how fragile it is." %}</li>
 <li>Discuss Comments</li>
 <li>Create options to make it easier to go to categories and tags</li>
 <li>OpenGraph</li>
 </ol>
-<p>I've done a couple comparisons with other pelican templates and I feel that I should have some of this ready for other users who want to try out the Tufte style without worry so much about how it fits with what a website is supposed to do<sup id="fnref:goals"><a class="footnote-ref" href="#fn:goals" rel="footnote">2</a></sup>.</p>
+<p>I've done a couple comparisons with other pelican templates and I feel that I should have some of this ready for other users who want to try out the Tufte style without worry so much about how it fits with what a website is supposed to do<sup id="fnref-goals"><a class="footnote-ref" href="#fn-goals">2</a></sup>.</p>
 <p>Well, it is getting kind of late for me here and I've got to push the button to make this public to the world.</p>
 <div class="footnote">
-<hr />
+<hr>
 <ol>
-<li id="fn:footnotes">
-<p>When I was first introduced to markdown, one of the things I thought was the coolest was the fact that you could have these little babies to put on the bottom of the page. If you look through my archieves you'll see that I use them off and on to do my writing. Some websites have them at the end or use a popup to show them when you click on them. I think I'll probably move to side and margin notes. Either way, when you get two or more they really start eating up space.&#160;<a class="footnote-backref" href="#fnref:footnotes" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<li id="fn-footnotes">
+<p>When I was first introduced to markdown, one of the things I thought was the coolest was the fact that you could have these little babies to put on the bottom of the page. If you look through my archieves you'll see that I use them off and on to do my writing. Some websites have them at the end or use a popup to show them when you click on them. I think I'll probably move to side and margin notes. Either way, when you get two or more they really start eating up space.&#160;<a class="footnote-backref" href="#fnref-footnotes" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
-<li id="fn:goals">
-<p>It took me a lot of time to pick a template when I first came to pelican and even then I found myself modifying it. &#160;<a class="footnote-backref" href="#fnref:goals" rev="footnote" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+<li id="fn-goals">
+<p>It took me a lot of time to pick a template when I first came to pelican and even then I found myself modifying it. &#160;<a class="footnote-backref" href="#fnref-goals" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>	
@@ -197,14 +204,14 @@ status: published    </p>
 <p class="subtitle"><time datetime="2015-12-07T21:27:48-08:00">Mon 07 December 2015</time><label for="testing-the-plugins" class="margin-toggle"> ⊕</label><input type="checkbox" id="testing-the-plugins" class="margin-toggle" /> <span class="marginnote">Category: <a href="http://quotidianquest.com/category/blogging.html">blogging</a><br />
  #<a href="http://quotidianquest.com/tag/tufte.html">tufte</a></span></p>
 </header><p>This is just a quick little page that will have some examples of notes used in the Tufte style.</p>
-<p>Anyway, I hope this<label for="Basic-Marginnote" class="margin-toggle">&#8853;</label><input type="checkbox" id="Basic-Marginnote" class="margin-toggle" /><span class="marginnote">Margin notes can be used for more than just putting information about a particular article.</span> works or I'm going to have to work on it some more.</p>
+<p>Anyway, I hope this{% marginnote "Basic-Marginnote" "Margin notes can be used for more than just putting information about a particular article." %} works or I'm going to have to work on it some more.</p>
 <p>Also, I've got to work on sidenotes as well.</p>
 <p>Something else that I want to work on...</p>
-<p><img src="images/ihnatko.jpg" alt="hey" title="hey"></p>
+<p>{% img images/ihnatko.jpg hey %}</p>
 <blockquote>
 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
 </blockquote>
-<p>layoffs Instagram Paul Steiger privacy commons-based peer production Arianna mathewi but what's the business model Tim Carmody metered model Wikipedia, hashtag Snarkmarket digital first hot news doctrine CPC learnings Free Darko Colbert bump.<label for="sidenote-id" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sidenote-id" class="margin-toggle" /><span class="sidenote">This is a random sidenote</span> recontextualize free as in beer privacy A.J. Liebling RSS Free Darko dying Mozilla recontextualize, Article Skimmer information wants to be free Colbert bump privacy production of innocence privacy metered model, #twittermakesyoustupid Steve Jobs copyboy Demand Media WordPress Fuego West Seattle Blog.</p>	
+<p>layoffs Instagram Paul Steiger privacy commons-based peer production Arianna mathewi but what's the business model Tim Carmody metered model Wikipedia, hashtag Snarkmarket digital first hot news doctrine CPC learnings Free Darko Colbert bump.{% sidenote 'sidenote-id' 'This is a random sidenote' %} recontextualize free as in beer privacy A.J. Liebling RSS Free Darko dying Mozilla recontextualize, Article Skimmer information wants to be free Colbert bump privacy production of innocence privacy metered model, #twittermakesyoustupid Steve Jobs copyboy Demand Media WordPress Fuego West Seattle Blog.</p>	
 </article>
 <article class="post">
 
@@ -218,22 +225,22 @@ status: published    </p>
 </h1>
 <p class="subtitle"><time datetime="2015-10-23T23:36:46-07:00">Fri 23 October 2015</time><label for="what-do-i-want-the-site-to-look-like" class="margin-toggle"> ⊕</label><input type="checkbox" id="what-do-i-want-the-site-to-look-like" class="margin-toggle" /> <span class="marginnote">Category: <a href="http://quotidianquest.com/category/blogging.html">blogging</a><br />
  #<a href="http://quotidianquest.com/tag/website.html">website</a> #<a href="http://quotidianquest.com/tag/tufte.html">tufte</a> #<a href="http://quotidianquest.com/tag/design.html">design</a></span></p>
-</header><p>I just wanted to take a moment to write about what I want my new website to look like. I've been hee-hawing it for years now and I'm starting working on it again. I've found some inspiration in using the Tufte style<sup id="fnref:tufte"><a class="footnote-ref" href="#fn:tufte" rel="footnote">1</a></sup> and I'll be documenting my changes on this very site. It gives me something to look every time I open up a new safari window.</p>
+</header><p>I just wanted to take a moment to write about what I want my new website to look like. I've been hee-hawing it for years now and I'm starting working on it again. I've found some inspiration in using the Tufte style<sup id="fnref-tufte"><a class="footnote-ref" href="#fn-tufte">1</a></sup> and I'll be documenting my changes on this very site. It gives me something to look every time I open up a new safari window.</p>
 <h1>Some of the Styles</h1>
 <p>As you'll notice the site should be some what simple because I'm learning how to add all the features in pelican using liquid tags. I was thinking about adding a plugin to pelican to turn footnotes into side notes, but I'll hold that off until I get some time to really play with the site design.</p>
 <h1>Continued Goals for the Site</h1>
 <p>I still have a desire to teach and help people. I've also found that one of those people should be myself. I want to show code examples.</p>
-<div class="highlight"><pre><span class="k">print</span> <span class="s">&quot;hello, world&quot;</span>
+<div class="highlight"><pre><span></span><span class="k">print</span> <span class="s2">&quot;hello, world&quot;</span>
 </pre></div>
 
 
 <p>I'm hoping to have some simple animations and just other stuff.</p>
 <p>But first, I'd like to make the site functional on my own.</p>
 <div class="footnote">
-<hr />
+<hr>
 <ol>
-<li id="fn:tufte">
-<p>Honestly, I came across the <a href="https://github.com/edwardtufte/tufte-css">Tufte CSS project</a> and then looked for more information about the guy on <a href="https://www.edwardtufte.com/tufte/">his webpage</a> and <a href="https://en.wikipedia.org/wiki/Edward_Tufte">wikipedia</a>&#160;<a class="footnote-backref" href="#fnref:tufte" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<li id="fn-tufte">
+<p>Honestly, I came across the <a href="https://github.com/edwardtufte/tufte-css">Tufte CSS project</a> and then looked for more information about the guy on <a href="https://www.edwardtufte.com/tufte/">his webpage</a> and <a href="https://en.wikipedia.org/wiki/Edward_Tufte">wikipedia</a>&#160;<a class="footnote-backref" href="#fnref-tufte" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>	
@@ -290,16 +297,16 @@ status: published    </p>
 </a>
 </h1>
 <p class="subtitle"><time datetime="2012-01-25T10:41:34-08:00">Wed 25 January 2012</time><label for="hyde-doc-suck" class="margin-toggle"> ⊕</label><input type="checkbox" id="hyde-doc-suck" class="margin-toggle" /> <span class="marginnote">Category: <a href="http://quotidianquest.com/category/blogging.html">blogging</a><br />
-</span></p>
+ #<a href="http://quotidianquest.com/tag/hyde.html">hyde</a></span></p>
 </header><p>I recently came across as <a href="http://groups.google.com/group/hyde-dev/browse_thread/thread/db9213433190487f" title="Message post from Google Groups">email</a> from a goggle group that I'm part of that is centered around <a href="https://github.com/hyde/hyde" title="Hyde on GitHub">Hyde</a> which is what I'm currently using to statically generate my website/blog. The email was basically asking "What's up with the docs?" and all I can do is just shake my head in agreement. </p>
 <p>The problem is that a significant amount of these open source projects are created by people whose talent is mostly with the creation of the tools and not with the associatated docs. This leaves a lot of people in the dust because people see the end result and want to have something cool like that, but don't have the time/desire to dive into the code and learn how it works. </p>
-<p>It's not because they are lazy, it because we are all busy people and sometimes we don't need to know every aspect of something to use it. For example, you don't have to be a mechanic to drive your car<sup id="fnref:car"><a class="footnote-ref" href="#fn:car" rel="footnote">1</a></sup>.</p>
+<p>It's not because they are lazy, it because we are all busy people and sometimes we don't need to know every aspect of something to use it. For example, you don't have to be a mechanic to drive your car<sup id="fnref-car"><a class="footnote-ref" href="#fn-car">1</a></sup>.</p>
 <p>Honestly, I wish I could help this guy out because I've had similar problems with this and other projects and it can be daunting to stick your head out and ask the questions. But you have to have the <a href="http://www.43folders.com/2008/12/01/courageous-sucking" title="Photography, and the Tolerance for Courageous Sucking via 43folders">courage to suck</a> in order to get any better at something.</p>
 <div class="footnote">
-<hr />
+<hr>
 <ol>
-<li id="fn:car">
-<p>... but a little more knowledged in this area can save you a ton of money.&#160;<a class="footnote-backref" href="#fnref:car" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<li id="fn-car">
+<p>... but a little more knowledged in this area can save you a ton of money.&#160;<a class="footnote-backref" href="#fnref-car" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>	
