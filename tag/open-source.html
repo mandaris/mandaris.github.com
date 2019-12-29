@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en-us" prefix="og: http://ogp.me/ns#"
+       xmlns:og="http://ogp.me/ns#"
+       xmlns:article="http://ogp.me/ns/article#"
+       xmlns:blogPosting="http://ogp.me/ns/blogPosting#"
+       xmlns:fb="http://www.facebook.com/2008/fbml"
+       xml:lang="en-us">
+<head>
+
+<meta charset="utf-8" />
+<title>open source - Mandaris Moore</title>
+<meta name="author" class="p-author h-card" content="Mandaris" />
+<meta property="site_name" content="Mandaris Moore" />
+<meta name="description" content="The personal website for Mandaris Moore." />
+<base href=".." />
+<meta name="generator" content="Pelican" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#1b5a53" />
+<link rel="stylesheet" type="text/css" href="/theme/css/main.css" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="icon" type="image/png" href="/favicon.png" />
+<link rel="apple-touch-icon-precomposed"
+      href="/apple-touch-icon-precomposed.png" />
+
+<!-- Feed information -->
+<link href="https://mandaris.github.com/feeds/atom.xml"
+      type="application/atom+xml"
+      rel="alternate" title="Mandaris Moore ALL Atom Feed" />
+
+<!--- Other Social Media Tags (See README.md) --->
+<!-- OpenGraph Info -->
+<meta property="og:title" content="Mandaris Moore" />
+<meta property="og:type" content="website" />
+<meta property="og:description" content="The personal website for Mandaris Moore."/>
+<meta property="og:url" content=".." />
+<meta property="og:locale" content="en-us" />
+<meta property="og:image" content="../favicon.png" />
+<meta property="og:image:alt" content="A person in a gear." />
+<!-- Micro.blog User Name -->
+<link href="https://micro.blog/mandaris" rel="me" />
+<!-- IndieWeb sign-in -->
+<link href="https://github.com/mandaris"
+      rel="me" class="u-url" />
+<!-- Twitter Specific Info -->
+<meta name="twitter:site" content="@mandaris" />
+<meta name="twitter:creator" content="@mandaris" />
+<meta name="twitter:card" content="summary_large_image" />
+<link href="https://twitter.com/mandaris"
+      rel="me" class="u-url" />
+</head>
+
+<body itemscope itemtype="https://schema.org/Blog">
+<meta itemprop="description" content="The personal website for Mandaris Moore." />
+<header role="banner">
+<h1 class="websitetitle"><a href="..">Mandaris Moore</a></h1>
+<nav itemscope itemtype="https://schema.org/SiteNavigationElement"
+    class="navmenu" id="navmenu" >
+<ul>
+  <li>
+    <a class="navitemlink" href="../archives.html">Archive</a>
+  </li>
+  <li><a class="navitemlink" href="../pages/about.html">
+     About
+  </a></li>
+  <li><a class="navitemlink" href="../pages/projects.html">
+     Projects
+  </a></li>
+</ul>
+</nav>
+</header>
+
+<hr />
+<main class="articlelisting container">
+<article
+  class="post hentry h-entry content"
+  itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+
+<header class="post-header">
+  <h2
+    itemprop="headline title p-name name"
+    class="title p-name post-title">
+    <a
+      rel="bookmark"
+      class="u-url"
+      title="Getting mdx_downheader to work «Mandaris Moore»"
+      href="2018/07/getting-mdx_downheader-to-work.html"
+      itemprop="url">
+      Getting mdx_downheader to work
+    </a>
+  </h2>
+</header><div class="e-content post-body" itemprop="articleBody">
+<p>In my <a href="/2018/06/blog-accomplishments.html" title="Blog Accomplishments «Mandaris Moore»">last post</a>, I left off with a list of things that I wanted to work on for the next release of the design of the blog. I'm still changing the header at the top of the page and I've been working on improving the contrast of the colors you see for links to make it easier to read. Something you can't spot just by looking is the fact that <code>&lt;h1&gt; - &lt;h3&gt;</code> tags don't correspond to the breakdown of the syntax of the rest of the site.</p>
+<figure><img alt="A small sample of the code that was being generated." src="images/sample-of-previous-syntax.png" title="Generated HTML in Sublime looks cool!"><figcaption>A small sample of the code that was being generated.</figcaption>
+</figure>
+<h3 id="what-do-i-see-on-the-internet">What do I see on the internet</h3>
+<p>I feel that a lot of the sites that are on the internet only use the <code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code>, <code>&lt;h3&gt;</code> tags and looking at some of the templates that I've come across for pelican use css classes to differentiate them in the design. </p>
+<p>I don't have a problem with that, but I felt that it doesn't help those that might be using some kind of screen reader or parsing system<sup id="fnref-seo"><a class="footnote-ref" href="#fn-seo">1</a></sup>.</p>
+<h3 id="searching-for-a-solution">Searching for a solution</h3>
+<p>Once again, I started looking for a place where this had already been fixed and quickly found one that would make sure that the html that <a href="http://docs.getpelican.com/en/stable/index.html">python-markdown</a> would give me would match what I was expecting to give to my <a href="https://github.com/mandaris/modest" title="A very simple template for pelican">template</a>.</p>
+<p><a href="https://github.com/cprieto">Christian Prieto</a> had already come up with this <a href="https://github.com/cprieto/mdx_downheader" title="Python Markdown Down Header Extension">handy solution</a> in 2016 and had put some tests and an example of how to incorporate it into pelican.</p>
+<h3 id="but-there-are-further-complications">But there are further complications</h3>
+<p>Unfortunately, pelican has changed since the original and I wasn't able to get the solution to work. The readme says to add the following:</p>
+<div class="highlight"><pre><span></span><span class="n">MD_EXTENSIONS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;downheader&#39;</span><span class="p">]</span>
+</pre></div>
+
+
+<p>But the latest documentation found <a href="http://docs.getpelican.com/en/stable/settings.html" title="Pelican Settings">here</a>, have the markdown default to be defined as a dictionary and not an array<sup id="fnref-doc"><a class="footnote-ref" href="#fn-doc">2</a></sup>. The simplest way to get it to work is to change your <code>pelicanconfig.py</code> to have the following code.</p>
+<div class="highlight"><pre><span></span><span class="c1"># Markdown Plugins</span>
+<span class="n">MARKDOWN</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;extension_configs&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;markdown.extensions.codehilite&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;css_class&#39;</span><span class="p">:</span> <span class="s1">&#39;highlight&#39;</span><span class="p">},</span>
+        <span class="s1">&#39;markdown.extensions.extra&#39;</span><span class="p">:</span> <span class="p">{},</span>
+        <span class="s1">&#39;markdown.extensions.meta&#39;</span><span class="p">:</span> <span class="p">{},</span>
+<span class="hll">        <span class="s1">&#39;downheader&#39;</span><span class="p">:</span> <span class="p">{},</span>
+</span>    <span class="p">},</span>
+    <span class="s1">&#39;output_format&#39;</span><span class="p">:</span> <span class="s1">&#39;html5&#39;</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>For me, I had to specify a value because the title of my site is in a <code>&lt;h1&gt;</code> tag and the article headers are in <code>&lt;h2&gt;</code>.</p>
+<div class="highlight"><pre><span></span><span class="c1"># Markdown Plugins</span>
+<span class="n">MARKDOWN</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;extension_configs&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;markdown.extensions.codehilite&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;css_class&#39;</span><span class="p">:</span> <span class="s1">&#39;highlight&#39;</span><span class="p">},</span>
+        <span class="s1">&#39;markdown.extensions.extra&#39;</span><span class="p">:</span> <span class="p">{},</span>
+        <span class="s1">&#39;markdown.extensions.meta&#39;</span><span class="p">:</span> <span class="p">{},</span>
+<span class="hll">        <span class="s1">&#39;downheader&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;levels&#39;</span><span class="p">:</span> <span class="s1">&#39;2&#39;</span><span class="p">},</span>
+</span>    <span class="p">},</span>
+    <span class="s1">&#39;output_format&#39;</span><span class="p">:</span> <span class="s1">&#39;html5&#39;</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>I've since made a <a href="https://github.com/cprieto/mdx_downheader/pull/5">pull request</a> so that others can get around this as well.</p>
+<h3 id="conclusion">Conclusion</h3>
+<p>I'm happier and happier with the way that the site is coming together, but I'm afraid of the amount of <a href="https://en.wikipedia.org/wiki/Technical_debt">technical debt</a> that the site is accruing as I go along. I've to to make the readme a priority for those who come after me and want to make this design better.</p>
+<p>I've also taken some time to just take the header and just make a <a href="https://github.com/mandaris/pelican-headers">standalone project</a> that demonstrates how it works. I points to the <code>simple</code> theme that comes with pelican so people can just download it after installing pelican, python-markdown and the mdx_downheader package.</p>
+<div class="footnote">
+<hr>
+<ol>
+<li id="fn-seo">
+<p>From what I've seen a lot of webcrawlers use the headers of a page to determine whether a site was worth putting in search results.&#160;<a class="footnote-backref" href="#fnref-seo" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn-doc">
+<p>This isn't the only place that has this, but I've been having trouble just getting the projects that I am using up to date. Heck, my <a href="https://github.com/mandaris/Modest/blob/master/README.md">readme is one line</a> at this point!&#160;<a class="footnote-backref" href="#fnref-doc" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+</div>
+
+<p class="readmore u-url">
+  <a
+    rel="bookmark"
+    title="Getting mdx_downheader to work «Mandaris Moore»"
+    href="2018/07/getting-mdx_downheader-to-work.html"
+    itemprop="url">Permalink
+  </a>
+</p>
+<footer>
+<p class="articleFooterP">Category:
+	<a class="p-category" href="../category/blogging.html">
+    <span itemprop="articleSection">blogging</span>
+  </a>
+  <span class="rightside">
+    <time
+      class="dt-published"
+      datetime="2018-07-03T22:38:02-07:00"
+      itemprop="dateCreated datePublished pubdate">
+        Tue 03 July 2018
+    </time>
+  </span>
+  <br />  <span itemprop="keywords">
+      <a
+        class="tag"
+        rel="category tag"
+        href="../tag/programming.html">
+          programming
+      </a>
+      <a
+        class="tag"
+        rel="category tag"
+        href="../tag/open-source.html">
+          open source
+      </a>
+      <a
+        class="tag"
+        rel="category tag"
+        href="../tag/python.html">
+          python
+      </a>
+      <a
+        class="tag"
+        rel="category tag"
+        href="../tag/pelican.html">
+          pelican
+      </a>
+  </span>
+</p>
+</footer>
+</article>
+<hr />
+</main>
+  <nav id="pagination">    <span id="first_page" class="a inactive">&#60;&#60;</span>
+    <span id="previous_page" class="a inactive">&#60;</span>
+    <span class="a active">1</span>
+    <span id="next_page" class="a inactive">&#62;</span>
+    <span id="last_page" class="a inactive">&#62;&#62;</span>
+</nav>
+<footer itemscope itemtype="https://schema.org/WPFooter"
+    role="contentinfo" class="baseFooter">
+  <p>All works created by
+    <span itemprop="author" itemscope itemtype=https://schema.org/Person>
+    <span class="p-author h-card" itemprop="name">Mandaris</span></span>.
+  </p>
+  <p>Powered by <a href="http://pelican.readthedocs.org">Pelican</a></p>
+</footer>
+</body>
+</html>
