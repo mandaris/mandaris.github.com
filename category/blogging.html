@@ -1,324 +1,1027 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-us" prefix="og: http://ogp.me/ns#"
+       xmlns:og="http://ogp.me/ns#"
+       xmlns:article="http://ogp.me/ns/article#"
+       xmlns:blogPosting="http://ogp.me/ns/blogPosting#"
+       xmlns:fb="http://www.facebook.com/2008/fbml"
+       xml:lang="en-us">
 <head>
-  <meta charset="utf-8" />
-  <title>blogging - Quotidian Quest</title>
-  <meta name="author" content="Mandaris" />
-  <base href="http://quotidianquest.com">
-  <link rel="stylesheet" type="text/css" href="/theme/tufte-css/tufte.css" />
-  <link rel="stylesheet" type="text/css" href="/theme/css/main.css" />
-  <!--
-  Original link to favicon
-  <link rel="shortcut icon" type="text/css" href="/favicon.ico" />
-  -->
-  <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png" />
-  <link rel="shortcut icon" href="/favicon.ico" />
-  <link rel="icon" type="image/png" href="/favicon.png" />
-  <link rel="mask-icon" href="/favicon.svg" color="black" />
 
-  <link href="http://quotidianquest.com/feeds/atom.xml" type="application/atom+xml"
-        rel="alternate" title="Quotidian Quest ALL Atom Feed" />
+<meta charset="utf-8" />
+<title>Mandaris Moore</title>
+<meta name="author" class="p-author h-card" content="Mandaris" />
+<meta property="site_name" content="Mandaris Moore" />
+<meta name="description" content="The personal website for Mandaris Moore." />
+<base href=".." />
+<meta name="generator" content="Pelican" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#1b5a53" />
+<link rel="stylesheet" type="text/css" href="/theme/css/main.css" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="icon" type="image/png" href="/favicon.png" />
+<link rel="apple-touch-icon-precomposed"
+      href="/apple-touch-icon-precomposed.png" />
 
-  <!-- OpenGraph Info -->
-  <meta property="og:title" content="Quotidian Quest"/>
-  <meta property="og:type" content="website"/>
-  <meta property="og:description" content="The personal website for Mandaris Moore."/>
-  <meta property="og:url" content="http://quotidianquest.com"/>
+<!-- Feed information -->
+<link href="https://mandaris.github.com/feeds/atom.xml"
+      type="application/atom+xml"
+      rel="alternate" title="Mandaris Moore ALL Atom Feed" />
+
+<!--- Other Social Media Tags (See README.md) --->
+<!-- OpenGraph Info -->
+<meta property="og:title" content="Mandaris Moore" />
+<meta property="og:type" content="website" />
+<meta property="og:description" content="The personal website for Mandaris Moore."/>
+<meta property="og:url" content=".." />
+<meta property="og:locale" content="en-us" />
+<meta property="og:image" content="../favicon.png" />
+<meta property="og:image:alt" content="A person in a gear." />
+<!-- Micro.blog User Name -->
+<link href="https://micro.blog/mandaris" rel="me" />
+<!-- IndieWeb sign-in -->
+<link href="https://github.com/mandaris"
+      rel="me" class="u-url" />
+<!-- Twitter Specific Info -->
+<meta name="twitter:site" content="@mandaris" />
+<meta name="twitter:creator" content="@mandaris" />
+<meta name="twitter:card" content="summary_large_image" />
+<link href="https://twitter.com/mandaris"
+      rel="me" class="u-url" />
 </head>
 
-<body>
-<header>
-  <h1 class="websitetitle"><a href="http://quotidianquest.com">Quotidian Quest</a></h1>
-  <nav class="navmenu" id="navmenu">
-    <li><a class="navitemlink" href="http://quotidianquest.com/archives.html">Archive</a></li>
-    <li><a class="navitemlink" href="http://quotidianquest.com/pages/about.html">About</a></li>
-    <li><a class="navitemlink" href="http://quotidianquest.com/pages/projects.html">Projects</a></li>
-   </nav>
- </header>
-<main class="articlelisting">
+<body itemscope itemtype="https://schema.org/Blog">
+<meta itemprop="description" content="The personal website for Mandaris Moore." />
+<header role="banner">
+<h1 class="websitetitle"><a href="..">Mandaris Moore</a></h1>
+<nav itemscope itemtype="https://schema.org/SiteNavigationElement"
+    class="navmenu" id="navmenu" >
+<ul>
+  <li>
+    <a class="navitemlink" href="../archives.html">Archive</a>
+  </li>
+  <li><a class="navitemlink" href="../pages/about.html">
+     About
+  </a></li>
+  <li><a class="navitemlink" href="../pages/projects.html">
+     Projects
+  </a></li>
+</ul>
+</nav>
+</header>
 
-<article class="post">
+<hr />
+<main class="articlelisting container">
+<article
+  class="post hentry h-entry content"
+  itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
 
 <header class="post-header">
-<h1>
-<a rel="bookmark"
-   href="2016/08/diagrams-in-the-post.html"
-   title="Diagrams in the post «Quotidian Quest»">
-   Diagrams in the post
-</a>
-</h1>
-<p class="subtitle"><time datetime="2016-08-03T00:08:15-07:00">Wed 03 August 2016</time><label for="diagrams-in-the-post" class="margin-toggle"> ⊕</label><input type="checkbox" id="diagrams-in-the-post" class="margin-toggle" /> <span class="marginnote">Category: <a href="http://quotidianquest.com/category/blogging.html">blogging</a><br />
- #<a href="http://quotidianquest.com/tag/pelican.html">pelican</a> #<a href="http://quotidianquest.com/tag/diagrams.html">diagrams</a> #<a href="http://quotidianquest.com/tag/plantuml.html">plantuml</a></span></p>
-</header><p>I thought I would switch gears for a second and see if I could get pelican to make certain diagrams for my blog posts.</p>
-<p>::uml:: format="svg"  classes="sequence" alt="Sample sequence diagram"
-  Alice -&gt; Bob: Authentication Request
-  Bob --&gt; Alice: Authentication Response</p>
-<p>Alice -&gt; Bob: Another authentication Request
-  Alice &lt;-- Bob: another authentication Response
-::end-uml::</p>
-<p>I hope that works.</p>	
+  <h2
+    itemprop="headline title p-name name"
+    class="title p-name post-title">
+    <a
+      rel="bookmark"
+      class="u-url"
+      title="Updating the meta data «Mandaris Moore»"
+      href="2019/01/updating-the-meta-data.html"
+      itemprop="url">
+      Updating the meta data
+    </a>
+  </h2>
+</header><div class="e-content post-body" itemprop="articleBody">
+<p>The first thing I did with this site this year other that work on a plugin that I'm not ready to release to the world is update the meta data. I don't know if you - the reader- will see a difference but I'm pretty proud of what I did.</p>
+<p>The next thing is to update all the catefory tags to make them more consistent.</p>
+</div>
+
+<p class="readmore u-url">
+  <a
+    rel="bookmark"
+    title="Updating the meta data «Mandaris Moore»"
+    href="2019/01/updating-the-meta-data.html"
+    itemprop="url">Permalink
+  </a>
+</p>
+<footer>
+<p class="articleFooterP">Category:
+	<a class="p-category" href="../category/blogging.html">
+    <span itemprop="articleSection">blogging</span>
+  </a>
+  <span class="rightside">
+    <time
+      class="dt-published"
+      datetime="2019-01-04T22:25:22-08:00"
+      itemprop="dateCreated datePublished pubdate">
+        Fri 04 January 2019
+    </time>
+  </span>
+  <br />  <span itemprop="keywords">
+      <a
+        class="tag"
+        rel="category tag"
+        href="../tag/coding.html">
+          coding
+      </a>
+      <a
+        class="tag"
+        rel="category tag"
+        href="../tag/details.html">
+          details
+      </a>
+  </span>
+</p>
+</footer>
 </article>
-<article class="post">
+<hr />
+<article
+  class="post hentry h-entry content"
+  itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
 
 <header class="post-header">
-<h1>
-<a rel="bookmark"
-   href="2016/03/tufte-margin-figure-and-column-images.html"
-   title="Tufte margin figure and column images «Quotidian Quest»">
-   Tufte margin figure and column images
-</a>
-</h1>
-<p class="subtitle"><time datetime="2016-03-16T11:02:52-07:00">Wed 16 March 2016</time><label for="tufte-margin-figure-and-column-images" class="margin-toggle"> ⊕</label><input type="checkbox" id="tufte-margin-figure-and-column-images" class="margin-toggle" /> <span class="marginnote">Category: <a href="http://quotidianquest.com/category/blogging.html">blogging</a><br />
- #<a href="http://quotidianquest.com/tag/misc.html">misc</a></span></p>
-</header><p>There are a couple things that I still have to finish for the website theme plugin. They are margin images and images in the main column. It should be to hard and in fact this post that you are reading is an example of me using it.</p>
-<p>In fact, I'm going to put a margin image here on the side followed by a small table of what I had for breakfast the last three days.</p>
-<p>{% marginfigure "margin-figure-id" "../../images/small_me.jpg" "This is guy keeps getting better!" %}</p>
-<table>
-<thead>
-<tr>
-<th align="left">Day of week</th>
-<th align="left">Breakfast</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">Sunday</td>
-<td align="left">Eggs and fruit</td>
-</tr>
-<tr>
-<td align="left">Monday</td>
-<td align="left">Protein Shake</td>
-</tr>
-<tr>
-<td align="left">Tuesday</td>
-<td align="left">Leftover serial</td>
-</tr>
-</tbody>
-</table>
-<p>Wow, wasn't that amazing{% marginnote "reflection" "Although this all looks nice, I think this might be the last update to the code for a while." %}
-. Now that we got that working we can get the column images working too.</p>
-<p>Now to follow up with the column image. I hope that it looks cool in your browser of choice.</p>
-<p>{% maincolumn "../../images/napoleons-march.png" "This example was lefted directly from the Tufte website. I hope that it works."%}</p>
-<p>Well, until next time!</p>	
-</article>
-<article class="post">
-
-<header class="post-header">
-<h1>
-<a rel="bookmark"
-   href="2016/02/a-small-return.html"
-   title="A small return «Quotidian Quest»">
-   A small return
-</a>
-</h1>
-<p class="subtitle"><time datetime="2016-02-07T20:33:36-08:00">Sun 07 February 2016</time><label for="a-small-return" class="margin-toggle"> ⊕</label><input type="checkbox" id="a-small-return" class="margin-toggle" /> <span class="marginnote">Category: <a href="http://quotidianquest.com/category/blogging.html">blogging</a><br />
- #<a href="http://quotidianquest.com/tag/misc.html">misc</a></span></p>
-</header><p>I recently pushed the button to update my site and push my new theme to the world. It felt good to get it out there because it has been dormant for years now and I had thought about shutting it down sometimes. During the time that I had <em>NOT</em> updated, I had switched jobs and kind of doubted everything I was working on.</p>
-<p>In a lot of ways, the doubt in my own abilities was part of the reason that it took so long to update because I just didn't think that it was good enough. In my mind, I thought "If it's not perfect than I won't show anything at all".</p>
-<p>This is the wrong way of thinking about it. </p>
-<p>It's almost childish in a way and reminds me of how I'd refuse to write the steps when I was doing my math homework<sup id="fnref-homework"><a class="footnote-ref" href="#fn-homework">1</a></sup>.</p>
-<h1>So now what?</h1>
-<p>Well, I've got a new redesign that loads really fast and looks pretty cool. The next steps outside of the technical details that I put in my previous post is to find my direction of the site again.</p>
-<p>Currently, I'm using <a href="https://dayone.me">Day One</a> for my journal entries and although this is my personal site I don't think I'll be putting entries from there here (more likely is that this entry will be an entry).</p>
-<p>I think I'll probably put links to things that are really cool or some tutorials that I've been thinking about making.</p>
-<p>We'll have to see.</p>
-<div class="footnote">
-<hr>
-<ol>
-<li id="fn-homework">
-<p>It was something that a couple of high school friends would do. We thought it was cool to get the answer completely in our head without writing all the steps of logic down on paper. It was stupid because the teacher would give you partial credit if you showed your work. &#160;<a class="footnote-backref" href="#fnref-homework" title="Jump back to footnote 1 in the text">&#8617;</a></p>
-</li>
-</ol>
-</div>	
-</article>
-<article class="post">
-
-<header class="post-header">
-<h1>
-<a rel="bookmark"
-   href="2016/02/pushing-the-button.html"
-   title="Pushing the button «Quotidian Quest»">
-   Pushing the button
-</a>
-</h1>
-<p class="subtitle"><time datetime="2016-02-04T22:06:26-08:00">Thu 04 February 2016</time><label for="pushing-the-button" class="margin-toggle"> ⊕</label><input type="checkbox" id="pushing-the-button" class="margin-toggle" /> <span class="marginnote">Category: <a href="http://quotidianquest.com/category/blogging.html">blogging</a><br />
- #<a href="http://quotidianquest.com/tag/misc.html">misc</a></span></p>
-</header><p>category: blogging <br>
-tags: tufte, blog<br>
-status: published    </p>
-<p>Well, tonight is the night. I got the site design to where I'd like it to be. It's simple, easy to read and very fast. I tried looking at it in a couple of different view ports using <a href="https://developer.apple.com/videos/play/wwdc2015-505/">Safari's Responsive Design Mode</a> and it made me even more sure about what I'm doing here. </p>
-<p>I understand that there are a lot of css/javascript frameworks out there and it would have been <strong>A LOT</strong> easier just to pick something like that and start posting. There is something to be said about just focusing on the actual words that go in the blog instead of how it looks like. I wanted my site to reflect me and what I'm about.</p>
-<p>{% newthought This is a message to me%} that I can complete the goals that I set out to do. It might take me a while but this has been so worth it.</p>
-<h1>Next up</h1>
-<p>Well, the initial design is done but there are a couple more things that I should probably finish up. </p>
-<ol>
-<li>Finish the rest of the tags (marginimage, columnimage)</li>
-<li>Add the analytics {% sidenote "analytical" "Not a real priority because I don't feel a need to know how many people have visited the site at this point in time. " %}</li>
-<li>Clean up the Archive page</li>
-<li>Create a 404 page</li>
-<li>Decrease the spacing between multiple footnotes<sup id="fnref-footnotes"><a class="footnote-ref" href="#fn-footnotes">1</a></sup></li>
-<li>Clean up the regular expressions used to parse for the plugins {% marginnote "irregular" "During the process of trying to figure out how to do this theme, I spent a lot of time whether to do this in pelican as a plugin or the python markdown. I am happy that it is working but I am not happy with how fragile it is." %}</li>
-<li>Discuss Comments</li>
-<li>Create options to make it easier to go to categories and tags</li>
-<li>OpenGraph</li>
-</ol>
-<p>I've done a couple comparisons with other pelican templates and I feel that I should have some of this ready for other users who want to try out the Tufte style without worry so much about how it fits with what a website is supposed to do<sup id="fnref-goals"><a class="footnote-ref" href="#fn-goals">2</a></sup>.</p>
-<p>Well, it is getting kind of late for me here and I've got to push the button to make this public to the world.</p>
-<div class="footnote">
-<hr>
-<ol>
-<li id="fn-footnotes">
-<p>When I was first introduced to markdown, one of the things I thought was the coolest was the fact that you could have these little babies to put on the bottom of the page. If you look through my archieves you'll see that I use them off and on to do my writing. Some websites have them at the end or use a popup to show them when you click on them. I think I'll probably move to side and margin notes. Either way, when you get two or more they really start eating up space.&#160;<a class="footnote-backref" href="#fnref-footnotes" title="Jump back to footnote 1 in the text">&#8617;</a></p>
-</li>
-<li id="fn-goals">
-<p>It took me a lot of time to pick a template when I first came to pelican and even then I found myself modifying it. &#160;<a class="footnote-backref" href="#fnref-goals" title="Jump back to footnote 2 in the text">&#8617;</a></p>
-</li>
-</ol>
-</div>	
-</article>
-<article class="post">
-
-<header class="post-header">
-<h1>
-<a rel="bookmark"
-   href="2016/02/publishing-incompletes.html"
-   title="Publishing incompletes «Quotidian Quest»">
-   Publishing incompletes
-</a>
-</h1>
-<p class="subtitle"><time datetime="2016-02-02T06:06:15-08:00">Tue 02 February 2016</time><label for="publishing-incompletes" class="margin-toggle"> ⊕</label><input type="checkbox" id="publishing-incompletes" class="margin-toggle" /> <span class="marginnote">Category: <a href="http://quotidianquest.com/category/blogging.html">blogging</a><br />
- #<a href="http://quotidianquest.com/tag/misc.html">misc</a> #<a href="http://quotidianquest.com/tag/goals.html">goals</a></span></p>
-</header><p>Today, I've decided that I was going to push my website out to the masses before the end of the week. This is a personal blog and just because it isn't <em>perfect</em> it is something that I created and I want to take pride in the fact that I'm willing to get out there and work on something and make it better.</p>
-<p>Some of the things that I'd like to work on will be the handling of navigation at the top and figuring out how to get the tufte style to work properly with pelican. I attempted to get everything working with a liquid tag but the parser doesn't work well with blocklevel tags and wraps it in <code>&lt;p&gt;</code> so the expected css doesn't apply properly. This only applies to fullwidth figures but I'd like it all to be uniform.</p>	
-</article>
-<article class="post">
-
-<header class="post-header">
-<h1>
-<a rel="bookmark"
-   href="2015/12/testing-the-plugins.html"
-   title="Testing the plugins «Quotidian Quest»">
-   Testing the plugins
-</a>
-</h1>
-<p class="subtitle"><time datetime="2015-12-07T21:27:48-08:00">Mon 07 December 2015</time><label for="testing-the-plugins" class="margin-toggle"> ⊕</label><input type="checkbox" id="testing-the-plugins" class="margin-toggle" /> <span class="marginnote">Category: <a href="http://quotidianquest.com/category/blogging.html">blogging</a><br />
- #<a href="http://quotidianquest.com/tag/tufte.html">tufte</a></span></p>
-</header><p>This is just a quick little page that will have some examples of notes used in the Tufte style.</p>
-<p>Anyway, I hope this{% marginnote "Basic-Marginnote" "Margin notes can be used for more than just putting information about a particular article." %} works or I'm going to have to work on it some more.</p>
-<p>Also, I've got to work on sidenotes as well.</p>
-<p>Something else that I want to work on...</p>
-<p>{% img images/ihnatko.jpg hey %}</p>
-<blockquote>
-<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-</blockquote>
-<p>layoffs Instagram Paul Steiger privacy commons-based peer production Arianna mathewi but what's the business model Tim Carmody metered model Wikipedia, hashtag Snarkmarket digital first hot news doctrine CPC learnings Free Darko Colbert bump.{% sidenote 'sidenote-id' 'This is a random sidenote' %} recontextualize free as in beer privacy A.J. Liebling RSS Free Darko dying Mozilla recontextualize, Article Skimmer information wants to be free Colbert bump privacy production of innocence privacy metered model, #twittermakesyoustupid Steve Jobs copyboy Demand Media WordPress Fuego West Seattle Blog.</p>	
-</article>
-<article class="post">
-
-<header class="post-header">
-<h1>
-<a rel="bookmark"
-   href="2015/10/what-do-i-want-the-site-to-look-like.html"
-   title="What do I want the site to look like? «Quotidian Quest»">
-   What do I want the site to look like?
-</a>
-</h1>
-<p class="subtitle"><time datetime="2015-10-23T23:36:46-07:00">Fri 23 October 2015</time><label for="what-do-i-want-the-site-to-look-like" class="margin-toggle"> ⊕</label><input type="checkbox" id="what-do-i-want-the-site-to-look-like" class="margin-toggle" /> <span class="marginnote">Category: <a href="http://quotidianquest.com/category/blogging.html">blogging</a><br />
- #<a href="http://quotidianquest.com/tag/website.html">website</a> #<a href="http://quotidianquest.com/tag/tufte.html">tufte</a> #<a href="http://quotidianquest.com/tag/design.html">design</a></span></p>
-</header><p>I just wanted to take a moment to write about what I want my new website to look like. I've been hee-hawing it for years now and I'm starting working on it again. I've found some inspiration in using the Tufte style<sup id="fnref-tufte"><a class="footnote-ref" href="#fn-tufte">1</a></sup> and I'll be documenting my changes on this very site. It gives me something to look every time I open up a new safari window.</p>
-<h1>Some of the Styles</h1>
-<p>As you'll notice the site should be some what simple because I'm learning how to add all the features in pelican using liquid tags. I was thinking about adding a plugin to pelican to turn footnotes into side notes, but I'll hold that off until I get some time to really play with the site design.</p>
-<h1>Continued Goals for the Site</h1>
-<p>I still have a desire to teach and help people. I've also found that one of those people should be myself. I want to show code examples.</p>
-<div class="highlight"><pre><span></span><span class="k">print</span> <span class="s2">&quot;hello, world&quot;</span>
+  <h2
+    itemprop="headline title p-name name"
+    class="title p-name post-title">
+    <a
+      rel="bookmark"
+      class="u-url"
+      title="Adding a touch of the indie «Mandaris Moore»"
+      href="2018/09/adding-a-touch-of-the-indie.html"
+      itemprop="url">
+      Adding a touch of the indie
+    </a>
+  </h2>
+</header><div class="e-content post-body" itemprop="articleBody">
+<figure><img alt="Two puzzle pieces coming together via pexels.com" src="images/pexels-photo-164531.jpeg" title="Trying to put all the pieces together to get this working!"><figcaption>Two puzzle pieces coming together via pexels.com</figcaption>
+</figure>
+<p>The more that I dive into the quest of having my own spot on the internet, the more that I find that I have things that I want to do with it. Which means more research, experiments and late nights. </p>
+<p>Currently, I'm on a mission to get webmentions and pingback working on my site. It's been pretty slow going because I want to incorporate it into my current blogging workflow. A workflow that is currently not flowing at all<sup id="fnref-flow"><a class="footnote-ref" href="#fn-flow">1</a></sup>.</p>
+<p>Anyway, I thought I'd focus on making some changes so that I can make it fit better with all the new stuff that is coming out for the <a href="https://indieweb.org" title="The IndieWeb is a people-focused alternative to the &quot;corporate web&quot;.">indieweb</a>.</p>
+<h3 id="setting-up-sign-in">Setting up sign in</h3>
+<p>The first thing to do is make some changes to my template to allow for sign up according to the <a href="https://indieweb.org/How_to_set_up_web_sign-in_on_your_own_domain" title="How to setup web sign-in on your own domain.">web directions</a></p>
+<p>I thought the easiest ways of doing this was to use github<sup id="fnref-github"><a class="footnote-ref" href="#fn-github">2</a></sup> or twitter<sup id="fnref-twitter"><a class="footnote-ref" href="#fn-twitter">3</a></sup>. I pushed the github login near the top of the page so that it would look for it first.</p>
+<div class="highlight"><pre><span></span><span class="cp">{%</span> <span class="k">if</span> <span class="nv">GITHUB_USERNAME</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">&lt;!-- IndieWeb sign-in --&gt;</span>
+<span class="x">&lt;link rel=&quot;me&quot; href=&quot;https://github.com/</span><span class="cp">{{</span> <span class="nv">GITHUB_USERNAME</span><span class="cp">}}</span><span class="x">&quot; /&gt;</span>
+<span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span><span class="x"></span>
 </pre></div>
 
 
-<p>I'm hoping to have some simple animations and just other stuff.</p>
-<p>But first, I'd like to make the site functional on my own.</p>
+<p>I then included the twitter login information with the rest of the twitter information.</p>
+<div class="highlight"><pre><span></span><span class="cp">{%</span> <span class="k">if</span> <span class="nv">TWITTER_USERNAME</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">&lt;!-- Twitter Specific Info --&gt;</span>
+<span class="x">&lt;meta name=&quot;twitter:site&quot; content=&quot;@</span><span class="cp">{{</span> <span class="nv">TWITTER_USERNAME</span> <span class="cp">}}</span><span class="x">&quot; /&gt;</span>
+<span class="x">&lt;meta name=&quot;twitter:creator&quot; content=&quot;@</span><span class="cp">{{</span> <span class="nv">TWITTER_USERNAME</span> <span class="cp">}}</span><span class="x">&quot; /&gt;</span>
+<span class="x">&lt;meta name=&quot;twitter:card&quot; content=&quot;summary_large_image&quot; /&gt;</span>
+<span class="hll"><span class="x">&lt;link rel=&quot;me&quot; href=&quot;https://twitter.com/</span><span class="cp">{{</span> <span class="nv">TWITTER_USERNAME</span><span class="cp">}}</span><span class="x">&quot; /&gt;</span>
+</span><span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span><span class="x"></span>
+</pre></div>
+
+
+<h3 id="setting-up-webmentions">Setting up webmentions</h3>
+<p>After the login was set up, I added this to enable webmentions that are specific to any website that uses the template.</p>
+<div class="highlight"><pre><span></span><span class="cp">{%</span> <span class="k">if</span> <span class="nv">WEBMENTIONS</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">&lt;!-- Enabling webmention functionality --&gt;</span>
+<span class="x">&lt;link rel=&quot;pingback&quot; href=&quot;https://webmention.io/</span><span class="cp">{{</span> <span class="nv">WEBMENTIONS</span> <span class="cp">}}</span><span class="x">/xmlrpc&quot; /&gt;</span>
+<span class="x">&lt;link rel=&quot;webmention&quot; href=&quot;https://webmention.io/</span><span class="cp">{{</span> <span class="nv">WEBMENTIONS</span> <span class="cp">}}</span><span class="x">/webmention&quot; /&gt;</span>
+<span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span><span class="x"></span>
+</pre></div>
+
+
+<p>Unfortunately, I still need to test it and get it in front of other people to use. I'm going to lay the foundation down and do some research so that I can get ping backs to work properly.</p>
+<h3 id="more-meta-data">More meta data</h3>
+<p>From my reading of indieweb.org, I see that it doesn't use the <a href="https://mandarismoore.com/2018/06/blog-accomplishments.html" title="The Open Graph protocol enables any web page to become a rich object in a social graph.">OpenGraph</a> and <a href="https://schema.org" title="Schema.org is a set of extensible schemas that enables webmasters to embed structured data on their web pages for use by search engines and other applications.">Schema.org</a> that I <a href="https://mandarismoore.com/2018/06/blog-accomplishments.html" title="My accomplishments on this blog">put in</a> the theme. </p>
+<p>I'm hesitant to add these new tags because it lowers the validation scores, but I hope that it will help with accessibility and just make the site work better for those who want to find it.</p>
+<h3 id="conclusion">Conclusion</h3>
+<p>I've got a lot of things on my mind and places where I can make the site move forward. I hope that those who read this feel inspired and have some input on how to make the template better. </p>
+<p>If so, the theme can be found <a href="https://github.com/mandaris/modest" title="A very simple template for pelican">here</a>.</p>
 <div class="footnote">
 <hr>
 <ol>
-<li id="fn-tufte">
-<p>Honestly, I came across the <a href="https://github.com/edwardtufte/tufte-css">Tufte CSS project</a> and then looked for more information about the guy on <a href="https://www.edwardtufte.com/tufte/">his webpage</a> and <a href="https://en.wikipedia.org/wiki/Edward_Tufte">wikipedia</a>&#160;<a class="footnote-backref" href="#fnref-tufte" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<li id="fn-flow">
+<p>I've got three places that I can sit down and make a blog post. My iPhone, my iMac, and my laptop. Currently, my favorite is my laptop but I don't take it everywhere or use it as much. My mind is having trouble just feeling comfortable writing recently. Add the complication of where the files should be saved and how to update previous posts and I start feeling like throwing my hands up.&#160;<a class="footnote-backref" href="#fnref-flow" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn-github">
+<p>Which was just bought by Microsoft a couple month ago. I don't know if it's the new Microsoft which is pro open source.&#160;<a class="footnote-backref" href="#fnref-github" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn-twitter">
+<p>A dumpster fire of deplorables.&#160;<a class="footnote-backref" href="#fnref-twitter" title="Jump back to footnote 3 in the text">&#8617;</a></p>
 </li>
 </ol>
-</div>	
+</div>
+</div>
+
+<p class="readmore u-url">
+  <a
+    rel="bookmark"
+    title="Adding a touch of the indie «Mandaris Moore»"
+    href="2018/09/adding-a-touch-of-the-indie.html"
+    itemprop="url">Permalink
+  </a>
+</p>
+<footer>
+<p class="articleFooterP">Category:
+	<a class="p-category" href="../category/blogging.html">
+    <span itemprop="articleSection">blogging</span>
+  </a>
+  <span class="rightside">
+    <time
+      class="dt-published"
+      datetime="2018-09-03T20:38:48-07:00"
+      itemprop="dateCreated datePublished pubdate">
+        Mon 03 September 2018
+    </time>
+  </span>
+  <br />  <span itemprop="keywords">
+      <a
+        class="tag"
+        rel="category tag"
+        href="../tag/pelican.html">
+          pelican
+      </a>
+      <a
+        class="tag"
+        rel="category tag"
+        href="../tag/indie-web.html">
+          indie web
+      </a>
+      <a
+        class="tag"
+        rel="category tag"
+        href="../tag/programming.html">
+          programming
+      </a>
+  </span>
+</p>
+</footer>
 </article>
-<article class="post">
+<hr />
+<article
+  class="post hentry h-entry content"
+  itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
 
 <header class="post-header">
-<h1>
-<a rel="bookmark"
-   href="2014/04/why-keep-my-site.html"
-   title="Why Keep My Site? «Quotidian Quest»">
-   Why Keep My Site?
-</a>
-</h1>
-<p class="subtitle"><time datetime="2014-04-15T21:59:41-07:00">Tue 15 April 2014</time><label for="why-keep-my-site" class="margin-toggle"> ⊕</label><input type="checkbox" id="why-keep-my-site" class="margin-toggle" /> <span class="marginnote">Category: <a href="http://quotidianquest.com/category/blogging.html">blogging</a><br />
- #<a href="http://quotidianquest.com/tag/misc.html">misc</a></span></p>
-</header><p>My personal blog hasn't been changed in over a year. I've been waiting for that perfect moment when it would be ready for the world. Unfortunately, it's been stifled because of my own drive for it to be perfect before it sees the world.</p>
-<p>Honestly, I don't think anyone reads it and it's not going to get better unless I put some time into it.</p>
-<p>But before I put any more effort into it, I want to take some time and write about why I should keep it in the first place.</p>
-<h1>Web Technology is cool</h1>
-<p>I like working on the web. Until this point, I never thought that I'd be considering a career where I'd be working on the web, but I've spent a lot of my life working or playing with something that is some how web related.</p>
-<h2>Play around with different tech</h2>
-<p>At the bare minimum, having a website allows you to play around with what can happen on the inter-webs and make that part of what people find when they google, bing or duck-duck-go your name.</p>
-<h1>My Part of the web</h1>
-<p>Ultimately, having your own website is about control. I control the content and what it looks like and if I choose. I can shut it down.</p>
-<h2>Vanity</h2>
-<p>Me.</p>
-<p>All Me.</p>
-<h2>Provide a Place to Share My Opinion</h2>
-<p>I don't say much, but I know that this is the perfect platform because I choose to write here and I don't have to worry too much about saying "the wrong thing."</p>	
-</article>
-<article class="post">
+  <h2
+    itemprop="headline title p-name name"
+    class="title p-name post-title">
+    <a
+      rel="bookmark"
+      class="u-url"
+      title="Over-engineered Solution «Mandaris Moore»"
+      href="2018/07/over-engineered-solution.html"
+      itemprop="url">
+      Over-engineered Solution
+    </a>
+  </h2>
+</header><div class="e-content post-body" itemprop="articleBody">
+<figure><img alt="Geometry picture by pixabay." src="images/geometry-1023846_1280.jpg"><figcaption>Geometry picture by pixabay.</figcaption>
+</figure>
+<div class="toc"><span class="toctitle">Table of Contents</span><ul>
+<li><a href="#all-about-that-base">All about that base</a></li>
+<li><a href="#table-of-pain">Table of Pain</a><ul>
+<li><a href="#div-ided-we-stand-on-syntax">Div-ided we stand on syntax</a></li>
+<li><a href="#making-it-look-nice">Making it look nice</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<p>Previously, I had written about how I found a solution to my compulsion to make sure that the headers on my blog were on the write<sup id="fnref-write"><a class="footnote-ref" href="#fn-write">2</a></sup> level <a href="getting-mdx_downheader-to-work.html" title="Getting MDX_Downheader to work">here</a>.</p>
+<p>As with so many other things in life, there was an easier<sup id="fnref-easy"><a class="footnote-ref" href="#fn-easy">1</a></sup> solution that was built into python-markdown.</p>
+<p>When I had first explored this issue, I had looked at the <a href="https://python-markdown.github.io/extensions/header_id/" title="Automatically generates id attributes.">HeaderID</a> it was marked as being deprecated and to be used for adding anchors for headings. I didn't read the whole thing because it didn't seem it would fit my needs. I continued on and found my current solution.</p>
+<p><em>But</em>, the thought that there could be a better way kept on nagging me even though I was happy<sup id="fnref-happy"><a class="footnote-ref" href="#fn-happy">3</a></sup> with how my site turned out.</p>
+<p>As I was in the process of updating my <a href="https://github.com/mandaris/pelican-test-content" title="Simple pelican articles to test new themes.">Pelican Test Content</a>, I went back to the <a href="https://python-markdown.github.io/extensions/" title="A compilation of various Python-Markdown extensions">python-markdown extensions page</a> to make sure that I had covered most of the use cases. I noticed that it had a <a href="https://python-markdown.github.io/extensions/toc/">Table of Contents</a>.</p>
+<h3 id="all-about-that-base">All about that base</h3>
+<p>The first thing that I found was that the extension allows me to set the <a href="https://python-markdown.github.io/extensions/toc/#usage">base for headers</a> fairly easily by setting a property in my <code>pelicanconfig.py</code>. </p>
+<div class="highlight"><pre><span></span><span class="c1"># Markdown options</span>
+<span class="n">MARKDOWN</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;extension_configs&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;markdown.extensions.codehilite&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;css_class&#39;</span><span class="p">:</span> <span class="s1">&#39;highlight&#39;</span><span class="p">},</span>
+        <span class="s1">&#39;markdown.extensions.extra&#39;</span><span class="p">:</span> <span class="p">{},</span>
+        <span class="s1">&#39;markdown.extensions.meta&#39;</span><span class="p">:</span> <span class="p">{},</span>
+<span class="hll">        <span class="s1">&#39;markdown.extensions.toc&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;baselevel&#39;</span><span class="p">:</span> <span class="s1">&#39;3&#39;</span><span class="p">,</span> <span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="s1">&#39;Table of Contents&#39;</span><span class="p">},</span>
+</span>    <span class="p">},</span>
+    <span class="s1">&#39;output_format&#39;</span><span class="p">:</span> <span class="s1">&#39;html5&#39;</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
 
-<header class="post-header">
-<h1>
-<a rel="bookmark"
-   href="2012/05/blogging-workshop.html"
-   title="Blogging workshop «Quotidian Quest»">
-   Blogging workshop
-</a>
-</h1>
-<p class="subtitle"><time datetime="2012-05-16T22:12:30-07:00">Wed 16 May 2012</time><label for="blogging-workshop" class="margin-toggle"> ⊕</label><input type="checkbox" id="blogging-workshop" class="margin-toggle" /> <span class="marginnote">Category: <a href="http://quotidianquest.com/category/blogging.html">blogging</a><br />
- #<a href="http://quotidianquest.com/tag/blog.html">blog</a> #<a href="http://quotidianquest.com/tag/writing.html">writing</a></span></p>
-</header><p>Today I went to a blogging workshop and I found it really interesting. At first, I was worried that it would filled with the standard novice information like how to get on the internet being taught by someone took 15 minutes to get some information off the internet and put it into a powerpoint presentation to read to use.</p>	
-</article>
-<article class="post">
 
-<header class="post-header">
-<h1>
-<a rel="bookmark"
-   href="2012/01/hyde-doc-suck.html"
-   title="Hyde Doc suck «Quotidian Quest»">
-   Hyde Doc suck
-</a>
-</h1>
-<p class="subtitle"><time datetime="2012-01-25T10:41:34-08:00">Wed 25 January 2012</time><label for="hyde-doc-suck" class="margin-toggle"> ⊕</label><input type="checkbox" id="hyde-doc-suck" class="margin-toggle" /> <span class="marginnote">Category: <a href="http://quotidianquest.com/category/blogging.html">blogging</a><br />
- #<a href="http://quotidianquest.com/tag/hyde.html">hyde</a></span></p>
-</header><p>I recently came across as <a href="http://groups.google.com/group/hyde-dev/browse_thread/thread/db9213433190487f" title="Message post from Google Groups">email</a> from a goggle group that I'm part of that is centered around <a href="https://github.com/hyde/hyde" title="Hyde on GitHub">Hyde</a> which is what I'm currently using to statically generate my website/blog. The email was basically asking "What's up with the docs?" and all I can do is just shake my head in agreement. </p>
-<p>The problem is that a significant amount of these open source projects are created by people whose talent is mostly with the creation of the tools and not with the associatated docs. This leaves a lot of people in the dust because people see the end result and want to have something cool like that, but don't have the time/desire to dive into the code and learn how it works. </p>
-<p>It's not because they are lazy, it because we are all busy people and sometimes we don't need to know every aspect of something to use it. For example, you don't have to be a mechanic to drive your car<sup id="fnref-car"><a class="footnote-ref" href="#fn-car">1</a></sup>.</p>
-<p>Honestly, I wish I could help this guy out because I've had similar problems with this and other projects and it can be daunting to stick your head out and ask the questions. But you have to have the <a href="http://www.43folders.com/2008/12/01/courageous-sucking" title="Photography, and the Tolerance for Courageous Sucking via 43folders">courage to suck</a> in order to get any better at something.</p>
+<p>This eliminates the need for the additional plugin and as an added bonus allows me to have a table of contents for those really long posts that I never write.</p>
+<h3 id="table-of-pain">Table of Pain</h3>
+<p><img alt="The html that is generated is hard to read." src="images/table-of-pain.png">
+There are only a couple mild things that I don't really enjoy about this new solution. </p>
+<h4 id="div-ided-we-stand-on-syntax">Div-ided we stand on syntax</h4>
+<ul>
+<li>I'd love if this wasn't in a <code>div</code> and used either a <code>nav</code> or <code>aside</code> tag for accessibility and my own personal comfort. </li>
+<li>Also, the number of <code>li</code> and <code>ul</code> tags can be hard to read if you want to read the raw html.</li>
+<li>Titles for table of contents is in a <code>span</code> tag. I find that kind of ironic. </li>
+</ul>
+<p>Seriously, just nitpicky at this point.</p>
+<h4 id="making-it-look-nice">Making it look nice</h4>
+<p>This part is just me going back to trying to figure out how to make it look nice in the browser. I imagine that it won't take long, but there are going to be a couple of ugly iterations.</p>
 <div class="footnote">
 <hr>
 <ol>
-<li id="fn-car">
-<p>... but a little more knowledged in this area can save you a ton of money.&#160;<a class="footnote-backref" href="#fnref-car" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<li id="fn-easy">
+<p>Easier being defined as having less dependencies.&#160;<a class="footnote-backref" href="#fnref-easy" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn-write">
+<p>Get it? :P&#160;<a class="footnote-backref" href="#fnref-write" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn-happy">
+<p>Mostly happy.&#160;<a class="footnote-backref" href="#fnref-happy" title="Jump back to footnote 3 in the text">&#8617;</a></p>
 </li>
 </ol>
-</div>	
+</div>
+</div>
+
+<p class="readmore u-url">
+  <a
+    rel="bookmark"
+    title="Over-engineered Solution «Mandaris Moore»"
+    href="2018/07/over-engineered-solution.html"
+    itemprop="url">Permalink
+  </a>
+</p>
+<footer>
+<p class="articleFooterP">Category:
+	<a class="p-category" href="../category/blogging.html">
+    <span itemprop="articleSection">blogging</span>
+  </a>
+  <span class="rightside">
+    <time
+      class="dt-published"
+      datetime="2018-07-24T06:22:43-07:00"
+      itemprop="dateCreated datePublished pubdate">
+        Tue 24 July 2018
+    </time>
+  </span>
+  <br />  <span itemprop="keywords">
+      <a
+        class="tag"
+        rel="category tag"
+        href="../tag/pelican.html">
+          pelican
+      </a>
+      <a
+        class="tag"
+        rel="category tag"
+        href="../tag/markdown.html">
+          markdown
+      </a>
+      <a
+        class="tag"
+        rel="category tag"
+        href="../tag/refactor.html">
+          refactor
+      </a>
+  </span>
+  <span class="rightside">Modified:
+  	<time
+      class="dt-updated"
+  	  datetime="2018-07-28T11:38:43-07:00"
+  	  itemprop="dateModified">
+        Sat 28 July 2018
+      </time>
+  </span>
+</p>
+</footer>
 </article>
+<hr />
+<article
+  class="post hentry h-entry content"
+  itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+
+<header class="post-header">
+  <h2
+    itemprop="headline title p-name name"
+    class="title p-name post-title">
+    <a
+      rel="bookmark"
+      class="u-url"
+      title="Getting mdx_downheader to work «Mandaris Moore»"
+      href="2018/07/getting-mdx_downheader-to-work.html"
+      itemprop="url">
+      Getting mdx_downheader to work
+    </a>
+  </h2>
+</header><div class="e-content post-body" itemprop="articleBody">
+<p>In my <a href="/2018/06/blog-accomplishments.html" title="Blog Accomplishments «Mandaris Moore»">last post</a>, I left off with a list of things that I wanted to work on for the next release of the design of the blog. I'm still changing the header at the top of the page and I've been working on improving the contrast of the colors you see for links to make it easier to read. Something you can't spot just by looking is the fact that <code>&lt;h1&gt; - &lt;h3&gt;</code> tags don't correspond to the breakdown of the syntax of the rest of the site.</p>
+<figure><img alt="A small sample of the code that was being generated." src="images/sample-of-previous-syntax.png" title="Generated HTML in Sublime looks cool!"><figcaption>A small sample of the code that was being generated.</figcaption>
+</figure>
+<h3 id="what-do-i-see-on-the-internet">What do I see on the internet</h3>
+<p>I feel that a lot of the sites that are on the internet only use the <code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code>, <code>&lt;h3&gt;</code> tags and looking at some of the templates that I've come across for pelican use css classes to differentiate them in the design. </p>
+<p>I don't have a problem with that, but I felt that it doesn't help those that might be using some kind of screen reader or parsing system<sup id="fnref-seo"><a class="footnote-ref" href="#fn-seo">1</a></sup>.</p>
+<h3 id="searching-for-a-solution">Searching for a solution</h3>
+<p>Once again, I started looking for a place where this had already been fixed and quickly found one that would make sure that the html that <a href="http://docs.getpelican.com/en/stable/index.html">python-markdown</a> would give me would match what I was expecting to give to my <a href="https://github.com/mandaris/modest" title="A very simple template for pelican">template</a>.</p>
+<p><a href="https://github.com/cprieto">Christian Prieto</a> had already come up with this <a href="https://github.com/cprieto/mdx_downheader" title="Python Markdown Down Header Extension">handy solution</a> in 2016 and had put some tests and an example of how to incorporate it into pelican.</p>
+<h3 id="but-there-are-further-complications">But there are further complications</h3>
+<p>Unfortunately, pelican has changed since the original and I wasn't able to get the solution to work. The readme says to add the following:</p>
+<div class="highlight"><pre><span></span><span class="n">MD_EXTENSIONS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;downheader&#39;</span><span class="p">]</span>
+</pre></div>
+
+
+<p>But the latest documentation found <a href="http://docs.getpelican.com/en/stable/settings.html" title="Pelican Settings">here</a>, have the markdown default to be defined as a dictionary and not an array<sup id="fnref-doc"><a class="footnote-ref" href="#fn-doc">2</a></sup>. The simplest way to get it to work is to change your <code>pelicanconfig.py</code> to have the following code.</p>
+<div class="highlight"><pre><span></span><span class="c1"># Markdown Plugins</span>
+<span class="n">MARKDOWN</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;extension_configs&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;markdown.extensions.codehilite&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;css_class&#39;</span><span class="p">:</span> <span class="s1">&#39;highlight&#39;</span><span class="p">},</span>
+        <span class="s1">&#39;markdown.extensions.extra&#39;</span><span class="p">:</span> <span class="p">{},</span>
+        <span class="s1">&#39;markdown.extensions.meta&#39;</span><span class="p">:</span> <span class="p">{},</span>
+<span class="hll">        <span class="s1">&#39;downheader&#39;</span><span class="p">:</span> <span class="p">{},</span>
+</span>    <span class="p">},</span>
+    <span class="s1">&#39;output_format&#39;</span><span class="p">:</span> <span class="s1">&#39;html5&#39;</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>For me, I had to specify a value because the title of my site is in a <code>&lt;h1&gt;</code> tag and the article headers are in <code>&lt;h2&gt;</code>.</p>
+<div class="highlight"><pre><span></span><span class="c1"># Markdown Plugins</span>
+<span class="n">MARKDOWN</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;extension_configs&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;markdown.extensions.codehilite&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;css_class&#39;</span><span class="p">:</span> <span class="s1">&#39;highlight&#39;</span><span class="p">},</span>
+        <span class="s1">&#39;markdown.extensions.extra&#39;</span><span class="p">:</span> <span class="p">{},</span>
+        <span class="s1">&#39;markdown.extensions.meta&#39;</span><span class="p">:</span> <span class="p">{},</span>
+<span class="hll">        <span class="s1">&#39;downheader&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;levels&#39;</span><span class="p">:</span> <span class="s1">&#39;2&#39;</span><span class="p">},</span>
+</span>    <span class="p">},</span>
+    <span class="s1">&#39;output_format&#39;</span><span class="p">:</span> <span class="s1">&#39;html5&#39;</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>I've since made a <a href="https://github.com/cprieto/mdx_downheader/pull/5">pull request</a> so that others can get around this as well.</p>
+<h3 id="conclusion">Conclusion</h3>
+<p>I'm happier and happier with the way that the site is coming together, but I'm afraid of the amount of <a href="https://en.wikipedia.org/wiki/Technical_debt">technical debt</a> that the site is accruing as I go along. I've to to make the readme a priority for those who come after me and want to make this design better.</p>
+<p>I've also taken some time to just take the header and just make a <a href="https://github.com/mandaris/pelican-headers">standalone project</a> that demonstrates how it works. I points to the <code>simple</code> theme that comes with pelican so people can just download it after installing pelican, python-markdown and the mdx_downheader package.</p>
+<div class="footnote">
+<hr>
+<ol>
+<li id="fn-seo">
+<p>From what I've seen a lot of webcrawlers use the headers of a page to determine whether a site was worth putting in search results.&#160;<a class="footnote-backref" href="#fnref-seo" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn-doc">
+<p>This isn't the only place that has this, but I've been having trouble just getting the projects that I am using up to date. Heck, my <a href="https://github.com/mandaris/Modest/blob/master/README.md">readme is one line</a> at this point!&#160;<a class="footnote-backref" href="#fnref-doc" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+</div>
+
+<p class="readmore u-url">
+  <a
+    rel="bookmark"
+    title="Getting mdx_downheader to work «Mandaris Moore»"
+    href="2018/07/getting-mdx_downheader-to-work.html"
+    itemprop="url">Permalink
+  </a>
+</p>
+<footer>
+<p class="articleFooterP">Category:
+	<a class="p-category" href="../category/blogging.html">
+    <span itemprop="articleSection">blogging</span>
+  </a>
+  <span class="rightside">
+    <time
+      class="dt-published"
+      datetime="2018-07-03T22:38:02-07:00"
+      itemprop="dateCreated datePublished pubdate">
+        Tue 03 July 2018
+    </time>
+  </span>
+  <br />  <span itemprop="keywords">
+      <a
+        class="tag"
+        rel="category tag"
+        href="../tag/programming.html">
+          programming
+      </a>
+      <a
+        class="tag"
+        rel="category tag"
+        href="../tag/open-source.html">
+          open source
+      </a>
+      <a
+        class="tag"
+        rel="category tag"
+        href="../tag/python.html">
+          python
+      </a>
+      <a
+        class="tag"
+        rel="category tag"
+        href="../tag/pelican.html">
+          pelican
+      </a>
+  </span>
+</p>
+</footer>
+</article>
+<hr />
+<article
+  class="post hentry h-entry content"
+  itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+
+<header class="post-header">
+  <h2
+    itemprop="headline title p-name name"
+    class="title p-name post-title">
+    <a
+      rel="bookmark"
+      class="u-url"
+      title="Blog Accomplishments «Mandaris Moore»"
+      href="2018/06/blog-accomplishments.html"
+      itemprop="url">
+      Blog Accomplishments
+    </a>
+  </h2>
+</header><div class="e-content post-body" itemprop="articleBody">
+<p>I think I'm ready to mark my second pelican theme 1.0 as "Feature Complete" today! I started off with -what I thought- a simple premise of having a site site took a lot longer than I expected but I'm pretty happy with the site for now.  But before I tag it and start working on 2.0, I want to go over what I've done so far.</p>
+<figure><img alt="Visualization of what I've accomplished with the blog." src="images/blog_accomplishments.png"> <figcaption>Visualization of what I've accomplished with the blog.</figcaption>
+</figure>
+<h3 id="parsable">Parsable</h3>
+<p>The first thing I started researching was how to make the site parsable by webcrawlers. Although it's a personal blog, I wanted people to be able to find the content easily.</p>
+<h4 id="opengraph">OpenGraph</h4>
+<p>OpenGraph was the first thing that I came across and appealed to me the most because it's the preferred way of parsing data for Twitter<sup id="fnref-twitter"><a class="footnote-ref" href="#fn-twitter">1</a></sup>.</p>
+<p>I found it especially rewarding that the tags are also parsed by facebook and my new favorite social network <a href="https://slack.com">slack</a>. </p>
+<p>One of the technical difficulties that I ran into when adding OpenGraph tags was adding the images. The specification for OpenGraph states that images to be used need to be added as meta data in the head of the html. This can be a pain as the other data like title and date can be pulled from the article itself and I didn't want to go through all my old posts to add image meta data.</p>
+<p>Luckily, the  github user WhiskyEchoBravo had a <a href="https://github.com/whiskyechobravo/pelican-open_graph">project that searched the content of the post for images</a> and added the first to the list of tags. I'm a little proud that I helped with issues with <a href="https://github.com/whiskyechobravo/pelican-open_graph/commit/61248d805588245a9fc1dc4eda56cff1f5a9d8fa">pages</a>. </p>
+<p>Afterwards, I did run into some frustration when the images that I added to posts wouldn't be as big as I expected.</p>
+<figure><img alt="Post in slack with a small image." src="images/slack-small-image.png"><figcaption>Post in slack with a small image.</figcaption>
+</figure>
+<p>Ultimately, I think it's because of the mixing and matching of having OpenGraph and twitter specific tags and was solved it by making sure I used the following for my twitter card.</p>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;twitter:card&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;summary_large_image&quot;</span> <span class="p">/&gt;</span>
+</pre></div>
+
+
+<p>And now I get the post to unfurl nicely.</p>
+<figure><img alt="Post in slack with a large image." src="images/slack-large-image.png"><figcaption>Post in slack with a large image.</figcaption>
+</figure>
+<h4 id="schemaorg">Schema.org</h4>
+<p>This is the styling used by both Bing and Google. I put this in as a challenge to myself to make it work in both instances. I leaned a lot from the example on <a href="https://orbitingweb.com/blog/schema-org-microdata-guide/" title="Complete Schema.Org and Microdata Tutorial for beginners">OrbitingWeb</a> and refined what I was working with using <a href="https://github.com/philwareham/schema-microdata-examples/blob/master/blog.html" title="Schema.org microdata examples">another example</a> that I found on github.</p>
+<h3 id="valid-semantic-tags">Valid Semantic Tags</h3>
+<p>For this, I just wanted to use some of those really cool semantic tags that html5 has given to us. When I look at the code for some pages on the internet I see a lot of <code>&lt;div&gt;</code> tags with classes that could be replaced with <code>&lt;main&gt;</code>, <code>&lt;nav&gt;</code>,  or <code>&lt;section&gt;</code> tags.</p>
+<p>I'm willing to just attribute it to my desire to have my own style or maybe just inexperience, but I'm happy to report that the site passes html validation except for the OpenGraph definitions found in the header.</p>
+<h4 id="figure-it-out">figure it out</h4>
+<p>One technical hurdle I ran into was that I wanted my images to be wrapped in the <code>&lt;figure&gt;</code> tag and also have a <code>&lt;figcaption&gt;</code> tag that would have the alternative text. </p>
+<p>I searched for a plugin for pelican<sup id="fnref-figure-ref"><a class="footnote-ref" href="#fn-figure-ref">2</a></sup>, but the closest thing I could find was <a href="https://github.com/getpelican/pelican-plugins/tree/master/liquid_tags">liquid tags</a> at the time<sup id="fnref-liquid"><a class="footnote-ref" href="#fn-liquid">3</a></sup>.  </p>
+<p>I did find jdittrich <a href="https://github.com/jdittrich/figureAltCaption">figureAltCaption</a> project on github which was a extension for the <a href="https://python-markdown.github.io/">python-markdown</a>  that pelican uses. I even submitted a <a href="https://github.com/jdittrich/figureAltCaption/pull/3" title="Still wait to be pulled into the main branch">pull request</a>  to allow it to do reference links!</p>
+<p>There was a little confusion on getting it to work because pelican has been changing since some of these plugins were created.</p>
+<p>Long story short, I had to add the following to my <code>pelicanconfig.py</code> to get it to work.</p>
+<div class="highlight"><pre><span></span>   <span class="c1"># Markdown Plugins</span>
+<span class="n">MARKDOWN</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;extension_configs&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;markdown.extensions.codehilite&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;css_class&#39;</span><span class="p">:</span> <span class="s1">&#39;highlight&#39;</span><span class="p">},</span>
+        <span class="s1">&#39;markdown.extensions.extra&#39;</span><span class="p">:</span> <span class="p">{},</span>
+        <span class="s1">&#39;markdown.extensions.meta&#39;</span><span class="p">:</span> <span class="p">{},</span>
+<span class="hll">        <span class="s1">&#39;figureAltCaption&#39;</span><span class="p">:{},</span>
+</span>    <span class="p">},</span>
+    <span class="s1">&#39;output_format&#39;</span><span class="p">:</span> <span class="s1">&#39;html5&#39;</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<h3 id="easy-to-share">Easy to share</h3>
+<p>I wrote down that I wanted the site to be easy to share and it is when you look at the amount of tags and metadata that is in every page. </p>
+<p>At one point, I wanted to add share buttons, but -with the rise in concerns about privacy- I wanted the users of the site to be the ones who would share it.</p>
+<p>Also, I'm still working on color schemes so the buttons might clash with whatever I end up with.</p>
+<figure><img alt="Clash of the social buttons!" src="images/supported-social-networks.jpg" title="The number of ways to share an article is too dang high!"><figcaption>Clash of the social buttons!</figcaption>
+</figure>
+<h3 id="accessible">Accessible</h3>
+<p>One of the underlining principles of this site design is that I wanted it to be accessible to as many people as possible. It's part of the reason that I've worked so hard on making sure that I included so many semantic tags. I didn't think that this was particularly hard to do when you understand what needs to happen before you begin. </p>
+<p>The theme doesn't have any errors at this point, but does loose some points because of the way that markdown headers are handled and the fact that I picked a low contrast color for my links. I'll fix it soon.</p>
+<h3 id="conclusion-and-where-im-going-next">Conclusion and where I'm going next</h3>
+<p>Overall, I'm happy with this version of the site and blogging about it has helped me think about what places I want to refine going forward. </p>
+<h4 id="list-of-things-to-improve">List of things to improve</h4>
+<ul>
+<li>Create a decent readme with all the packages and properties that the theme uses</li>
+<li>Improve color contrast for reading</li>
+<li>Add Cristian Prieto's <a href="https://github.com/cprieto/mdx_downheader">mdx_downheader</a></li>
+<li>Make the top navigation a little less clunky</li>
+<li>Look into how to integrate micro.blog posts</li>
+</ul>
+<p>If you want to contribute you can find the theme on <a href="https://github.com/mandaris/modest" title="A very simple template for pelican">github here</a>.</p>
+<div class="footnote">
+<hr>
+<ol>
+<li id="fn-twitter">
+<p>Twitter is still my social network of choice and -despite it's flaws- is not as creepy as facebook.&#160;<a class="footnote-backref" href="#fnref-twitter" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn-figure-ref">
+<p>Seriously didn't see Chris MacMackin's <a href="https://github.com/cmacmackin/figure-ref" title="A Pelican plugin providing a referencing-system for figures, like that in LaTeX.">figure-ref</a> until I was writing this article. I'll have to look into it for my next version.&#160;<a class="footnote-backref" href="#fnref-figure-ref" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn-liquid">
+<p>I used this to make my previous theme <a href="https://github.com/mandaris/TuftePelican" title="Abandoned themes that still haunt me">Tufte</a> and did not want to go down that road twice. It is very specific to pelican and I didn't want to dive into more regular expressions when I <em>knew</em> there had to be a solution already created.&#160;<a class="footnote-backref" href="#fnref-liquid" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+</div>
+
+<p class="readmore u-url">
+  <a
+    rel="bookmark"
+    title="Blog Accomplishments «Mandaris Moore»"
+    href="2018/06/blog-accomplishments.html"
+    itemprop="url">Permalink
+  </a>
+</p>
+<footer>
+<p class="articleFooterP">Category:
+	<a class="p-category" href="../category/blogging.html">
+    <span itemprop="articleSection">blogging</span>
+  </a>
+  <span class="rightside">
+    <time
+      class="dt-published"
+      datetime="2018-06-26T19:16:06-07:00"
+      itemprop="dateCreated datePublished pubdate">
+        Tue 26 June 2018
+    </time>
+  </span>
+  <br />  <span itemprop="keywords">
+      <a
+        class="tag"
+        rel="category tag"
+        href="../tag/accomplishments.html">
+          accomplishments
+      </a>
+      <a
+        class="tag"
+        rel="category tag"
+        href="../tag/python.html">
+          python
+      </a>
+      <a
+        class="tag"
+        rel="category tag"
+        href="../tag/html.html">
+          html
+      </a>
+  </span>
+</p>
+</footer>
+</article>
+<hr />
+<article
+  class="post hentry h-entry content"
+  itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+
+<header class="post-header">
+  <h2
+    itemprop="headline title p-name name"
+    class="title p-name post-title">
+    <a
+      rel="bookmark"
+      class="u-url"
+      title="New Favicon «Mandaris Moore»"
+      href="2018/05/new-favicon.html"
+      itemprop="url">
+      New Favicon
+    </a>
+  </h2>
+</header><div class="e-content post-body" itemprop="articleBody">
+<figure><img alt="A man in a gear. A cog in the machine of life." src="images/man-gear.png"><figcaption>A man in a gear. A cog in the machine of life.</figcaption>
+</figure>
+<p>I spent a little time with <a href="http://www.pixelmator.com/mac/">Pixelmator</a> last night and found it to be fairly easy to make something like this.  I thought it would take a while to make something would meet my needs. </p>
+<p>I guess it shows that you never know what you can do until you try.</p>
+<p>The only thing that I regret is that I went down the rabit hole and spent almost an hour this morning researching formats and dimensions for making my icon <em>perfect</em>. </p>
+<p>Here are my resources if you want to find out more:</p>
+<ul>
+<li>http://icoconvert.com/ </li>
+<li>https://stackoverflow.com/questions/1526747/ideal-size-for-ico</li>
+<li>https://github.com/audreyr/favicon-cheat-sheet</li>
+<li>https://mathiasbynens.be/notes/touch-icons</li>
+</ul>
+</div>
+
+<p class="readmore u-url">
+  <a
+    rel="bookmark"
+    title="New Favicon «Mandaris Moore»"
+    href="2018/05/new-favicon.html"
+    itemprop="url">Permalink
+  </a>
+</p>
+<footer>
+<p class="articleFooterP">Category:
+	<a class="p-category" href="../category/blogging.html">
+    <span itemprop="articleSection">blogging</span>
+  </a>
+  <span class="rightside">
+    <time
+      class="dt-published"
+      datetime="2018-05-21T06:07:59-07:00"
+      itemprop="dateCreated datePublished pubdate">
+        Mon 21 May 2018
+    </time>
+  </span>
+  <br />  <span itemprop="keywords">
+      <a
+        class="tag"
+        rel="category tag"
+        href="../tag/images.html">
+          images
+      </a>
+      <a
+        class="tag"
+        rel="category tag"
+        href="../tag/icons.html">
+          icons
+      </a>
+  </span>
+</p>
+</footer>
+</article>
+<hr />
+<article
+  class="post hentry h-entry content"
+  itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+
+<header class="post-header">
+  <h2
+    itemprop="headline title p-name name"
+    class="title p-name post-title">
+    <a
+      rel="bookmark"
+      class="u-url"
+      title="Researching Micro.blog post «Mandaris Moore»"
+      href="2018/05/researching-microblog-post.html"
+      itemprop="url">
+      Researching Micro.blog post
+    </a>
+  </h2>
+</header><div class="e-content post-body" itemprop="articleBody">
+<p>I wanted to spend sometime looking at some resources that I came across that I'm going to use to make my site work better with the micro.blog format.</p>
+<h4 id="implementing-microblogging-in-pelican">Implementing microblogging in pelican</h4>
+<p><strong><a href="https://ascraeus.org/implementing-microblogging-in-pelican/">Link</a></strong></p>
+<p>This one was pretty interesting in that it was the first link in my search and let me know that it was indeed possible. Unfortunately, the site has moved from <a href="https://blog.getpelican.com/">pelican</a> to <a href="https://gohugo.io/">hugo</a> and I couldn't find the theme in the users github repository (unless he's renamed it).</p>
+<h4 id="microblogging-with-pelican">Microblogging with pelican</h4>
+<p><strong><a href="http://blog.bellebcooper.com/microblogging-with-pelican.html">Link</a></strong> 
+This link seems a little more promising as the writer is still actively using pelican to generate her site. Not only that but she has a couple example iOS workflows that give me ideas on how to quickly generate posts for the site. </p>
+<p>Currently, I don't have any bandwidth to do any of these options in the next couple of days, but I hope that by writing about them here someone else can use them to make their site better.</p>
+</div>
+
+<p class="readmore u-url">
+  <a
+    rel="bookmark"
+    title="Researching Micro.blog post «Mandaris Moore»"
+    href="2018/05/researching-microblog-post.html"
+    itemprop="url">Permalink
+  </a>
+</p>
+<footer>
+<p class="articleFooterP">Category:
+	<a class="p-category" href="../category/blogging.html">
+    <span itemprop="articleSection">blogging</span>
+  </a>
+  <span class="rightside">
+    <time
+      class="dt-published"
+      datetime="2018-05-15T07:12:49-07:00"
+      itemprop="dateCreated datePublished pubdate">
+        Tue 15 May 2018
+    </time>
+  </span>
+  <br />  <span itemprop="keywords">
+      <a
+        class="tag"
+        rel="category tag"
+        href="../tag/microblog.html">
+          micro.blog
+      </a>
+      <a
+        class="tag"
+        rel="category tag"
+        href="../tag/pelican.html">
+          pelican
+      </a>
+  </span>
+  <span class="rightside">Modified:
+  	<time
+      class="dt-updated"
+  	  datetime="2019-01-04T20:29:51-08:00"
+  	  itemprop="dateModified">
+        Fri 04 January 2019
+      </time>
+  </span>
+</p>
+</footer>
+</article>
+<hr />
+<article
+  class="post hentry h-entry content"
+  itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+
+<header class="post-header">
+  <h2
+    itemprop="headline title p-name name"
+    class="title p-name post-title">
+    <a
+      rel="bookmark"
+      class="u-url"
+      title="Pelican Test Content «Mandaris Moore»"
+      href="2018/05/pelican-test-content.html"
+      itemprop="url">
+      Pelican Test Content
+    </a>
+  </h2>
+</header><div class="e-content post-body" itemprop="articleBody">
+<figure><img alt="Example of markdown syntax meant to test new themes." src="images/pelican-test-content.png"><figcaption>Example of markdown syntax meant to test new themes.</figcaption>
+</figure>
+<p>When I'm trying to come up with a new theme for my blog, I like to think about the different scenerios of what I can put together. I admit that a lot of what I design is rarely shown in my daily writing, but I like the possibilities of expressing myself in this way and part of me hopes that someone else will see my theme and use it or make it better.</p>
+<p>In light of this, I don't like using my own content sometimes because I don't always have something recent to test with a theme with.</p>
+<p>That's why I took some time and created a repo just for this purpose. I present:</p>
+<p><a href="https://github.com/mandaris/pelican-test-content">Pelican Test Content!</a></p>
+<p>It's a couple of articles and pages that I use to simulate a website in pelican. It looks like most of the <a href="https://github.com/getpelican/pelican-themes">theme designers</a> create their own set of test data but I'm hoping that this can be the seed or at least add on to whatever else is available. </p>
+</div>
+
+<p class="readmore u-url">
+  <a
+    rel="bookmark"
+    title="Pelican Test Content «Mandaris Moore»"
+    href="2018/05/pelican-test-content.html"
+    itemprop="url">Permalink
+  </a>
+</p>
+<footer>
+<p class="articleFooterP">Category:
+	<a class="p-category" href="../category/blogging.html">
+    <span itemprop="articleSection">blogging</span>
+  </a>
+  <span class="rightside">
+    <time
+      class="dt-published"
+      datetime="2018-05-14T21:22:07-07:00"
+      itemprop="dateCreated datePublished pubdate">
+        Mon 14 May 2018
+    </time>
+  </span>
+  <br />  <span itemprop="keywords">
+      <a
+        class="tag"
+        rel="category tag"
+        href="../tag/test.html">
+          test
+      </a>
+      <a
+        class="tag"
+        rel="category tag"
+        href="../tag/pelican.html">
+          pelican
+      </a>
+      <a
+        class="tag"
+        rel="category tag"
+        href="../tag/content.html">
+          content
+      </a>
+  </span>
+</p>
+</footer>
+</article>
+<hr />
+<article
+  class="post hentry h-entry content"
+  itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+
+<header class="post-header">
+  <h2
+    itemprop="headline title p-name name"
+    class="title p-name post-title">
+    <a
+      rel="bookmark"
+      class="u-url"
+      title="A post for everyday in May «Mandaris Moore»"
+      href="2018/05/a-post-for-everyday-in-may.html"
+      itemprop="url">
+      A post for everyday in May
+    </a>
+  </h2>
+</header><div class="e-content post-body" itemprop="articleBody">
+<p>I just noticed that I have a post here for almost every day thus far in May. I think I'm going to leverage that and try to have a post for every day going forward. Some days won't have anything, but will make them either before or after.</p>
+<p>I'm hoping that this will help me get ready for <a href="https://nanowrimo.org/">NaNoWriMo</a> this year.</p>
+<figure><img alt="The logo for National Novel Writing Month." src="https://d3bhawflmd1fic.cloudfront.net/assets/crest-05e1a637392425b4d5225780797e5a76.png"><figcaption>The logo for National Novel Writing Month.</figcaption>
+</figure>
+<p>If not, at least, I'll have some kind of exercise to increase my communication skills.</p>
+</div>
+
+<p class="readmore u-url">
+  <a
+    rel="bookmark"
+    title="A post for everyday in May «Mandaris Moore»"
+    href="2018/05/a-post-for-everyday-in-may.html"
+    itemprop="url">Permalink
+  </a>
+</p>
+<footer>
+<p class="articleFooterP">Category:
+	<a class="p-category" href="../category/blogging.html">
+    <span itemprop="articleSection">blogging</span>
+  </a>
+  <span class="rightside">
+    <time
+      class="dt-published"
+      datetime="2018-05-06T17:53:27-07:00"
+      itemprop="dateCreated datePublished pubdate">
+        Sun 06 May 2018
+    </time>
+  </span>
+  <br />  <span itemprop="keywords">
+      <a
+        class="tag"
+        rel="category tag"
+        href="../tag/goal.html">
+          goal
+      </a>
+      <a
+        class="tag"
+        rel="category tag"
+        href="../tag/writing.html">
+          writing
+      </a>
+  </span>
+  <span class="rightside">Modified:
+  	<time
+      class="dt-updated"
+  	  datetime="2019-01-04T22:30:33-08:00"
+  	  itemprop="dateModified">
+        Fri 04 January 2019
+      </time>
+  </span>
+</p>
+</footer>
+</article>
+<hr />
+<article
+  class="post hentry h-entry content"
+  itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+
+<header class="post-header">
+  <h2
+    itemprop="headline title p-name name"
+    class="title p-name post-title">
+    <a
+      rel="bookmark"
+      class="u-url"
+      title="Writing in my home office «Mandaris Moore»"
+      href="2018/04/writing-in-my-home-office.html"
+      itemprop="url">
+      Writing in my home office
+    </a>
+  </h2>
+</header><div class="e-content post-body" itemprop="articleBody">
+<figure><img alt="Writing this post in Byword" src="images\writing-in-byword.png"><figcaption>Writing this post in Byword</figcaption>
+</figure>
+<p>I like writing. I find it very relaxing and it allows me to get my thoughts together. Recently, I've gotten out of the habit of writing on a regular basis so I'm going to take this as an opportunity to start journaling again in the month of May.</p>
+<p>I'll set a goal to start the day with a little bit of yoga followed by some writing on what I want to do with the day. Maybe some introspection as well.</p>
+<p>If I had it my way, I'd put this all into DayOne, but it has been kind of stressful having it there where I don't have any control over when it goes away.</p>
+</div>
+
+<p class="readmore u-url">
+  <a
+    rel="bookmark"
+    title="Writing in my home office «Mandaris Moore»"
+    href="2018/04/writing-in-my-home-office.html"
+    itemprop="url">Permalink
+  </a>
+</p>
+<footer>
+<p class="articleFooterP">Category:
+	<a class="p-category" href="../category/blogging.html">
+    <span itemprop="articleSection">blogging</span>
+  </a>
+  <span class="rightside">
+    <time
+      class="dt-published"
+      datetime="2018-04-29T18:53:22-07:00"
+      itemprop="dateCreated datePublished pubdate">
+        Sun 29 April 2018
+    </time>
+  </span>
+  <br />  <span itemprop="keywords">
+      <a
+        class="tag"
+        rel="category tag"
+        href="../tag/writing.html">
+          writing
+      </a>
+  </span>
+</p>
+</footer>
+</article>
+<hr />
 </main>
-      <nav id="pagination">   <!-- <span id="first_page" class="a inactive">&#60;&#60;</span>
-        <span id="first_page" class="a inactive">&#60;</span> -->
-        <span class="a active">1</span>
-        <a href="http://quotidianquest.com/category/blogging2.html">2</a>
-        <a id="next_page" href="http://quotidianquest.com/category/blogging2.html">&#62;</a>
-        <a id="last_page" href="http://quotidianquest.com/category/blogging2.html">&#62;&#62;</a>
-</nav><footer>
+  <nav id="pagination">    <span id="first_page" class="a inactive">&#60;&#60;</span>
+    <span id="previous_page" class="a inactive">&#60;</span>
+    <span class="a active">1</span>
+    <a href="../category/blogging2.html">2</a>
+    <a href="../category/blogging3.html">3</a>
+    <a id="next_page" rel="next" href="../category/blogging2.html">&#62;</a>
+    <a id="last_page" href="../category/blogging3.html">&#62;&#62;</a>
+</nav>
+<footer itemscope itemtype="https://schema.org/WPFooter"
+    role="contentinfo" class="baseFooter">
+  <p>All works created by
+    <span itemprop="author" itemscope itemtype=https://schema.org/Person>
+    <span class="p-author h-card" itemprop="name">Mandaris</span></span>.
+  </p>
   <p>Powered by <a href="http://pelican.readthedocs.org">Pelican</a></p>
 </footer>
 </body>

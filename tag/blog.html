@@ -1,55 +1,354 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-us" prefix="og: http://ogp.me/ns#"
+       xmlns:og="http://ogp.me/ns#"
+       xmlns:article="http://ogp.me/ns/article#"
+       xmlns:blogPosting="http://ogp.me/ns/blogPosting#"
+       xmlns:fb="http://www.facebook.com/2008/fbml"
+       xml:lang="en-us">
 <head>
-  <meta charset="utf-8" />
-  <title>blog - Quotidian Quest</title>
-  <meta name="author" content="Mandaris" />
-  <base href="http://quotidianquest.com">
-  <link rel="stylesheet" type="text/css" href="/theme/tufte-css/tufte.css" />
-  <link rel="stylesheet" type="text/css" href="/theme/css/main.css" />
-  <!--
-  Original link to favicon
-  <link rel="shortcut icon" type="text/css" href="/favicon.ico" />
-  -->
-  <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png" />
-  <link rel="shortcut icon" href="/favicon.ico" />
-  <link rel="icon" type="image/png" href="/favicon.png" />
-  <link rel="mask-icon" href="/favicon.svg" color="black" />
 
-  <link href="http://quotidianquest.com/feeds/atom.xml" type="application/atom+xml"
-        rel="alternate" title="Quotidian Quest ALL Atom Feed" />
+<meta charset="utf-8" />
+<title>blog - Mandaris Moore</title>
+<meta name="author" class="p-author h-card" content="Mandaris" />
+<meta property="site_name" content="Mandaris Moore" />
+<meta name="description" content="The personal website for Mandaris Moore." />
+<base href=".." />
+<meta name="generator" content="Pelican" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#1b5a53" />
+<link rel="stylesheet" type="text/css" href="/theme/css/main.css" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="icon" type="image/png" href="/favicon.png" />
+<link rel="apple-touch-icon-precomposed"
+      href="/apple-touch-icon-precomposed.png" />
 
-  <!-- OpenGraph Info -->
-  <meta property="og:title" content="Quotidian Quest"/>
-  <meta property="og:type" content="website"/>
-  <meta property="og:description" content="The personal website for Mandaris Moore."/>
-  <meta property="og:url" content="http://quotidianquest.com"/>
+<!-- Feed information -->
+<link href="https://mandaris.github.com/feeds/atom.xml"
+      type="application/atom+xml"
+      rel="alternate" title="Mandaris Moore ALL Atom Feed" />
+
+<!--- Other Social Media Tags (See README.md) --->
+<!-- OpenGraph Info -->
+<meta property="og:title" content="Mandaris Moore" />
+<meta property="og:type" content="website" />
+<meta property="og:description" content="The personal website for Mandaris Moore."/>
+<meta property="og:url" content=".." />
+<meta property="og:locale" content="en-us" />
+<meta property="og:image" content="../favicon.png" />
+<meta property="og:image:alt" content="A person in a gear." />
+<!-- Micro.blog User Name -->
+<link href="https://micro.blog/mandaris" rel="me" />
+<!-- IndieWeb sign-in -->
+<link href="https://github.com/mandaris"
+      rel="me" class="u-url" />
+<!-- Twitter Specific Info -->
+<meta name="twitter:site" content="@mandaris" />
+<meta name="twitter:creator" content="@mandaris" />
+<meta name="twitter:card" content="summary_large_image" />
+<link href="https://twitter.com/mandaris"
+      rel="me" class="u-url" />
 </head>
 
-<body>
-<header>
-  <h1 class="websitetitle"><a href="http://quotidianquest.com">Quotidian Quest</a></h1>
-  <nav class="navmenu" id="navmenu">
-    <li><a class="navitemlink" href="http://quotidianquest.com/archives.html">Archive</a></li>
-    <li><a class="navitemlink" href="http://quotidianquest.com/pages/about.html">About</a></li>
-    <li><a class="navitemlink" href="http://quotidianquest.com/pages/projects.html">Projects</a></li>
-   </nav>
- </header>
-<main class="articlelisting">
+<body itemscope itemtype="https://schema.org/Blog">
+<meta itemprop="description" content="The personal website for Mandaris Moore." />
+<header role="banner">
+<h1 class="websitetitle"><a href="..">Mandaris Moore</a></h1>
+<nav itemscope itemtype="https://schema.org/SiteNavigationElement"
+    class="navmenu" id="navmenu" >
+<ul>
+  <li>
+    <a class="navitemlink" href="../archives.html">Archive</a>
+  </li>
+  <li><a class="navitemlink" href="../pages/about.html">
+     About
+  </a></li>
+  <li><a class="navitemlink" href="../pages/projects.html">
+     Projects
+  </a></li>
+</ul>
+</nav>
+</header>
 
-<article class="post">
+<hr />
+<main class="articlelisting container">
+<article
+  class="post hentry h-entry content"
+  itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
 
 <header class="post-header">
-<h1>
-<a rel="bookmark"
-   href="2016/12/switching-over-to-dashes.html"
-   title="switching over to dashes «Quotidian Quest»">
-   switching over to dashes
-</a>
-</h1>
-<p class="subtitle"><time datetime="2016-12-14T23:19:19-08:00">Wed 14 December 2016</time><label for="switching-over-to-dashes" class="margin-toggle"> ⊕</label><input type="checkbox" id="switching-over-to-dashes" class="margin-toggle" /> <span class="marginnote">Category: <a href="http://quotidianquest.com/category/tech.html">tech</a><br />
- #<a href="http://quotidianquest.com/tag/blog.html">blog</a> #<a href="http://quotidianquest.com/tag/creative-challenge.html">creative challenge</a></span></p>
-</header><p>Today, I wanted to find out why urls used dash (-) instead of underscores (_). Personally, I perfer to use underscores because they are easier for me to read when looking at a <code>long_title_that_signals_something</code> and thought that the reason it didn't work out was because of someone thinking the opposite. </p>
+  <h2
+    itemprop="headline title p-name name"
+    class="title p-name post-title">
+    <a
+      rel="bookmark"
+      class="u-url"
+      title="Contemplating my next project «Mandaris Moore»"
+      href="2018/08/contemplating-my-next-project.html"
+      itemprop="url">
+      Contemplating my next project
+    </a>
+  </h2>
+</header><div class="e-content post-body" itemprop="articleBody">
+<figure><img alt="Thinking about what my next actions are going to be." src="images/idea-1876659_1280.jpg" title="Just waiting for the ideas to come to me."><figcaption>Thinking about what my next actions are going to be.</figcaption>
+</figure>
+<p>I'm about to do a review of what needs to be done this week and I'm hesitant to start. Although I've been getting better at making sure that things get done, the sheer amount of "stuff" can feel overwhelming if I look at all of it at once. </p>
+<p>I think that is why I find myself drawn to OmniFocus and GTD in general. It give me a tool that allows me to trust that what I'm <em>not</em> doing is correct.</p>
+<p>But back to the matter at hand, what should my next project be?</p>
+<h3 id="moving-the-site-generation-to-another-server">Moving the site generation to another server</h3>
+<p>Currently, I have a iMac at home that generates the site and then <code>scp</code> the files to a server. The only times that I have had an issue is when I had to shut down dropbox running on the machine because it was being a resource hog.</p>
+<p>My plan is to move all of my posts to a repository and then having a cron job running on the server to do an update every hour to update the repository and then the website. </p>
+</div>
+
+<p class="readmore u-url">
+  <a
+    rel="bookmark"
+    title="Contemplating my next project «Mandaris Moore»"
+    href="2018/08/contemplating-my-next-project.html"
+    itemprop="url">Permalink
+  </a>
+</p>
+<footer>
+<p class="articleFooterP">Category:
+	<a class="p-category" href="../category/personal.html">
+    <span itemprop="articleSection">personal</span>
+  </a>
+  <span class="rightside">
+    <time
+      class="dt-published"
+      datetime="2018-08-05T21:55:56-07:00"
+      itemprop="dateCreated datePublished pubdate">
+        Sun 05 August 2018
+    </time>
+  </span>
+  <br />  <span itemprop="keywords">
+      <a
+        class="tag"
+        rel="category tag"
+        href="../tag/goals.html">
+          goals
+      </a>
+      <a
+        class="tag"
+        rel="category tag"
+        href="../tag/blog.html">
+          blog
+      </a>
+      <a
+        class="tag"
+        rel="category tag"
+        href="../tag/tech.html">
+          tech
+      </a>
+  </span>
+</p>
+</footer>
+</article>
+<hr />
+<article
+  class="post hentry h-entry content"
+  itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+
+<header class="post-header">
+  <h2
+    itemprop="headline title p-name name"
+    class="title p-name post-title">
+    <a
+      rel="bookmark"
+      class="u-url"
+      title="Share and share alike «Mandaris Moore»"
+      href="2018/07/share-and-share-alike.html"
+      itemprop="url">
+      Share and share alike
+    </a>
+  </h2>
+</header><div class="e-content post-body" itemprop="articleBody">
+<p>I've been part of a slack group where I contribute on a regular basis and some of the members have really gone the extra mile to share some of their experiences with the rest of us.</p>
+<p>It feels amazing to be part of a group that is brave enough to do this and trusts us to that degree. </p>
+<p>I'm feeling pretty inspired to write more as well.</p>
+</div>
+
+<p class="readmore u-url">
+  <a
+    rel="bookmark"
+    title="Share and share alike «Mandaris Moore»"
+    href="2018/07/share-and-share-alike.html"
+    itemprop="url">Permalink
+  </a>
+</p>
+<footer>
+<p class="articleFooterP">Category:
+	<a class="p-category" href="../category/personal.html">
+    <span itemprop="articleSection">personal</span>
+  </a>
+  <span class="rightside">
+    <time
+      class="dt-published"
+      datetime="2018-07-12T07:19:18-07:00"
+      itemprop="dateCreated datePublished pubdate">
+        Thu 12 July 2018
+    </time>
+  </span>
+  <br />  <span itemprop="keywords">
+      <a
+        class="tag"
+        rel="category tag"
+        href="../tag/blog.html">
+          blog
+      </a>
+  </span>
+</p>
+</footer>
+</article>
+<hr />
+<article
+  class="post hentry h-entry content"
+  itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+
+<header class="post-header">
+  <h2
+    itemprop="headline title p-name name"
+    class="title p-name post-title">
+    <a
+      rel="bookmark"
+      class="u-url"
+      title="Slow progress on the blog «Mandaris Moore»"
+      href="2018/03/slow-progress-on-the-blog.html"
+      itemprop="url">
+      Slow progress on the blog
+    </a>
+  </h2>
+</header><div class="e-content post-body" itemprop="articleBody">
+<p>I'm slowing making progress on my blog. It doesn't look like much because I don't have any css associated with it. I'm ok with it looks a little rough for now because I want to focus on the design for now and I rally don't think I'm going to get a lot of people checking it out between now and whenever...</p>
+<p>What I would like do is challenge myself to do more than just play around on my computer. I've been spend more and more time becoming aware of the little clock in the upper right hand corner of the screen that tells me how productive I've been on my Mac.</p>
+<figure><img alt="Image of Timing in Menubar showing that I am 62% productive." src="../../images/timing_clock_menubaritem.png" title="Timing showing that I could be doing more."><figcaption>Image of Timing in Menubar showing that I am 62% productive.</figcaption>
+</figure>
+<p>Personally, I feel that every little bit counts towards becoming an adult. I can't go back to the days where I only had to worry about homework any more. In fact,I no longer wish for those days because I understand that even then I had some kind of struggle going on. The me now, is a lot more self aware and more confident in who I am.</p>
+</div>
+
+<p class="readmore u-url">
+  <a
+    rel="bookmark"
+    title="Slow progress on the blog «Mandaris Moore»"
+    href="2018/03/slow-progress-on-the-blog.html"
+    itemprop="url">Permalink
+  </a>
+</p>
+<footer>
+<p class="articleFooterP">Category:
+	<a class="p-category" href="../category/personal.html">
+    <span itemprop="articleSection">personal</span>
+  </a>
+  <span class="rightside">
+    <time
+      class="dt-published"
+      datetime="2018-03-01T19:17:34-08:00"
+      itemprop="dateCreated datePublished pubdate">
+        Thu 01 March 2018
+    </time>
+  </span>
+  <br />  <span itemprop="keywords">
+      <a
+        class="tag"
+        rel="category tag"
+        href="../tag/blog.html">
+          blog
+      </a>
+      <a
+        class="tag"
+        rel="category tag"
+        href="../tag/productivity.html">
+          productivity
+      </a>
+  </span>
+</p>
+</footer>
+</article>
+<hr />
+<article
+  class="post hentry h-entry content"
+  itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+
+<header class="post-header">
+  <h2
+    itemprop="headline title p-name name"
+    class="title p-name post-title">
+    <a
+      rel="bookmark"
+      class="u-url"
+      title="Setting rules in Hazel «Mandaris Moore»"
+      href="2017/12/setting-rules-in-hazel.html"
+      itemprop="url">
+      Setting rules in Hazel
+    </a>
+  </h2>
+</header><div class="e-content post-body" itemprop="articleBody">
+<figure><img alt="Setting rules in Hazel" src="/images/hazel_page_generation.png"><figcaption>Setting rules in Hazel</figcaption>
+</figure>
+<p>I've been working towards getting the generation of this blog to be automated and I've decided to do that using a rule in Hazel to always detect if a file has been  changed and then running the <code>pelican</code> command to create new pages.</p>
+<p>I've decided to make the actual publication<sup id="fnref-pub"><a class="footnote-ref" href="#fn-pub">1</a></sup> a seperate step for now because I might be moving hosting in the coming weeks.</p>
+<div class="footnote">
+<hr>
+<ol>
+<li id="fn-pub">
+<p>Currently, the site is hosted on github and I need to make a git commit to make it availble on the inter-webs.&#160;<a class="footnote-backref" href="#fnref-pub" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+</div>
+
+<p class="readmore u-url">
+  <a
+    rel="bookmark"
+    title="Setting rules in Hazel «Mandaris Moore»"
+    href="2017/12/setting-rules-in-hazel.html"
+    itemprop="url">Permalink
+  </a>
+</p>
+<footer>
+<p class="articleFooterP">Category:
+	<a class="p-category" href="../category/personal.html">
+    <span itemprop="articleSection">personal</span>
+  </a>
+  <span class="rightside">
+    <time
+      class="dt-published"
+      datetime="2017-12-04T20:38:00-08:00"
+      itemprop="dateCreated datePublished pubdate">
+        Mon 04 December 2017
+    </time>
+  </span>
+  <br />  <span itemprop="keywords">
+      <a
+        class="tag"
+        rel="category tag"
+        href="../tag/blog.html">
+          blog
+      </a>
+  </span>
+</p>
+</footer>
+</article>
+<hr />
+<article
+  class="post hentry h-entry content"
+  itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+
+<header class="post-header">
+  <h2
+    itemprop="headline title p-name name"
+    class="title p-name post-title">
+    <a
+      rel="bookmark"
+      class="u-url"
+      title="switching over to dashes «Mandaris Moore»"
+      href="2016/12/switching-over-to-dashes.html"
+      itemprop="url">
+      switching over to dashes
+    </a>
+  </h2>
+</header><div class="e-content post-body" itemprop="articleBody">
+<p>Today, I wanted to find out why urls used dash (-) instead of underscores (_). Personally, I perfer to use underscores because they are easier for me to read when looking at a <code>long_title_that_signals_something</code> and thought that the reason it didn't work out was because of someone thinking the opposite. </p>
 <p>Turns out that it has more to do with how computers seperate words. <a href="https://blog.codinghorror.com/of-spaces-underscores-and-dashes/">Joel Atwood had a nice piece</a> that points out that the <code>w</code> used in regular expressions matches up with the under score so what I view as multiple words would be counted as one.</p>
 <p>The best example was in the comments when someone wrote:</p>
 <blockquote>
@@ -57,38 +356,130 @@
 but this-is-multiple-words<br>
 -- Jeff Atwood</p>
 </blockquote>
-<p>I don't think I'll be changing my old files but going forward, I'll probably use this convention.</p>	
+<p>I don't think I'll be changing my old files but going forward, I'll probably use this convention.</p>
+</div>
+
+<p class="readmore u-url">
+  <a
+    rel="bookmark"
+    title="switching over to dashes «Mandaris Moore»"
+    href="2016/12/switching-over-to-dashes.html"
+    itemprop="url">Permalink
+  </a>
+</p>
+<footer>
+<p class="articleFooterP">Category:
+	<a class="p-category" href="../category/tech.html">
+    <span itemprop="articleSection">tech</span>
+  </a>
+  <span class="rightside">
+    <time
+      class="dt-published"
+      datetime="2016-12-14T23:19:19-08:00"
+      itemprop="dateCreated datePublished pubdate">
+        Wed 14 December 2016
+    </time>
+  </span>
+  <br />  <span itemprop="keywords">
+      <a
+        class="tag"
+        rel="category tag"
+        href="../tag/blog.html">
+          blog
+      </a>
+      <a
+        class="tag"
+        rel="category tag"
+        href="../tag/creative-challenge.html">
+          creative challenge
+      </a>
+  </span>
+</p>
+</footer>
 </article>
-<article class="post">
+<hr />
+<article
+  class="post hentry h-entry content"
+  itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
 
 <header class="post-header">
-<h1>
-<a rel="bookmark"
-   href="2016/07/opening-up-on-the-internet.html"
-   title="Opening up on the internet «Quotidian Quest»">
-   Opening up on the internet
-</a>
-</h1>
-<p class="subtitle"><time datetime="2016-07-20T13:38:12-07:00">Wed 20 July 2016</time><label for="opening-up-on-the-internet" class="margin-toggle"> ⊕</label><input type="checkbox" id="opening-up-on-the-internet" class="margin-toggle" /> <span class="marginnote">Category: <a href="http://quotidianquest.com/category/personal.html">personal</a><br />
- #<a href="http://quotidianquest.com/tag/blog.html">blog</a> #<a href="http://quotidianquest.com/tag/slack.html">slack</a></span></p>
-</header><p>I recently spent some time chatting on the internet about some of the problems that I've been having with getting things done since my "fun-employment" the last couple of months. It is very hard for me, because I've been told that I'm smart and have potential all of my life and here I am in my mid 30's and there aren't a line of people knocking on my door to give me money.</p>
+  <h2
+    itemprop="headline title p-name name"
+    class="title p-name post-title">
+    <a
+      rel="bookmark"
+      class="u-url"
+      title="Opening up on the internet «Mandaris Moore»"
+      href="2016/07/opening-up-on-the-internet.html"
+      itemprop="url">
+      Opening up on the internet
+    </a>
+  </h2>
+</header><div class="e-content post-body" itemprop="articleBody">
+<p>I recently spent some time chatting on the internet about some of the problems that I've been having with getting things done since my "fun-employment" the last couple of months. It is very hard for me, because I've been told that I'm smart and have potential all of my life and here I am in my mid 30's and there aren't a line of people knocking on my door to give me money.</p>
 <p>When I did this, I felt good. </p>
 <p>I felt like I wasn't just someone lost in the wind. </p>
-<p>I'm going to stay involved with the community and make it my touch stone as I work towards finding more work.</p>	
+<p>I'm going to stay involved with the community and make it my touch stone as I work towards finding more work.</p>
+</div>
+
+<p class="readmore u-url">
+  <a
+    rel="bookmark"
+    title="Opening up on the internet «Mandaris Moore»"
+    href="2016/07/opening-up-on-the-internet.html"
+    itemprop="url">Permalink
+  </a>
+</p>
+<footer>
+<p class="articleFooterP">Category:
+	<a class="p-category" href="../category/personal.html">
+    <span itemprop="articleSection">personal</span>
+  </a>
+  <span class="rightside">
+    <time
+      class="dt-published"
+      datetime="2016-07-20T13:38:12-07:00"
+      itemprop="dateCreated datePublished pubdate">
+        Wed 20 July 2016
+    </time>
+  </span>
+  <br />  <span itemprop="keywords">
+      <a
+        class="tag"
+        rel="category tag"
+        href="../tag/blog.html">
+          blog
+      </a>
+      <a
+        class="tag"
+        rel="category tag"
+        href="../tag/slack.html">
+          slack
+      </a>
+  </span>
+</p>
+</footer>
 </article>
-<article class="post">
+<hr />
+<article
+  class="post hentry h-entry content"
+  itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
 
 <header class="post-header">
-<h1>
-<a rel="bookmark"
-   href="2016/03/finished-open-graph.html"
-   title="Finished open graph «Quotidian Quest»">
-   Finished open graph
-</a>
-</h1>
-<p class="subtitle"><time datetime="2016-03-06T13:16:22-08:00">Sun 06 March 2016</time><label for="finished-open-graph" class="margin-toggle"> ⊕</label><input type="checkbox" id="finished-open-graph" class="margin-toggle" /> <span class="marginnote">Category: <a href="http://quotidianquest.com/category/coding.html">coding</a><br />
- #<a href="http://quotidianquest.com/tag/blog.html">blog</a> #<a href="http://quotidianquest.com/tag/open-graph.html">open graph</a></span></p>
-</header><p>So,  I spent about 3 hours working on getting Open Graph tags to work in the theme that I created. I've got mixed feeling about it because I started off by adding the tags to the base html template using an if statement and it seemed a little clunky.</p>
+  <h2
+    itemprop="headline title p-name name"
+    class="title p-name post-title">
+    <a
+      rel="bookmark"
+      class="u-url"
+      title="Finished open graph «Mandaris Moore»"
+      href="2016/03/finished-open-graph.html"
+      itemprop="url">
+      Finished open graph
+    </a>
+  </h2>
+</header><div class="e-content post-body" itemprop="articleBody">
+<p>So,  I spent about 3 hours working on getting Open Graph tags to work in the theme that I created. I've got mixed feeling about it because I started off by adding the tags to the base html template using an if statement and it seemed a little clunky.</p>
 <div class="highlight"><pre><span></span><span class="cp">{%</span> <span class="k">if</span> <span class="nv">OPEN_GRAPH</span> <span class="cp">%}</span><span class="x"></span>
 <span class="x">&lt;meta property=&quot;og:title&quot; content=&quot;</span><span class="cp">{{</span> <span class="nv">SITENAME</span> <span class="cp">}}</span><span class="x">&quot;/&gt;</span>
 <span class="x">&lt;meta property=&quot;og:type&quot; content=&quot;website&quot;/&gt;</span>
@@ -101,9 +492,9 @@ but this-is-multiple-words<br>
 <p>This worked for the site in general but doesn't translate to all the articles and this caused me to go into a some what deep dive into how Pelican and Jinja parses blocks and if statements. I started off with putting all the tags into the base and then doing individual changes to tags that need to be changed for. </p>
 <p><strong>BAH!!!</strong></p>
 <p>So, took a step back and looked into what plugins were already available. And there is was! <a href="https://github.com/whiskyechobravo/pelican-open_graph">Pelican-open_graph</a>! I was home free! Or so I thought, until I tried to use it. The plugin has three problems. </p>
-<h2>It doesn't  account for when someone does <em>not</em> have a modified date on their articles.</h2>
+<h4 id="it-doesnt-account-for-when-someone-does-not-have-a-modified-date-on-their-articles">It doesn't  account for when someone does <em>not</em> have a modified date on their articles.</h4>
 <p><a href="https://github.com/AntoineVe/pelican-open_graph">Luckily, someone had put a solution up</a>. The change was forked about 7 months ago today and it looks like whoever created the open graph plugin has taken a break to work on other things.</p>
-<h2>It's a year old and hasn't made the changes for pelican regarding summaries of articles.</h2>
+<h4 id="its-a-year-old-and-hasnt-made-the-changes-for-pelican-regarding-summaries-of-articles">It's a year old and hasn't made the changes for pelican regarding summaries of articles.</h4>
 <p>So, I had to do some debugging to find out that the code needed to be changed in the following way<sup id="fnref-payitforward"><a class="footnote-ref" href="#fn-payitforward">1</a></sup>.</p>
 <div class="highlight"><pre><span></span><span class="n">ogtags</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s1">&#39;og:description&#39;</span><span class="p">,</span> <span class="n">instance</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;og_description&#39;</span><span class="p">,</span>
                                                            <span class="n">instance</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;summary&#39;</span><span class="p">,</span>
@@ -111,7 +502,7 @@ but this-is-multiple-words<br>
 </pre></div>
 
 
-<h2>It also assumed that every article has some kind of tag.</h2>
+<h4 id="it-also-assumed-that-every-article-has-some-kind-of-tag">It also assumed that every article has some kind of tag.</h4>
 <p>I've decided to just punt this problem and add the tags to the 6 articles that don't have them, but than I took a second look at the problem because the perfectionist in me doesn't like to leave problems unsolved and I didn't want to track down what the particular articles were.</p>
 <p>So, I just wrapped the code in a try block to make sure that I got this particular exception.</p>
 <div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
@@ -122,7 +513,7 @@ but this-is-multiple-words<br>
 </pre></div>
 
 
-<h2>Results</h2>
+<h4 id="results">Results</h4>
 <p>Ultimately, I got to learn a little bit more about using pelican and knocked off a major milestone on getting this blog to where I'd like it to be.</p>
 <div class="footnote">
 <hr>
@@ -131,43 +522,197 @@ but this-is-multiple-words<br>
 <p>I've got to branch and push this fix. I don't know how many other people are using pelican or this plugin but if I can save them or future me some time...&#160;<a class="footnote-backref" href="#fnref-payitforward" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 </ol>
-</div>	
+</div>
+</div>
+
+<p class="readmore u-url">
+  <a
+    rel="bookmark"
+    title="Finished open graph «Mandaris Moore»"
+    href="2016/03/finished-open-graph.html"
+    itemprop="url">Permalink
+  </a>
+</p>
+<footer>
+<p class="articleFooterP">Category:
+	<a class="p-category" href="../category/coding.html">
+    <span itemprop="articleSection">coding</span>
+  </a>
+  <span class="rightside">
+    <time
+      class="dt-published"
+      datetime="2016-03-06T13:16:22-08:00"
+      itemprop="dateCreated datePublished pubdate">
+        Sun 06 March 2016
+    </time>
+  </span>
+  <br />  <span itemprop="keywords">
+      <a
+        class="tag"
+        rel="category tag"
+        href="../tag/blog.html">
+          blog
+      </a>
+      <a
+        class="tag"
+        rel="category tag"
+        href="../tag/open-graph.html">
+          open graph
+      </a>
+  </span>
+  <span class="rightside">Modified:
+  	<time
+      class="dt-updated"
+  	  datetime="2016-03-06T14:25:50-08:00"
+  	  itemprop="dateModified">
+        Sun 06 March 2016
+      </time>
+  </span>
+</p>
+</footer>
 </article>
-<article class="post">
+<hr />
+<article
+  class="post hentry h-entry content"
+  itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
 
 <header class="post-header">
-<h1>
-<a rel="bookmark"
-   href="2012/05/blogging-workshop.html"
-   title="Blogging workshop «Quotidian Quest»">
-   Blogging workshop
-</a>
-</h1>
-<p class="subtitle"><time datetime="2012-05-16T22:12:30-07:00">Wed 16 May 2012</time><label for="blogging-workshop" class="margin-toggle"> ⊕</label><input type="checkbox" id="blogging-workshop" class="margin-toggle" /> <span class="marginnote">Category: <a href="http://quotidianquest.com/category/blogging.html">blogging</a><br />
- #<a href="http://quotidianquest.com/tag/blog.html">blog</a> #<a href="http://quotidianquest.com/tag/writing.html">writing</a></span></p>
-</header><p>Today I went to a blogging workshop and I found it really interesting. At first, I was worried that it would filled with the standard novice information like how to get on the internet being taught by someone took 15 minutes to get some information off the internet and put it into a powerpoint presentation to read to use.</p>	
+  <h2
+    itemprop="headline title p-name name"
+    class="title p-name post-title">
+    <a
+      rel="bookmark"
+      class="u-url"
+      title="Blogging workshop «Mandaris Moore»"
+      href="2012/05/blogging-workshop.html"
+      itemprop="url">
+      Blogging workshop
+    </a>
+  </h2>
+</header><div class="e-content post-body" itemprop="articleBody">
+<p>Today I went to a blogging workshop and I found it really interesting. At first, I was worried that it would filled with the standard novice information like how to get on the internet being taught by someone took 15 minutes to get some information off the internet and put it into a powerpoint presentation to read to use.</p>
+</div>
+
+<p class="readmore u-url">
+  <a
+    rel="bookmark"
+    title="Blogging workshop «Mandaris Moore»"
+    href="2012/05/blogging-workshop.html"
+    itemprop="url">Permalink
+  </a>
+</p>
+<footer>
+<p class="articleFooterP">Category:
+	<a class="p-category" href="../category/blogging.html">
+    <span itemprop="articleSection">blogging</span>
+  </a>
+  <span class="rightside">
+    <time
+      class="dt-published"
+      datetime="2012-05-16T22:12:30-07:00"
+      itemprop="dateCreated datePublished pubdate">
+        Wed 16 May 2012
+    </time>
+  </span>
+  <br />  <span itemprop="keywords">
+      <a
+        class="tag"
+        rel="category tag"
+        href="../tag/blog.html">
+          blog
+      </a>
+      <a
+        class="tag"
+        rel="category tag"
+        href="../tag/writing.html">
+          writing
+      </a>
+  </span>
+  <span class="rightside">Modified:
+  	<time
+      class="dt-updated"
+  	  datetime="2016-03-06T12:30:51-08:00"
+  	  itemprop="dateModified">
+        Sun 06 March 2016
+      </time>
+  </span>
+</p>
+</footer>
 </article>
-<article class="post">
+<hr />
+<article
+  class="post hentry h-entry content"
+  itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
 
 <header class="post-header">
-<h1>
-<a rel="bookmark"
-   href="2010/06/creating-new-website.html"
-   title="Creating New Website «Quotidian Quest»">
-   Creating New Website
-</a>
-</h1>
-<p class="subtitle"><time datetime="2010-06-03T18:05:37-07:00">Thu 03 June 2010</time><label for="creating-new-website" class="margin-toggle"> ⊕</label><input type="checkbox" id="creating-new-website" class="margin-toggle" /> <span class="marginnote">Category: <a href="http://quotidianquest.com/category/blogging.html">blogging</a><br />
- #<a href="http://quotidianquest.com/tag/website.html">website</a> #<a href="http://quotidianquest.com/tag/blog.html">blog</a></span></p>
-</header><p>Despite all of my <em>hard work</em> on facebook, it's time that I also have some kind of static site as well.</p>	
+  <h2
+    itemprop="headline title p-name name"
+    class="title p-name post-title">
+    <a
+      rel="bookmark"
+      class="u-url"
+      title="Creating New Website «Mandaris Moore»"
+      href="2010/06/creating-new-website.html"
+      itemprop="url">
+      Creating New Website
+    </a>
+  </h2>
+</header><div class="e-content post-body" itemprop="articleBody">
+<p>Despite all of my <em>hard work</em> on facebook, it's time that I also have some kind of static site as well.</p>
+</div>
+
+<p class="readmore u-url">
+  <a
+    rel="bookmark"
+    title="Creating New Website «Mandaris Moore»"
+    href="2010/06/creating-new-website.html"
+    itemprop="url">Permalink
+  </a>
+</p>
+<footer>
+<p class="articleFooterP">Category:
+	<a class="p-category" href="../category/blogging.html">
+    <span itemprop="articleSection">blogging</span>
+  </a>
+  <span class="rightside">
+    <time
+      class="dt-published"
+      datetime="2010-06-03T18:05:37-07:00"
+      itemprop="dateCreated datePublished pubdate">
+        Thu 03 June 2010
+    </time>
+  </span>
+  <br />  <span itemprop="keywords">
+      <a
+        class="tag"
+        rel="category tag"
+        href="../tag/website.html">
+          website
+      </a>
+      <a
+        class="tag"
+        rel="category tag"
+        href="../tag/blog.html">
+          blog
+      </a>
+  </span>
+</p>
+</footer>
 </article>
+<hr />
 </main>
-      <nav id="pagination">   <!-- <span id="first_page" class="a inactive">&#60;&#60;</span>
-        <span id="first_page" class="a inactive">&#60;</span> -->
-        <span class="a active">1</span>
-   <!-- <span id="next_page" class="a inactive">&#62;</span>
-        <span id="next_page" class="a inactive">&#62;&#62;</span> -->
-</nav><footer>
+  <nav id="pagination">    <span id="first_page" class="a inactive">&#60;&#60;</span>
+    <span id="previous_page" class="a inactive">&#60;</span>
+    <span class="a active">1</span>
+    <span id="next_page" class="a inactive">&#62;</span>
+    <span id="last_page" class="a inactive">&#62;&#62;</span>
+</nav>
+<footer itemscope itemtype="https://schema.org/WPFooter"
+    role="contentinfo" class="baseFooter">
+  <p>All works created by
+    <span itemprop="author" itemscope itemtype=https://schema.org/Person>
+    <span class="p-author h-card" itemprop="name">Mandaris</span></span>.
+  </p>
   <p>Powered by <a href="http://pelican.readthedocs.org">Pelican</a></p>
 </footer>
 </body>

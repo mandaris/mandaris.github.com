@@ -1,55 +1,96 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-us" prefix="og: http://ogp.me/ns#"
+       xmlns:og="http://ogp.me/ns#"
+       xmlns:article="http://ogp.me/ns/article#"
+       xmlns:blogPosting="http://ogp.me/ns/blogPosting#"
+       xmlns:fb="http://www.facebook.com/2008/fbml"
+       xml:lang="en-us">
 <head>
-  <meta charset="utf-8" />
-  <title>hyde - Quotidian Quest</title>
-  <meta name="author" content="Mandaris" />
-  <base href="http://quotidianquest.com">
-  <link rel="stylesheet" type="text/css" href="/theme/tufte-css/tufte.css" />
-  <link rel="stylesheet" type="text/css" href="/theme/css/main.css" />
-  <!--
-  Original link to favicon
-  <link rel="shortcut icon" type="text/css" href="/favicon.ico" />
-  -->
-  <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png" />
-  <link rel="shortcut icon" href="/favicon.ico" />
-  <link rel="icon" type="image/png" href="/favicon.png" />
-  <link rel="mask-icon" href="/favicon.svg" color="black" />
 
-  <link href="http://quotidianquest.com/feeds/atom.xml" type="application/atom+xml"
-        rel="alternate" title="Quotidian Quest ALL Atom Feed" />
+<meta charset="utf-8" />
+<title>hyde - Mandaris Moore</title>
+<meta name="author" class="p-author h-card" content="Mandaris" />
+<meta property="site_name" content="Mandaris Moore" />
+<meta name="description" content="The personal website for Mandaris Moore." />
+<base href=".." />
+<meta name="generator" content="Pelican" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#1b5a53" />
+<link rel="stylesheet" type="text/css" href="/theme/css/main.css" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="icon" type="image/png" href="/favicon.png" />
+<link rel="apple-touch-icon-precomposed"
+      href="/apple-touch-icon-precomposed.png" />
 
-  <!-- OpenGraph Info -->
-  <meta property="og:title" content="Quotidian Quest"/>
-  <meta property="og:type" content="website"/>
-  <meta property="og:description" content="The personal website for Mandaris Moore."/>
-  <meta property="og:url" content="http://quotidianquest.com"/>
+<!-- Feed information -->
+<link href="https://mandaris.github.com/feeds/atom.xml"
+      type="application/atom+xml"
+      rel="alternate" title="Mandaris Moore ALL Atom Feed" />
+
+<!--- Other Social Media Tags (See README.md) --->
+<!-- OpenGraph Info -->
+<meta property="og:title" content="Mandaris Moore" />
+<meta property="og:type" content="website" />
+<meta property="og:description" content="The personal website for Mandaris Moore."/>
+<meta property="og:url" content=".." />
+<meta property="og:locale" content="en-us" />
+<meta property="og:image" content="../favicon.png" />
+<meta property="og:image:alt" content="A person in a gear." />
+<!-- Micro.blog User Name -->
+<link href="https://micro.blog/mandaris" rel="me" />
+<!-- IndieWeb sign-in -->
+<link href="https://github.com/mandaris"
+      rel="me" class="u-url" />
+<!-- Twitter Specific Info -->
+<meta name="twitter:site" content="@mandaris" />
+<meta name="twitter:creator" content="@mandaris" />
+<meta name="twitter:card" content="summary_large_image" />
+<link href="https://twitter.com/mandaris"
+      rel="me" class="u-url" />
 </head>
 
-<body>
-<header>
-  <h1 class="websitetitle"><a href="http://quotidianquest.com">Quotidian Quest</a></h1>
-  <nav class="navmenu" id="navmenu">
-    <li><a class="navitemlink" href="http://quotidianquest.com/archives.html">Archive</a></li>
-    <li><a class="navitemlink" href="http://quotidianquest.com/pages/about.html">About</a></li>
-    <li><a class="navitemlink" href="http://quotidianquest.com/pages/projects.html">Projects</a></li>
-   </nav>
- </header>
-<main class="articlelisting">
+<body itemscope itemtype="https://schema.org/Blog">
+<meta itemprop="description" content="The personal website for Mandaris Moore." />
+<header role="banner">
+<h1 class="websitetitle"><a href="..">Mandaris Moore</a></h1>
+<nav itemscope itemtype="https://schema.org/SiteNavigationElement"
+    class="navmenu" id="navmenu" >
+<ul>
+  <li>
+    <a class="navitemlink" href="../archives.html">Archive</a>
+  </li>
+  <li><a class="navitemlink" href="../pages/about.html">
+     About
+  </a></li>
+  <li><a class="navitemlink" href="../pages/projects.html">
+     Projects
+  </a></li>
+</ul>
+</nav>
+</header>
 
-<article class="post">
+<hr />
+<main class="articlelisting container">
+<article
+  class="post hentry h-entry content"
+  itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
 
 <header class="post-header">
-<h1>
-<a rel="bookmark"
-   href="2012/01/hyde-doc-suck.html"
-   title="Hyde Doc suck «Quotidian Quest»">
-   Hyde Doc suck
-</a>
-</h1>
-<p class="subtitle"><time datetime="2012-01-25T10:41:34-08:00">Wed 25 January 2012</time><label for="hyde-doc-suck" class="margin-toggle"> ⊕</label><input type="checkbox" id="hyde-doc-suck" class="margin-toggle" /> <span class="marginnote">Category: <a href="http://quotidianquest.com/category/blogging.html">blogging</a><br />
- #<a href="http://quotidianquest.com/tag/hyde.html">hyde</a></span></p>
-</header><p>I recently came across as <a href="http://groups.google.com/group/hyde-dev/browse_thread/thread/db9213433190487f" title="Message post from Google Groups">email</a> from a goggle group that I'm part of that is centered around <a href="https://github.com/hyde/hyde" title="Hyde on GitHub">Hyde</a> which is what I'm currently using to statically generate my website/blog. The email was basically asking "What's up with the docs?" and all I can do is just shake my head in agreement. </p>
+  <h2
+    itemprop="headline title p-name name"
+    class="title p-name post-title">
+    <a
+      rel="bookmark"
+      class="u-url"
+      title="Hyde Doc suck «Mandaris Moore»"
+      href="2012/01/hyde-doc-suck.html"
+      itemprop="url">
+      Hyde Doc suck
+    </a>
+  </h2>
+</header><div class="e-content post-body" itemprop="articleBody">
+<p>I recently came across as <a href="http://groups.google.com/group/hyde-dev/browse_thread/thread/db9213433190487f" title="Message post from Google Groups">email</a> from a goggle group that I'm part of that is centered around <a href="https://github.com/hyde/hyde" title="Hyde on GitHub">Hyde</a> which is what I'm currently using to statically generate my website/blog. The email was basically asking "What's up with the docs?" and all I can do is just shake my head in agreement. </p>
 <p>The problem is that a significant amount of these open source projects are created by people whose talent is mostly with the creation of the tools and not with the associatated docs. This leaves a lot of people in the dust because people see the end result and want to have something cool like that, but don't have the time/desire to dive into the code and learn how it works. </p>
 <p>It's not because they are lazy, it because we are all busy people and sometimes we don't need to know every aspect of something to use it. For example, you don't have to be a mechanic to drive your car<sup id="fnref-car"><a class="footnote-ref" href="#fn-car">1</a></sup>.</p>
 <p>Honestly, I wish I could help this guy out because I've had similar problems with this and other projects and it can be daunting to stick your head out and ask the questions. But you have to have the <a href="http://www.43folders.com/2008/12/01/courageous-sucking" title="Photography, and the Tolerance for Courageous Sucking via 43folders">courage to suck</a> in order to get any better at something.</p>
@@ -60,15 +101,63 @@
 <p>... but a little more knowledged in this area can save you a ton of money.&#160;<a class="footnote-backref" href="#fnref-car" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 </ol>
-</div>	
+</div>
+</div>
+
+<p class="readmore u-url">
+  <a
+    rel="bookmark"
+    title="Hyde Doc suck «Mandaris Moore»"
+    href="2012/01/hyde-doc-suck.html"
+    itemprop="url">Permalink
+  </a>
+</p>
+<footer>
+<p class="articleFooterP">Category:
+	<a class="p-category" href="../category/blogging.html">
+    <span itemprop="articleSection">blogging</span>
+  </a>
+  <span class="rightside">
+    <time
+      class="dt-published"
+      datetime="2012-01-25T10:41:34-08:00"
+      itemprop="dateCreated datePublished pubdate">
+        Wed 25 January 2012
+    </time>
+  </span>
+  <br />  <span itemprop="keywords">
+      <a
+        class="tag"
+        rel="category tag"
+        href="../tag/hyde.html">
+          hyde
+      </a>
+  </span>
+  <span class="rightside">Modified:
+  	<time
+      class="dt-updated"
+  	  datetime="2017-07-11T07:07:03-07:00"
+  	  itemprop="dateModified">
+        Tue 11 July 2017
+      </time>
+  </span>
+</p>
+</footer>
 </article>
+<hr />
 </main>
-      <nav id="pagination">   <!-- <span id="first_page" class="a inactive">&#60;&#60;</span>
-        <span id="first_page" class="a inactive">&#60;</span> -->
-        <span class="a active">1</span>
-   <!-- <span id="next_page" class="a inactive">&#62;</span>
-        <span id="next_page" class="a inactive">&#62;&#62;</span> -->
-</nav><footer>
+  <nav id="pagination">    <span id="first_page" class="a inactive">&#60;&#60;</span>
+    <span id="previous_page" class="a inactive">&#60;</span>
+    <span class="a active">1</span>
+    <span id="next_page" class="a inactive">&#62;</span>
+    <span id="last_page" class="a inactive">&#62;&#62;</span>
+</nav>
+<footer itemscope itemtype="https://schema.org/WPFooter"
+    role="contentinfo" class="baseFooter">
+  <p>All works created by
+    <span itemprop="author" itemscope itemtype=https://schema.org/Person>
+    <span class="p-author h-card" itemprop="name">Mandaris</span></span>.
+  </p>
   <p>Powered by <a href="http://pelican.readthedocs.org">Pelican</a></p>
 </footer>
 </body>
