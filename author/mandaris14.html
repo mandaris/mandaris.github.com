@@ -12,7 +12,7 @@
 <meta name="author" class="p-author h-card" content="Mandaris" />
 <meta property="site_name" content="Mandaris Moore" />
 <meta name="description" content="The personal website for Mandaris Moore." />
-<base href=".." />
+<base href="http://mandaris.github.io" />
 <meta name="generator" content="Pelican" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -24,7 +24,7 @@
       href="/apple-touch-icon-precomposed.png" />
 
 <!-- Feed information -->
-<link href="https://mandaris.github.com/feeds/atom.xml"
+<link href="http://mandaris.github.io/feeds/atom.xml"
       type="application/atom+xml"
       rel="alternate" title="Mandaris Moore ALL Atom Feed" />
 
@@ -33,9 +33,9 @@
 <meta property="og:title" content="Mandaris Moore" />
 <meta property="og:type" content="website" />
 <meta property="og:description" content="The personal website for Mandaris Moore."/>
-<meta property="og:url" content=".." />
+<meta property="og:url" content="http://mandaris.github.io" />
 <meta property="og:locale" content="en-us" />
-<meta property="og:image" content="../favicon.png" />
+<meta property="og:image" content="http://mandaris.github.io/favicon.png" />
 <meta property="og:image:alt" content="A person in a gear." />
 <!-- Micro.blog User Name -->
 <link href="https://micro.blog/mandaris" rel="me" />
@@ -53,19 +53,19 @@
 <body itemscope itemtype="https://schema.org/Blog">
 <meta itemprop="description" content="The personal website for Mandaris Moore." />
 <header role="banner">
-<h1 class="websitetitle"><a href="..">Mandaris Moore</a></h1>
+<h1 class="websitetitle"><a href="http://mandaris.github.io">Mandaris Moore</a></h1>
 <nav itemscope itemtype="https://schema.org/SiteNavigationElement"
     class="navmenu" id="navmenu" >
 <ul>
   <li>
-    <a class="navitemlink" href="../archives.html">Archive</a>
+    <a class="navitemlink" href="http://mandaris.github.io/archives.html">Archive</a>
   </li>
-  <li><a class="navitemlink" href="../pages/about.html">
-     About
-  </a></li>
-  <li><a class="navitemlink" href="../pages/projects.html">
-     Projects
-  </a></li>
+  <li>
+    <a class="navitemlink" href="http://mandaris.github.io/pages/about.html">About</a>
+  </li>
+  <li>
+    <a class="navitemlink" href="http://mandaris.github.io/pages/projects.html">Projects</a>
+  </li>
 </ul>
 </nav>
 </header>
@@ -83,25 +83,40 @@
     <a
       rel="bookmark"
       class="u-url"
-      title="Bed time patience «Mandaris Moore»"
-      href="2012/08/bed-time-patience.html"
+      title="An accomplishment «Mandaris Moore»"
+      href="2013/10/an-accomplishment.html"
       itemprop="url">
-      Bed time patience
+      An accomplishment
     </a>
   </h2>
 </header><div class="e-content post-body" itemprop="articleBody">
-<p>Today has been a pretty good day. I got up and was able to get a breakfast for my kids and get them to school on time followed by some quality time with my youngest<sup id="fnref-youngest"><a class="footnote-ref" href="#fn-youngest">1</a></sup>. </p>
-<p>Things were going pretty good even though there were a number of bumps along the way. </p>
-<p>And then it’s time for bed.</p>
-<p>It seems like this is the most difficult time for my family<sup id="fnref-routine"><a class="footnote-ref" href="#fn-routine">2</a></sup> and it is the one that really tries my patience because it is the end of the day and is the last that stands between me and any activities that I want or need to do for that day. I feel that it is because the lack of a consistent schedule is a major reason my wife and I have “issues” with communication and... um... other stuff.</p>
+<p>I've had a little idea going on in the back of my head for the last couple of months about a simple application that would pop up after a given keyboard shortcut. It's a simple idea and never got around to doing it because I didn't sit down and do it. Even on the days, where I thought "Hey,If I had an easy way to keep track of all the good things that I've done, I'd feel better about myself". Normally, I just look at the todo item that I had in OmniFocus and just push it back a couple days or weeks because of priorities.</p>
+<p>But today, I sat down and decided that if I wanted to really follow my own words about controlling my life I've got to make good on the commitments that I make to myself big or small. </p>
+<p>So I sat down behind my laptop opened up my AppleScript 1-2-3<sup id="fnref-unused"><a class="footnote-ref" href="#fn-unused">1</a></sup> and started searching the internet after not seeing a solution to my problems on the first page.</p>
+<div class="highlight"><pre><span></span><span class="k">set</span> <span class="nv">theSumm</span> <span class="k">to</span> <span class="na">text returned</span> <span class="k">of</span> <span class="p">(</span><span class="nb">display dialog</span> <span class="s2">&quot;Latest Accomplishment&quot;</span> <span class="nb">buttons</span> <span class="s2">&quot;OK&quot;</span> <span class="nv">default</span> <span class="nv">answer</span> <span class="s2">&quot;A step forward&quot;</span> <span class="nv">default</span> <span class="nb">button</span> <span class="s2">&quot;OK&quot;</span><span class="p">)</span>
+
+<span class="k">tell</span> <span class="nb">application</span> <span class="s2">&quot;Calendar&quot;</span>
+    <span class="nb">make</span> <span class="nv">todo</span> <span class="nb">at</span> <span class="k">end</span> <span class="k">of</span> <span class="nv">todos</span> <span class="k">of</span> <span class="nv">calendar</span> <span class="s2">&quot;Accomplishments&quot;</span> <span class="nv">with</span> <span class="na">properties</span> <span class="p">{</span><span class="nv">summary</span><span class="p">:</span><span class="nv">theSumm</span><span class="p">,</span> <span class="nv">completion</span> <span class="nv">date</span><span class="p">:</span><span class="nb">current date</span><span class="p">}</span>
+<span class="k">end</span> <span class="k">tell</span>
+</pre></div>
+
+
+<p>At first, I was just going to put this in a script file and then run it from a service, but I decided that the easiest way of doing this was to use <a href="http://www.keyboardmaestro.com/main/" title="An app that I've been using more and more to get things moving quickly.">Keyboard Maestro</a>. It was really cool that I got to move the entire script into the application so I didn't have to move between the different applications.</p>
+<p><a href="http://www.flickr.com/photos/mandaris/10540756656/" title="A screenshot of my first keyboard maestro attempt to make a short cut to log my accomplishments"><img src="http://farm4.staticflickr.com/3783/10540756656_0d7bd92af3.jpg" width="427" height="500" alt="A copy of my first keyboard maestro attempt to make a short cut to log my accomplishments"></a></p>
+<p>This is what I had originally envisioned, but I started to think about the limitations of keeping all of this in reminders. All the applications that use the system built <a href="https://www.apple.com/osx/apps/#reminders" title="The default todo application on Mac OSX">task management tools</a> have a focus on what needs to be done and if I want to have way to look at this stuff quickly and I wasn't sure how to look at accomplishments that were marked as completed a month ago.</p>
+<p>I took a look at what I was doing on a daily basis and saw that I've been doing more and more journaling using <a href="http://dayoneapp.com" title="Day One is a great simple application that allows you to have a journal that syncs with all my devices">Day One</a><sup id="fnref-dayoneshortcut"><a class="footnote-ref" href="#fn-dayoneshortcut">2</a></sup>. </p>
+<p>I didn't want to make the Day One application open up every time that I finished something new so I looked at the <a href="http://dayoneapp.com/tools/cli-man/" title="Day One command line interface">command line interface</a> and came up with this.</p>
+<p><a href="http://www.flickr.com/photos/mandaris/10543020504/" title="Screenshot of my keyboard maestro macro to log accomplishments quickly using the command line interface for Day One"><img src="http://farm6.staticflickr.com/5487/10543020504_5edfa7b7ba.jpg" width="387" height="500" alt="Screenshot of my keyboard maestro macro to log accomplishments quickly using the command line interface for Day One"></a></p>
+<p>So far, the only downside is that I have to go into Day One to make all the hashtags turn into tags and I have to do a search for that tag if I want to see all my accomplishments in a given time.</p>
+<p>I think for the next iteration, I might set up <a href="http://projects.tynsoe.org/en/geektool/" title="GeekTool: A tool to show information from files and commands on the desktop">GeekTool</a> to show my latest accomplishment on my desktop, but I'm just happy that I finished this initial task.</p>
 <div class="footnote">
 <hr>
 <ol>
-<li id="fn-youngest">
-<p>The youngest asked me to pack up a lunch for her and put it in her backpack. I packed the same lunch as I did for my oldest as she requested and then when we got to class she wanted to touch all the toys and wanted to stay after the bell was rung. I had to bribe her with playing my little pony when we got home AND a piggy back ride.&#160;<a class="footnote-backref" href="#fnref-youngest" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<li id="fn-unused">
+<p>I bought this <a href="http://www.amazon.com/Apple-Training-AppleScript-1-2-3-ebook/dp/B000SEI7EO/ref=sr_1_1?ie=UTF8&amp;qid=1381753150&amp;sr=8-1&amp;keywords=applescript+1-2-3">book</a> almost a year ago so that I could start teaching myself to do more automation on my computer. Turns out, I just needed to take the time and focus on something that I really wanted to create. It felt good and I think I'll actually get through it... when I get the time.&#160;<a class="footnote-backref" href="#fnref-unused" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
-<li id="fn-routine">
-<p>I think this is the fault of me and my wife as we do not instill a stable routine with the girls. Too often, we get derailed with activities or some other nonsense like not using the right toothpaste, etc.&#160;<a class="footnote-backref" href="#fnref-routine" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+<li id="fn-dayoneshortcut">
+<p>I'd already had a specific keyboard shortcut for opening up the menubar pop up for quick writing of thoughts and feelings, but I didn't want to add a <a href="http://smilesoftware.com/TextExpander/index.html" title="Textexpander is a tool that I use when I'm writing things over and over again.">textexpander</a> snippet to add an accomplishment tag.&#160;<a class="footnote-backref" href="#fnref-dayoneshortcut" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
@@ -110,38 +125,270 @@
 <p class="readmore u-url">
   <a
     rel="bookmark"
-    title="Bed time patience «Mandaris Moore»"
-    href="2012/08/bed-time-patience.html"
+    title="An accomplishment «Mandaris Moore»"
+    href="2013/10/an-accomplishment.html"
     itemprop="url">Permalink
   </a>
 </p>
 <footer>
 <p class="articleFooterP">Category:
-	<a class="p-category" href="../category/parenting.html">
-    <span itemprop="articleSection">parenting</span>
+	<a class="p-category" href="http://mandaris.github.io/category/personal.html">
+    <span itemprop="articleSection">personal</span>
   </a>
   <span class="rightside">
     <time
       class="dt-published"
-      datetime="2012-08-20T21:29:23-07:00"
+      datetime="2013-10-13T22:50:29-07:00"
       itemprop="dateCreated datePublished pubdate">
-        Mon 20 August 2012
+        Sun 13 October 2013
     </time>
   </span>
   <br />  <span itemprop="keywords">
       <a
         class="tag"
         rel="category tag"
-        href="../tag/routine.html">
-          routine
+        href="http://mandaris.github.io/tag/journal.html">
+          journal
+      </a>
+      <a
+        class="tag"
+        rel="category tag"
+        href="http://mandaris.github.io/tag/accomplishments.html">
+          accomplishments
+      </a>
+      <a
+        class="tag"
+        rel="category tag"
+        href="http://mandaris.github.io/tag/keyboard-maestro.html">
+          keyboard maestro
+      </a>
+  </span>
+</p>
+</footer>
+</article>
+<hr />
+<article
+  class="post hentry h-entry content"
+  itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+
+<header class="post-header">
+  <h2
+    itemprop="headline title p-name name"
+    class="title p-name post-title">
+    <a
+      rel="bookmark"
+      class="u-url"
+      title="Messing around with Sublime Text «Mandaris Moore»"
+      href="2013/09/messing-around-with-sublime-text.html"
+      itemprop="url">
+      Messing around with Sublime Text
+    </a>
+  </h2>
+</header><div class="e-content post-body" itemprop="articleBody">
+<p>Honestly, a lot of people that I respect are talking about it. I think I'm going to have to step through the tutorial again. But honestly, I'd like to think about what I want to do with it. </p>
+<p>I already have a couple text editors but I love messing around with the tools more than doing the job sometimes. </p>
+<p>The only reason that I don't use sublime text is because of the price. The "free" demo allows you to use it as long as you want but you see a pop up reminding you that it hasn't been purchased yet. I'm not at a point where I can justify the price and being someone who works in the industry, I want to encourage people to pay for software.</p>
+<p>I've talked to some other people and it seems like they are proud of the being able to mentally blockout the popup and dismiss it without missing a beat.</p>
+<p>To me, that just seems wrong on so many levels.</p>
+</div>
+
+<p class="readmore u-url">
+  <a
+    rel="bookmark"
+    title="Messing around with Sublime Text «Mandaris Moore»"
+    href="2013/09/messing-around-with-sublime-text.html"
+    itemprop="url">Permalink
+  </a>
+</p>
+<footer>
+<p class="articleFooterP">Category:
+	<a class="p-category" href="http://mandaris.github.io/category/tech.html">
+    <span itemprop="articleSection">tech</span>
+  </a>
+  <span class="rightside">
+    <time
+      class="dt-published"
+      datetime="2013-09-16T10:56:13-07:00"
+      itemprop="dateCreated datePublished pubdate">
+        Mon 16 September 2013
+    </time>
+  </span>
+  <br />  <span itemprop="keywords">
+      <a
+        class="tag"
+        rel="category tag"
+        href="http://mandaris.github.io/tag/software.html">
+          software
+      </a>
+      <a
+        class="tag"
+        rel="category tag"
+        href="http://mandaris.github.io/tag/sublime-text.html">
+          sublime text
+      </a>
+  </span>
+</p>
+</footer>
+</article>
+<hr />
+<article
+  class="post hentry h-entry content"
+  itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+
+<header class="post-header">
+  <h2
+    itemprop="headline title p-name name"
+    class="title p-name post-title">
+    <a
+      rel="bookmark"
+      class="u-url"
+      title="QA Questions «Mandaris Moore»"
+      href="2013/09/qa-questions.html"
+      itemprop="url">
+      QA Questions
+    </a>
+  </h2>
+</header><div class="e-content post-body" itemprop="articleBody">
+<p>I was recently asked to write a little something about my thoughts on doing QA and some questions about my experience. I was told to only write two sentences but I made three so that I could delete a paragraph later. I thought it would be ok to post them on my site. I hope that you get something out of reading it.</p>
+<hr>
+<p>I'm a little bit of a perfectionist when it comes to my work. I find myself agonizing over details and often have multiple drafts and versions of emails, code examples and tutorials that I'm going to publish right after I change that one or two critical things that will make my point. This has been one of the reasons that I've been in Quality Assurance for as long as I have; I don't want people to run into problems.</p>
+<p>When I first started working, I was put in charge of creating and automating test suites for an application development tool. The mission was to simulate how a user would create a smaller application using the different components and options available. I quickly learned that automation is only good if you have a clear goal of what you want to accomplish. When the automation breaks, something should happen other than changing the automation. Since then, I've worked with a variety of systems that reported an issue when something goes wrong, either a problem in the build system or a change in functionality. </p>
+<p>A lot of companies are attempting to be agile and it is important that a QA engineer keep up to date with where the company wants to go with the product and have an idea for how people are actually going to be using it. I've been in a couple of situations where companies have been so focused on the features of the product, that they loose track of how everything is supposed to come together for the user. There can be difficulty in communicating (development in remote parts of the world or just don't see it the same way), but I feel that I've learned a lot of different ways of getting my point across (detailed bug reports, screenshots and videos) and understanding where other people are coming from.</p>
+<h4 id="in-your-current-role-what-is-the-end-product-how-do-you-test-it">In your current role, what is the end product? How do you test it?</h4>
+<p>In my current role, I test two products. One is a web portal that I test using selenium for regressions and manual testing following test plans that I've developed. The other is an IDE based off of eclipse which creates smaller applications that I do manual testing using test plans that I've created.</p>
+<h4 id="do-you-have-experience-with-imbedded-software-please-describe">Do you have experience with imbedded software? Please describe?</h4>
+<p>No, the closest I've come to a truly imbedded system is when I was working at Intel and I had to run data through a simulation of the graphics chip.</p>
+<h4 id="what-is-your-experience-with-programming-languages-years-of-experience-what-have-you-programmed-for">What is your experience with programming?  Languages? Years of experience? What have you programmed for?</h4>
+<p>I've always been active in keeping my skills up. I've been doing java for about 8 years now and use it mainly for creating examples for customers and components within my test plans. I've used objective-c for 4 years and use it for my own personal applications. I've been getting more and more into python for the last 2 years as a way to automate my mac, generate test data and small web services. </p>
+<h4 id="have-you-been-a-member-of-a-scrum-team-describe-your-sprints">Have you been a member of a SCRUM team? Describe your sprints</h4>
+<p>Yes, most of them are related to creating and merging a major feature into the software. The team had to design and implement new features that could make the software unstable, I was in charge of merge conflicts and regression testing.</p>
+<h4 id="what-is-your-experience-with-defect-tracking-systems-where-did-you-do-this-and-what-was-the-project">What is your experience with defect tracking systems. Where did you do this and what was the project?</h4>
+<p>I can't imagine a world where there isn't some kind of defect tracking system! I've used RedMine, Jira, Salesforce and a couple built by the the company (Intel and Apple). At Unify, we used Salesforce to track customer issues and information. If there was a real bug or enhancement, we'd put it into Jira or a terminal based bug tracker and each person was told to make sure that all the information needed for a bug was completely documented and were to place test artifacts. At Intel and Apple, we used a custom built solution that required us to put the examples and test artifacts on a shared drive. At Intel, we also had to schedule time on simulator in order to reproduce and debug problems. At Starview, we use RedMine to document and prioritize issues as they come up.</p>
+<h4 id="describe-your-experience-with-source-control-systems">Describe your experience with source control systems</h4>
+<p>I've used CVS, RCS, Subversion, git and mercurial. At intel, we used subversion to branch and merge bug features and bug fixes. It was my primary duty to handle these merges. The most difficult merge had to do with over 25 files and thousands of lines of code. At Starview, they use mercurial and I use the command line to interact with that. I use git to check out source control from Github. </p>
+<h4 id="describe-your-experience-with-automated-testing-tools-what-have-you-used-where-for-how-long-in-what-context">Describe your experience with automated testing tools. What have you used? Where? For how long? In what context.</h4>
+<p>The first tool that used was SilkTest as Unify, I used it for 2 years. At Intel, they had a system called Tambor that ran tests in an emulator (not to be confused with the simulator from earlier) part of the regression testing was running Tambor. Currently, I've been using Jenkins to start automated tasks when there is a change in source code. Jenkins kicks off tasks such as selenium to test how the application respond to user input.</p>
+<h4 id="what-is-your-experience-with-integration-test-planning-approaches-and-related-experience-with">What is your experience with integration test planning approaches and related experience with:</h4>
+<h5 id="regression-testing">regression testing</h5>
+<p>Usually, we add a test to the automated suite based off the the severity of the bug and all critical issues are added to the test plan for manual testing. Usually, this is broken down as use cases and there is a lot of over lap. For example, a new feature might be introduced (i.e when users click and hold a button a different event is triggered) and we have to make sure that the new functionality doesn't change how it used to work unexpectedly. I've had to write the plans that describe how it is supposed to be used and the code that would actually do it.</p>
+<h5 id="acceptance-testing">acceptance testing</h5>
+<p>At my current position, we noticed a problem where things started to feel slower when using the application. We didn't have any real data on how to see if there was a problem other than noticing that our automation suite was taking longer to run. I took it upon myself to learn and implement jmeter and look at serval plugins for jenkins so that we can look at the performance of different test from one build to the other.</p>
+<h5 id="risk-based-testing">risk based testing?</h5>
+<p>I usually see this as part of regression testing because of time and resource limitations. If you are able to grow your suite of tests, you can focus on making sure that new features and bug fixes get higher priority for test creation. That being said, the new stuff is usually tested manually so that I can get a feel for what it is doing versus the documented requirements.
+ </p>
+</div>
+
+<p class="readmore u-url">
+  <a
+    rel="bookmark"
+    title="QA Questions «Mandaris Moore»"
+    href="2013/09/qa-questions.html"
+    itemprop="url">Permalink
+  </a>
+</p>
+<footer>
+<p class="articleFooterP">Category:
+	<a class="p-category" href="http://mandaris.github.io/category/personal.html">
+    <span itemprop="articleSection">personal</span>
+  </a>
+  <span class="rightside">
+    <time
+      class="dt-published"
+      datetime="2013-09-12T22:09:38-07:00"
+      itemprop="dateCreated datePublished pubdate">
+        Thu 12 September 2013
+    </time>
+  </span>
+  <br />  <span itemprop="keywords">
+      <a
+        class="tag"
+        rel="category tag"
+        href="http://mandaris.github.io/tag/qa.html">
+          QA
+      </a>
+      <a
+        class="tag"
+        rel="category tag"
+        href="http://mandaris.github.io/tag/employment.html">
+          employment
+      </a>
+  </span>
+</p>
+</footer>
+</article>
+<hr />
+<article
+  class="post hentry h-entry content"
+  itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+
+<header class="post-header">
+  <h2
+    itemprop="headline title p-name name"
+    class="title p-name post-title">
+    <a
+      rel="bookmark"
+      class="u-url"
+      title="Excited about beta «Mandaris Moore»"
+      href="2013/07/excited-about-beta.html"
+      itemprop="url">
+      Excited about beta
+    </a>
+  </h2>
+</header><div class="e-content post-body" itemprop="articleBody">
+<p>I'm pretty excited about the latest changes in <a href="http://multimarkdown.com/messages/v24b2">MultiMarkdown Composer</a>!</p>
+<p>It's going to have some things like: </p>
+<div class="highlight"><pre><span></span><span class="n">some</span> <span class="n">perl</span> <span class="n">code</span>
+</pre></div>
+
+
+<p>and </p>
+<p>x^2 or x^2^</p>
+<p>as well as </p>
+<p>y~z or y~z~</p>
+<p>It looks like it is showing the changes now.</p>
+</div>
+
+<p class="readmore u-url">
+  <a
+    rel="bookmark"
+    title="Excited about beta «Mandaris Moore»"
+    href="2013/07/excited-about-beta.html"
+    itemprop="url">Permalink
+  </a>
+</p>
+<footer>
+<p class="articleFooterP">Category:
+	<a class="p-category" href="http://mandaris.github.io/category/tech.html">
+    <span itemprop="articleSection">tech</span>
+  </a>
+  <span class="rightside">
+    <time
+      class="dt-published"
+      datetime="2013-07-08T15:05:46-07:00"
+      itemprop="dateCreated datePublished pubdate">
+        Mon 08 July 2013
+    </time>
+  </span>
+  <br />  <span itemprop="keywords">
+      <a
+        class="tag"
+        rel="category tag"
+        href="http://mandaris.github.io/tag/mmd.html">
+          mmd
+      </a>
+      <a
+        class="tag"
+        rel="category tag"
+        href="http://mandaris.github.io/tag/beta.html">
+          beta
       </a>
   </span>
   <span class="rightside">Modified:
   	<time
       class="dt-updated"
-  	  datetime="2016-03-06T12:07:07-08:00"
+  	  datetime="2013-07-08T15:05:46-07:00"
   	  itemprop="dateModified">
-        Sun 06 March 2016
+        Mon 08 July 2013
       </time>
   </span>
 </p>
@@ -159,150 +406,61 @@
     <a
       rel="bookmark"
       class="u-url"
-      title="I like to read «Mandaris Moore»"
-      href="2012/08/i-like-to-read.html"
+      title="N-Word «Mandaris Moore»"
+      href="2013/06/n-word.html"
       itemprop="url">
-      I like to read
+      N-Word
     </a>
   </h2>
 </header><div class="e-content post-body" itemprop="articleBody">
-<p>I like the idea of being a writer. i also like the idea of being a programmer. I spend a lot of time reading about what this and that person did an invariably putthem on a little bit of a pedistal. After that I stand back and say "that person is cool. I wonder if I could do something cool like that. I know, I'll takesome notes and then when I get a chance I'll make something must as cool."</p>
-<p>Nothing comes from just wanting and -at this point- my dreams are only hurting me because I see these people and only see what i lack versus what i can bring to the table.</p>
-<p>I feel like im hurting and i dont know if I'll ever  heal. </p>
-<p>I tell myself it ok. That I can get up and do something more with my life but it feels like all my breaks are simply to break even. </p>
-<p>I need help.</p>
-<p>I need some kind of guidence.</p>
-</div>
-
-<p class="readmore u-url">
-  <a
-    rel="bookmark"
-    title="I like to read «Mandaris Moore»"
-    href="2012/08/i-like-to-read.html"
-    itemprop="url">Permalink
-  </a>
-</p>
-<footer>
-<p class="articleFooterP">Category:
-	<a class="p-category" href="../category/writing.html">
-    <span itemprop="articleSection">writing</span>
-  </a>
-  <span class="rightside">
-    <time
-      class="dt-published"
-      datetime="2012-08-17T01:30:37-07:00"
-      itemprop="dateCreated datePublished pubdate">
-        Fri 17 August 2012
-    </time>
-  </span>
-  <br />  <span itemprop="keywords">
-      <a
-        class="tag"
-        rel="category tag"
-        href="../tag/writing.html">
-          writing
-      </a>
-      <a
-        class="tag"
-        rel="category tag"
-        href="../tag/goals.html">
-          goals
-      </a>
-  </span>
-</p>
-</footer>
-</article>
-<hr />
-<article
-  class="post hentry h-entry content"
-  itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-
-<header class="post-header">
-  <h2
-    itemprop="headline title p-name name"
-    class="title p-name post-title">
-    <a
-      rel="bookmark"
-      class="u-url"
-      title="Loosing touch «Mandaris Moore»"
-      href="2012/07/loosing-touch.html"
-      itemprop="url">
-      Loosing touch
-    </a>
-  </h2>
-</header><div class="e-content post-body" itemprop="articleBody">
-<p>Today, I really feel like I'm loosing touch with my daughters. Part of me thinks that I maybe overthinking the fact that I've been a little sick and out of it the last couple of days, but another part is worried about the health of the communication between me and my 4 year old daughter.</p>
-<p>As soon as I wrote that I thought to myself, 'How can any one unstand the mind of a 4 year old?'. Well, there are books on it so maybe something is there?</p>
-<h4 id="using-your-big-girl-words">Using your big girl words</h4>
-<p>Recently, it feels that our daughters are both not communicating in the best possible way. Both of them seem to yell and whine more than they used to and I find myself thinking that this might be my fault since they are home more. The last couple of weeks have seen the family move into a pattern where things aren't really moving as in a healthy way.</p>
-<p>Maybe it's the lack of sleep or the fact that mommy and daddy have had more and more conflict where we aren't talking to each other in a respectful way and the children sometimes hear us.</p>
-<p>Maybe it's the fact that our dog died and this is part of the grieving process.</p>
-<p>Whatever it is, we have to figure it out and find a way for us as a family to move forward.</p>
-<p>The alternative diffinitely won't make anyone happy.</p>
-</div>
-
-<p class="readmore u-url">
-  <a
-    rel="bookmark"
-    title="Loosing touch «Mandaris Moore»"
-    href="2012/07/loosing-touch.html"
-    itemprop="url">Permalink
-  </a>
-</p>
-<footer>
-<p class="articleFooterP">Category:
-	<a class="p-category" href="../category/personal.html">
-    <span itemprop="articleSection">personal</span>
-  </a>
-  <span class="rightside">
-    <time
-      class="dt-published"
-      datetime="2012-07-23T23:48:32-07:00"
-      itemprop="dateCreated datePublished pubdate">
-        Mon 23 July 2012
-    </time>
-  </span>
-  <br />  <span itemprop="keywords">
-      <a
-        class="tag"
-        rel="category tag"
-        href="../tag/children.html">
-          children
-      </a>
-  </span>
-</p>
-</footer>
-</article>
-<hr />
-<article
-  class="post hentry h-entry content"
-  itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-
-<header class="post-header">
-  <h2
-    itemprop="headline title p-name name"
-    class="title p-name post-title">
-    <a
-      rel="bookmark"
-      class="u-url"
-      title="Our first painting project «Mandaris Moore»"
-      href="2012/07/our-first-painting-project.html"
-      itemprop="url">
-      Our first painting project
-    </a>
-  </h2>
-</header><div class="e-content post-body" itemprop="articleBody">
-<p>Today, the wife and I finished up a two day painting project involving some furniture that my mom had found at a yard sale. At first I had my own reservations about taking the furniture in because of all the invisible strings attached to something like that<sup id="fnref-mama_drama"><a class="footnote-ref" href="#fn-mama_drama">1</a></sup>.</p>
-<p>I was told that it was going to be a simple set of headboards, drawers and a desk with a little book shelf on top. In truth, the furniture was a lot different then what we were expecting as far as shape, size and quality. It's the older kind of furniture, the kind that can last and be moved from one home to another without falling apart along the way. It looked like it could take a beating and from some of the scratches and scraps it looked like it already had.</p>
-<p>So the wife decided that we should paint it...</p>
-<p>And this turned into a weekend long project where we spent most of our time outside in the sun putting multiple coats of white and pink.</p>
-<p>And just when we finish up and show our children. How do they react?</p>
-<p>They hate it.</p>
+<p>Well, it seems like even <a href="http://www.cnn.com/2013/06/19/showbiz/paula-deen-racial-slur">Paula Deen</a> has said it too. And it looks like a lot of people have a strong reaction to this. Her sponsor has dropped her and even the food network has severed her ties with her. "People" -I use the term loosely- are going back on forth on forums about how it's unfair to do this to her because some of the best selling rappers use the word like a particle of speech. </p>
+<p>Personally, I think the outrage is too much. Doing this isn't helping race relations.</p>
+<h3 id="history">History?</h3>
+<p>I'm not going to give you a history lesson on the N-word. Most people in America already know what it means. If you don't know what it means, take some time and watch <a href="http://www.imdb.com/title/tt0075572">Roots</a> or <a href="http://www.imdb.com/title/tt1853728">Django Unchained</a>. </p>
+<p>All I can think about are my own experiences.</p>
+<h4 id="my-experiences">My experiences</h4>
+<h5 id="people-yelling-it-out-of-cars">People yelling it out of cars</h5>
+<p>Most of the times that I've heard the N-word shouted at me was when I had someone drive past me and yell the word from a moving vehicle. I've had people throw things at me as they were doing it. </p>
+<p>One instance was when our neighbor's boyfriend had yelled it at me after I had threatened to call the cops on him for yelling at his girlfriend. </p>
+<p>None of these people knew anything about me other than I was black.</p>
+<h5 id="children-yelling-at-each-other">Children Yelling at Each Other</h5>
+<p>Sometimes, when I take my kids to the park I hear some of the younger kids say it to each other. Sometime to intimidate and anger each other and other times as a general insult.</p>
+<p>I sometimes see how some of the children will gang up on the other and use it in hopes that the one being teased (usually a smaller kid and never the largest) will fight back.</p>
+<p>I wonder if the kids are mimicking TV or just there life at home and feel sad for them that this is what they do when their parents are around.</p>
+<h5 id="entertainment">Entertainment</h5>
+<p>I enjoy a lot of things, like music and movies. One of my favorite things to do is to watch a movie or listen to some stand up. In fact, some of my favorite comedians are Eddie Murphy, Chris Rock and Dave Chappelle.</p>
+<p>All three of them have had jokes that can be considered derogatory<sup id="fnref-unfunny"><a class="footnote-ref" href="#fn-unfunny">1</a></sup>. </p>
+<p>When it comes to movies, a lot of the "black films" that I've seen in recent years have had the phrase "Nigga, please" or some kind of derivative. </p>
+<p>I remember a couple times, when I've had "discussions" with my parents about how I don't "talk black".</p>
+<h5 id="conference">Conference</h5>
+<p>Honestly, the most memorable use of the N-word that I've heard happened when I was at a NSBE conference back in 2003.</p>
+<p>The speaker had painted an image of how a group of runaway slaves had been captured by some kind of bounty hunters and how some of them were going to be killed as an example. One of the runaways had just given birth and was pleading to be spared.</p>
+<p>The slaver shot her dead.</p>
+<p>Then stomped the baby.</p>
+<p>And said "Nigger".</p>
+<p>As if it was less than trash.</p>
+<p>This was a powerful image, because it hit me that the N-word is the same word people would use to kill as to chide. </p>
+<p>That makes no sense to me.</p>
+<h4 id="do-other-races-see-it-that-bad">Do other races see it that bad</h4>
+<p>I don't know if other races, think about words used for them. And honestly, I've only know a couple. Most notably mexicans.</p>
+<h3 id="what-are-we-going-to-do">What are we going to do?</h3>
+<p>Well, we can all jump to arms and point fingers, but I doubt that is going to help anyone out in this situation.</p>
+<h4 id="dont-hide-it">Don't hide it</h4>
+<p>I feel we all need to be a little more open to the fact that people are going to say things that we don't like.</p>
+<p>And honestly, there are people out there that even the worst words are too good for them. </p>
+<p>It is up to all of us to be a little understanding and let people express themselves<sup id="fnref-DontBeStupid"><a class="footnote-ref" href="#fn-DontBeStupid">2</a></sup> to a degree.</p>
+<p>Otherwise, how are they going to learn? And how are we going to know?</p>
+<h3 id="conclusion">Conclusion</h3>
+<p>We have a long way to go in race relations. I consider myself very lucky to be in America and even more lucky to be in California. I know we've made huge strides in equality and learning to live with other ethnic groups. </p>
+<p>Still, there is more to this case than just the N-word. The lawsuit that brought this to light talks about other forms of harassment and I think that as human beings we should focus on that in regards to Paula Deen.</p>
 <div class="footnote">
 <hr>
 <ol>
-<li id="fn-mama_drama">
-<p>I don't like taking things from people because they sometimes expect you to reciprocate in a way that I don't feel warrants a particular action. I'm grateful for everything, but it feels like sometimes there is an unspoken contract and a payment that is beyond what I'm willing to do. Sorry for being vague and extra appologizies if this sounds like I'm talking about you. I'm not it's someone completely different.&#160;<a class="footnote-backref" href="#fnref-mama_drama" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<li id="fn-unfunny">
+<p>I think this might actually be why Eddie Murphy doesn't do stand up any more. I went back and listened to some of his earlier stuff and shook my head to hear how many "faggot" jokes he used to say.&#160;<a class="footnote-backref" href="#fnref-unfunny" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn-DontBeStupid">
+<p>Don't be that guy who went to his child custody appearance dressed as <a href="http://nymag.com/daily/intelligencer/2013/06/hitler-dad-fights-for-custody-in-nazi-uniform.html">Hitler</a>.&#160;<a class="footnote-backref" href="#fnref-DontBeStupid" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
@@ -311,31 +469,39 @@
 <p class="readmore u-url">
   <a
     rel="bookmark"
-    title="Our first painting project «Mandaris Moore»"
-    href="2012/07/our-first-painting-project.html"
+    title="N-Word «Mandaris Moore»"
+    href="2013/06/n-word.html"
     itemprop="url">Permalink
   </a>
 </p>
 <footer>
 <p class="articleFooterP">Category:
-	<a class="p-category" href="../category/personal.html">
+	<a class="p-category" href="http://mandaris.github.io/category/personal.html">
     <span itemprop="articleSection">personal</span>
   </a>
   <span class="rightside">
     <time
       class="dt-published"
-      datetime="2012-07-22T21:00:55-07:00"
+      datetime="2013-06-25T13:03:03-07:00"
       itemprop="dateCreated datePublished pubdate">
-        Sun 22 July 2012
+        Tue 25 June 2013
     </time>
   </span>
   <br />  <span itemprop="keywords">
       <a
         class="tag"
         rel="category tag"
-        href="../tag/home.html">
-          home
+        href="http://mandaris.github.io/tag/misc.html">
+          misc
       </a>
+  </span>
+  <span class="rightside">Modified:
+  	<time
+      class="dt-updated"
+  	  datetime="2013-06-25T13:03:03-07:00"
+  	  itemprop="dateModified">
+        Tue 25 June 2013
+      </time>
   </span>
 </p>
 </footer>
@@ -352,43 +518,48 @@
     <a
       rel="bookmark"
       class="u-url"
-      title="All morning long «Mandaris Moore»"
-      href="2012/07/all-morning-long.html"
+      title="Morning musings «Mandaris Moore»"
+      href="2013/06/morning-musings.html"
       itemprop="url">
-      All morning long
+      Morning musings
     </a>
   </h2>
 </header><div class="e-content post-body" itemprop="articleBody">
-<p>Last night the wife and I were up late last night.</p>
+<p>I wanted to write something today. That's the whole reason for this post. My mind is kind of wandering and I wanted to put some of those thoughts someplace where I can look at them again.</p>
+<h3 id="the-dog-smells">The Dog Smells</h3>
+<p>We've had our dog, Puddles, for almost a year and the first thing that comes to mind when I think about him is that he smells. He really, really smells. </p>
+<p>From the very first moment that we had him, we noticed that he had a certain odor about him. </p>
+<p>We had hoped that it was only because he was being rescued, but despite the regular bathing, the special shampoos and changes in diet…</p>
+<p>He still smells.</p>
 </div>
 
 <p class="readmore u-url">
   <a
     rel="bookmark"
-    title="All morning long «Mandaris Moore»"
-    href="2012/07/all-morning-long.html"
+    title="Morning musings «Mandaris Moore»"
+    href="2013/06/morning-musings.html"
     itemprop="url">Permalink
   </a>
 </p>
 <footer>
 <p class="articleFooterP">Category:
-	<a class="p-category" href="../category/personal.html">
+	<a class="p-category" href="http://mandaris.github.io/category/personal.html">
     <span itemprop="articleSection">personal</span>
   </a>
   <span class="rightside">
     <time
       class="dt-published"
-      datetime="2012-07-17T11:53:54-07:00"
+      datetime="2013-06-17T10:23:10-07:00"
       itemprop="dateCreated datePublished pubdate">
-        Tue 17 July 2012
+        Mon 17 June 2013
     </time>
   </span>
   <br />  <span itemprop="keywords">
       <a
         class="tag"
         rel="category tag"
-        href="../tag/goals.html">
-          goals
+        href="http://mandaris.github.io/tag/misc.html">
+          misc
       </a>
   </span>
 </p>
@@ -406,21 +577,21 @@
     <a
       rel="bookmark"
       class="u-url"
-      title="Ticking Clock «Mandaris Moore»"
-      href="2012/07/ticking-clock.html"
+      title="Bully, bully «Mandaris Moore»"
+      href="2013/03/bully-bully.html"
       itemprop="url">
-      Ticking Clock
+      Bully, bully
     </a>
   </h2>
 </header><div class="e-content post-body" itemprop="articleBody">
-<p>Currently, I'm sitting in an office waiting for my friend to get finished talking to his doctor. I've been doing this for the last couple of weeks, and it is has been nice to see my friend a little bit more. I feel that we've both have been walking our own paths and neither one of us is happy about it. When we see each other, we get a chance to talk about our own grievances and help cheer each other on as we make our way towards are respective goals.</p>
-<p>For me, I've been playing with the idea of doing affirmations and spending time everyday writing out 5 things that I'm excited/happy about as well as grateful for<sup id="fnref-grateful"><a class="footnote-ref" href="#fn-grateful">1</a></sup>.</p>
-<p>As for my friend, I don't know all the things that he is doing to relieve stress and just move forward with his life. I kind of just want to give him a big hug and tell him that it's going to be alright, but I know that isn't going to be enough. It isn't enough for me either and when it comes to stuff like this, you have make your own choices on how you are going to make yourself a better person.</p>
+<p>Tonight, my wife told me that our daughter has an exclusive girl club in her kindergarten class that she isn't allowed to be in. This club has one particular girl in it that is being mean to my daughter. She doesn't like being there <sup id="fnref-aha"><a class="footnote-ref" href="#fn-aha">1</a></sup>.</p>
+<p>It's something that no parent wants to hear, but should listen to now more than ever. <a href="http://www.cbsnews.com/2100-204_162-3239837.html" title="Girl's Suicide Rate Rise Dramatically">The suicide rate for girls has increased to an alarming level</a> with articles and news clips talking about how girls are being ambushed and beaten by their peers. Then, to add more humiliation, someone records it and puts it on the internet.</p>
+<p>Some would say that it's just girls being mean, but I've been bullied and I know how these things can affect you. I only pray that I can help my daughter find the strength that she needs in order to get past this.</p>
 <div class="footnote">
 <hr>
 <ol>
-<li id="fn-grateful">
-<p>As soon as I typed it, I realized that Day One would be perfect for something like that because it would allow me to keep track of those without having all the roadblocks that I would put in front of a normal writing routine.&#160;<a class="footnote-backref" href="#fnref-grateful" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<li id="fn-aha">
+<p>It also makes since to why I see her playing by herself when I come into her class and why she's been acting up when she's at home.&#160;<a class="footnote-backref" href="#fnref-aha" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
@@ -429,36 +600,30 @@
 <p class="readmore u-url">
   <a
     rel="bookmark"
-    title="Ticking Clock «Mandaris Moore»"
-    href="2012/07/ticking-clock.html"
+    title="Bully, bully «Mandaris Moore»"
+    href="2013/03/bully-bully.html"
     itemprop="url">Permalink
   </a>
 </p>
 <footer>
 <p class="articleFooterP">Category:
-	<a class="p-category" href="../category/personal.html">
-    <span itemprop="articleSection">personal</span>
+	<a class="p-category" href="http://mandaris.github.io/category/parenting.html">
+    <span itemprop="articleSection">parenting</span>
   </a>
   <span class="rightside">
     <time
       class="dt-published"
-      datetime="2012-07-17T11:36:14-07:00"
+      datetime="2013-03-17T22:42:31-07:00"
       itemprop="dateCreated datePublished pubdate">
-        Tue 17 July 2012
+        Sun 17 March 2013
     </time>
   </span>
   <br />  <span itemprop="keywords">
       <a
         class="tag"
         rel="category tag"
-        href="../tag/time.html">
-          time
-      </a>
-      <a
-        class="tag"
-        rel="category tag"
-        href="../tag/friends.html">
-          friends
+        href="http://mandaris.github.io/tag/bullying.html">
+          bullying
       </a>
   </span>
 </p>
@@ -476,84 +641,42 @@
     <a
       rel="bookmark"
       class="u-url"
-      title="Working out is hard to do «Mandaris Moore»"
-      href="2012/07/working-out-is-hard-to-do.html"
+      title="I almost bought BusyCal 2 «Mandaris Moore»"
+      href="2013/03/i-almost-bought-busycal-2.html"
       itemprop="url">
-      Working out is hard to do
+      I almost bought BusyCal 2
     </a>
   </h2>
 </header><div class="e-content post-body" itemprop="articleBody">
-<p>Today, the whole family went running. </p>
-</div>
-
-<p class="readmore u-url">
-  <a
-    rel="bookmark"
-    title="Working out is hard to do «Mandaris Moore»"
-    href="2012/07/working-out-is-hard-to-do.html"
-    itemprop="url">Permalink
-  </a>
-</p>
-<footer>
-<p class="articleFooterP">Category:
-	<a class="p-category" href="../category/personal.html">
-    <span itemprop="articleSection">personal</span>
-  </a>
-  <span class="rightside">
-    <time
-      class="dt-published"
-      datetime="2012-07-16T21:09:19-07:00"
-      itemprop="dateCreated datePublished pubdate">
-        Mon 16 July 2012
-    </time>
-  </span>
-  <br />  <span itemprop="keywords">
-      <a
-        class="tag"
-        rel="category tag"
-        href="../tag/exercise.html">
-          exercise
-      </a>
-  </span>
-</p>
-</footer>
-</article>
-<hr />
-<article
-  class="post hentry h-entry content"
-  itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-
-<header class="post-header">
-  <h2
-    itemprop="headline title p-name name"
-    class="title p-name post-title">
-    <a
-      rel="bookmark"
-      class="u-url"
-      title="The day after have a big argument with my wife sucks. «Mandaris Moore»"
-      href="2012/07/the-day-after-have-a-big-argument-with-my-wife-sucks.html"
-      itemprop="url">
-      The day after have a big argument with my wife sucks.
-    </a>
-  </h2>
-</header><div class="e-content post-body" itemprop="articleBody">
-<p>It sucks soooo bad that I sometimes wonder why I even bother in the first place. Was the subject of what we were fighting over so big that we have to go through this? Do the highs of our relationship really outweigh the lows?</p>
-<p>Part of me tells me to just relax  because this is part of what relationships are about. Highs and lows. We've been having some rough spots because I've lost my job and the money has gotten a lot tighter<sup id="fnref-tighter"><a class="footnote-ref" href="#fn-tighter">1</a></sup>. We both have our expectations of what should and shouldn't be. </p>
-<p>Another part of me is angry at the world. Angry at where I am. Angry at myself. </p>
-<p>I was having a fairly good day and I didn't want to walk into that familiar routine of being <em>her</em> punching bag. I'm tired of taking other people's <code>redacted</code> and I dumped it back on her with other stuff as well.</p>
-<p>And then she just laughed.</p>
-<p>That's where I went wrong. I got angry. I got very angry and said that I sometimes don't like coming home to her because of her attitude. I might have said some other stuff too. I don't remember all of it, but I'm sure she'll remind<sup id="fnref-remember"><a class="footnote-ref" href="#fn-remember">2</a></sup> me.</p>
-<p>I went for a walk before it got bigger. I came home. We didn't look at each other. She took the girls. We slept in separate rooms.</p>
-<p>Now I'm sitting at a coffee shop.</p>
-<p>I might as well be sitting in the middle of Antarctica for all the distance and coldness between us.</p>
+<p>I've been making little changes with my life in order to get more done instead of just talking about it. One of the changes that I've done is to become more committed to the things that I put into my calendar after hearing a couple great quotes from Merlin Mann's <a href="http://5by5.tv/b2w" title="A great Podcast">Back to Work</a> podcast.</p>
+<blockquote>
+<p>"A calendar is a map of your time." - Merlin Mann </p>
+<p>"Don't let a calendar run your life, use a calendar to help <em>you</em> run your life." - Merlin Mann</p>
+</blockquote>
+<p>It seemed like perfect timing that at the same time that I'm putting more effort into getting things together, one of flagship calendar applications - BusyCal - came out with a <a href="https://support.busymac.com/tickets/15755" title="What's New in BusyCal 2.0">new version</a>.</p>
+<h4 id="getting-organized">Getting Organized</h4>
+<p>In the effort to become more organized, I decided that it would be easier on me to start off by placing recurring events and events that I know that I will certainly be attending. The only problem being that I need to review my calendar to make sure that it is up to date and that all the activities on my computer are reflected on the family calendar hanging on the wall of the kitchen. I'm slowly building up the habit of making sure that the two are in sync and in a way this works as a little review of what is going on in my life for the purpose of time management. Another benefit is that I don't commit to a lot of different things because of the hassle it would take to make sure that I'm available at a certain time<sup id="fnref-punctual"><a class="footnote-ref" href="#fn-punctual">1</a></sup>.</p>
+<p>In a way, this has improved how I function in my day to day life because I don't have as much stress about missing appointments. The stress I do have is generated because of my desire to do more things at once. The problem is that I'm getting a better idea of what I want/should be doing and it is kind of scary to see all the different things that are vying for my attention. I've been using <a href="http://www.omnigroup.com/products/omnifocus" title="One of the most powerful/popular GTD applications in the world.">OmniFocus</a> to help me manage all the projects and I think I've moved a little bit past just pushing things around and doing busy work. I'm learning where things are getting lost and I think thats one of the key things you need to find if you really want to improve your life.</p>
+<p>Ultimately, this has really shown me that there isn't a silver bullet to being productive and getting things done. It's a bunch of little bullets being fired from the gun called willpower<sup id="fnref-willpower"><a class="footnote-ref" href="#fn-willpower">2</a></sup>. And I am starting to trust in myself to follow the plan that I have set out. I'm still working on making sure that I do some kind of as often as possible and get things out of my inbox.</p>
+<p>But that leads us back to the main point of this post.</p>
+<h4 id="why-diddidnt-buy-busycal-2">Why did/didn't buy BusyCal 2?</h4>
+<p>Honestly, I'm on a budget. When you're constantly checking your balance to make sure that you have enough for food/rent/kids/spouse, it is hard to justify $30<sup id="fnref-cash"><a class="footnote-ref" href="#fn-cash">3</a></sup>. </p>
+<p>The other reason is that I already have the first version of <a href="http://www.busymac.com/busycal/index.html" title="BusyCal is an award winning calendar app that provides powerful time-saving productivity tools in a friendly, personalized, easy-to-use package.">BusyCal</a> and <a href="http://flexibits.com/fantastical" title="The Mac calendar you'll actually enjoy using">fantastical</a>. Both of these products provide me with all the calendar information that I need at this point. For the current date and to add things, I use fantastical<sup id="fnref-problem"><a class="footnote-ref" href="#fn-problem">4</a></sup>. When it comes to a wider view, BusyCal does that way better that iCal in the sense that it isn't a nightmare to look at.</p>
+<p>If I had the money, I'd buy the new version as it looks really nice and company is focused on bringing a great mac experience.</p>
 <div class="footnote">
 <hr>
 <ol>
-<li id="fn-tighter">
-<p>The real rub about this is that even though I'm unemployed, I still make more than her via unemployment insurance. This has allowed us to appear that we are doing alright, but I feel the strain of it. We're living <a href="http://youtu.be/9iCd6UHR-3I" title="Still Fly">hood rich</a>.&#160;<a class="footnote-backref" href="#fnref-tighter" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<li id="fn-punctual">
+<p>For a while, I would stress out about meeting people up at a given time. I wanted my word to mean something when it came to not being late. If I said 8AM, I meant 8AM. In my mind, I would chant "Punctual is not being on time, it's being respectful of other peoples time". I still think that, but I don't stress about it.&#160;<a class="footnote-backref" href="#fnref-punctual" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
-<li id="fn-remember">
-<p>I'm going to paraphrase, "There are three sides to every story: The way he remembers it, the way she remembers it, what really happened."&#160;<a class="footnote-backref" href="#fnref-remember" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+<li id="fn-willpower">
+<p>That has to be one of the corniest things I've written in the last couple of weeks. &#160;<a class="footnote-backref" href="#fnref-willpower" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn-cash">
+<p>It's currently on sale until the end of the month. &#160;<a class="footnote-backref" href="#fnref-cash" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn-problem">
+<p>Although, I do have  a problem adding repeating events. I'm going to give the software the benefit of the doubt for not being able to read me…  Maybe next release.&#160;<a class="footnote-backref" href="#fnref-problem" title="Jump back to footnote 4 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
@@ -562,31 +685,45 @@
 <p class="readmore u-url">
   <a
     rel="bookmark"
-    title="The day after have a big argument with my wife sucks. «Mandaris Moore»"
-    href="2012/07/the-day-after-have-a-big-argument-with-my-wife-sucks.html"
+    title="I almost bought BusyCal 2 «Mandaris Moore»"
+    href="2013/03/i-almost-bought-busycal-2.html"
     itemprop="url">Permalink
   </a>
 </p>
 <footer>
 <p class="articleFooterP">Category:
-	<a class="p-category" href="../category/personal.html">
-    <span itemprop="articleSection">personal</span>
+	<a class="p-category" href="http://mandaris.github.io/category/productivity.html">
+    <span itemprop="articleSection">productivity</span>
   </a>
   <span class="rightside">
     <time
       class="dt-published"
-      datetime="2012-07-13T21:11:32-07:00"
+      datetime="2013-03-07T22:25:30-08:00"
       itemprop="dateCreated datePublished pubdate">
-        Fri 13 July 2012
+        Thu 07 March 2013
     </time>
   </span>
   <br />  <span itemprop="keywords">
       <a
         class="tag"
         rel="category tag"
-        href="../tag/relationships.html">
-          relationships
+        href="http://mandaris.github.io/tag/calendar.html">
+          calendar
       </a>
+      <a
+        class="tag"
+        rel="category tag"
+        href="http://mandaris.github.io/tag/apps.html">
+          apps
+      </a>
+  </span>
+  <span class="rightside">Modified:
+  	<time
+      class="dt-updated"
+  	  datetime="2013-03-13T00:07:33-07:00"
+  	  itemprop="dateModified">
+        Wed 13 March 2013
+      </time>
   </span>
 </p>
 </footer>
@@ -603,114 +740,123 @@
     <a
       rel="bookmark"
       class="u-url"
-      title="Speaking of making myself a priority «Mandaris Moore»"
-      href="2012/07/speaking-of-making-myself-a-priority.html"
+      title="What do I want in an email client? «Mandaris Moore»"
+      href="2013/03/what-do-i-want-in-an-email-client.html"
       itemprop="url">
-      Speaking of making myself a priority
+      What do I want in an email client?
     </a>
   </h2>
 </header><div class="e-content post-body" itemprop="articleBody">
-<p>I went for a run today by myself.</p>
-<p>I haven't had any exercise in a while and it was great to get out of my head and hit the dusty trail... which actually isn't dusty because it's paved. Although I do enjoy the benefits of running, I don't really enjoy it. I don't get a thrill of having the wind in my hair or seeing the scenery change as I speed along the paths and trails.</p>
-<p>Maybe I'm not going that fast.</p>
-<p>Tomorrow, I plan on going to my first yoga class at a local studio and I'm pretty excited about it. It's a new way of caring for myself and I have to make that a priority.</p>
-<h4 id="speaking-of-making-myself-a-priority">Speaking of making myself a priority</h4>
-<p>I've typed up a new list of affirmations for myself, but I'm honestly afraid to put them in a place that I can see them every day. I've played with the idea of making a script to pop them up when I first log into my computer in the morning, but that time usually changes depending on what I'm doing that day. I've also thought about putting them up in the bathroom, but I'm embarrassed about how I would explain that to my children and afraid that my wife might say something about that.</p>
-<p>I looked at that last sentence and thought, 'Hey, I can't live that way. If I'm going to make myself a better person, I need to do this for me.'</p>
-<p>So, I guess I'll be printing them up now.</p>
-</div>
-
-<p class="readmore u-url">
-  <a
-    rel="bookmark"
-    title="Speaking of making myself a priority «Mandaris Moore»"
-    href="2012/07/speaking-of-making-myself-a-priority.html"
-    itemprop="url">Permalink
-  </a>
-</p>
-<footer>
-<p class="articleFooterP">Category:
-	<a class="p-category" href="../category/personal.html">
-    <span itemprop="articleSection">personal</span>
-  </a>
-  <span class="rightside">
-    <time
-      class="dt-published"
-      datetime="2012-07-11T23:45:57-07:00"
-      itemprop="dateCreated datePublished pubdate">
-        Wed 11 July 2012
-    </time>
-  </span>
-  <br />  <span itemprop="keywords">
-      <a
-        class="tag"
-        rel="category tag"
-        href="../tag/exercise.html">
-          exercise
-      </a>
-  </span>
-</p>
-</footer>
-</article>
-<hr />
-<article
-  class="post hentry h-entry content"
-  itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-
-<header class="post-header">
-  <h2
-    itemprop="headline title p-name name"
-    class="title p-name post-title">
-    <a
-      rel="bookmark"
-      class="u-url"
-      title="Dark Dream «Mandaris Moore»"
-      href="2012/07/dark-dream.html"
-      itemprop="url">
-      Dark Dream
-    </a>
-  </h2>
-</header><div class="e-content post-body" itemprop="articleBody">
-<p>I was in a dark place. It was a cage with other people and a couple lights above us. </p>
-<p>I could hear people walking across and i knew who they were.</p>
-<p>They were being judged and they were going to heaven.</p>
+<p>I've been thinking about email a lot more than I would like to during the last couple of days due to my latest attempt to have a GTD based workflow and eliminate some of the friction<sup id="fnref-wonders"><a class="footnote-ref" href="#fn-wonders">1</a></sup> in my life. </p>
+<p>I know for a fact that email is not really the problem when it comes to managing my life and the thoughts about how to handle the incoming maybe just my minds way of just "moving the food around on my plate".</p>
+<p><strong>BUT</strong> </p>
+<p>This has been a problem for me every time that I get organized. I've been blessed to have two computers and it seems like a lot of trouble trying to get the two to have the same set up because I share one with the rest of the family and the other is my "work" computer that has all the latest do dads and what nots in it.</p>
+<p>Right now, I'm at a crossroads when it comes to my feelings about Mail.app and email/Gmail. I have multiple account (3 gmail accounts and 1 iCloud/me.com/MobileMe<sup id="fnref-mobilemess"><a class="footnote-ref" href="#fn-mobilemess">2</a></sup>). I feel that if I can't control this kind of input into my life than I'm not going to be able to trust any kind of system that I set up.  So made a little wish list of all the things that I need from an email client.</p>
+<ul>
+<li>Keyboard Shortcuts </li>
+<li>IMAP/POP for when I "eventually" leave gmail<sup id="fnref-free"><a class="footnote-ref" href="#fn-free">3</a></sup>.  </li>
+<li>Scriptable/extendable - I want an easy way to send a link to a message to OmniFocus</li>
+<li>Stable - I want the app to do all of this without using plug-ins.</li>
+</ul>
+<p>So where does this put me? Do I take the time to find that "Perfect" email client? Do I go back to Mail.app attempt to make it fit my imaginary workflow?</p>
+<p>After writing all this, I think I'm just wasting my time with a first world problem.</p>
+<div class="footnote">
 <hr>
-<p>and then a man came down dressed in black and drinking a cup of coffee. he asked "why should you live?" as he sipped his drink and sat down.</p>
-<p>"how can i find my pashion," i yelled.</p>
-<p>he almost spat out his coffee... </p>
-<p>he readjusted himself in the chair and repeated the question as if i hadnt said anyhting.</p>
-<p>i felt like i was doomed and helpless. that nothing i said or did would change anything...</p>
-<p>i feeling that im too familiar with...</p>
-<p>and then the alarm went off.</p>
+<ol>
+<li id="fn-wonders">
+<p>More like distractions. I don't think I had a problem focusing on things until I had was able to get on the internet for longer than two hours in a row.&#160;<a class="footnote-backref" href="#fnref-wonders" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn-mobilemess">
+<p>For the longest time, it seemed like the service was constantly going down for hours or days at a time. I haven't heard of any problems in a while, but that could just mean that people don't care anymore.&#160;<a class="footnote-backref" href="#fnref-mobilemess" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn-free">
+<p>It is hard to beat free. Although I'm paying for it by being a small aggregated blip on some data profile, I'm having trouble fighting "the good fight" and yes, I know that all the third party apps are using IMAP to connect to gmail.&#160;<a class="footnote-backref" href="#fnref-free" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 </div>
 
 <p class="readmore u-url">
   <a
     rel="bookmark"
-    title="Dark Dream «Mandaris Moore»"
-    href="2012/07/dark-dream.html"
+    title="What do I want in an email client? «Mandaris Moore»"
+    href="2013/03/what-do-i-want-in-an-email-client.html"
     itemprop="url">Permalink
   </a>
 </p>
 <footer>
 <p class="articleFooterP">Category:
-	<a class="p-category" href="../category/personal.html">
-    <span itemprop="articleSection">personal</span>
+	<a class="p-category" href="http://mandaris.github.io/category/productivity.html">
+    <span itemprop="articleSection">productivity</span>
   </a>
   <span class="rightside">
     <time
       class="dt-published"
-      datetime="2012-07-10T14:00:16-07:00"
+      datetime="2013-03-02T20:51:09-08:00"
       itemprop="dateCreated datePublished pubdate">
-        Tue 10 July 2012
+        Sat 02 March 2013
     </time>
   </span>
   <br />  <span itemprop="keywords">
       <a
         class="tag"
         rel="category tag"
-        href="../tag/dream.html">
-          dream
+        href="http://mandaris.github.io/tag/email.html">
+          email
+      </a>
+  </span>
+</p>
+</footer>
+</article>
+<hr />
+<article
+  class="post hentry h-entry content"
+  itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+
+<header class="post-header">
+  <h2
+    itemprop="headline title p-name name"
+    class="title p-name post-title">
+    <a
+      rel="bookmark"
+      class="u-url"
+      title="Recollecting «Mandaris Moore»"
+      href="2013/02/recollecting.html"
+      itemprop="url">
+      Recollecting
+    </a>
+  </h2>
+</header><div class="e-content post-body" itemprop="articleBody">
+<p>I really like doing a brain dump/collection in the GTD sense. It gives me a feeling that I can actually control it all. That I'm going to rediscover every last commitment that I've got to make and then be able to make my world just a little bit better. I think that I've finally reached the point when I'm no longer running from all my insecurities.</p>
+</div>
+
+<p class="readmore u-url">
+  <a
+    rel="bookmark"
+    title="Recollecting «Mandaris Moore»"
+    href="2013/02/recollecting.html"
+    itemprop="url">Permalink
+  </a>
+</p>
+<footer>
+<p class="articleFooterP">Category:
+	<a class="p-category" href="http://mandaris.github.io/category/productivity.html">
+    <span itemprop="articleSection">productivity</span>
+  </a>
+  <span class="rightside">
+    <time
+      class="dt-published"
+      datetime="2013-02-25T20:10:00-08:00"
+      itemprop="dateCreated datePublished pubdate">
+        Mon 25 February 2013
+    </time>
+  </span>
+  <br />  <span itemprop="keywords">
+      <a
+        class="tag"
+        rel="category tag"
+        href="http://mandaris.github.io/tag/collection.html">
+          collection
       </a>
   </span>
 </p>
@@ -718,19 +864,19 @@
 </article>
 <hr />
 </main>
-  <nav id="pagination">    <a id="first_page" href="../author/mandaris.html">&#60;&#60;</a>
-    <a id="previous_page" rel="prev" href="../author/mandaris13.html">&#60;</a>
-    <a href="../author/mandaris10.html">10</a>
-    <a href="../author/mandaris11.html">11</a>
-    <a href="../author/mandaris12.html">12</a>
-    <a href="../author/mandaris13.html">13</a>
+  <nav id="pagination">    <a id="first_page" href="http://mandaris.github.io/author/mandaris.html">&#60;&#60;</a>
+    <a id="previous_page" rel="prev" href="http://mandaris.github.io/author/mandaris13.html">&#60;</a>
+    <a href="http://mandaris.github.io/author/mandaris10.html">10</a>
+    <a href="http://mandaris.github.io/author/mandaris11.html">11</a>
+    <a href="http://mandaris.github.io/author/mandaris12.html">12</a>
+    <a href="http://mandaris.github.io/author/mandaris13.html">13</a>
     <span class="a active">14</span>
-    <a href="../author/mandaris15.html">15</a>
-    <a href="../author/mandaris16.html">16</a>
-    <a href="../author/mandaris17.html">17</a>
-    <a href="../author/mandaris18.html">18</a>
-    <a id="next_page" rel="next" href="../author/mandaris15.html">&#62;</a>
-    <a id="last_page" href="../author/mandaris24.html">&#62;&#62;</a>
+    <a href="http://mandaris.github.io/author/mandaris15.html">15</a>
+    <a href="http://mandaris.github.io/author/mandaris16.html">16</a>
+    <a href="http://mandaris.github.io/author/mandaris17.html">17</a>
+    <a href="http://mandaris.github.io/author/mandaris18.html">18</a>
+    <a id="next_page" rel="next" href="http://mandaris.github.io/author/mandaris15.html">&#62;</a>
+    <a id="last_page" href="http://mandaris.github.io/author/mandaris26.html">&#62;&#62;</a>
 </nav>
 <footer itemscope itemtype="https://schema.org/WPFooter"
     role="contentinfo" class="baseFooter">

@@ -12,7 +12,7 @@
 <meta name="author" class="p-author h-card" content="Mandaris" />
 <meta property="site_name" content="Mandaris Moore" />
 <meta name="description" content="The personal website for Mandaris Moore." />
-<base href="." />
+<base href="http://mandaris.github.io" />
 <meta name="generator" content="Pelican" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -24,7 +24,7 @@
       href="/apple-touch-icon-precomposed.png" />
 
 <!-- Feed information -->
-<link href="https://mandaris.github.com/feeds/atom.xml"
+<link href="http://mandaris.github.io/feeds/atom.xml"
       type="application/atom+xml"
       rel="alternate" title="Mandaris Moore ALL Atom Feed" />
 
@@ -33,9 +33,9 @@
 <meta property="og:title" content="Mandaris Moore" />
 <meta property="og:type" content="website" />
 <meta property="og:description" content="The personal website for Mandaris Moore."/>
-<meta property="og:url" content="." />
+<meta property="og:url" content="http://mandaris.github.io" />
 <meta property="og:locale" content="en-us" />
-<meta property="og:image" content="./favicon.png" />
+<meta property="og:image" content="http://mandaris.github.io/favicon.png" />
 <meta property="og:image:alt" content="A person in a gear." />
 <!-- Micro.blog User Name -->
 <link href="https://micro.blog/mandaris" rel="me" />
@@ -53,19 +53,19 @@
 <body itemscope itemtype="https://schema.org/Blog">
 <meta itemprop="description" content="The personal website for Mandaris Moore." />
 <header role="banner">
-<h1 class="websitetitle"><a href=".">Mandaris Moore</a></h1>
+<h1 class="websitetitle"><a href="http://mandaris.github.io">Mandaris Moore</a></h1>
 <nav itemscope itemtype="https://schema.org/SiteNavigationElement"
     class="navmenu" id="navmenu" >
 <ul>
   <li>
-    <a class="navitemlink" href="./archives.html">Archive</a>
+    <a class="navitemlink" href="http://mandaris.github.io/archives.html">Archive</a>
   </li>
-  <li><a class="navitemlink" href="./pages/about.html">
-     About
-  </a></li>
-  <li><a class="navitemlink" href="./pages/projects.html">
-     Projects
-  </a></li>
+  <li>
+    <a class="navitemlink" href="http://mandaris.github.io/pages/about.html">About</a>
+  </li>
+  <li>
+    <a class="navitemlink" href="http://mandaris.github.io/pages/projects.html">Projects</a>
+  </li>
 </ul>
 </nav>
 </header>
@@ -81,98 +81,120 @@
     itemprop="headline title p-name name"
     class="title p-name post-title">
     <a
-      rel="external"
-      title="Creation Challenge: Enable linked-list post «Mandaris Moore»"
-      href="https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types">
-      Creation Challenge: Enable linked-list post
+      rel="bookmark"
+      class="u-url"
+      title="Exercism video mindmap complete «Mandaris Moore»"
+      href="2016/12/exercism-video-mindmap-complete.html"
+      itemprop="url">
+      Exercism video mindmap complete
     </a>
   </h2>
 </header><div class="e-content post-body" itemprop="articleBody">
-<p>The first thing that I'd like to work on is getting the article header that I'm using to be more capable of handing meta data for individual entries. Currently, it points to the specific url for the article but I'd like it to take my current header.</p>
-<div class="highlight"><pre><span></span><span class="n">title</span><span class="o">:</span> <span class="n">Where</span> <span class="n">to</span> <span class="n">put</span> <span class="n">the</span> <span class="n">maybe</span><span class="o">-</span><span class="n">someday</span>  
-<span class="n">date</span><span class="o">:</span> <span class="mi">2016</span><span class="o">-</span><span class="mi">09</span><span class="o">-</span><span class="mi">05</span> <span class="mi">22</span><span class="o">:</span><span class="mi">10</span><span class="o">:</span><span class="mi">08</span>  
-<span class="n">category</span><span class="o">:</span> <span class="n">personal</span>  
-<span class="n">tags</span><span class="o">:</span> <span class="n">tech</span><span class="o">,</span> <span class="n">notes</span><span class="o">,</span> <span class="n">evernote</span>  
-<span class="n">status</span><span class="o">:</span> <span class="n">published</span>    
-</pre></div>
-
-
-<p>and add the <code>link</code> attribute</p>
-<div class="highlight"><pre><span></span><span class="n">title</span><span class="o">:</span> <span class="n">Where</span> <span class="n">to</span> <span class="n">put</span> <span class="n">the</span> <span class="n">maybe</span><span class="o">-</span><span class="n">someday</span>  
-<span class="n">date</span><span class="o">:</span> <span class="mi">2016</span><span class="o">-</span><span class="mi">09</span><span class="o">-</span><span class="mi">05</span> <span class="mi">22</span><span class="o">:</span><span class="mi">10</span><span class="o">:</span><span class="mi">08</span>  
-<span class="n">category</span><span class="o">:</span> <span class="n">personal</span>  
-<span class="n">tags</span><span class="o">:</span> <span class="n">tech</span><span class="o">,</span> <span class="n">notes</span><span class="o">,</span> <span class="n">evernote</span>  
-<span class="n">status</span><span class="o">:</span> <span class="n">published</span>    
-<span class="n">link</span><span class="o">:</span> <span class="n">some_other_place</span><span class="o">.</span><span class="na">com</span>
-</pre></div>
-
-
-<p>I started off with the following jinja heading.</p>
-<div class="highlight"><pre><span></span><span class="x">&lt;h1&gt;</span>
-<span class="x">&lt;a rel=&quot;bookmark&quot;</span>
-<span class="x">   href=&quot;</span><span class="cp">{{</span> <span class="nv">article.url</span> <span class="cp">}}</span><span class="x">&quot;</span>
-<span class="x">   title=&quot;</span><span class="cp">{{</span> <span class="nv">article.title</span><span class="o">|</span><span class="nf">striptags</span> <span class="cp">}}</span><span class="x"> «</span><span class="cp">{{</span> <span class="nv">SITENAME</span> <span class="cp">}}</span><span class="x">»&quot;&gt;</span>
-<span class="x">   </span><span class="cp">{{</span> <span class="nv">article.title</span><span class="cp">}}</span><span class="x"></span>
-<span class="x">&lt;/a&gt;</span>
-<span class="x">&lt;/h1&gt;</span>
-</pre></div>
-
-
-<p>To be honest, I don't do development on the blog that often so I used my own code to look up how to do an <code>if</code> statement in jinja and wrote a little test line to see if it worked.</p>
-<div class="highlight"><pre><span></span><span class="cp">{{</span> <span class="nv">article.title</span><span class="cp">}}</span><span class="x"> </span><span class="cp">{%</span> <span class="k">if</span> <span class="nv">article.link</span> <span class="cp">%}</span><span class="x"> </span><span class="cp">{{</span> <span class="nv">article.link</span><span class="cp">}}</span><span class="x"> </span><span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span><span class="x"></span>
-</pre></div>
-
-
-<p>After editing the page a number of times and doing more research that I should have into which kind of <code>rel</code> tag I should use for book marks versus external links, I finished up with this.</p>
-<div class="highlight"><pre><span></span><span class="cp">{%</span> <span class="k">if</span> <span class="nv">article.link</span> <span class="cp">%}</span><span class="x"></span>
-<span class="x">&lt;a rel=&quot;external&quot;</span>
-<span class="x">   title=&quot;</span><span class="cp">{{</span> <span class="nv">article.title</span><span class="o">|</span><span class="nf">striptags</span> <span class="cp">}}</span><span class="x"> «</span><span class="cp">{{</span> <span class="nv">SITENAME</span> <span class="cp">}}</span><span class="x">»&quot;</span>
-<span class="x">   href=&quot;</span><span class="cp">{{</span> <span class="nv">article.link</span> <span class="cp">}}</span><span class="x">&quot;&gt;</span>
-<span class="x">   </span><span class="cp">{{</span> <span class="nv">article.title</span><span class="cp">}}</span><span class="x"></span>
-<span class="x">&lt;/a&gt;</span>
-<span class="cp">{%</span> <span class="k">else</span> <span class="cp">%}</span><span class="x"></span>
-<span class="x">&lt;a rel=&quot;bookmark&quot;</span>
-<span class="x">   title=&quot;</span><span class="cp">{{</span> <span class="nv">article.title</span><span class="o">|</span><span class="nf">striptags</span> <span class="cp">}}</span><span class="x"> «</span><span class="cp">{{</span> <span class="nv">SITENAME</span> <span class="cp">}}</span><span class="x">»&quot;</span>
-<span class="x">   href=&quot;</span><span class="cp">{{</span> <span class="nv">article.url</span> <span class="cp">}}</span><span class="x">&quot;&gt;</span>
-<span class="x">   </span><span class="cp">{{</span> <span class="nv">article.title</span><span class="cp">}}</span><span class="x"></span>
-<span class="x">&lt;/a&gt;</span>
-<span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span><span class="x"></span>
-</pre></div>
+<figure><img alt="A mindmap showing the different things I will be talking about to make a video of programming exercises." src="/images/exercism-mindmap.png" title="A mindmap of an upcoming video"><figcaption>A mindmap showing the different things I will be talking about to make a video of programming exercises.</figcaption>
+</figure>
+<p>This has been on the back of my mind of a while and I thought it would help to get a more formal grasp of what I wanted to do with my up coming video. </p>
+<p>I've also been putting together the keynote that I'll be using to back the screen shots and videos I'll be taking. With this being my outline, I think I can start taking the video I need this weekend.</p>
 </div>
 
 <p class="readmore u-url">
   <a
     rel="bookmark"
-    title="Creation Challenge: Enable linked-list post «Mandaris Moore»"
-    href="2016/12/creation-challenge-enable-linked-list-post.html"
+    title="Exercism video mindmap complete «Mandaris Moore»"
+    href="2016/12/exercism-video-mindmap-complete.html"
     itemprop="url">Permalink
   </a>
 </p>
 <footer>
 <p class="articleFooterP">Category:
-	<a class="p-category" href="./category/misc.html">
+	<a class="p-category" href="http://mandaris.github.io/category/tech.html">
+    <span itemprop="articleSection">tech</span>
+  </a>
+  <span class="rightside">
+    <time
+      class="dt-published"
+      datetime="2016-12-15T17:56:04-08:00"
+      itemprop="dateCreated datePublished pubdate">
+        Thu 15 December 2016
+    </time>
+  </span>
+  <br />  <span itemprop="keywords">
+      <a
+        class="tag"
+        rel="category tag"
+        href="http://mandaris.github.io/tag/mindmap.html">
+          mindmap
+      </a>
+      <a
+        class="tag"
+        rel="category tag"
+        href="http://mandaris.github.io/tag/exercism.html">
+          exercism
+      </a>
+  </span>
+</p>
+</footer>
+</article>
+<hr />
+<article
+  class="post hentry h-entry content"
+  itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+
+<header class="post-header">
+  <h2
+    itemprop="headline title p-name name"
+    class="title p-name post-title">
+    <a
+      rel="bookmark"
+      class="u-url"
+      title="250 Words «Mandaris Moore»"
+      href="2016/12/250-words.html"
+      itemprop="url">
+      250 Words
+    </a>
+  </h2>
+</header><div class="e-content post-body" itemprop="articleBody">
+<p>Today for my creative challenge, I'm going to write 250 words! </p>
+<p>I was sending and tweet to Matt Gemmel (a developer who has transitioned to being a writer) asking what kind of exercises does he do to improve his writing. He stated that he writes about himself in third person and then does some fan fiction as well. </p>
+<p>I'm going to do something similar to that because I have some desire to be a little bit of a writer as well. </p>
+<p>Of course it was part of a dream that I've given up, but I think I should at least work on making it an option. Being able to express my thoughts, feelings and ideas can only help me interact with other people.</p>
+<p>Sometimes, I get lonely and I don't know if anyone feels the same way that I do about a lot of things. If I write about what I think, I might find others like me who feel the same way about it.</p>
+<p>Or even better, I can understand my own feeling about something and work towards getting a grasp of it. Understand it and do something about it if it is negative.</p>
+<p>One last goal is to be able to write for another publication. I feel that I have a unique way of seeing things sometimes. Some of the reports and snippets that I see on the internet are about 250 words and if I could write something that length easily than it would open a lot of doors.</p>
+</div>
+
+<p class="readmore u-url">
+  <a
+    rel="bookmark"
+    title="250 Words «Mandaris Moore»"
+    href="2016/12/250-words.html"
+    itemprop="url">Permalink
+  </a>
+</p>
+<footer>
+<p class="articleFooterP">Category:
+	<a class="p-category" href="http://mandaris.github.io/category/misc.html">
     <span itemprop="articleSection">misc</span>
   </a>
   <span class="rightside">
     <time
       class="dt-published"
-      datetime="2016-12-01T17:46:45-08:00"
+      datetime="2016-12-15T17:30:45-08:00"
       itemprop="dateCreated datePublished pubdate">
-        Thu 01 December 2016
+        Thu 15 December 2016
     </time>
   </span>
   <br />  <span itemprop="keywords">
       <a
         class="tag"
         rel="category tag"
-        href="./tag/misc.html">
-          misc
+        href="http://mandaris.github.io/tag/writing.html">
+          writing
       </a>
       <a
         class="tag"
         rel="category tag"
-        href="./tag/creation-challenge.html">
-          creation challenge
+        href="http://mandaris.github.io/tag/creative-challenge.html">
+          creative challenge
       </a>
   </span>
 </p>
@@ -190,208 +212,57 @@
     <a
       rel="bookmark"
       class="u-url"
-      title="Creating something everyday «Mandaris Moore»"
-      href="2016/12/creating-something-everyday.html"
+      title="switching over to dashes «Mandaris Moore»"
+      href="2016/12/switching-over-to-dashes.html"
       itemprop="url">
-      Creating something everyday
+      switching over to dashes
     </a>
   </h2>
 </header><div class="e-content post-body" itemprop="articleBody">
-<p>So, I'm making a commitment to myself to create something every day until Christmas without the limitation/structure of saying what I'm going to be making during this period of time.  I suspect that it will mostly be blog posts and tutorials but I think I'll make a push to clean up the code for this blog and add a number of things that I've been putting on the back burner.</p>
+<p>Today, I wanted to find out why urls used dash (-) instead of underscores (_). Personally, I perfer to use underscores because they are easier for me to read when looking at a <code>long_title_that_signals_something</code> and thought that the reason it didn't work out was because of someone thinking the opposite. </p>
+<p>Turns out that it has more to do with how computers seperate words. <a href="https://blog.codinghorror.com/of-spaces-underscores-and-dashes/">Joel Atwood had a nice piece</a> that points out that the <code>w</code> used in regular expressions matches up with the under score so what I view as multiple words would be counted as one.</p>
+<p>The best example was in the comments when someone wrote:</p>
+<blockquote>
+<p>This_is_a_single_word<br>
+but this-is-multiple-words<br>
+-- Jeff Atwood</p>
+</blockquote>
+<p>I don't think I'll be changing my old files but going forward, I'll probably use this convention.</p>
 </div>
 
 <p class="readmore u-url">
   <a
     rel="bookmark"
-    title="Creating something everyday «Mandaris Moore»"
-    href="2016/12/creating-something-everyday.html"
+    title="switching over to dashes «Mandaris Moore»"
+    href="2016/12/switching-over-to-dashes.html"
     itemprop="url">Permalink
   </a>
 </p>
 <footer>
 <p class="articleFooterP">Category:
-	<a class="p-category" href="./category/misc.html">
-    <span itemprop="articleSection">misc</span>
+	<a class="p-category" href="http://mandaris.github.io/category/tech.html">
+    <span itemprop="articleSection">tech</span>
   </a>
   <span class="rightside">
     <time
       class="dt-published"
-      datetime="2016-12-01T17:29:37-08:00"
+      datetime="2016-12-14T23:19:19-08:00"
       itemprop="dateCreated datePublished pubdate">
-        Thu 01 December 2016
+        Wed 14 December 2016
     </time>
   </span>
   <br />  <span itemprop="keywords">
       <a
         class="tag"
         rel="category tag"
-        href="./tag/making.html">
-          making
-      </a>
-      <a
-        class="tag"
-        rel="category tag"
-        href="./tag/creation-challenge.html">
-          creation challenge
-      </a>
-  </span>
-</p>
-</footer>
-</article>
-<hr />
-<article
-  class="post hentry h-entry content"
-  itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-
-<header class="post-header">
-  <h2
-    itemprop="headline title p-name name"
-    class="title p-name post-title">
-    <a
-      rel="bookmark"
-      class="u-url"
-      title="Where to put the maybe-someday «Mandaris Moore»"
-      href="2016/09/where-to-put-the-maybe-someday.html"
-      itemprop="url">
-      Where to put the maybe-someday
-    </a>
-  </h2>
-</header><div class="e-content post-body" itemprop="articleBody">
-<p><figure class="fullwidth"><img src="https://mandarismoore.com/images/omnifocus_printout_256.png"><figcaption>I felt I needed to unplug so I printed out what is in Omnifocus</figcation></figure></p>
-<p>Today, I did a review of my projects in OmniFocus. And thought about if I really, really wanted to keep certain things in there. The key to any good productivity system is having trust in that it is working correctly. If I have things in the system that I'm not going to do, then a part of me is going to subconsciencely fight against it.</p>
-<h4 id="so-why-are-things-in-omnifocus-in-the-first-place">So, why are things in omnifocus in the first place?</h4>
-<p>Well, these were things that I wanted to do at some point in time and it has become very easy to add things to the inbox.  Anything that I put into reminders<sup id="fnref-reminders"><a class="footnote-ref" href="#fn-reminders">1</a></sup> or send directly from Safari or the mail drop. </p>
-<p>When I attempt to get organized, I typically try to use omnifocus because a lot of people in my circle of influence use it when they are feeling overwhelmed. I like it because I'm somewhat familiar with it. Also, when I feel like going back to pencil and paper, I can print out everything to act as a starting point.</p>
-<h4 id="so-where-am-i-going-to-put-all-this-stuff-than">So, where am I going to put all this stuff than?</h4>
-<p>I've been thinking about it a lot recently. For a while, I was keeping a couple text files that would have information about different projects that I would like to do. I'd access them via nvAlt.</p>
-<p><figure class="fullwidth"><img src="/images/nvalt_text_notes.png"><figcaption>A small sample of some of the notes that I keep</figcation></figure></p>
-<p>This allowed them to be saved in dropbox so that I could access them on different computers. The only problem is that a majority of the things that I was interested in starting would something that I found on the web (an article or how to).  </p>
-<p>I've thought about moving everything to evernote. It's a service that allows me to connect to my mac and also allows me to use windows as well. In fact, I've been using it more and more this year in order to help me track all the job applications that I submitted to the state government.</p>
-<p><figure class="fullwidth"><img src="https://mandarismoore.com/images/evernote_application_log.png"><figcaption>With Evernote, I am able to keep track of all the applications I put in so that I can review and follow up.</figcation></figure>. </p>
-<p>The reason that I'm not a fan of this is because I don't know what is going to happen with the future of the business. Although I have a premium membership, I don't think the new price is worth it for what I use it for. Nor do I think I can afford it the next time that renewal is up.</p>
-<p>This leaves, me with Apple's Notes.app. It has really been making the rounds as far as praise from a lot of the people that I respect and has been fairly easy to use. The only problems that I'm worried about going forward with this the ability to add something to a pre-existing note when the list of notes starts to get longer. I like the fact that everything I put in it gets pushed to the server and is then on my device. I also like the idea of being able to have an easy way of sharing notes with my wife and look forward to more features in the future.</p>
-<h4 id="in-conclusion-where-am-i-going-to-put-my-notes">In conclusion, where am I going to put my notes.</h4>
-<p><label for="maybe_evernote" class="margin-toggle">&#8853;</label><input type="checkbox" id="maybe_evernote" class="margin-toggle" /><span class="marginnote"><img class="fullwidth" src="/images/maybe_someday_evernote.png" alt="Evernote allows me a place to sort things that I do not want to see in my review"/><br/>Evernote allows me a place to sort things that I do not want to see in my review</span> I think I'll be giving evernote another chance for being the place that I keep my maybe-someday list for projects. Although there is some uncertainty in the future of the service, it still works at this point and I don't imagine that it will be difficult to leave it in the future. I even went back and tried linking some notes together and I think I can come up with some really nice uses for that going forward.</p>
-<div class="footnote">
-<hr>
-<ol>
-<li id="fn-reminders">
-<p>This actually works too well because sometimes, I put geo location and times with the reminders and this doesn't get translated when it makes the move to omnifocus. I think this is just a training issue of me applying that information later on.&#160;<a class="footnote-backref" href="#fnref-reminders" title="Jump back to footnote 1 in the text">&#8617;</a></p>
-</li>
-</ol>
-</div>
-</div>
-
-<p class="readmore u-url">
-  <a
-    rel="bookmark"
-    title="Where to put the maybe-someday «Mandaris Moore»"
-    href="2016/09/where-to-put-the-maybe-someday.html"
-    itemprop="url">Permalink
-  </a>
-</p>
-<footer>
-<p class="articleFooterP">Category:
-	<a class="p-category" href="./category/personal.html">
-    <span itemprop="articleSection">personal</span>
-  </a>
-  <span class="rightside">
-    <time
-      class="dt-published"
-      datetime="2016-09-05T22:10:08-07:00"
-      itemprop="dateCreated datePublished pubdate">
-        Mon 05 September 2016
-    </time>
-  </span>
-  <br />  <span itemprop="keywords">
-      <a
-        class="tag"
-        rel="category tag"
-        href="./tag/tech.html">
-          tech
-      </a>
-      <a
-        class="tag"
-        rel="category tag"
-        href="./tag/notes.html">
-          notes
-      </a>
-      <a
-        class="tag"
-        rel="category tag"
-        href="./tag/evernote.html">
-          evernote
-      </a>
-  </span>
-  <span class="rightside">Modified:
-  	<time
-      class="dt-updated"
-  	  datetime="2016-12-02T18:29:36-08:00"
-  	  itemprop="dateModified">
-        Fri 02 December 2016
-      </time>
-  </span>
-</p>
-</footer>
-</article>
-<hr />
-<article
-  class="post hentry h-entry content"
-  itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-
-<header class="post-header">
-  <h2
-    itemprop="headline title p-name name"
-    class="title p-name post-title">
-    <a
-      rel="bookmark"
-      class="u-url"
-      title="Opening up on the internet «Mandaris Moore»"
-      href="2016/07/opening-up-on-the-internet.html"
-      itemprop="url">
-      Opening up on the internet
-    </a>
-  </h2>
-</header><div class="e-content post-body" itemprop="articleBody">
-<p>I recently spent some time chatting on the internet about some of the problems that I've been having with getting things done since my "fun-employment" the last couple of months. It is very hard for me, because I've been told that I'm smart and have potential all of my life and here I am in my mid 30's and there aren't a line of people knocking on my door to give me money.</p>
-<p>When I did this, I felt good. </p>
-<p>I felt like I wasn't just someone lost in the wind. </p>
-<p>I'm going to stay involved with the community and make it my touch stone as I work towards finding more work.</p>
-</div>
-
-<p class="readmore u-url">
-  <a
-    rel="bookmark"
-    title="Opening up on the internet «Mandaris Moore»"
-    href="2016/07/opening-up-on-the-internet.html"
-    itemprop="url">Permalink
-  </a>
-</p>
-<footer>
-<p class="articleFooterP">Category:
-	<a class="p-category" href="./category/personal.html">
-    <span itemprop="articleSection">personal</span>
-  </a>
-  <span class="rightside">
-    <time
-      class="dt-published"
-      datetime="2016-07-20T13:38:12-07:00"
-      itemprop="dateCreated datePublished pubdate">
-        Wed 20 July 2016
-    </time>
-  </span>
-  <br />  <span itemprop="keywords">
-      <a
-        class="tag"
-        rel="category tag"
-        href="./tag/blog.html">
+        href="http://mandaris.github.io/tag/blog.html">
           blog
       </a>
       <a
         class="tag"
         rel="category tag"
-        href="./tag/slack.html">
-          slack
+        href="http://mandaris.github.io/tag/creative-challenge.html">
+          creative challenge
       </a>
   </span>
 </p>
@@ -409,171 +280,423 @@
     <a
       rel="bookmark"
       class="u-url"
-      title="Why not me? «Mandaris Moore»"
-      href="2016/06/why-not-me.html"
+      title="Setting aside research «Mandaris Moore»"
+      href="2016/12/setting-aside-research.html"
       itemprop="url">
-      Why not me?
+      Setting aside research
     </a>
   </h2>
 </header><div class="e-content post-body" itemprop="articleBody">
-<p>We don't get a chance to start our lives over again. Even if we could, there is no garuntee that what we do will be better.</p>
-<p>What we can do is move on and change ourselves even by a little to make our lives better. I'm going to do that publicly and you are more than welcome to keep reading along. </p>
-</div>
-
-<p class="readmore u-url">
-  <a
-    rel="bookmark"
-    title="Why not me? «Mandaris Moore»"
-    href="2016/06/why-not-me.html"
-    itemprop="url">Permalink
-  </a>
-</p>
-<footer>
-<p class="articleFooterP">Category:
-	<a class="p-category" href="./category/personal.html">
-    <span itemprop="articleSection">personal</span>
-  </a>
-  <span class="rightside">
-    <time
-      class="dt-published"
-      datetime="2016-06-26T15:29:00-07:00"
-      itemprop="dateCreated datePublished pubdate">
-        Sun 26 June 2016
-    </time>
-  </span>
-  <br />  <span itemprop="keywords">
-      <a
-        class="tag"
-        rel="category tag"
-        href="./tag/starting-over.html">
-          starting over
-      </a>
-      <a
-        class="tag"
-        rel="category tag"
-        href="./tag/change.html">
-          change
-      </a>
-  </span>
-</p>
-</footer>
-</article>
-<hr />
-<article
-  class="post hentry h-entry content"
-  itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-
-<header class="post-header">
-  <h2
-    itemprop="headline title p-name name"
-    class="title p-name post-title">
-    <a
-      rel="bookmark"
-      class="u-url"
-      title="Where have I been? «Mandaris Moore»"
-      href="2016/06/where-have-i-been.html"
-      itemprop="url">
-      Where have I been?
-    </a>
-  </h2>
-</header><div class="e-content post-body" itemprop="articleBody">
-<p>Ok, it is time to get back into writing on my blog. I think I'm going to track my progress with learning swift 3 and my other tutorials that I come across.</p>
-</div>
-
-<p class="readmore u-url">
-  <a
-    rel="bookmark"
-    title="Where have I been? «Mandaris Moore»"
-    href="2016/06/where-have-i-been.html"
-    itemprop="url">Permalink
-  </a>
-</p>
-<footer>
-<p class="articleFooterP">Category:
-	<a class="p-category" href="./category/personal.html">
-    <span itemprop="articleSection">personal</span>
-  </a>
-  <span class="rightside">
-    <time
-      class="dt-published"
-      datetime="2016-06-21T20:54:03-07:00"
-      itemprop="dateCreated datePublished pubdate">
-        Tue 21 June 2016
-    </time>
-  </span>
-  <br />  <span itemprop="keywords">
-      <a
-        class="tag"
-        rel="category tag"
-        href="./tag/misc.html">
-          misc
-      </a>
-  </span>
-</p>
-</footer>
-</article>
-<hr />
-<article
-  class="post hentry h-entry content"
-  itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-
-<header class="post-header">
-  <h2
-    itemprop="headline title p-name name"
-    class="title p-name post-title">
-    <a
-      rel="bookmark"
-      class="u-url"
-      title="Further thoughts on text expander «Mandaris Moore»"
-      href="2016/04/further-thoughts-on-text-expander.html"
-      itemprop="url">
-      Further thoughts on text expander
-    </a>
-  </h2>
-</header><div class="e-content post-body" itemprop="articleBody">
-<p>Recently, <a href="https://mandarismoore.com/2016/04/my-thoughts-on-text-expander.html">I posted about my thoughts on Text Expander</a> after they announced that they were going to be moving to a subscription. And I got some feedback regarding what I wrote. I've pasted it below because I honestly don't get any feed back regarding any of my writing<label for="feedback" class="margin-toggle sidenote-number"></label><input type="checkbox" id="feedback" class="margin-toggle" /><span class="sidenote">Most likely because I do not have comments on the site</span>. </p>
-<blockquote>
+<p>Last night, I spent some time doing research on how to work with exercism.io so that I could create a little video tutorial. From my home computer, I saved the individual webpages into evernote and than made sure that my laptop did a sync of the pages before I left the house.</p>
+<p>I think this will work well going forward for my research materials, but<sup id="fnref-but"><a class="footnote-ref" href="#fn-but">1</a></sup> it doesn't help me when I come up with new outlines and mind maps on my phone. </p>
+<p>I have mixed feelings about this problem. On one hand, I have a point of friction. On the other, I'm moving! I'm doing something and this will ultimately be something that I can work on as part of this whole challenge.</p>
+<div class="footnote">
+<hr>
 <ol>
-<li>I completely agree that they have kind of boxed themselves out of the "casual user" market and are now more focused on "power users" or those that are using this tool on multiple devices (like me)</li>
-<li>I think your point is very well written, but would love to see more information about the alternative (AutoHotKey) that you have selected. </li>
-<li>Perhaps it would be helpful to mention a couple of things (If any) that could make textexpander that tool for you again.</li>
+<li id="fn-but">
+<p>I'm the first one to run into issues with my own work most times. The perfectionist in me has stopped a lot of cool stuff.&#160;<a class="footnote-backref" href="#fnref-but" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
 </ol>
-<p>Great job though. You can definitely tell that you care about the company.</p>
-<p>It's just they don't fit in your system anymore (which happens)</p>
-</blockquote>
-<p>I like feedback. At this point, good or bad I'm happy with the fact that someone else is reading and it gives me some motivation to make the writing better. In this case, I'd like to further expand on the last two points in the reverse order.</p>
-<h3 id="3-how-to-make-the-tool-more-helpful-for-me">3. How to make the tool more helpful for me</h3>
-<p>This is actually a something that needs to happen on my end<label for="disservice" class="margin-toggle sidenote-number"></label><input type="checkbox" id="disservice" class="margin-toggle" /><span class="sidenote">To be fair, the application tries its best to help me be as productive as possible.</span>.  The people at smile give you a number of examples that you can use right away to save you time.</p>
-<p><figure><figcaption>When I was making this post, I added one more. If anything knowing that I might have to give the application up has sparked new interest in using it. Plus all the the writing that I've been doing.</figcaption><img src="../../images/my_textexpander_setup_2016-04.png"/></figure></p>
-<p>The application does help in one major way everyday (when I do use it). Most mornings, I do use it to create my grateful journal template<sup id="fnref-affirmation"><a class="footnote-ref" href="#fn-affirmation">1</a></sup>.  Here is a brief example of the template that I use:</p>
-<div class="highlight"><pre><span></span># Things I&#39;m Grateful for #
-+ 
+</div>
+</div>
 
-# Things I&#39;m Excited about #
-+ 
+<p class="readmore u-url">
+  <a
+    rel="bookmark"
+    title="Setting aside research «Mandaris Moore»"
+    href="2016/12/setting-aside-research.html"
+    itemprop="url">Permalink
+  </a>
+</p>
+<footer>
+<p class="articleFooterP">Category:
+	<a class="p-category" href="http://mandaris.github.io/category/misc.html">
+    <span itemprop="articleSection">misc</span>
+  </a>
+  <span class="rightside">
+    <time
+      class="dt-published"
+      datetime="2016-12-13T17:31:30-08:00"
+      itemprop="dateCreated datePublished pubdate">
+        Tue 13 December 2016
+    </time>
+  </span>
+  <br />  <span itemprop="keywords">
+      <a
+        class="tag"
+        rel="category tag"
+        href="http://mandaris.github.io/tag/creative-challenge.html">
+          creative challenge
+      </a>
+  </span>
+</p>
+</footer>
+</article>
+<hr />
+<article
+  class="post hentry h-entry content"
+  itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
 
-# One Thing I&#39;d like to focus on #
+<header class="post-header">
+  <h2
+    itemprop="headline title p-name name"
+    class="title p-name post-title">
+    <a
+      rel="bookmark"
+      class="u-url"
+      title="Walter Talking «Mandaris Moore»"
+      href="2016/12/walter-talking.html"
+      itemprop="url">
+      Walter Talking
+    </a>
+  </h2>
+</header><div class="e-content post-body" itemprop="articleBody">
+<p>This time, I set out to see how quickly I could make a video of a simple animation. I managed to put it together in half an hour, but in the rush I can see a horrible delay in the middle of it. I feel it is because I don't really know the controls of the time line and that I was rushing to create something more than a blog post about the challenge that I'm doing.</p>
+<video width="960" height="540" controls>
+  <source src="../../images/walter_talking.mp4" type="video/mp4">
+Your browser does not support the video tag. This is a video showing a sprite running towards the screen and then talking about how I should have more research on my laptop. 
+</video>
+</div>
+
+<p class="readmore u-url">
+  <a
+    rel="bookmark"
+    title="Walter Talking «Mandaris Moore»"
+    href="2016/12/walter-talking.html"
+    itemprop="url">Permalink
+  </a>
+</p>
+<footer>
+<p class="articleFooterP">Category:
+	<a class="p-category" href="http://mandaris.github.io/category/misc.html">
+    <span itemprop="articleSection">misc</span>
+  </a>
+  <span class="rightside">
+    <time
+      class="dt-published"
+      datetime="2016-12-12T18:01:20-08:00"
+      itemprop="dateCreated datePublished pubdate">
+        Mon 12 December 2016
+    </time>
+  </span>
+  <br />  <span itemprop="keywords">
+      <a
+        class="tag"
+        rel="category tag"
+        href="http://mandaris.github.io/tag/creation-challenge.html">
+          creation challenge
+      </a>
+  </span>
+</p>
+</footer>
+</article>
+<hr />
+<article
+  class="post hentry h-entry content"
+  itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+
+<header class="post-header">
+  <h2
+    itemprop="headline title p-name name"
+    class="title p-name post-title">
+    <a
+      rel="bookmark"
+      class="u-url"
+      title="creating something with a time crunch «Mandaris Moore»"
+      href="2016/12/creating-something-with-a-time-crunch.html"
+      itemprop="url">
+      creating something with a time crunch
+    </a>
+  </h2>
+</header><div class="e-content post-body" itemprop="articleBody">
+<p>Perhaps I'm fortunate in the fact that I only have half of my self allotted time to create something today.  I got caught up being productive at my job<sup id="fnref-working_hard"><a class="footnote-ref" href="#fn-working_hard">1</a></sup> and the place that I usually set up for this kind of work had the desk and chairs removed.</p>
+<p>In fact, that got me thinking of whether I should count things that I make for work as part of my challenge. I think I'll say no at this point because I want to be able to show my work to the outside world and I'd like to keep my job<sup id="fnref-firewall"><a class="footnote-ref" href="#fn-firewall">2</a></sup>.</p>
+<div class="footnote">
+<hr>
+<ol>
+<li id="fn-working_hard">
+<p>I like to make sure that there aren't any loose ends that need to be taken care of. &#160;<a class="footnote-backref" href="#fnref-working_hard" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn-firewall">
+<p>The place that I work at is very touchy with information getting in and out. Even though I don't feel that my site has a lot (if any) traffic. Let's just keep things simple.&#160;<a class="footnote-backref" href="#fnref-firewall" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+</div>
+
+<p class="readmore u-url">
+  <a
+    rel="bookmark"
+    title="creating something with a time crunch «Mandaris Moore»"
+    href="2016/12/creating-something-with-a-time-crunch.html"
+    itemprop="url">Permalink
+  </a>
+</p>
+<footer>
+<p class="articleFooterP">Category:
+	<a class="p-category" href="http://mandaris.github.io/category/misc.html">
+    <span itemprop="articleSection">misc</span>
+  </a>
+  <span class="rightside">
+    <time
+      class="dt-published"
+      datetime="2016-12-12T17:23:18-08:00"
+      itemprop="dateCreated datePublished pubdate">
+        Mon 12 December 2016
+    </time>
+  </span>
+  <br />  <span itemprop="keywords">
+      <a
+        class="tag"
+        rel="category tag"
+        href="http://mandaris.github.io/tag/creation-challenge.html">
+          creation challenge
+      </a>
+  </span>
+</p>
+</footer>
+</article>
+<hr />
+<article
+  class="post hentry h-entry content"
+  itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+
+<header class="post-header">
+  <h2
+    itemprop="headline title p-name name"
+    class="title p-name post-title">
+    <a
+      rel="bookmark"
+      class="u-url"
+      title="The first xmas tree «Mandaris Moore»"
+      href="2016/12/the-first-xmas-tree.html"
+      itemprop="url">
+      The first xmas tree
+    </a>
+  </h2>
+</header><div class="e-content post-body" itemprop="articleBody">
+<figure><img alt="The first Christmas Tree our family has ever done" src="../../images/xmas_tree.jpeg"><figcaption>The first Christmas Tree our family has ever done</figcaption>
+</figure>
+<p>Today, we bought our first Christmas Tree. For me, Christmas hasn't been my favorite holiday, but I should make it something of it for my family.</p>
+</div>
+
+<p class="readmore u-url">
+  <a
+    rel="bookmark"
+    title="The first xmas tree «Mandaris Moore»"
+    href="2016/12/the-first-xmas-tree.html"
+    itemprop="url">Permalink
+  </a>
+</p>
+<footer>
+<p class="articleFooterP">Category:
+	<a class="p-category" href="http://mandaris.github.io/category/personal.html">
+    <span itemprop="articleSection">personal</span>
+  </a>
+  <span class="rightside">
+    <time
+      class="dt-published"
+      datetime="2016-12-11T22:00:43-08:00"
+      itemprop="dateCreated datePublished pubdate">
+        Sun 11 December 2016
+    </time>
+  </span>
+  <br />  <span itemprop="keywords">
+      <a
+        class="tag"
+        rel="category tag"
+        href="http://mandaris.github.io/tag/xmas.html">
+          xmas
+      </a>
+  </span>
+</p>
+</footer>
+</article>
+<hr />
+<article
+  class="post hentry h-entry content"
+  itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+
+<header class="post-header">
+  <h2
+    itemprop="headline title p-name name"
+    class="title p-name post-title">
+    <a
+      rel="bookmark"
+      class="u-url"
+      title="Spending some time in my room «Mandaris Moore»"
+      href="2016/12/spending-some-time-in-my-room.html"
+      itemprop="url">
+      Spending some time in my room
+    </a>
+  </h2>
+</header><div class="e-content post-body" itemprop="articleBody">
+<p>I was going to make something today.</p>
+<p>I could say that I made waffles this morning.</p>
+<p>Some of them were burnt.</p>
+<p>Some of them were soggy.</p>
+<p>It seems to be the metaphor for today.</p>
+</div>
+
+<p class="readmore u-url">
+  <a
+    rel="bookmark"
+    title="Spending some time in my room «Mandaris Moore»"
+    href="2016/12/spending-some-time-in-my-room.html"
+    itemprop="url">Permalink
+  </a>
+</p>
+<footer>
+<p class="articleFooterP">Category:
+	<a class="p-category" href="http://mandaris.github.io/category/personal.html">
+    <span itemprop="articleSection">personal</span>
+  </a>
+  <span class="rightside">
+    <time
+      class="dt-published"
+      datetime="2016-12-10T20:06:12-08:00"
+      itemprop="dateCreated datePublished pubdate">
+        Sat 10 December 2016
+    </time>
+  </span>
+  <br />  <span itemprop="keywords">
+      <a
+        class="tag"
+        rel="category tag"
+        href="http://mandaris.github.io/tag/creative-challenge.html">
+          creative challenge
+      </a>
+      <a
+        class="tag"
+        rel="category tag"
+        href="http://mandaris.github.io/tag/marriage.html">
+          marriage
+      </a>
+  </span>
+</p>
+</footer>
+</article>
+<hr />
+<article
+  class="post hentry h-entry content"
+  itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+
+<header class="post-header">
+  <h2
+    itemprop="headline title p-name name"
+    class="title p-name post-title">
+    <a
+      rel="bookmark"
+      class="u-url"
+      title="Starting a multiday project «Mandaris Moore»"
+      href="2016/12/starting-a-multiday-project.html"
+      itemprop="url">
+      Starting a multiday project
+    </a>
+  </h2>
+</header><div class="e-content post-body" itemprop="articleBody">
+<p>I had trouble coming up with something to make today. I usually set up a time to do something right after work, but found myself staring at my phone for 15 minutes thinking about how I couldn't think of anything<sup id="fnref-crossyroad"><a class="footnote-ref" href="#fn-crossyroad">1</a></sup>.</p>
+<p>I spent so time dabbling with CrazyTalk Animator, but didn't want to spend the time customizing a character today. I noticed that there were some properties that I couldn't change using the version that I have on my laptop<sup id="fnref-cost"><a class="footnote-ref" href="#fn-cost">2</a></sup>.</p>
+<p>So, I think what I will do other than make this post is to commit myself to crafting a video on how to do certain exercises using swift. It would mark off a couple of things that I've been wanting to produce and allow me to have a road map going forward. Not just sitting down and thinking "what am I going to make today".</p>
+<div class="footnote">
+<hr>
+<ol>
+<li id="fn-crossyroad">
+<p>Maybe I shouldn't have been playing Crossy Road.&#160;<a class="footnote-backref" href="#fnref-crossyroad" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn-cost">
+<p>I don't want to fork out more money just to change the skin color of my characters.&#160;<a class="footnote-backref" href="#fnref-cost" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+</div>
+
+<p class="readmore u-url">
+  <a
+    rel="bookmark"
+    title="Starting a multiday project «Mandaris Moore»"
+    href="2016/12/starting-a-multiday-project.html"
+    itemprop="url">Permalink
+  </a>
+</p>
+<footer>
+<p class="articleFooterP">Category:
+	<a class="p-category" href="http://mandaris.github.io/category/tech.html">
+    <span itemprop="articleSection">tech</span>
+  </a>
+  <span class="rightside">
+    <time
+      class="dt-published"
+      datetime="2016-12-09T17:55:06-08:00"
+      itemprop="dateCreated datePublished pubdate">
+        Fri 09 December 2016
+    </time>
+  </span>
+  <br />  <span itemprop="keywords">
+      <a
+        class="tag"
+        rel="category tag"
+        href="http://mandaris.github.io/tag/animation.html">
+          animation
+      </a>
+      <a
+        class="tag"
+        rel="category tag"
+        href="http://mandaris.github.io/tag/creative-challenge.html">
+          creative challenge
+      </a>
+  </span>
+</p>
+</footer>
+</article>
+<hr />
+<article
+  class="post hentry h-entry content"
+  itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+
+<header class="post-header">
+  <h2
+    itemprop="headline title p-name name"
+    class="title p-name post-title">
+    <a
+      rel="bookmark"
+      class="u-url"
+      title="A simple alias «Mandaris Moore»"
+      href="2016/12/a-simple-alias.html"
+      itemprop="url">
+      A simple alias
+    </a>
+  </h2>
+</header><div class="e-content post-body" itemprop="articleBody">
+<p>Today, I thought I'd document something simple like how I created an alias to render the blog and then port it to my website. I'm writing it out in hopes that something will pop up and say "There is an easier way of doing it!"</p>
+<p>The first thing I do for most posts is I open up Byword to write the words that you are seeing before you. If it's something a little more complicated, I might start off in MindNode<sup id="fnref-MindNode"><a class="footnote-ref" href="#fn-MindNode">1</a></sup> and export to Markdown. </p>
+<p>I use a TextExpander snippet to set the header and then just start writing and save the file in dropbox.</p>
+<figure><img alt="The popup window for the TextExpander header for my website." src="../../images/textexpander_window_header_for_post.png"><figcaption>The popup window for the TextExpander header for my website.</figcaption>
+</figure>
+<p>The part that I feel needs improvement is finishing the draft. I have a virtual environment set up for pelican that has all the templates and plugins that I've been tweaking to make the site look and behave in the way that I want. This means that any extra syntax or themes don't show up unless I process the markdown<sup id="fnref-marked"><a class="footnote-ref" href="#fn-marked">2</a></sup>.</p>
+<p>To solve this, I've set up a hazel rule<sup id="fnref-rule"><a class="footnote-ref" href="#fn-rule">3</a></sup> to copy over all the files. </p>
+<figure><img alt="Hazel rule to clone over all the posts and images for the blog" src="../../images/hazel_rule_to_clone_posts.png"><figcaption>Hazel rule to clone over all the posts and images for the blog</figcaption>
+</figure>
+<p>After that, I can run a local server to see what the post looks like after being processed.</p>
+<figure><img alt="An iTerm window with the commands that I use to run the development server" src="../../images/running_local_server.png"><figcaption>An iTerm window with the commands that I use to run the development server</figcaption>
+</figure>
+<p>Which leads us to the thing that I created. An alias in my environment to rsync the finished website and push it to github to host.</p>
+<div class="highlight"><pre><span></span>alias pub=&quot;pelican; rsync -r /Users/mandaris/Projects/quotidian/output/* ~/Projects/mandaris.github.com&quot;
 </pre></div>
 
 
-<p>By default, the application will monitor what you type and suggest even more snippets that you can add to your collection.</p>
-<p><figure><figcaption>I was kind of shocked by some of the things that I write multiple times and it has the possibility of helping me change some habits.</figcaption><img src="../../images/my_textexpander_suggestions.png"/></figure></p>
-<p>Maybe, I shouldn't have freaked out when I saw this feature pop up and you can always change the way it works in the preference because it could have been helpful. But it seemed creepy and annoying. </p>
-<p><figure><figcaption>Part of me was getting annoyed with all the notifications on what I could use as a snippet.</figcaption><img src="../../images/my_textexpander_preferences_2016-04.png"/></figure></p>
-<p>If you're feeling adventurous you can even go to the website of one of my heroes <a href="http://brettterpstra.com/">Brett Terpstra</a> and check out his page of <a href="http://brettterpstra.com/projects/te-tools/">text expander tools</a>. </p>
-<p>Despite all this, I still find that I wasn't using it to the fullest<label for="text_expander_usage" class="margin-toggle">&#8853;</label><input type="checkbox" id="text_expander_usage" class="margin-toggle" /><span class="marginnote"><img class="fullwidth" src="../../images/my_textexpander_usage.png" alt="This was my last usage stat. Take it with a *HUGE* grain of salt because I only have it on my laptop and I do frequent re-installs"/><br/>This was my last usage stat. Take it with a <em>HUGE</em> grain of salt because I only have it on my laptop and I do frequent re-installs</span>. Ultimately, we all have to balance what we want versus what we need the money to go to.</p>
-<h3 id="2-autohotkey">2. AutoHotKey</h3>
-<p>On this topic, I don't have much to say because I no longer have a windows machine to use on a day to day basis. The great thing about this tool was that I was using it to now only fire off extensions but to launch applications and replicate user interactions for testing.</p>
-<p>I would often use a keyboard short cut to launch the vnc client because the laptop that was given to employees to use might not be that powerful or we wanted to run a test on another machine that had a faster connection. </p>
-<p>For user interactions, I created a script that would type in the keyboard shortcut that would make windows rotate the screen or do a series of mouse clicks to reproduce... something...</p>
-<h3 id="1-updated">1. Updated...</h3>
-<p>While I was writing this, Smile reduced the price to $20 a year for the software. Which changes the deal significantly. Now I have to think about what the software is going to do for me going forward. Is this going to save me time in the future? Will I save more time than the time that I used writing about it here? </p>
-<p>I don't know.</p>
+<p>Well, that was a longer explanation that I was thinking it would be. </p>
 <div class="footnote">
 <hr>
 <ol>
-<li id="fn-affirmation">
-<p>It's an exercise that I do in the morning when I feel a little overwhelmed with life. I'm making it a habit and automating the prompt helps. Although, I do use <a href="https://www.keyboardmaestro.com">Keyboard Meastro</a> to do something similar.&#160;<a class="footnote-backref" href="#fnref-affirmation" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<li id="fn-MindNode">
+<p>I do have iThoughts as well, but MindNode is better looking.&#160;<a class="footnote-backref" href="#fnref-MindNode" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn-marked">
+<p>Although, I do use Marked.app to look at the post as I'm writing it. I haven't commited myself to making the my theme and processors work in the appplication.&#160;<a class="footnote-backref" href="#fnref-marked" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn-rule">
+<p>To be honest, this hasn't been working like I want it to. I have to manually run the rule. I'll make it a OmniFocus project to get the rules to work properly. I tried using rsync, but got some weird errors when I attempted to put the configuration into github.&#160;<a class="footnote-backref" href="#fnref-rule" title="Jump back to footnote 3 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
@@ -582,307 +705,56 @@
 <p class="readmore u-url">
   <a
     rel="bookmark"
-    title="Further thoughts on text expander «Mandaris Moore»"
-    href="2016/04/further-thoughts-on-text-expander.html"
+    title="A simple alias «Mandaris Moore»"
+    href="2016/12/a-simple-alias.html"
     itemprop="url">Permalink
   </a>
 </p>
 <footer>
 <p class="articleFooterP">Category:
-	<a class="p-category" href="./category/tech.html">
+	<a class="p-category" href="http://mandaris.github.io/category/tech.html">
     <span itemprop="articleSection">tech</span>
   </a>
   <span class="rightside">
     <time
       class="dt-published"
-      datetime="2016-04-11T18:53:05-07:00"
+      datetime="2016-12-08T17:08:11-08:00"
       itemprop="dateCreated datePublished pubdate">
-        Mon 11 April 2016
+        Thu 08 December 2016
     </time>
   </span>
   <br />  <span itemprop="keywords">
       <a
         class="tag"
         rel="category tag"
-        href="./tag/text-expander.html">
-          text expander
+        href="http://mandaris.github.io/tag/unix.html">
+          unix
       </a>
       <a
         class="tag"
         rel="category tag"
-        href="./tag/response.html">
-          response
+        href="http://mandaris.github.io/tag/creative-challenge.html">
+          creative challenge
       </a>
-  </span>
-  <span class="rightside">Modified:
-  	<time
-      class="dt-updated"
-  	  datetime="2016-05-14T22:52:52-07:00"
-  	  itemprop="dateModified">
-        Sat 14 May 2016
-      </time>
-  </span>
-</p>
-</footer>
-</article>
-<hr />
-<article
-  class="post hentry h-entry content"
-  itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-
-<header class="post-header">
-  <h2
-    itemprop="headline title p-name name"
-    class="title p-name post-title">
-    <a
-      rel="bookmark"
-      class="u-url"
-      title="My thoughts on Text Expander «Mandaris Moore»"
-      href="2016/04/my-thoughts-on-text-expander.html"
-      itemprop="url">
-      My thoughts on Text Expander
-    </a>
-  </h2>
-</header><div class="e-content post-body" itemprop="articleBody">
-<p><a href="https://textexpander.com">TextExpander</a> is a tool that I forget that I have. Actually, TextExpander is a tool that I forget to use. In the last couple of years, I've moved to a workflow that really isn't working for me day to day. I have a laptop, an imac, a couple ipads and all the work computers<sup id="fnref-windows"><a class="footnote-ref" href="#fn-windows">1</a></sup> that have been supplied for me to use in the last couple of years.</p>
-<p>Recently, the people at Smile software have switch the software to be a subscription model. On one hand, I understand that some companies need to do this to keep their businesses afloat; the monthly revenue is better to budget against versus someone purchasing the software every major release (maybe). On the other hand, this means that as a user I don't "own" the software; I'm leasing<label for="leasing" class="margin-toggle">&#8853;</label><input type="checkbox" id="leasing" class="margin-toggle" /><span class="marginnote">It seems to be the trend nowadays that people pay a fee to use things from homes(rent), cars and music. I do not have a problem with it, but it seems like a lot of money is going to things that we will not be able to get some equity back from.</span> it.</p>
-<p>Honestly, I can see why they would do something like that. The company specializes in tools like this and pdfpen and I like the fact that they sponsor a lot of podcasts that I listen to. I wish them well.</p>
-<p>Unfortunately, I don't think I'll be joining them on this experiment. I'm not a power user of the software. Because of the way that I've been living my technical life, I haven't seen myself repeating a lot of text. You can probably see the result of this in the fact that I don't post that often. The header for this posting is stored as a text expander snippet but I find myself having to look it up in order to use it.</p>
-<p>I wish them luck and I'm happy to use my current version until it stops working.</p>
-<div class="footnote">
-<hr>
-<ol>
-<li id="fn-windows">
-<p>On windows, I've switched to using <a href="https://www.autohotkey.com">AutoHotKey</a> because I can use text expansion as well as actions such as prepping an email to my wife so I can send her a message telling her that I love her.&#160;<a class="footnote-backref" href="#fnref-windows" title="Jump back to footnote 1 in the text">&#8617;</a></p>
-</li>
-</ol>
-</div>
-</div>
-
-<p class="readmore u-url">
-  <a
-    rel="bookmark"
-    title="My thoughts on Text Expander «Mandaris Moore»"
-    href="2016/04/my-thoughts-on-text-expander.html"
-    itemprop="url">Permalink
-  </a>
-</p>
-<footer>
-<p class="articleFooterP">Category:
-	<a class="p-category" href="./category/tech.html">
-    <span itemprop="articleSection">tech</span>
-  </a>
-  <span class="rightside">
-    <time
-      class="dt-published"
-      datetime="2016-04-10T20:39:34-07:00"
-      itemprop="dateCreated datePublished pubdate">
-        Sun 10 April 2016
-    </time>
-  </span>
-  <br />  <span itemprop="keywords">
-      <a
-        class="tag"
-        rel="category tag"
-        href="./tag/text-expander.html">
-          text expander
-      </a>
-  </span>
-</p>
-</footer>
-</article>
-<hr />
-<article
-  class="post hentry h-entry content"
-  itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-
-<header class="post-header">
-  <h2
-    itemprop="headline title p-name name"
-    class="title p-name post-title">
-    <a
-      rel="bookmark"
-      class="u-url"
-      title="Starting with Hazel «Mandaris Moore»"
-      href="2016/03/starting-with-hazel.html"
-      itemprop="url">
-      Starting with Hazel
-    </a>
-  </h2>
-</header><div class="e-content post-body" itemprop="articleBody">
-<p><img alt="Initial Creation of Hazel rule" src="../../images/initial_hazel.png"> 
-I write all of my blog post in markdown and store them in a folder in dropbox. From there, I use pelican to turn the files into a webpage.  The steps would be...</p>
-<ol>
-<li>Open Byword or <a href="http://multimarkdown.com/index.html">MultiMarkdown Composer</a></li>
-<li>Write the post</li>
-<li>Remember the textexpander snippet that I created for post headers because I don't post as often as I used to</li>
-<li>Save the file</li>
-<li>Copy the file to location where I have pelican looking<sup id="fnref-publish"><a class="footnote-ref" href="#fn-publish">1</a></sup></li>
-<li>Generate the site</li>
-<li>Publish the site by copying the generated file to the proper git repository</li>
-<li>Push the repository</li>
-<li>Check that all the links work</li>
-</ol>
-<p>Anyway, I decided that I've already bought tons of productivity tools and should use them for what they are for. I had a couple workflows in the past but not saving them while I switch between betas causes the system to falter. </p>
-<p>It's not the complicated rule set, but it certainly a start and makes me happy that I'm actual using the things that I've bought. </p>
-<figure><img alt="Completed rule set for moving my posts to get processed" src="../../images/sorting_cloning_with_hazel.png"><figcaption>Completed rule set for moving my posts to get processed</figcaption>
-</figure>
-<div class="footnote">
-<hr>
-<ol>
-<li id="fn-publish">
-<p>This is my fault for not setting up pelican to auto publish. I just want to make sure that everything works locally before I send it out to my millions of fans.&#160;<a class="footnote-backref" href="#fnref-publish" title="Jump back to footnote 1 in the text">&#8617;</a></p>
-</li>
-</ol>
-</div>
-</div>
-
-<p class="readmore u-url">
-  <a
-    rel="bookmark"
-    title="Starting with Hazel «Mandaris Moore»"
-    href="2016/03/starting-with-hazel.html"
-    itemprop="url">Permalink
-  </a>
-</p>
-<footer>
-<p class="articleFooterP">Category:
-	<a class="p-category" href="./category/productivity.html">
-    <span itemprop="articleSection">productivity</span>
-  </a>
-  <span class="rightside">
-    <time
-      class="dt-published"
-      datetime="2016-03-22T10:41:11-07:00"
-      itemprop="dateCreated datePublished pubdate">
-        Tue 22 March 2016
-    </time>
-  </span>
-  <br />  <span itemprop="keywords">
-      <a
-        class="tag"
-        rel="category tag"
-        href="./tag/misc.html">
-          misc
-      </a>
-  </span>
-  <span class="rightside">Modified:
-  	<time
-      class="dt-updated"
-  	  datetime="2016-03-22T10:41:11-07:00"
-  	  itemprop="dateModified">
-        Tue 22 March 2016
-      </time>
-  </span>
-</p>
-</footer>
-</article>
-<hr />
-<article
-  class="post hentry h-entry content"
-  itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-
-<header class="post-header">
-  <h2
-    itemprop="headline title p-name name"
-    class="title p-name post-title">
-    <a
-      rel="bookmark"
-      class="u-url"
-      title="Tufte margin figure and column images «Mandaris Moore»"
-      href="2016/03/tufte-margin-figure-and-column-images.html"
-      itemprop="url">
-      Tufte margin figure and column images
-    </a>
-  </h2>
-</header><div class="e-content post-body" itemprop="articleBody">
-<p>There are a couple things that I still have to finish for the website theme plugin. They are margin images and images in the main column. It should be to hard and in fact this post that you are reading is an example of me using it.</p>
-<p>In fact, I'm going to put a margin image here on the side followed by a small table of what I had for breakfast the last three days.</p>
-<p><label for="margin-figure-id" class="margin-toggle">&#8853;</label><input type="checkbox" id="margin-figure-id" class="margin-toggle" /><span class="marginnote"><img class="fullwidth" src="../../images/small_me.jpg" alt="This is guy keeps getting better!"/><br/>This is guy keeps getting better!</span></p>
-<table>
-<thead>
-<tr>
-<th align="left">Day of week</th>
-<th align="left">Breakfast</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">Sunday</td>
-<td align="left">Eggs and fruit</td>
-</tr>
-<tr>
-<td align="left">Monday</td>
-<td align="left">Protein Shake</td>
-</tr>
-<tr>
-<td align="left">Tuesday</td>
-<td align="left">Leftover serial</td>
-</tr>
-</tbody>
-</table>
-<p>Wow, wasn't that amazing<label for="reflection" class="margin-toggle">&#8853;</label><input type="checkbox" id="reflection" class="margin-toggle" /><span class="marginnote">Although this all looks nice, I think this might be the last update to the code for a while.</span>
-. Now that we got that working we can get the column images working too.</p>
-<p>Now to follow up with the column image. I hope that it looks cool in your browser of choice.</p>
-<p><figure><figcaption>This example was lefted directly from the Tufte website. I hope that it works.</figcaption><img src="../../images/napoleons-march.png"/></figure></p>
-<p>Well, until next time!</p>
-</div>
-
-<p class="readmore u-url">
-  <a
-    rel="bookmark"
-    title="Tufte margin figure and column images «Mandaris Moore»"
-    href="2016/03/tufte-margin-figure-and-column-images.html"
-    itemprop="url">Permalink
-  </a>
-</p>
-<footer>
-<p class="articleFooterP">Category:
-	<a class="p-category" href="./category/blogging.html">
-    <span itemprop="articleSection">blogging</span>
-  </a>
-  <span class="rightside">
-    <time
-      class="dt-published"
-      datetime="2016-03-16T11:02:52-07:00"
-      itemprop="dateCreated datePublished pubdate">
-        Wed 16 March 2016
-    </time>
-  </span>
-  <br />  <span itemprop="keywords">
-      <a
-        class="tag"
-        rel="category tag"
-        href="./tag/misc.html">
-          misc
-      </a>
-  </span>
-  <span class="rightside">Modified:
-  	<time
-      class="dt-updated"
-  	  datetime="2016-03-16T11:02:52-07:00"
-  	  itemprop="dateModified">
-        Wed 16 March 2016
-      </time>
   </span>
 </p>
 </footer>
 </article>
 <hr />
 </main>
-  <nav id="pagination">    <a id="first_page" href="./index.html">&#60;&#60;</a>
-    <a id="previous_page" rel="prev" href="./index9.html">&#60;</a>
-    <a href="./index6.html">6</a>
-    <a href="./index7.html">7</a>
-    <a href="./index8.html">8</a>
-    <a href="./index9.html">9</a>
+  <nav id="pagination">    <a id="first_page" href="http://mandaris.github.io/index.html">&#60;&#60;</a>
+    <a id="previous_page" rel="prev" href="http://mandaris.github.io/index9.html">&#60;</a>
+    <a href="http://mandaris.github.io/index6.html">6</a>
+    <a href="http://mandaris.github.io/index7.html">7</a>
+    <a href="http://mandaris.github.io/index8.html">8</a>
+    <a href="http://mandaris.github.io/index9.html">9</a>
     <span class="a active">10</span>
-    <a href="./index11.html">11</a>
-    <a href="./index12.html">12</a>
-    <a href="./index13.html">13</a>
-    <a href="./index14.html">14</a>
-    <a id="next_page" rel="next" href="./index11.html">&#62;</a>
-    <a id="last_page" href="./index24.html">&#62;&#62;</a>
+    <a href="http://mandaris.github.io/index11.html">11</a>
+    <a href="http://mandaris.github.io/index12.html">12</a>
+    <a href="http://mandaris.github.io/index13.html">13</a>
+    <a href="http://mandaris.github.io/index14.html">14</a>
+    <a id="next_page" rel="next" href="http://mandaris.github.io/index11.html">&#62;</a>
+    <a id="last_page" href="http://mandaris.github.io/index26.html">&#62;&#62;</a>
 </nav>
 <footer itemscope itemtype="https://schema.org/WPFooter"
     role="contentinfo" class="baseFooter">
