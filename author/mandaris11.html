@@ -83,6 +83,97 @@
     <a
       rel="bookmark"
       class="u-url"
+      title="A simple alias «Mandaris Moore»"
+      href="2016/12/a-simple-alias.html"
+      itemprop="url">
+      A simple alias
+    </a>
+  </h2>
+</header><div class="e-content post-body" itemprop="articleBody">
+<p>Today, I thought I'd document something simple like how I created an alias to render the blog and then port it to my website. I'm writing it out in hopes that something will pop up and say "There is an easier way of doing it!"</p>
+<p>The first thing I do for most posts is I open up Byword to write the words that you are seeing before you. If it's something a little more complicated, I might start off in MindNode<sup id="fnref-MindNode"><a class="footnote-ref" href="#fn-MindNode">1</a></sup> and export to Markdown. </p>
+<p>I use a TextExpander snippet to set the header and then just start writing and save the file in dropbox.</p>
+<figure><img alt="The popup window for the TextExpander header for my website." src="../../images/textexpander_window_header_for_post.png"><figcaption>The popup window for the TextExpander header for my website.</figcaption>
+</figure>
+<p>The part that I feel needs improvement is finishing the draft. I have a virtual environment set up for pelican that has all the templates and plugins that I've been tweaking to make the site look and behave in the way that I want. This means that any extra syntax or themes don't show up unless I process the markdown<sup id="fnref-marked"><a class="footnote-ref" href="#fn-marked">2</a></sup>.</p>
+<p>To solve this, I've set up a hazel rule<sup id="fnref-rule"><a class="footnote-ref" href="#fn-rule">3</a></sup> to copy over all the files. </p>
+<figure><img alt="Hazel rule to clone over all the posts and images for the blog" src="../../images/hazel_rule_to_clone_posts.png"><figcaption>Hazel rule to clone over all the posts and images for the blog</figcaption>
+</figure>
+<p>After that, I can run a local server to see what the post looks like after being processed.</p>
+<figure><img alt="An iTerm window with the commands that I use to run the development server" src="../../images/running_local_server.png"><figcaption>An iTerm window with the commands that I use to run the development server</figcaption>
+</figure>
+<p>Which leads us to the thing that I created. An alias in my environment to rsync the finished website and push it to github to host.</p>
+<div class="highlight"><pre><span></span>alias pub=&quot;pelican; rsync -r /Users/mandaris/Projects/quotidian/output/* ~/Projects/mandaris.github.com&quot;
+</pre></div>
+
+
+<p>Well, that was a longer explanation that I was thinking it would be. </p>
+<div class="footnote">
+<hr>
+<ol>
+<li id="fn-MindNode">
+<p>I do have iThoughts as well, but MindNode is better looking.&#160;<a class="footnote-backref" href="#fnref-MindNode" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn-marked">
+<p>Although, I do use Marked.app to look at the post as I'm writing it. I haven't commited myself to making the my theme and processors work in the appplication.&#160;<a class="footnote-backref" href="#fnref-marked" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn-rule">
+<p>To be honest, this hasn't been working like I want it to. I have to manually run the rule. I'll make it a OmniFocus project to get the rules to work properly. I tried using rsync, but got some weird errors when I attempted to put the configuration into github.&#160;<a class="footnote-backref" href="#fnref-rule" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+</div>
+
+<p class="readmore u-url">
+  <a
+    rel="bookmark"
+    title="A simple alias «Mandaris Moore»"
+    href="2016/12/a-simple-alias.html"
+    itemprop="url">Permalink
+  </a>
+</p>
+<footer>
+<p class="articleFooterP">Category:
+	<a class="p-category" href="http://mandaris.github.io/category/tech.html">
+    <span itemprop="articleSection">tech</span>
+  </a>
+  <span class="rightside">
+    <time
+      class="dt-published"
+      datetime="2016-12-08T17:08:11-08:00"
+      itemprop="dateCreated datePublished pubdate">
+        Thu 08 December 2016
+    </time>
+  </span>
+  <br />  <span itemprop="keywords">
+      <a
+        class="tag"
+        rel="category tag"
+        href="http://mandaris.github.io/tag/unix.html">
+          unix
+      </a>
+      <a
+        class="tag"
+        rel="category tag"
+        href="http://mandaris.github.io/tag/creative-challenge.html">
+          creative challenge
+      </a>
+  </span>
+</p>
+</footer>
+</article>
+<hr />
+<article
+  class="post hentry h-entry content"
+  itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+
+<header class="post-header">
+  <h2
+    itemprop="headline title p-name name"
+    class="title p-name post-title">
+    <a
+      rel="bookmark"
+      class="u-url"
       title="First impressions on Setapp «Mandaris Moore»"
       href="2016/12/first-impressions-on-setapp.html"
       itemprop="url">
@@ -759,69 +850,6 @@ Your browser does not support the video tag. This is a video of a charter jumpin
   	  itemprop="dateModified">
         Fri 02 December 2016
       </time>
-  </span>
-</p>
-</footer>
-</article>
-<hr />
-<article
-  class="post hentry h-entry content"
-  itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-
-<header class="post-header">
-  <h2
-    itemprop="headline title p-name name"
-    class="title p-name post-title">
-    <a
-      rel="bookmark"
-      class="u-url"
-      title="Opening up on the internet «Mandaris Moore»"
-      href="2016/07/opening-up-on-the-internet.html"
-      itemprop="url">
-      Opening up on the internet
-    </a>
-  </h2>
-</header><div class="e-content post-body" itemprop="articleBody">
-<p>I recently spent some time chatting on the internet about some of the problems that I've been having with getting things done since my "fun-employment" the last couple of months. It is very hard for me, because I've been told that I'm smart and have potential all of my life and here I am in my mid 30's and there aren't a line of people knocking on my door to give me money.</p>
-<p>When I did this, I felt good. </p>
-<p>I felt like I wasn't just someone lost in the wind. </p>
-<p>I'm going to stay involved with the community and make it my touch stone as I work towards finding more work.</p>
-</div>
-
-<p class="readmore u-url">
-  <a
-    rel="bookmark"
-    title="Opening up on the internet «Mandaris Moore»"
-    href="2016/07/opening-up-on-the-internet.html"
-    itemprop="url">Permalink
-  </a>
-</p>
-<footer>
-<p class="articleFooterP">Category:
-	<a class="p-category" href="http://mandaris.github.io/category/personal.html">
-    <span itemprop="articleSection">personal</span>
-  </a>
-  <span class="rightside">
-    <time
-      class="dt-published"
-      datetime="2016-07-20T13:38:12-07:00"
-      itemprop="dateCreated datePublished pubdate">
-        Wed 20 July 2016
-    </time>
-  </span>
-  <br />  <span itemprop="keywords">
-      <a
-        class="tag"
-        rel="category tag"
-        href="http://mandaris.github.io/tag/blog.html">
-          blog
-      </a>
-      <a
-        class="tag"
-        rel="category tag"
-        href="http://mandaris.github.io/tag/slack.html">
-          slack
-      </a>
   </span>
 </p>
 </footer>
