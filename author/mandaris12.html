@@ -12,7 +12,7 @@
 <meta name="author" class="p-author h-card" content="Mandaris" />
 <meta property="site_name" content="Mandaris Moore" />
 <meta name="description" content="The personal website for Mandaris Moore." />
-<base href="http://mandaris.github.io" />
+<base href="https://mandaris.github.io" />
 <meta name="generator" content="Pelican" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -24,7 +24,7 @@
       href="/apple-touch-icon-precomposed.png" />
 
 <!-- Feed information -->
-<link href="http://mandaris.github.io/feeds/atom.xml"
+<link href="https://mandaris.github.io/feeds/atom.xml"
       type="application/atom+xml"
       rel="alternate" title="Mandaris Moore ALL Atom Feed" />
 
@@ -33,9 +33,9 @@
 <meta property="og:title" content="Mandaris Moore" />
 <meta property="og:type" content="website" />
 <meta property="og:description" content="The personal website for Mandaris Moore."/>
-<meta property="og:url" content="http://mandaris.github.io" />
+<meta property="og:url" content="https://mandaris.github.io" />
 <meta property="og:locale" content="en-us" />
-<meta property="og:image" content="http://mandaris.github.io/favicon.png" />
+<meta property="og:image" content="https://mandaris.github.io/favicon.png" />
 <meta property="og:image:alt" content="A person in a gear." />
 <!-- Micro.blog User Name -->
 <link href="https://micro.blog/mandaris" rel="me" />
@@ -53,18 +53,18 @@
 <body itemscope itemtype="https://schema.org/Blog">
 <meta itemprop="description" content="The personal website for Mandaris Moore." />
 <header role="banner">
-<h1 class="websitetitle"><a href="http://mandaris.github.io">Mandaris Moore</a></h1>
+<h1 class="websitetitle"><a href="https://mandaris.github.io">Mandaris Moore</a></h1>
 <nav itemscope itemtype="https://schema.org/SiteNavigationElement"
     class="navmenu" id="navmenu" >
 <ul>
   <li>
-    <a class="navitemlink" href="http://mandaris.github.io/archives.html">Archive</a>
+    <a class="navitemlink" href="https://mandaris.github.io/archives.html">Archive</a>
   </li>
   <li>
-    <a class="navitemlink" href="http://mandaris.github.io/pages/about.html">About</a>
+    <a class="navitemlink" href="https://mandaris.github.io/pages/about.html">About</a>
   </li>
   <li>
-    <a class="navitemlink" href="http://mandaris.github.io/pages/projects.html">Projects</a>
+    <a class="navitemlink" href="https://mandaris.github.io/pages/projects.html">Projects</a>
   </li>
 </ul>
 </nav>
@@ -72,6 +72,269 @@
 
 <hr />
 <main class="articlelisting container">
+<article
+  class="post hentry h-entry content"
+  itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+
+<header class="post-header">
+  <h2
+    itemprop="headline title p-name name"
+    class="title p-name post-title">
+    <a
+      rel="external"
+      title="Creation Challenge: Enable linked-list post «Mandaris Moore»"
+      href="https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types">
+      Creation Challenge: Enable linked-list post
+    </a>
+  </h2>
+</header><div class="e-content post-body" itemprop="articleBody">
+<p>The first thing that I'd like to work on is getting the article header that I'm using to be more capable of handing meta data for individual entries. Currently, it points to the specific url for the article but I'd like it to take my current header.</p>
+<div class="highlight"><pre><span></span><span class="n">title</span><span class="o">:</span> <span class="n">Where</span> <span class="n">to</span> <span class="n">put</span> <span class="n">the</span> <span class="n">maybe</span><span class="o">-</span><span class="n">someday</span>  
+<span class="n">date</span><span class="o">:</span> <span class="mi">2016</span><span class="o">-</span><span class="mi">09</span><span class="o">-</span><span class="mi">05</span> <span class="mi">22</span><span class="o">:</span><span class="mi">10</span><span class="o">:</span><span class="mi">08</span>  
+<span class="n">category</span><span class="o">:</span> <span class="n">personal</span>  
+<span class="n">tags</span><span class="o">:</span> <span class="n">tech</span><span class="o">,</span> <span class="n">notes</span><span class="o">,</span> <span class="n">evernote</span>  
+<span class="n">status</span><span class="o">:</span> <span class="n">published</span>    
+</pre></div>
+
+
+<p>and add the <code>link</code> attribute</p>
+<div class="highlight"><pre><span></span><span class="n">title</span><span class="o">:</span> <span class="n">Where</span> <span class="n">to</span> <span class="n">put</span> <span class="n">the</span> <span class="n">maybe</span><span class="o">-</span><span class="n">someday</span>  
+<span class="n">date</span><span class="o">:</span> <span class="mi">2016</span><span class="o">-</span><span class="mi">09</span><span class="o">-</span><span class="mi">05</span> <span class="mi">22</span><span class="o">:</span><span class="mi">10</span><span class="o">:</span><span class="mi">08</span>  
+<span class="n">category</span><span class="o">:</span> <span class="n">personal</span>  
+<span class="n">tags</span><span class="o">:</span> <span class="n">tech</span><span class="o">,</span> <span class="n">notes</span><span class="o">,</span> <span class="n">evernote</span>  
+<span class="n">status</span><span class="o">:</span> <span class="n">published</span>    
+<span class="n">link</span><span class="o">:</span> <span class="n">some_other_place</span><span class="o">.</span><span class="na">com</span>
+</pre></div>
+
+
+<p>I started off with the following jinja heading.</p>
+<div class="highlight"><pre><span></span><span class="x">&lt;h1&gt;</span>
+<span class="x">&lt;a rel=&quot;bookmark&quot;</span>
+<span class="x">   href=&quot;</span><span class="cp">{{</span> <span class="nv">article.url</span> <span class="cp">}}</span><span class="x">&quot;</span>
+<span class="x">   title=&quot;</span><span class="cp">{{</span> <span class="nv">article.title</span><span class="o">|</span><span class="nf">striptags</span> <span class="cp">}}</span><span class="x"> «</span><span class="cp">{{</span> <span class="nv">SITENAME</span> <span class="cp">}}</span><span class="x">»&quot;&gt;</span>
+<span class="x">   </span><span class="cp">{{</span> <span class="nv">article.title</span><span class="cp">}}</span><span class="x"></span>
+<span class="x">&lt;/a&gt;</span>
+<span class="x">&lt;/h1&gt;</span>
+</pre></div>
+
+
+<p>To be honest, I don't do development on the blog that often so I used my own code to look up how to do an <code>if</code> statement in jinja and wrote a little test line to see if it worked.</p>
+<div class="highlight"><pre><span></span><span class="cp">{{</span> <span class="nv">article.title</span><span class="cp">}}</span><span class="x"> </span><span class="cp">{%</span> <span class="k">if</span> <span class="nv">article.link</span> <span class="cp">%}</span><span class="x"> </span><span class="cp">{{</span> <span class="nv">article.link</span><span class="cp">}}</span><span class="x"> </span><span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span><span class="x"></span>
+</pre></div>
+
+
+<p>After editing the page a number of times and doing more research that I should have into which kind of <code>rel</code> tag I should use for book marks versus external links, I finished up with this.</p>
+<div class="highlight"><pre><span></span><span class="cp">{%</span> <span class="k">if</span> <span class="nv">article.link</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">&lt;a rel=&quot;external&quot;</span>
+<span class="x">   title=&quot;</span><span class="cp">{{</span> <span class="nv">article.title</span><span class="o">|</span><span class="nf">striptags</span> <span class="cp">}}</span><span class="x"> «</span><span class="cp">{{</span> <span class="nv">SITENAME</span> <span class="cp">}}</span><span class="x">»&quot;</span>
+<span class="x">   href=&quot;</span><span class="cp">{{</span> <span class="nv">article.link</span> <span class="cp">}}</span><span class="x">&quot;&gt;</span>
+<span class="x">   </span><span class="cp">{{</span> <span class="nv">article.title</span><span class="cp">}}</span><span class="x"></span>
+<span class="x">&lt;/a&gt;</span>
+<span class="cp">{%</span> <span class="k">else</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">&lt;a rel=&quot;bookmark&quot;</span>
+<span class="x">   title=&quot;</span><span class="cp">{{</span> <span class="nv">article.title</span><span class="o">|</span><span class="nf">striptags</span> <span class="cp">}}</span><span class="x"> «</span><span class="cp">{{</span> <span class="nv">SITENAME</span> <span class="cp">}}</span><span class="x">»&quot;</span>
+<span class="x">   href=&quot;</span><span class="cp">{{</span> <span class="nv">article.url</span> <span class="cp">}}</span><span class="x">&quot;&gt;</span>
+<span class="x">   </span><span class="cp">{{</span> <span class="nv">article.title</span><span class="cp">}}</span><span class="x"></span>
+<span class="x">&lt;/a&gt;</span>
+<span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span><span class="x"></span>
+</pre></div>
+</div>
+
+<p class="readmore u-url">
+  <a
+    rel="bookmark"
+    title="Creation Challenge: Enable linked-list post «Mandaris Moore»"
+    href="2016/12/creation-challenge-enable-linked-list-post.html"
+    itemprop="url">Permalink
+  </a>
+</p>
+<footer>
+<p class="articleFooterP">Category:
+	<a class="p-category" href="https://mandaris.github.io/category/misc.html">
+    <span itemprop="articleSection">misc</span>
+  </a>
+  <span class="rightside">
+    <time
+      class="dt-published"
+      datetime="2016-12-01T17:46:45-08:00"
+      itemprop="dateCreated datePublished pubdate">
+        Thu 01 December 2016
+    </time>
+  </span>
+  <br />  <span itemprop="keywords">
+      <a
+        class="tag"
+        rel="category tag"
+        href="https://mandaris.github.io/tag/misc.html">
+          misc
+      </a>
+      <a
+        class="tag"
+        rel="category tag"
+        href="https://mandaris.github.io/tag/creation-challenge.html">
+          creation challenge
+      </a>
+  </span>
+</p>
+</footer>
+</article>
+<hr />
+<article
+  class="post hentry h-entry content"
+  itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+
+<header class="post-header">
+  <h2
+    itemprop="headline title p-name name"
+    class="title p-name post-title">
+    <a
+      rel="bookmark"
+      class="u-url"
+      title="Creating something everyday «Mandaris Moore»"
+      href="2016/12/creating-something-everyday.html"
+      itemprop="url">
+      Creating something everyday
+    </a>
+  </h2>
+</header><div class="e-content post-body" itemprop="articleBody">
+<p>So, I'm making a commitment to myself to create something every day until Christmas without the limitation/structure of saying what I'm going to be making during this period of time.  I suspect that it will mostly be blog posts and tutorials but I think I'll make a push to clean up the code for this blog and add a number of things that I've been putting on the back burner.</p>
+</div>
+
+<p class="readmore u-url">
+  <a
+    rel="bookmark"
+    title="Creating something everyday «Mandaris Moore»"
+    href="2016/12/creating-something-everyday.html"
+    itemprop="url">Permalink
+  </a>
+</p>
+<footer>
+<p class="articleFooterP">Category:
+	<a class="p-category" href="https://mandaris.github.io/category/misc.html">
+    <span itemprop="articleSection">misc</span>
+  </a>
+  <span class="rightside">
+    <time
+      class="dt-published"
+      datetime="2016-12-01T17:29:37-08:00"
+      itemprop="dateCreated datePublished pubdate">
+        Thu 01 December 2016
+    </time>
+  </span>
+  <br />  <span itemprop="keywords">
+      <a
+        class="tag"
+        rel="category tag"
+        href="https://mandaris.github.io/tag/making.html">
+          making
+      </a>
+      <a
+        class="tag"
+        rel="category tag"
+        href="https://mandaris.github.io/tag/creation-challenge.html">
+          creation challenge
+      </a>
+  </span>
+</p>
+</footer>
+</article>
+<hr />
+<article
+  class="post hentry h-entry content"
+  itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+
+<header class="post-header">
+  <h2
+    itemprop="headline title p-name name"
+    class="title p-name post-title">
+    <a
+      rel="bookmark"
+      class="u-url"
+      title="Where to put the maybe-someday «Mandaris Moore»"
+      href="2016/09/where-to-put-the-maybe-someday.html"
+      itemprop="url">
+      Where to put the maybe-someday
+    </a>
+  </h2>
+</header><div class="e-content post-body" itemprop="articleBody">
+<p><figure class="fullwidth"><img src="https://mandarismoore.com/images/omnifocus_printout_256.png"><figcaption>I felt I needed to unplug so I printed out what is in Omnifocus</figcation></figure></p>
+<p>Today, I did a review of my projects in OmniFocus. And thought about if I really, really wanted to keep certain things in there. The key to any good productivity system is having trust in that it is working correctly. If I have things in the system that I'm not going to do, then a part of me is going to subconsciencely fight against it.</p>
+<h4 id="so-why-are-things-in-omnifocus-in-the-first-place">So, why are things in omnifocus in the first place?</h4>
+<p>Well, these were things that I wanted to do at some point in time and it has become very easy to add things to the inbox.  Anything that I put into reminders<sup id="fnref-reminders"><a class="footnote-ref" href="#fn-reminders">1</a></sup> or send directly from Safari or the mail drop. </p>
+<p>When I attempt to get organized, I typically try to use omnifocus because a lot of people in my circle of influence use it when they are feeling overwhelmed. I like it because I'm somewhat familiar with it. Also, when I feel like going back to pencil and paper, I can print out everything to act as a starting point.</p>
+<h4 id="so-where-am-i-going-to-put-all-this-stuff-than">So, where am I going to put all this stuff than?</h4>
+<p>I've been thinking about it a lot recently. For a while, I was keeping a couple text files that would have information about different projects that I would like to do. I'd access them via nvAlt.</p>
+<p><figure class="fullwidth"><img src="/images/nvalt_text_notes.png"><figcaption>A small sample of some of the notes that I keep</figcation></figure></p>
+<p>This allowed them to be saved in dropbox so that I could access them on different computers. The only problem is that a majority of the things that I was interested in starting would something that I found on the web (an article or how to).  </p>
+<p>I've thought about moving everything to evernote. It's a service that allows me to connect to my mac and also allows me to use windows as well. In fact, I've been using it more and more this year in order to help me track all the job applications that I submitted to the state government.</p>
+<p><figure class="fullwidth"><img src="https://mandarismoore.com/images/evernote_application_log.png"><figcaption>With Evernote, I am able to keep track of all the applications I put in so that I can review and follow up.</figcation></figure>. </p>
+<p>The reason that I'm not a fan of this is because I don't know what is going to happen with the future of the business. Although I have a premium membership, I don't think the new price is worth it for what I use it for. Nor do I think I can afford it the next time that renewal is up.</p>
+<p>This leaves, me with Apple's Notes.app. It has really been making the rounds as far as praise from a lot of the people that I respect and has been fairly easy to use. The only problems that I'm worried about going forward with this the ability to add something to a pre-existing note when the list of notes starts to get longer. I like the fact that everything I put in it gets pushed to the server and is then on my device. I also like the idea of being able to have an easy way of sharing notes with my wife and look forward to more features in the future.</p>
+<h4 id="in-conclusion-where-am-i-going-to-put-my-notes">In conclusion, where am I going to put my notes.</h4>
+<p><label for="maybe_evernote" class="margin-toggle">&#8853;</label><input type="checkbox" id="maybe_evernote" class="margin-toggle" /><span class="marginnote"><img class="fullwidth" src="/images/maybe_someday_evernote.png" alt="Evernote allows me a place to sort things that I do not want to see in my review"/><br/>Evernote allows me a place to sort things that I do not want to see in my review</span> I think I'll be giving evernote another chance for being the place that I keep my maybe-someday list for projects. Although there is some uncertainty in the future of the service, it still works at this point and I don't imagine that it will be difficult to leave it in the future. I even went back and tried linking some notes together and I think I can come up with some really nice uses for that going forward.</p>
+<div class="footnote">
+<hr>
+<ol>
+<li id="fn-reminders">
+<p>This actually works too well because sometimes, I put geo location and times with the reminders and this doesn't get translated when it makes the move to omnifocus. I think this is just a training issue of me applying that information later on.&#160;<a class="footnote-backref" href="#fnref-reminders" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+</div>
+
+<p class="readmore u-url">
+  <a
+    rel="bookmark"
+    title="Where to put the maybe-someday «Mandaris Moore»"
+    href="2016/09/where-to-put-the-maybe-someday.html"
+    itemprop="url">Permalink
+  </a>
+</p>
+<footer>
+<p class="articleFooterP">Category:
+	<a class="p-category" href="https://mandaris.github.io/category/personal.html">
+    <span itemprop="articleSection">personal</span>
+  </a>
+  <span class="rightside">
+    <time
+      class="dt-published"
+      datetime="2016-09-05T22:10:08-07:00"
+      itemprop="dateCreated datePublished pubdate">
+        Mon 05 September 2016
+    </time>
+  </span>
+  <br />  <span itemprop="keywords">
+      <a
+        class="tag"
+        rel="category tag"
+        href="https://mandaris.github.io/tag/tech.html">
+          tech
+      </a>
+      <a
+        class="tag"
+        rel="category tag"
+        href="https://mandaris.github.io/tag/notes.html">
+          notes
+      </a>
+      <a
+        class="tag"
+        rel="category tag"
+        href="https://mandaris.github.io/tag/evernote.html">
+          evernote
+      </a>
+  </span>
+  <span class="rightside">Modified:
+  	<time
+      class="dt-updated"
+  	  datetime="2016-12-02T18:29:36-08:00"
+  	  itemprop="dateModified">
+        Fri 02 December 2016
+      </time>
+  </span>
+</p>
+</footer>
+</article>
+<hr />
 <article
   class="post hentry h-entry content"
   itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
@@ -106,7 +369,7 @@
 </p>
 <footer>
 <p class="articleFooterP">Category:
-	<a class="p-category" href="http://mandaris.github.io/category/personal.html">
+	<a class="p-category" href="https://mandaris.github.io/category/personal.html">
     <span itemprop="articleSection">personal</span>
   </a>
   <span class="rightside">
@@ -121,13 +384,13 @@
       <a
         class="tag"
         rel="category tag"
-        href="http://mandaris.github.io/tag/blog.html">
+        href="https://mandaris.github.io/tag/blog.html">
           blog
       </a>
       <a
         class="tag"
         rel="category tag"
-        href="http://mandaris.github.io/tag/slack.html">
+        href="https://mandaris.github.io/tag/slack.html">
           slack
       </a>
   </span>
@@ -167,7 +430,7 @@
 </p>
 <footer>
 <p class="articleFooterP">Category:
-	<a class="p-category" href="http://mandaris.github.io/category/personal.html">
+	<a class="p-category" href="https://mandaris.github.io/category/personal.html">
     <span itemprop="articleSection">personal</span>
   </a>
   <span class="rightside">
@@ -182,13 +445,13 @@
       <a
         class="tag"
         rel="category tag"
-        href="http://mandaris.github.io/tag/starting-over.html">
+        href="https://mandaris.github.io/tag/starting-over.html">
           starting over
       </a>
       <a
         class="tag"
         rel="category tag"
-        href="http://mandaris.github.io/tag/change.html">
+        href="https://mandaris.github.io/tag/change.html">
           change
       </a>
   </span>
@@ -227,7 +490,7 @@
 </p>
 <footer>
 <p class="articleFooterP">Category:
-	<a class="p-category" href="http://mandaris.github.io/category/personal.html">
+	<a class="p-category" href="https://mandaris.github.io/category/personal.html">
     <span itemprop="articleSection">personal</span>
   </a>
   <span class="rightside">
@@ -242,7 +505,7 @@
       <a
         class="tag"
         rel="category tag"
-        href="http://mandaris.github.io/tag/misc.html">
+        href="https://mandaris.github.io/tag/misc.html">
           misc
       </a>
   </span>
@@ -326,7 +589,7 @@
 </p>
 <footer>
 <p class="articleFooterP">Category:
-	<a class="p-category" href="http://mandaris.github.io/category/tech.html">
+	<a class="p-category" href="https://mandaris.github.io/category/tech.html">
     <span itemprop="articleSection">tech</span>
   </a>
   <span class="rightside">
@@ -341,13 +604,13 @@
       <a
         class="tag"
         rel="category tag"
-        href="http://mandaris.github.io/tag/text-expander.html">
+        href="https://mandaris.github.io/tag/text-expander.html">
           text expander
       </a>
       <a
         class="tag"
         rel="category tag"
-        href="http://mandaris.github.io/tag/response.html">
+        href="https://mandaris.github.io/tag/response.html">
           response
       </a>
   </span>
@@ -406,7 +669,7 @@
 </p>
 <footer>
 <p class="articleFooterP">Category:
-	<a class="p-category" href="http://mandaris.github.io/category/tech.html">
+	<a class="p-category" href="https://mandaris.github.io/category/tech.html">
     <span itemprop="articleSection">tech</span>
   </a>
   <span class="rightside">
@@ -421,7 +684,7 @@
       <a
         class="tag"
         rel="category tag"
-        href="http://mandaris.github.io/tag/text-expander.html">
+        href="https://mandaris.github.io/tag/text-expander.html">
           text expander
       </a>
   </span>
@@ -484,7 +747,7 @@ I write all of my blog post in markdown and store them in a folder in dropbox. F
 </p>
 <footer>
 <p class="articleFooterP">Category:
-	<a class="p-category" href="http://mandaris.github.io/category/productivity.html">
+	<a class="p-category" href="https://mandaris.github.io/category/productivity.html">
     <span itemprop="articleSection">productivity</span>
   </a>
   <span class="rightside">
@@ -499,7 +762,7 @@ I write all of my blog post in markdown and store them in a folder in dropbox. F
       <a
         class="tag"
         rel="category tag"
-        href="http://mandaris.github.io/tag/misc.html">
+        href="https://mandaris.github.io/tag/misc.html">
           misc
       </a>
   </span>
@@ -575,7 +838,7 @@ I write all of my blog post in markdown and store them in a folder in dropbox. F
 </p>
 <footer>
 <p class="articleFooterP">Category:
-	<a class="p-category" href="http://mandaris.github.io/category/blogging.html">
+	<a class="p-category" href="https://mandaris.github.io/category/blogging.html">
     <span itemprop="articleSection">blogging</span>
   </a>
   <span class="rightside">
@@ -590,7 +853,7 @@ I write all of my blog post in markdown and store them in a folder in dropbox. F
       <a
         class="tag"
         rel="category tag"
-        href="http://mandaris.github.io/tag/misc.html">
+        href="https://mandaris.github.io/tag/misc.html">
           misc
       </a>
   </span>
@@ -606,306 +869,20 @@ I write all of my blog post in markdown and store them in a folder in dropbox. F
 </footer>
 </article>
 <hr />
-<article
-  class="post hentry h-entry content"
-  itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-
-<header class="post-header">
-  <h2
-    itemprop="headline title p-name name"
-    class="title p-name post-title">
-    <a
-      rel="bookmark"
-      class="u-url"
-      title="Finished open graph «Mandaris Moore»"
-      href="2016/03/finished-open-graph.html"
-      itemprop="url">
-      Finished open graph
-    </a>
-  </h2>
-</header><div class="e-content post-body" itemprop="articleBody">
-<p>So,  I spent about 3 hours working on getting Open Graph tags to work in the theme that I created. I've got mixed feeling about it because I started off by adding the tags to the base html template using an if statement and it seemed a little clunky.</p>
-<div class="highlight"><pre><span></span><span class="cp">{%</span> <span class="k">if</span> <span class="nv">OPEN_GRAPH</span> <span class="cp">%}</span><span class="x"></span>
-<span class="x">&lt;meta property=&quot;og:title&quot; content=&quot;</span><span class="cp">{{</span> <span class="nv">SITENAME</span> <span class="cp">}}</span><span class="x">&quot;/&gt;</span>
-<span class="x">&lt;meta property=&quot;og:type&quot; content=&quot;website&quot;/&gt;</span>
-<span class="x">&lt;meta property=&quot;og:description&quot; content=&quot;</span><span class="cp">{{</span> <span class="nv">SITE_DESCRIPTION</span> <span class="cp">}}</span><span class="x">&quot;/&gt;</span>
-<span class="x">&lt;meta property=&quot;og:url&quot; content=&quot;</span><span class="cp">{%</span> <span class="k">SITE_URL</span> <span class="cp">%}</span><span class="x">&quot;/&gt;</span>
-<span class="cp">{%</span> <span class="k">endif</span> <span class="nv">OPEN_GRAPH</span> <span class="cp">%}</span><span class="x"></span>
-</pre></div>
-
-
-<p>This worked for the site in general but doesn't translate to all the articles and this caused me to go into a some what deep dive into how Pelican and Jinja parses blocks and if statements. I started off with putting all the tags into the base and then doing individual changes to tags that need to be changed for. </p>
-<p><strong>BAH!!!</strong></p>
-<p>So, took a step back and looked into what plugins were already available. And there is was! <a href="https://github.com/whiskyechobravo/pelican-open_graph">Pelican-open_graph</a>! I was home free! Or so I thought, until I tried to use it. The plugin has three problems. </p>
-<h4 id="it-doesnt-account-for-when-someone-does-not-have-a-modified-date-on-their-articles">It doesn't  account for when someone does <em>not</em> have a modified date on their articles.</h4>
-<p><a href="https://github.com/AntoineVe/pelican-open_graph">Luckily, someone had put a solution up</a>. The change was forked about 7 months ago today and it looks like whoever created the open graph plugin has taken a break to work on other things.</p>
-<h4 id="its-a-year-old-and-hasnt-made-the-changes-for-pelican-regarding-summaries-of-articles">It's a year old and hasn't made the changes for pelican regarding summaries of articles.</h4>
-<p>So, I had to do some debugging to find out that the code needed to be changed in the following way<sup id="fnref-payitforward"><a class="footnote-ref" href="#fn-payitforward">1</a></sup>.</p>
-<div class="highlight"><pre><span></span><span class="n">ogtags</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s1">&#39;og:description&#39;</span><span class="p">,</span> <span class="n">instance</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;og_description&#39;</span><span class="p">,</span>
-                                                           <span class="n">instance</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;summary&#39;</span><span class="p">,</span>
-                                                                                 <span class="n">instance</span><span class="o">.</span><span class="n">summary</span><span class="p">))))</span>
-</pre></div>
-
-
-<h4 id="it-also-assumed-that-every-article-has-some-kind-of-tag">It also assumed that every article has some kind of tag.</h4>
-<p>I've decided to just punt this problem and add the tags to the 6 articles that don't have them, but than I took a second look at the problem because the perfectionist in me doesn't like to leave problems unsolved and I didn't want to track down what the particular articles were.</p>
-<p>So, I just wrapped the code in a try block to make sure that I got this particular exception.</p>
-<div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
-        <span class="k">for</span> <span class="n">tag</span> <span class="ow">in</span> <span class="n">instance</span><span class="o">.</span><span class="n">tags</span><span class="p">:</span>
-            <span class="n">ogtags</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s1">&#39;article:tag&#39;</span><span class="p">,</span> <span class="n">tag</span><span class="o">.</span><span class="n">name</span><span class="p">))</span>
-    <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
-            <span class="n">ogtags</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s1">&#39;article:tag&#39;</span><span class="p">,</span> <span class="s1">&#39;untagged&#39;</span><span class="p">))</span>
-</pre></div>
-
-
-<h4 id="results">Results</h4>
-<p>Ultimately, I got to learn a little bit more about using pelican and knocked off a major milestone on getting this blog to where I'd like it to be.</p>
-<div class="footnote">
-<hr>
-<ol>
-<li id="fn-payitforward">
-<p>I've got to branch and push this fix. I don't know how many other people are using pelican or this plugin but if I can save them or future me some time...&#160;<a class="footnote-backref" href="#fnref-payitforward" title="Jump back to footnote 1 in the text">&#8617;</a></p>
-</li>
-</ol>
-</div>
-</div>
-
-<p class="readmore u-url">
-  <a
-    rel="bookmark"
-    title="Finished open graph «Mandaris Moore»"
-    href="2016/03/finished-open-graph.html"
-    itemprop="url">Permalink
-  </a>
-</p>
-<footer>
-<p class="articleFooterP">Category:
-	<a class="p-category" href="http://mandaris.github.io/category/tech.html">
-    <span itemprop="articleSection">tech</span>
-  </a>
-  <span class="rightside">
-    <time
-      class="dt-published"
-      datetime="2016-03-06T13:16:22-08:00"
-      itemprop="dateCreated datePublished pubdate">
-        Sun 06 March 2016
-    </time>
-  </span>
-  <br />  <span itemprop="keywords">
-      <a
-        class="tag"
-        rel="category tag"
-        href="http://mandaris.github.io/tag/blog.html">
-          blog
-      </a>
-      <a
-        class="tag"
-        rel="category tag"
-        href="http://mandaris.github.io/tag/open-graph.html">
-          open graph
-      </a>
-      <a
-        class="tag"
-        rel="category tag"
-        href="http://mandaris.github.io/tag/coding.html">
-          coding
-      </a>
-      <a
-        class="tag"
-        rel="category tag"
-        href="http://mandaris.github.io/tag/pelican.html">
-          pelican
-      </a>
-  </span>
-  <span class="rightside">Modified:
-  	<time
-      class="dt-updated"
-  	  datetime="2019-06-18T21:34:08-07:00"
-  	  itemprop="dateModified">
-        Tue 18 June 2019
-      </time>
-  </span>
-</p>
-</footer>
-</article>
-<hr />
-<article
-  class="post hentry h-entry content"
-  itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-
-<header class="post-header">
-  <h2
-    itemprop="headline title p-name name"
-    class="title p-name post-title">
-    <a
-      rel="bookmark"
-      class="u-url"
-      title="A small return «Mandaris Moore»"
-      href="2016/02/a-small-return.html"
-      itemprop="url">
-      A small return
-    </a>
-  </h2>
-</header><div class="e-content post-body" itemprop="articleBody">
-<p>I recently pushed the button to update my site and push my new theme to the world. It felt good to get it out there because it has been dormant for years now and I had thought about shutting it down sometimes. During the time that I had <em>NOT</em> updated, I had switched jobs and kind of doubted everything I was working on.</p>
-<p>In a lot of ways, the doubt in my own abilities was part of the reason that it took so long to update because I just didn't think that it was good enough. In my mind, I thought "If it's not perfect than I won't show anything at all".</p>
-<p>This is the wrong way of thinking about it. </p>
-<p>It's almost childish in a way and reminds me of how I'd refuse to write the steps when I was doing my math homework<sup id="fnref-homework"><a class="footnote-ref" href="#fn-homework">1</a></sup>.</p>
-<h3 id="so-now-what">So now what?</h3>
-<p>Well, I've got a new redesign that loads really fast and looks pretty cool. The next steps outside of the technical details that I put in my previous post is to find my direction of the site again.</p>
-<p>Currently, I'm using <a href="https://dayone.me">Day One</a> for my journal entries and although this is my personal site I don't think I'll be putting entries from there here (more likely is that this entry will be an entry).</p>
-<p>I think I'll probably put links to things that are really cool or some tutorials that I've been thinking about making.</p>
-<p>We'll have to see.</p>
-<div class="footnote">
-<hr>
-<ol>
-<li id="fn-homework">
-<p>It was something that a couple of high school friends would do. We thought it was cool to get the answer completely in our head without writing all the steps of logic down on paper. It was stupid because the teacher would give you partial credit if you showed your work. &#160;<a class="footnote-backref" href="#fnref-homework" title="Jump back to footnote 1 in the text">&#8617;</a></p>
-</li>
-</ol>
-</div>
-</div>
-
-<p class="readmore u-url">
-  <a
-    rel="bookmark"
-    title="A small return «Mandaris Moore»"
-    href="2016/02/a-small-return.html"
-    itemprop="url">Permalink
-  </a>
-</p>
-<footer>
-<p class="articleFooterP">Category:
-	<a class="p-category" href="http://mandaris.github.io/category/blogging.html">
-    <span itemprop="articleSection">blogging</span>
-  </a>
-  <span class="rightside">
-    <time
-      class="dt-published"
-      datetime="2016-02-07T20:33:36-08:00"
-      itemprop="dateCreated datePublished pubdate">
-        Sun 07 February 2016
-    </time>
-  </span>
-  <br />  <span itemprop="keywords">
-      <a
-        class="tag"
-        rel="category tag"
-        href="http://mandaris.github.io/tag/misc.html">
-          misc
-      </a>
-  </span>
-</p>
-</footer>
-</article>
-<hr />
-<article
-  class="post hentry h-entry content"
-  itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-
-<header class="post-header">
-  <h2
-    itemprop="headline title p-name name"
-    class="title p-name post-title">
-    <a
-      rel="bookmark"
-      class="u-url"
-      title="Pushing the button «Mandaris Moore»"
-      href="2016/02/pushing-the-button.html"
-      itemprop="url">
-      Pushing the button
-    </a>
-  </h2>
-</header><div class="e-content post-body" itemprop="articleBody">
-<p>category: blogging <br>
-tags: tufte, blog<br>
-status: published    </p>
-<p>Well, tonight is the night. I got the site design to where I'd like it to be. It's simple, easy to read and very fast. I tried looking at it in a couple of different view ports using <a href="https://developer.apple.com/videos/play/wwdc2015-505/">Safari's Responsive Design Mode</a> and it made me even more sure about what I'm doing here. </p>
-<p>I understand that there are a lot of css/javascript frameworks out there and it would have been <strong>A LOT</strong> easier just to pick something like that and start posting. There is something to be said about just focusing on the actual words that go in the blog instead of how it looks like. I wanted my site to reflect me and what I'm about.</p>
-<p><span class='newthought'>This is a message to me</span> that I can complete the goals that I set out to do. It might take me a while but this has been so worth it.</p>
-<h3 id="next-up">Next up</h3>
-<p>Well, the initial design is done but there are a couple more things that I should probably finish up. </p>
-<ol>
-<li>Finish the rest of the tags (marginimage, columnimage)</li>
-<li>Add the analytics <label for="analytical" class="margin-toggle sidenote-number"></label><input type="checkbox" id="analytical" class="margin-toggle" /><span class="sidenote">Not a real priority because I don</span></li>
-<li>Clean up the Archive page</li>
-<li>Create a 404 page</li>
-<li>Decrease the spacing between multiple footnotes<sup id="fnref-footnotes"><a class="footnote-ref" href="#fn-footnotes">1</a></sup></li>
-<li>Clean up the regular expressions used to parse for the plugins <label for="irregular" class="margin-toggle">&#8853;</label><input type="checkbox" id="irregular" class="margin-toggle" /><span class="marginnote">During the process of trying to figure out how to do this theme, I spent a lot of time whether to do this in pelican as a plugin or the python markdown. I am happy that it is working but I am not happy with how fragile it is.</span></li>
-<li>Discuss Comments</li>
-<li>Create options to make it easier to go to categories and tags</li>
-<li>OpenGraph</li>
-</ol>
-<p>I've done a couple comparisons with other pelican templates and I feel that I should have some of this ready for other users who want to try out the Tufte style without worry so much about how it fits with what a website is supposed to do<sup id="fnref-goals"><a class="footnote-ref" href="#fn-goals">2</a></sup>.</p>
-<p>Well, it is getting kind of late for me here and I've got to push the button to make this public to the world.</p>
-<div class="footnote">
-<hr>
-<ol>
-<li id="fn-footnotes">
-<p>When I was first introduced to markdown, one of the things I thought was the coolest was the fact that you could have these little babies to put on the bottom of the page. If you look through my archieves you'll see that I use them off and on to do my writing. Some websites have them at the end or use a popup to show them when you click on them. I think I'll probably move to side and margin notes. Either way, when you get two or more they really start eating up space.&#160;<a class="footnote-backref" href="#fnref-footnotes" title="Jump back to footnote 1 in the text">&#8617;</a></p>
-</li>
-<li id="fn-goals">
-<p>It took me a lot of time to pick a template when I first came to pelican and even then I found myself modifying it. &#160;<a class="footnote-backref" href="#fnref-goals" title="Jump back to footnote 2 in the text">&#8617;</a></p>
-</li>
-</ol>
-</div>
-</div>
-
-<p class="readmore u-url">
-  <a
-    rel="bookmark"
-    title="Pushing the button «Mandaris Moore»"
-    href="2016/02/pushing-the-button.html"
-    itemprop="url">Permalink
-  </a>
-</p>
-<footer>
-<p class="articleFooterP">Category:
-	<a class="p-category" href="http://mandaris.github.io/category/blogging.html">
-    <span itemprop="articleSection">blogging</span>
-  </a>
-  <span class="rightside">
-    <time
-      class="dt-published"
-      datetime="2016-02-04T22:06:26-08:00"
-      itemprop="dateCreated datePublished pubdate">
-        Thu 04 February 2016
-    </time>
-  </span>
-  <br />  <span itemprop="keywords">
-      <a
-        class="tag"
-        rel="category tag"
-        href="http://mandaris.github.io/tag/misc.html">
-          misc
-      </a>
-  </span>
-  <span class="rightside">Modified:
-  	<time
-      class="dt-updated"
-  	  datetime="2016-02-07T22:18:01-08:00"
-  	  itemprop="dateModified">
-        Sun 07 February 2016
-      </time>
-  </span>
-</p>
-</footer>
-</article>
-<hr />
 </main>
-  <nav id="pagination">    <a id="first_page" href="http://mandaris.github.io/author/mandaris.html">&#60;&#60;</a>
-    <a id="previous_page" rel="prev" href="http://mandaris.github.io/author/mandaris11.html">&#60;</a>
-    <a href="http://mandaris.github.io/author/mandaris8.html">8</a>
-    <a href="http://mandaris.github.io/author/mandaris9.html">9</a>
-    <a href="http://mandaris.github.io/author/mandaris10.html">10</a>
-    <a href="http://mandaris.github.io/author/mandaris11.html">11</a>
+  <nav id="pagination">    <a id="first_page" href="https://mandaris.github.io/author/mandaris.html">&#60;&#60;</a>
+    <a id="previous_page" rel="prev" href="https://mandaris.github.io/author/mandaris11.html">&#60;</a>
+    <a href="https://mandaris.github.io/author/mandaris8.html">8</a>
+    <a href="https://mandaris.github.io/author/mandaris9.html">9</a>
+    <a href="https://mandaris.github.io/author/mandaris10.html">10</a>
+    <a href="https://mandaris.github.io/author/mandaris11.html">11</a>
     <span class="a active">12</span>
-    <a href="http://mandaris.github.io/author/mandaris13.html">13</a>
-    <a href="http://mandaris.github.io/author/mandaris14.html">14</a>
-    <a href="http://mandaris.github.io/author/mandaris15.html">15</a>
-    <a href="http://mandaris.github.io/author/mandaris16.html">16</a>
-    <a id="next_page" rel="next" href="http://mandaris.github.io/author/mandaris13.html">&#62;</a>
-    <a id="last_page" href="http://mandaris.github.io/author/mandaris26.html">&#62;&#62;</a>
+    <a href="https://mandaris.github.io/author/mandaris13.html">13</a>
+    <a href="https://mandaris.github.io/author/mandaris14.html">14</a>
+    <a href="https://mandaris.github.io/author/mandaris15.html">15</a>
+    <a href="https://mandaris.github.io/author/mandaris16.html">16</a>
+    <a id="next_page" rel="next" href="https://mandaris.github.io/author/mandaris13.html">&#62;</a>
+    <a id="last_page" href="https://mandaris.github.io/author/mandaris26.html">&#62;&#62;</a>
 </nav>
 <footer itemscope itemtype="https://schema.org/WPFooter"
     role="contentinfo" class="baseFooter">
