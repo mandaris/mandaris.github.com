@@ -11,20 +11,20 @@
 <title>Mandaris Moore - Articles by Mandaris</title>
 <meta name="author" class="p-author h-card" content="Mandaris" />
 <meta property="site_name" content="Mandaris Moore" />
-<meta name="description" content="The personal website for Mandaris Moore." />
-<base href="https://mandaris.github.io" />
+<meta name="description" content="The Pelican website for Mandaris Moore." />
+<base href=".." />
 <meta name="generator" content="Pelican" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="theme-color" content="#1b5a53" />
-<link rel="stylesheet" type="text/css" href="/theme/css/main.css" />
+<link rel="stylesheet" type="text/css" href="../theme/css/main.css" />
 <link rel="shortcut icon" href="/favicon.ico" />
 <link rel="icon" type="image/png" href="/favicon.png" />
 <link rel="apple-touch-icon-precomposed"
       href="/apple-touch-icon-precomposed.png" />
 
 <!-- Feed information -->
-<link href="https://mandaris.github.io/feeds/atom.xml"
+<link href="http://mandaris.github.io/feeds/atom.xml"
       type="application/atom+xml"
       rel="alternate" title="Mandaris Moore ALL Atom Feed" />
 
@@ -32,10 +32,10 @@
 <!-- OpenGraph Info -->
 <meta property="og:title" content="Mandaris Moore" />
 <meta property="og:type" content="website" />
-<meta property="og:description" content="The personal website for Mandaris Moore."/>
-<meta property="og:url" content="https://mandaris.github.io" />
+<meta property="og:description" content="The Pelican website for Mandaris Moore."/>
+<meta property="og:url" content=".." />
 <meta property="og:locale" content="en-us" />
-<meta property="og:image" content="https://mandaris.github.io/favicon.png" />
+<meta property="og:image" content="../favicon.png" />
 <meta property="og:image:alt" content="A person in a gear." />
 <!-- Micro.blog User Name -->
 <link href="https://micro.blog/mandaris" rel="me" />
@@ -51,34 +51,274 @@
 </head>
 
 <body itemscope itemtype="https://schema.org/Blog">
-<meta itemprop="description" content="The personal website for Mandaris Moore." />
+<meta itemprop="description" content="The Pelican website for Mandaris Moore." />
 <header role="banner">
-<h1 class="websitetitle"><a href="https://mandaris.github.io">Mandaris Moore</a></h1>
+<h1 class="websitetitle"><a href="..">Mandaris Moore</a></h1>
 <nav itemscope itemtype="https://schema.org/SiteNavigationElement"
     class="navmenu" id="navmenu" >
 <ul>
   <li>
-    <a class="navitemlink" href="https://mandaris.github.io/archives.html">Archive</a>
+    <a class="navitemlink" href="../archives.html">Archive</a>
   </li>
   <li>
-    <a class="navitemlink" href="https://mandaris.github.io/pages/about.html">About</a>
+    <a class="navitemlink" href="../pages/about.html">About</a>
   </li>
   <li>
-    <a class="navitemlink" href="https://mandaris.github.io/pages/projects.html">Projects</a>
+    <a class="navitemlink" href="../pages/projects.html">Projects</a>
   </li>
 </ul>
 </nav>
+<hr />
 </header>
 
-<hr />
-<main class="articlelisting container">
+
+<main class="articlelisting content">
+
+
+
 <article
-  class="post hentry h-entry content"
+  class="post hentry h-entry"
   itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
 
 <header class="post-header">
   <h2
-    itemprop="headline title p-name name"
+    itemprop="headline name"
+    class="title p-name post-title">
+    <a
+      rel="bookmark"
+      class="u-url"
+      title="Blog Accomplishments «Mandaris Moore»"
+      href="2018/06/blog-accomplishments.html"
+      itemprop="url">
+      Blog Accomplishments
+    </a>
+  </h2>
+</header><div class="e-content post-body" itemprop="articleBody">
+<p>I think I'm ready to mark my second pelican theme 1.0 as "Feature Complete" today! I started off with -what I thought- a simple premise of having a site site took a lot longer than I expected but I'm pretty happy with the site for now.  But before I tag it and start working on 2.0, I want to go over what I've done so far.</p>
+<p><img alt="Visualization of what I've accomplished with the blog." src="/images/blog-accomplishments.png"> </p>
+<h3 id="parsable">Parsable</h3>
+<p>The first thing I started researching was how to make the site parsable by webcrawlers. Although it's a personal blog, I wanted people to be able to find the content easily.</p>
+<h4 id="opengraph">OpenGraph</h4>
+<p>OpenGraph was the first thing that I came across and appealed to me the most because it's the preferred way of parsing data for Twitter<sup id="fnref:twitter"><a class="footnote-ref" href="#fn:twitter">1</a></sup>.</p>
+<p>I found it especially rewarding that the tags are also parsed by facebook and my new favorite social network <a href="https://slack.com">slack</a>. </p>
+<p>One of the technical difficulties that I ran into when adding OpenGraph tags was adding the images. The specification for OpenGraph states that images to be used need to be added as meta data in the head of the html. This can be a pain as the other data like title and date can be pulled from the article itself and I didn't want to go through all my old posts to add image meta data.</p>
+<p>Luckily, the  github user WhiskyEchoBravo had a <a href="https://github.com/whiskyechobravo/pelican-open_graph">project that searched the content of the post for images</a> and added the first to the list of tags. I'm a little proud that I helped with issues with <a href="https://github.com/whiskyechobravo/pelican-open_graph/commit/61248d805588245a9fc1dc4eda56cff1f5a9d8fa">pages</a>. </p>
+<p>Afterwards, I did run into some frustration when the images that I added to posts wouldn't be as big as I expected.</p>
+<p><img alt="Post in slack with a small image." src="images/slack-small-image.png"></p>
+<p>Ultimately, I think it's because of the mixing and matching of having OpenGraph and twitter specific tags and was solved it by making sure I used the following for my twitter card.</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;twitter:card&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;summary_large_image&quot;</span> <span class="p">/&gt;</span>
+</code></pre></div>
+
+<p>And now I get the post to unfurl nicely.</p>
+<p><img alt="Post in slack with a large image." src="images/slack-large-image.png"></p>
+<h4 id="schemaorg">Schema.org</h4>
+<p>This is the styling used by both Bing and Google. I put this in as a challenge to myself to make it work in both instances. I leaned a lot from the example on <a href="https://orbitingweb.com/blog/schema-org-microdata-guide/" title="Complete Schema.Org and Microdata Tutorial for beginners">OrbitingWeb</a> and refined what I was working with using <a href="https://github.com/philwareham/schema-microdata-examples/blob/master/blog.html" title="Schema.org microdata examples">another example</a> that I found on github.</p>
+<h3 id="valid-semantic-tags">Valid Semantic Tags</h3>
+<p>For this, I just wanted to use some of those really cool semantic tags that html5 has given to us. When I look at the code for some pages on the internet I see a lot of <code>&lt;div&gt;</code> tags with classes that could be replaced with <code>&lt;main&gt;</code>, <code>&lt;nav&gt;</code>,  or <code>&lt;section&gt;</code> tags.</p>
+<p>I'm willing to just attribute it to my desire to have my own style or maybe just inexperience, but I'm happy to report that the site passes html validation except for the OpenGraph definitions found in the header.</p>
+<h4 id="figure-it-out">figure it out</h4>
+<p>One technical hurdle I ran into was that I wanted my images to be wrapped in the <code>&lt;figure&gt;</code> tag and also have a <code>&lt;figcaption&gt;</code> tag that would have the alternative text. </p>
+<p>I searched for a plugin for pelican<sup id="fnref:figure-ref"><a class="footnote-ref" href="#fn:figure-ref">2</a></sup>, but the closest thing I could find was <a href="https://github.com/getpelican/pelican-plugins/tree/master/liquid_tags">liquid tags</a> at the time<sup id="fnref:liquid"><a class="footnote-ref" href="#fn:liquid">3</a></sup>.  </p>
+<p>I did find jdittrich <a href="https://github.com/jdittrich/figureAltCaption">figureAltCaption</a> project on github which was a extension for the <a href="https://python-markdown.github.io/">python-markdown</a>  that pelican uses. I even submitted a <a href="https://github.com/jdittrich/figureAltCaption/pull/3" title="Still wait to be pulled into the main branch">pull request</a>  to allow it to do reference links!</p>
+<p>There was a little confusion on getting it to work because pelican has been changing since some of these plugins were created.</p>
+<p>Long story short, I had to add the following to my <code>pelicanconfig.py</code> to get it to work.</p>
+<div class="highlight"><pre><span></span><code>   <span class="c1"># Markdown Plugins</span>
+<span class="n">MARKDOWN</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;extension_configs&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;markdown.extensions.codehilite&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;css_class&#39;</span><span class="p">:</span> <span class="s1">&#39;highlight&#39;</span><span class="p">},</span>
+        <span class="s1">&#39;markdown.extensions.extra&#39;</span><span class="p">:</span> <span class="p">{},</span>
+        <span class="s1">&#39;markdown.extensions.meta&#39;</span><span class="p">:</span> <span class="p">{},</span>
+<span class="hll">        <span class="s1">&#39;figureAltCaption&#39;</span><span class="p">:{},</span>
+</span>    <span class="p">},</span>
+    <span class="s1">&#39;output_format&#39;</span><span class="p">:</span> <span class="s1">&#39;html5&#39;</span><span class="p">,</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h3 id="easy-to-share">Easy to share</h3>
+<p>I wrote down that I wanted the site to be easy to share and it is when you look at the amount of tags and metadata that is in every page. </p>
+<p>At one point, I wanted to add share buttons, but -with the rise in concerns about privacy- I wanted the users of the site to be the ones who would share it.</p>
+<p>Also, I'm still working on color schemes so the buttons might clash with whatever I end up with.</p>
+<p><img alt="Clash of the social buttons!" src="images/supported-social-networks.jpg" title="The number of ways to share an article is too dang high!"></p>
+<h3 id="accessible">Accessible</h3>
+<p>One of the underlining principles of this site design is that I wanted it to be accessible to as many people as possible. It's part of the reason that I've worked so hard on making sure that I included so many semantic tags. I didn't think that this was particularly hard to do when you understand what needs to happen before you begin. </p>
+<p>The theme doesn't have any errors at this point, but does loose some points because of the way that markdown headers are handled and the fact that I picked a low contrast color for my links. I'll fix it soon.</p>
+<h3 id="conclusion-and-where-im-going-next">Conclusion and where I'm going next</h3>
+<p>Overall, I'm happy with this version of the site and blogging about it has helped me think about what places I want to refine going forward. </p>
+<h4 id="list-of-things-to-improve">List of things to improve</h4>
+<ul>
+<li>Create a decent readme with all the packages and properties that the theme uses</li>
+<li>Improve color contrast for reading</li>
+<li>Add Cristian Prieto's <a href="https://github.com/cprieto/mdx_downheader">mdx_downheader</a></li>
+<li>Make the top navigation a little less clunky</li>
+<li>Look into how to integrate micro.blog posts</li>
+</ul>
+<p>If you want to contribute you can find the theme on <a href="https://github.com/mandaris/modest" title="A very simple template for pelican">github here</a>.</p>
+<div class="footnote">
+<hr>
+<ol>
+<li id="fn:twitter">
+<p>Twitter is still my social network of choice and -despite it's flaws- is not as creepy as facebook.&#160;<a class="footnote-backref" href="#fnref:twitter" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:figure-ref">
+<p>Seriously didn't see Chris MacMackin's <a href="https://github.com/cmacmackin/figure-ref" title="A Pelican plugin providing a referencing-system for figures, like that in LaTeX.">figure-ref</a> until I was writing this article. I'll have to look into it for my next version.&#160;<a class="footnote-backref" href="#fnref:figure-ref" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:liquid">
+<p>I used this to make my previous theme <a href="https://github.com/mandaris/TuftePelican" title="Abandoned themes that still haunt me">Tufte</a> and did not want to go down that road twice. It is very specific to pelican and I didn't want to dive into more regular expressions when I <em>knew</em> there had to be a solution already created.&#160;<a class="footnote-backref" href="#fnref:liquid" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+</div>
+
+<p class="readmore u-url">
+  <a
+    rel="bookmark"
+    title="Blog Accomplishments «Mandaris Moore»"
+    href="2018/06/blog-accomplishments.html"
+    itemprop="url">Permalink
+  </a>
+</p>
+<footer>
+<p class="articleFooterP">Category:
+	<a class="p-category" href="../category/blogging.html">
+    <span itemprop="articleSection">blogging</span>
+  </a>
+  <span class="rightside">
+    <time
+      class="dt-published"
+      datetime="2018-06-26T19:16:06-07:00"
+      itemprop="dateCreated datePublished">
+        June 26, 2018
+    </time>
+  </span>
+  <br />  <span itemprop="keywords">
+      <a
+        class="tag"
+        rel="category tag"
+        href="../tag/accomplishments.html">
+          accomplishments
+      </a>
+      <a
+        class="tag"
+        rel="category tag"
+        href="../tag/python.html">
+          python
+      </a>
+      <a
+        class="tag"
+        rel="category tag"
+        href="../tag/html.html">
+          html
+      </a>
+  </span>
+  <span class="rightside">Modified:
+  	<time
+      class="dt-updated"
+  	  datetime="2019-05-29T22:02:30-07:00"
+  	  itemprop="dateModified">
+        June 26, 2018
+      </time>
+  </span>
+</p>
+
+<details itemprop="author" itemscope itemtype="https://schema.org/Person" class="p-author h-card hidden">
+  <summary itemprop="name" class="p-name">Mandaris</summary>  <img itemprop="image" class="u-photo"
+    src="https://secure.gravatar.com/avatar/03fb367dd4c7aea56f77dfa496db3725"
+    alt="Author's Profile." />
+  <p class="p-note">Mandaris is someone who strives to make himself into a better person</p>
+  <p><a itemprop="url" class="u-url u-uid"
+    rel="me" href="https://mandarismoore.com"
+    title="Author Website.">
+    Mandaris</a></p>
+
+
+</details>
+</footer>
+</article>
+<hr />
+<article
+  class="post hentry h-entry"
+  itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+
+<header class="post-header">
+  <h2
+    itemprop="headline name"
+    class="title p-name post-title">
+    <a
+      rel="bookmark"
+      class="u-url"
+      title="A lone desk «Mandaris Moore»"
+      href="2018/06/a-lone-desk.html"
+      itemprop="url">
+      A lone desk
+    </a>
+  </h2>
+</header><div class="e-content post-body" itemprop="articleBody">
+<p>I found a desk near the garbage bin and I wanted even though I didn't have room for it. I guess it's because I still love the idea of sitting down and getting to work on something. </p>
+<p><img alt="A lone desk looking for a good home." src="images/garbage-desk.png"></p>
+<p>I feel that it’s party because of the restlessness I get every once in a while where I want to make or learn something. I think I’m really making progress in keeping my eye on the ball and making sure to reflect on my goals. </p>
+<h4 id="meanwhile">Meanwhile...</h4>
+<p>Work has been really busy and weird at the same time. A lot of unanswered questions and unease just below the surface. I hope there isn’t any extra drama...</p>
+</div>
+
+<p class="readmore u-url">
+  <a
+    rel="bookmark"
+    title="A lone desk «Mandaris Moore»"
+    href="2018/06/a-lone-desk.html"
+    itemprop="url">Permalink
+  </a>
+</p>
+<footer>
+<p class="articleFooterP">Category:
+	<a class="p-category" href="../category/personal.html">
+    <span itemprop="articleSection">personal</span>
+  </a>
+  <span class="rightside">
+    <time
+      class="dt-published"
+      datetime="2018-06-21T20:25:50-07:00"
+      itemprop="dateCreated datePublished">
+        June 21, 2018
+    </time>
+  </span>
+  <br />  <span itemprop="keywords">
+      <a
+        class="tag"
+        rel="category tag"
+        href="../tag/work.html">
+          work
+      </a>
+      <a
+        class="tag"
+        rel="category tag"
+        href="../tag/goals.html">
+          goals
+      </a>
+  </span>
+</p>
+
+<details itemprop="author" itemscope itemtype="https://schema.org/Person" class="p-author h-card hidden">
+  <summary itemprop="name" class="p-name">Mandaris</summary>  <img itemprop="image" class="u-photo"
+    src="https://secure.gravatar.com/avatar/03fb367dd4c7aea56f77dfa496db3725"
+    alt="Author's Profile." />
+  <p class="p-note">Mandaris is someone who strives to make himself into a better person</p>
+  <p><a itemprop="url" class="u-url u-uid"
+    rel="me" href="https://mandarismoore.com"
+    title="Author Website.">
+    Mandaris</a></p>
+
+
+</details>
+</footer>
+</article>
+<hr />
+<article
+  class="post hentry h-entry"
+  itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+
+<header class="post-header">
+  <h2
+    itemprop="headline name"
     class="title p-name post-title">
     <a
       rel="bookmark"
@@ -90,8 +330,7 @@
     </a>
   </h2>
 </header><div class="e-content post-body" itemprop="articleBody">
-<figure><img alt="Seeing how time files when I'm trying to get things done" src="images/a-man-with-a-clock.png"><figcaption>Seeing how time files when I'm trying to get things done</figcaption>
-</figure>
+<p><img alt="Seeing how time files when I'm trying to get things done" src="images/a-man-with-a-clock.png"></p>
 <p>I've set aside some time tonight to do a review of some of the things that I told myself that I was going to do. And it's kind of daunting in that some of this stuff has been waiting for a while to get my attention. </p>
 <p>Well, there isn't a point in procrastinating much longer. </p>
 <p>I know I'll feel better about so many things if I at least get started.</p>
@@ -107,36 +346,49 @@
 </p>
 <footer>
 <p class="articleFooterP">Category:
-	<a class="p-category" href="https://mandaris.github.io/category/personal.html">
+	<a class="p-category" href="../category/personal.html">
     <span itemprop="articleSection">personal</span>
   </a>
   <span class="rightside">
     <time
       class="dt-published"
       datetime="2018-06-18T18:33:37-07:00"
-      itemprop="dateCreated datePublished pubdate">
-        Mon 18 June 2018
+      itemprop="dateCreated datePublished">
+        June 18, 2018
     </time>
   </span>
   <br />  <span itemprop="keywords">
       <a
         class="tag"
         rel="category tag"
-        href="https://mandaris.github.io/tag/review.html">
+        href="../tag/review.html">
           review
       </a>
   </span>
 </p>
+
+<details itemprop="author" itemscope itemtype="https://schema.org/Person" class="p-author h-card hidden">
+  <summary itemprop="name" class="p-name">Mandaris</summary>  <img itemprop="image" class="u-photo"
+    src="https://secure.gravatar.com/avatar/03fb367dd4c7aea56f77dfa496db3725"
+    alt="Author's Profile." />
+  <p class="p-note">Mandaris is someone who strives to make himself into a better person</p>
+  <p><a itemprop="url" class="u-url u-uid"
+    rel="me" href="https://mandarismoore.com"
+    title="Author Website.">
+    Mandaris</a></p>
+
+
+</details>
 </footer>
 </article>
 <hr />
 <article
-  class="post hentry h-entry content"
+  class="post hentry h-entry"
   itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
 
 <header class="post-header">
   <h2
-    itemprop="headline title p-name name"
+    itemprop="headline name"
     class="title p-name post-title">
     <a
       rel="bookmark"
@@ -163,42 +415,55 @@
 </p>
 <footer>
 <p class="articleFooterP">Category:
-	<a class="p-category" href="https://mandaris.github.io/category/personal.html">
+	<a class="p-category" href="../category/personal.html">
     <span itemprop="articleSection">personal</span>
   </a>
   <span class="rightside">
     <time
       class="dt-published"
       datetime="2018-06-18T17:24:33-07:00"
-      itemprop="dateCreated datePublished pubdate">
-        Mon 18 June 2018
+      itemprop="dateCreated datePublished">
+        June 18, 2018
     </time>
   </span>
   <br />  <span itemprop="keywords">
       <a
         class="tag"
         rel="category tag"
-        href="https://mandaris.github.io/tag/goals.html">
+        href="../tag/goals.html">
           goals
       </a>
       <a
         class="tag"
         rel="category tag"
-        href="https://mandaris.github.io/tag/today.html">
+        href="../tag/today.html">
           today
       </a>
   </span>
 </p>
+
+<details itemprop="author" itemscope itemtype="https://schema.org/Person" class="p-author h-card hidden">
+  <summary itemprop="name" class="p-name">Mandaris</summary>  <img itemprop="image" class="u-photo"
+    src="https://secure.gravatar.com/avatar/03fb367dd4c7aea56f77dfa496db3725"
+    alt="Author's Profile." />
+  <p class="p-note">Mandaris is someone who strives to make himself into a better person</p>
+  <p><a itemprop="url" class="u-url u-uid"
+    rel="me" href="https://mandarismoore.com"
+    title="Author Website.">
+    Mandaris</a></p>
+
+
+</details>
 </footer>
 </article>
 <hr />
 <article
-  class="post hentry h-entry content"
+  class="post hentry h-entry"
   itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
 
 <header class="post-header">
   <h2
-    itemprop="headline title p-name name"
+    itemprop="headline name"
     class="title p-name post-title">
     <a
       rel="bookmark"
@@ -210,9 +475,8 @@
     </a>
   </h2>
 </header><div class="e-content post-body" itemprop="articleBody">
-<figure><img alt="Looking back there were 4 main areas. Performance being the first." src="images/WWDC-2018.png"><figcaption>Looking back there were 4 main areas. Performance being the first.</figcaption>
-</figure>
-<p>My first feeling about the keynote is genuine happiness. I'm happy that they are going to focus on the performance of the operating system. I'm happy that they are supporting all the devices that were working with iOS 11. I'm also happy that they are <strong>NOT</strong> introducing a lot of extraneous<sup id="fnref-extra"><a class="footnote-ref" href="#fn-extra">1</a></sup> features that people may never use.</p>
+<p><img alt="Looking back there were 4 main areas. Performance being the first." src="images/WWDC-2018.png"></p>
+<p>My first feeling about the keynote is genuine happiness. I'm happy that they are going to focus on the performance of the operating system. I'm happy that they are supporting all the devices that were working with iOS 11. I'm also happy that they are <strong>NOT</strong> introducing a lot of extraneous<sup id="fnref:extra"><a class="footnote-ref" href="#fn:extra">1</a></sup> features that people may never use.</p>
 <h3 id="focus-on-performance">Focus on performance</h3>
 <p>I'm tired of people having problems with Apple devices. I'm the family tech support and I do <em>not</em> like the feeling of having someone's device not work. This is compounded when I'm usually the one who recommends them. </p>
 <p>I'm hoping that this will allow me to not have to answer as many questions and make the current devices last longer. I can't afford to buy anything new at this point.</p>
@@ -221,17 +485,17 @@
 <h3 id="bring-developers-back-to-the-mac-app-store">Bring developers back to the Mac App Store</h3>
 <p>I'll believe it when I see it, but it definitely gives me the warm fuzzies to have developers feel more at ease on the platforms that I love.</p>
 <h3 id="apple-watch">Apple Watch</h3>
-<p>I think this is the best presentation that I've seen with Kevin Lynch. I would like an Apple watch, but I have trouble thinking about how I'd incorporate it into my life. When I saw those demos along with everything else associated with iOS 12, I found myself dreaming about owning one again<sup id="fnref-again"><a class="footnote-ref" href="#fn-again">2</a></sup>.</p>
+<p>I think this is the best presentation that I've seen with Kevin Lynch. I would like an Apple watch, but I have trouble thinking about how I'd incorporate it into my life. When I saw those demos along with everything else associated with iOS 12, I found myself dreaming about owning one again<sup id="fnref:again"><a class="footnote-ref" href="#fn:again">2</a></sup>.</p>
 <h3 id="conclusion">Conclusion</h3>
 <p>All in all, I'm happy with the keynote and actually a little sad that people weren't. It really feels like Apple is sitting down and letting their products mature a little more as they move forward.</p>
 <div class="footnote">
 <hr>
 <ol>
-<li id="fn-extra">
-<p>Well, they seem extraneous to me. I guess it's just a matter of how easy it would be to add to my work flow.&#160;<a class="footnote-backref" href="#fnref-extra" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<li id="fn:extra">
+<p>Well, they seem extraneous to me. I guess it's just a matter of how easy it would be to add to my work flow.&#160;<a class="footnote-backref" href="#fnref:extra" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
-<li id="fn-again">
-<p>I was gifted one, but had to return it for financial reasons. Really sweet gift but I needed to pay the bills.&#160;<a class="footnote-backref" href="#fnref-again" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+<li id="fn:again">
+<p>I was gifted one, but had to return it for financial reasons. Really sweet gift but I needed to pay the bills.&#160;<a class="footnote-backref" href="#fnref:again" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
@@ -247,48 +511,61 @@
 </p>
 <footer>
 <p class="articleFooterP">Category:
-	<a class="p-category" href="https://mandaris.github.io/category/tech.html">
+	<a class="p-category" href="../category/tech.html">
     <span itemprop="articleSection">tech</span>
   </a>
   <span class="rightside">
     <time
       class="dt-published"
       datetime="2018-06-04T21:04:14-07:00"
-      itemprop="dateCreated datePublished pubdate">
-        Mon 04 June 2018
+      itemprop="dateCreated datePublished">
+        June 04, 2018
     </time>
   </span>
   <br />  <span itemprop="keywords">
       <a
         class="tag"
         rel="category tag"
-        href="https://mandaris.github.io/tag/wwdc.html">
+        href="../tag/wwdc.html">
           wwdc
       </a>
       <a
         class="tag"
         rel="category tag"
-        href="https://mandaris.github.io/tag/apple.html">
+        href="../tag/apple.html">
           apple
       </a>
       <a
         class="tag"
         rel="category tag"
-        href="https://mandaris.github.io/tag/reaction.html">
+        href="../tag/reaction.html">
           reaction
       </a>
   </span>
 </p>
+
+<details itemprop="author" itemscope itemtype="https://schema.org/Person" class="p-author h-card hidden">
+  <summary itemprop="name" class="p-name">Mandaris</summary>  <img itemprop="image" class="u-photo"
+    src="https://secure.gravatar.com/avatar/03fb367dd4c7aea56f77dfa496db3725"
+    alt="Author's Profile." />
+  <p class="p-note">Mandaris is someone who strives to make himself into a better person</p>
+  <p><a itemprop="url" class="u-url u-uid"
+    rel="me" href="https://mandarismoore.com"
+    title="Author Website.">
+    Mandaris</a></p>
+
+
+</details>
 </footer>
 </article>
 <hr />
 <article
-  class="post hentry h-entry content"
+  class="post hentry h-entry"
   itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
 
 <header class="post-header">
   <h2
-    itemprop="headline title p-name name"
+    itemprop="headline name"
     class="title p-name post-title">
     <a
       rel="bookmark"
@@ -300,8 +577,7 @@
     </a>
   </h2>
 </header><div class="e-content post-body" itemprop="articleBody">
-<figure><img alt="People still make mistakes." src="images/oopsie.jpeg"><figcaption>People still make mistakes.</figcaption>
-</figure>
+<p><img alt="People still make mistakes." src="images/oopsie.jpeg"></p>
 <p>I haven’t seen a pen like this since high school. I thought it was funny that even thought we pushing and pushing for a paperless life style we still have room for something like this. </p>
 </div>
 
@@ -315,36 +591,49 @@
 </p>
 <footer>
 <p class="articleFooterP">Category:
-	<a class="p-category" href="https://mandaris.github.io/category/personal.html">
+	<a class="p-category" href="../category/personal.html">
     <span itemprop="articleSection">personal</span>
   </a>
   <span class="rightside">
     <time
       class="dt-published"
       datetime="2018-05-27T18:36:45-07:00"
-      itemprop="dateCreated datePublished pubdate">
-        Sun 27 May 2018
+      itemprop="dateCreated datePublished">
+        May 27, 2018
     </time>
   </span>
   <br />  <span itemprop="keywords">
       <a
         class="tag"
         rel="category tag"
-        href="https://mandaris.github.io/tag/misc.html">
+        href="../tag/misc.html">
           misc
       </a>
   </span>
 </p>
+
+<details itemprop="author" itemscope itemtype="https://schema.org/Person" class="p-author h-card hidden">
+  <summary itemprop="name" class="p-name">Mandaris</summary>  <img itemprop="image" class="u-photo"
+    src="https://secure.gravatar.com/avatar/03fb367dd4c7aea56f77dfa496db3725"
+    alt="Author's Profile." />
+  <p class="p-note">Mandaris is someone who strives to make himself into a better person</p>
+  <p><a itemprop="url" class="u-url u-uid"
+    rel="me" href="https://mandarismoore.com"
+    title="Author Website.">
+    Mandaris</a></p>
+
+
+</details>
 </footer>
 </article>
 <hr />
 <article
-  class="post hentry h-entry content"
+  class="post hentry h-entry"
   itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
 
 <header class="post-header">
   <h2
-    itemprop="headline title p-name name"
+    itemprop="headline name"
     class="title p-name post-title">
     <a
       rel="bookmark"
@@ -356,8 +645,7 @@
     </a>
   </h2>
 </header><div class="e-content post-body" itemprop="articleBody">
-<figure><img alt="I am telling the world my mission." src="images/omnifocus-mission.jpeg"><figcaption>I am telling the world my mission.</figcaption>
-</figure>
+<p><img alt="I am telling the world my mission." src="images/omnifocus-mission.jpeg"></p>
 <p>I wrote the above in the OmniGroup slack. I think I’ll set a reminder so that I don’t lose track of who I am and where I’m going. </p>
 </div>
 
@@ -371,42 +659,55 @@
 </p>
 <footer>
 <p class="articleFooterP">Category:
-	<a class="p-category" href="https://mandaris.github.io/category/personal.html">
+	<a class="p-category" href="../category/personal.html">
     <span itemprop="articleSection">personal</span>
   </a>
   <span class="rightside">
     <time
       class="dt-published"
       datetime="2018-05-24T17:03:54-07:00"
-      itemprop="dateCreated datePublished pubdate">
-        Thu 24 May 2018
+      itemprop="dateCreated datePublished">
+        May 24, 2018
     </time>
   </span>
   <br />  <span itemprop="keywords">
       <a
         class="tag"
         rel="category tag"
-        href="https://mandaris.github.io/tag/omnifocus.html">
+        href="../tag/omnifocus.html">
           OmniFocus
       </a>
       <a
         class="tag"
         rel="category tag"
-        href="https://mandaris.github.io/tag/goals.html">
+        href="../tag/goals.html">
           goals
       </a>
   </span>
 </p>
+
+<details itemprop="author" itemscope itemtype="https://schema.org/Person" class="p-author h-card hidden">
+  <summary itemprop="name" class="p-name">Mandaris</summary>  <img itemprop="image" class="u-photo"
+    src="https://secure.gravatar.com/avatar/03fb367dd4c7aea56f77dfa496db3725"
+    alt="Author's Profile." />
+  <p class="p-note">Mandaris is someone who strives to make himself into a better person</p>
+  <p><a itemprop="url" class="u-url u-uid"
+    rel="me" href="https://mandarismoore.com"
+    title="Author Website.">
+    Mandaris</a></p>
+
+
+</details>
 </footer>
 </article>
 <hr />
 <article
-  class="post hentry h-entry content"
+  class="post hentry h-entry"
   itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
 
 <header class="post-header">
   <h2
-    itemprop="headline title p-name name"
+    itemprop="headline name"
     class="title p-name post-title">
     <a
       rel="bookmark"
@@ -418,8 +719,7 @@
     </a>
   </h2>
 </header><div class="e-content post-body" itemprop="articleBody">
-<figure><img alt="A man in a gear. A cog in the machine of life." src="images/man-gear.png"><figcaption>A man in a gear. A cog in the machine of life.</figcaption>
-</figure>
+<p><img alt="A man in a gear. A cog in the machine of life." src="images/man-gear.png"></p>
 <p>I spent a little time with <a href="http://www.pixelmator.com/mac/">Pixelmator</a> last night and found it to be fairly easy to make something like this.  I thought it would take a while to make something would meet my needs. </p>
 <p>I guess it shows that you never know what you can do until you try.</p>
 <p>The only thing that I regret is that I went down the rabit hole and spent almost an hour this morning researching formats and dimensions for making my icon <em>perfect</em>. </p>
@@ -442,42 +742,55 @@
 </p>
 <footer>
 <p class="articleFooterP">Category:
-	<a class="p-category" href="https://mandaris.github.io/category/blogging.html">
+	<a class="p-category" href="../category/blogging.html">
     <span itemprop="articleSection">blogging</span>
   </a>
   <span class="rightside">
     <time
       class="dt-published"
       datetime="2018-05-21T06:07:59-07:00"
-      itemprop="dateCreated datePublished pubdate">
-        Mon 21 May 2018
+      itemprop="dateCreated datePublished">
+        May 21, 2018
     </time>
   </span>
   <br />  <span itemprop="keywords">
       <a
         class="tag"
         rel="category tag"
-        href="https://mandaris.github.io/tag/images.html">
+        href="../tag/images.html">
           images
       </a>
       <a
         class="tag"
         rel="category tag"
-        href="https://mandaris.github.io/tag/icons.html">
+        href="../tag/icons.html">
           icons
       </a>
   </span>
 </p>
+
+<details itemprop="author" itemscope itemtype="https://schema.org/Person" class="p-author h-card hidden">
+  <summary itemprop="name" class="p-name">Mandaris</summary>  <img itemprop="image" class="u-photo"
+    src="https://secure.gravatar.com/avatar/03fb367dd4c7aea56f77dfa496db3725"
+    alt="Author's Profile." />
+  <p class="p-note">Mandaris is someone who strives to make himself into a better person</p>
+  <p><a itemprop="url" class="u-url u-uid"
+    rel="me" href="https://mandarismoore.com"
+    title="Author Website.">
+    Mandaris</a></p>
+
+
+</details>
 </footer>
 </article>
 <hr />
 <article
-  class="post hentry h-entry content"
+  class="post hentry h-entry"
   itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
 
 <header class="post-header">
   <h2
-    itemprop="headline title p-name name"
+    itemprop="headline name"
     class="title p-name post-title">
     <a
       rel="bookmark"
@@ -503,42 +816,55 @@
 </p>
 <footer>
 <p class="articleFooterP">Category:
-	<a class="p-category" href="https://mandaris.github.io/category/personal.html">
+	<a class="p-category" href="../category/personal.html">
     <span itemprop="articleSection">personal</span>
   </a>
   <span class="rightside">
     <time
       class="dt-published"
       datetime="2018-05-16T22:05:25-07:00"
-      itemprop="dateCreated datePublished pubdate">
-        Wed 16 May 2018
+      itemprop="dateCreated datePublished">
+        May 16, 2018
     </time>
   </span>
   <br />  <span itemprop="keywords">
       <a
         class="tag"
         rel="category tag"
-        href="https://mandaris.github.io/tag/westworld.html">
+        href="../tag/westworld.html">
           westworld
       </a>
       <a
         class="tag"
         rel="category tag"
-        href="https://mandaris.github.io/tag/marriage.html">
+        href="../tag/marriage.html">
           marriage
       </a>
   </span>
 </p>
+
+<details itemprop="author" itemscope itemtype="https://schema.org/Person" class="p-author h-card hidden">
+  <summary itemprop="name" class="p-name">Mandaris</summary>  <img itemprop="image" class="u-photo"
+    src="https://secure.gravatar.com/avatar/03fb367dd4c7aea56f77dfa496db3725"
+    alt="Author's Profile." />
+  <p class="p-note">Mandaris is someone who strives to make himself into a better person</p>
+  <p><a itemprop="url" class="u-url u-uid"
+    rel="me" href="https://mandarismoore.com"
+    title="Author Website.">
+    Mandaris</a></p>
+
+
+</details>
 </footer>
 </article>
 <hr />
 <article
-  class="post hentry h-entry content"
+  class="post hentry h-entry"
   itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
 
 <header class="post-header">
   <h2
-    itemprop="headline title p-name name"
+    itemprop="headline name"
     class="title p-name post-title">
     <a
       rel="bookmark"
@@ -550,8 +876,7 @@
     </a>
   </h2>
 </header><div class="e-content post-body" itemprop="articleBody">
-<figure><img alt="I'm still looking for the peace in my puzzle." src="images/black-and-white_800x600.jpeg"><figcaption>I'm still looking for the peace in my puzzle.</figcaption>
-</figure>
+<p><img alt="I'm still looking for the peace in my puzzle." src="images/black-and-white_800x600.jpeg"></p>
 <p>A long time ago, I went to a seminar called EmpowerU. Don't bother looking them up because the name has been used by so many different organizations, it would just confuse you to what I'm trying to say...</p>
 <p><em>Anyway,</em> I went to a seminar and I really got inspired to make a change in my life and I've been struggling with trying to make sense of where I want to go next.</p>
 <p>It feels like all I can think about it just trying to make it to the next week or day. </p>
@@ -569,191 +894,70 @@
 </p>
 <footer>
 <p class="articleFooterP">Category:
-	<a class="p-category" href="https://mandaris.github.io/category/personal.html">
+	<a class="p-category" href="../category/personal.html">
     <span itemprop="articleSection">personal</span>
   </a>
   <span class="rightside">
     <time
       class="dt-published"
       datetime="2018-05-15T23:15:21-07:00"
-      itemprop="dateCreated datePublished pubdate">
-        Tue 15 May 2018
+      itemprop="dateCreated datePublished">
+        May 15, 2018
     </time>
   </span>
   <br />  <span itemprop="keywords">
       <a
         class="tag"
         rel="category tag"
-        href="https://mandaris.github.io/tag/rut.html">
+        href="../tag/rut.html">
           rut
       </a>
   </span>
 </p>
+
+<details itemprop="author" itemscope itemtype="https://schema.org/Person" class="p-author h-card hidden">
+  <summary itemprop="name" class="p-name">Mandaris</summary>  <img itemprop="image" class="u-photo"
+    src="https://secure.gravatar.com/avatar/03fb367dd4c7aea56f77dfa496db3725"
+    alt="Author's Profile." />
+  <p class="p-note">Mandaris is someone who strives to make himself into a better person</p>
+  <p><a itemprop="url" class="u-url u-uid"
+    rel="me" href="https://mandarismoore.com"
+    title="Author Website.">
+    Mandaris</a></p>
+
+
+</details>
 </footer>
 </article>
 <hr />
-<article
-  class="post hentry h-entry content"
-  itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
 
-<header class="post-header">
-  <h2
-    itemprop="headline title p-name name"
-    class="title p-name post-title">
-    <a
-      rel="bookmark"
-      class="u-url"
-      title="Bills give me chills «Mandaris Moore»"
-      href="2018/05/bills-give-me-chills.html"
-      itemprop="url">
-      Bills give me chills
-    </a>
-  </h2>
-</header><div class="e-content post-body" itemprop="articleBody">
-<p>Sometimes, getting ready for bed is the hardest thing to do. In my home, nights are the time that we actually get a chance to sit down and do the things we need to do such as pay bills and schedule activities.</p>
-<p>My wife has been the one taking care of the bills in recent months. On one hand, it's good because I found myself having trouble keeping track of when and where money was going. The stress and guilt of missing a bill just got worse and worse over the years as expenses continued to grow.</p>
-<p>On the other hand, this has caused problems as I feel pushed out of key decision making areas. </p>
-<p>We've never been explicit about it but there have been under tones of hostility about money.</p>
-<p>I do what I can, I follow the budget that we agree on and be understanding when she's stressed out. After all, I was doing it for years before we switched.</p>
-<p>We're in better shape as far as budgetting, but I tread every night we have to go over bills.</p>
-</div>
 
-<p class="readmore u-url">
-  <a
-    rel="bookmark"
-    title="Bills give me chills «Mandaris Moore»"
-    href="2018/05/bills-give-me-chills.html"
-    itemprop="url">Permalink
-  </a>
-</p>
-<footer>
-<p class="articleFooterP">Category:
-	<a class="p-category" href="https://mandaris.github.io/category/parenting.html">
-    <span itemprop="articleSection">parenting</span>
-  </a>
-  <span class="rightside">
-    <time
-      class="dt-published"
-      datetime="2018-05-15T23:03:22-07:00"
-      itemprop="dateCreated datePublished pubdate">
-        Tue 15 May 2018
-    </time>
-  </span>
-  <br />  <span itemprop="keywords">
-      <a
-        class="tag"
-        rel="category tag"
-        href="https://mandaris.github.io/tag/bills.html">
-          bills
-      </a>
-      <a
-        class="tag"
-        rel="category tag"
-        href="https://mandaris.github.io/tag/marriage.html">
-          marriage
-      </a>
-  </span>
-</p>
-</footer>
-</article>
-<hr />
-<article
-  class="post hentry h-entry content"
-  itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
 
-<header class="post-header">
-  <h2
-    itemprop="headline title p-name name"
-    class="title p-name post-title">
-    <a
-      rel="bookmark"
-      class="u-url"
-      title="Researching Micro.blog post «Mandaris Moore»"
-      href="2018/05/researching-microblog-post.html"
-      itemprop="url">
-      Researching Micro.blog post
-    </a>
-  </h2>
-</header><div class="e-content post-body" itemprop="articleBody">
-<p>I wanted to spend sometime looking at some resources that I came across that I'm going to use to make my site work better with the micro.blog format.</p>
-<h4 id="implementing-microblogging-in-pelican">Implementing microblogging in pelican</h4>
-<p><strong><a href="https://ascraeus.org/implementing-microblogging-in-pelican/">Link</a></strong></p>
-<p>This one was pretty interesting in that it was the first link in my search and let me know that it was indeed possible. Unfortunately, the site has moved from <a href="https://blog.getpelican.com/">pelican</a> to <a href="https://gohugo.io/">hugo</a> and I couldn't find the theme in the users github repository (unless he's renamed it).</p>
-<h4 id="microblogging-with-pelican">Microblogging with pelican</h4>
-<p><strong><a href="http://blog.bellebcooper.com/microblogging-with-pelican.html">Link</a></strong> 
-This link seems a little more promising as the writer is still actively using pelican to generate her site. Not only that but she has a couple example iOS workflows that give me ideas on how to quickly generate posts for the site. </p>
-<p>Currently, I don't have any bandwidth to do any of these options in the next couple of days, but I hope that by writing about them here someone else can use them to make their site better.</p>
-</div>
-
-<p class="readmore u-url">
-  <a
-    rel="bookmark"
-    title="Researching Micro.blog post «Mandaris Moore»"
-    href="2018/05/researching-microblog-post.html"
-    itemprop="url">Permalink
-  </a>
-</p>
-<footer>
-<p class="articleFooterP">Category:
-	<a class="p-category" href="https://mandaris.github.io/category/blog.html">
-    <span itemprop="articleSection">blog</span>
-  </a>
-  <span class="rightside">
-    <time
-      class="dt-published"
-      datetime="2018-05-15T07:12:49-07:00"
-      itemprop="dateCreated datePublished pubdate">
-        Tue 15 May 2018
-    </time>
-  </span>
-  <br />  <span itemprop="keywords">
-      <a
-        class="tag"
-        rel="category tag"
-        href="https://mandaris.github.io/tag/microblog.html">
-          micro.blog
-      </a>
-      <a
-        class="tag"
-        rel="category tag"
-        href="https://mandaris.github.io/tag/pelican.html">
-          pelican
-      </a>
-  </span>
-  <span class="rightside">Modified:
-  	<time
-      class="dt-updated"
-  	  datetime="2018-08-09T21:14:51-07:00"
-  	  itemprop="dateModified">
-        Thu 09 August 2018
-      </time>
-  </span>
-</p>
-</footer>
-</article>
-<hr />
 </main>
-  <nav id="pagination">    <a id="first_page" href="https://mandaris.github.io/author/mandaris.html">&#60;&#60;</a>
-    <a id="previous_page" rel="prev" href="https://mandaris.github.io/author/mandaris4.html">&#60;</a>
-    <a href="https://mandaris.github.io/author/mandaris.html">1</a>
-    <a href="https://mandaris.github.io/author/mandaris2.html">2</a>
-    <a href="https://mandaris.github.io/author/mandaris3.html">3</a>
-    <a href="https://mandaris.github.io/author/mandaris4.html">4</a>
-    <span class="a active">5</span>
-    <a href="https://mandaris.github.io/author/mandaris6.html">6</a>
-    <a href="https://mandaris.github.io/author/mandaris7.html">7</a>
-    <a href="https://mandaris.github.io/author/mandaris8.html">8</a>
-    <a href="https://mandaris.github.io/author/mandaris9.html">9</a>
-    <a id="next_page" rel="next" href="https://mandaris.github.io/author/mandaris6.html">&#62;</a>
-    <a id="last_page" href="https://mandaris.github.io/author/mandaris26.html">&#62;&#62;</a>
-</nav>
+
+
+<aside class="sidebar">
+<h2>
+<a
+  rel="external"
+  href="https://micro.blog/mandaris"
+  title="Micro.blog for mandaris"
+  class="u-url"
+  itemprop="url">
+Micro.blog posts
+</a>
+</h2>
+<script type="text/javascript" src="https://micro.blog/sidebar.js?username=mandaris"></script>
+</aside>
+
 <footer itemscope itemtype="https://schema.org/WPFooter"
     role="contentinfo" class="baseFooter">
+  <hr />
   <p>All works created by
     <span itemprop="author" itemscope itemtype=https://schema.org/Person>
-    <span class="p-author h-card" itemprop="name">Mandaris</span></span>.
-  </p>
-  <p>Powered by <a href="http://pelican.readthedocs.org">Pelican</a></p>
+    <span class="p-author h-card p-name" itemprop="name">Mandaris</span></span>.
+
+  <span class="rightside">Powered by <a href="http://pelican.readthedocs.org">Pelican</a>.</span></p>
 </footer>
 </body>
 </html>

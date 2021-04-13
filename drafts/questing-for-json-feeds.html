@@ -12,19 +12,19 @@
 <meta name="author" class="p-author h-card" content="Mandaris" />
 <meta property="site_name" content="Mandaris Moore" />
 <meta name="description" content="Time for another epic quest to get something working in a way that I want it to1. This time, it's an adventure to get the json feed to work with my blog. I had tried about 2 months ago, but I gave up thinking that it had something to …" />
-<base href="https://mandaris.github.io" />
+<base href=".." />
 <meta name="generator" content="Pelican" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="theme-color" content="#1b5a53" />
-<link rel="stylesheet" type="text/css" href="/theme/css/main.css" />
+<link rel="stylesheet" type="text/css" href="../theme/css/main.css" />
 <link rel="shortcut icon" href="/favicon.ico" />
 <link rel="icon" type="image/png" href="/favicon.png" />
 <link rel="apple-touch-icon-precomposed"
       href="/apple-touch-icon-precomposed.png" />
 
 <!-- Feed information -->
-<link href="https://mandaris.github.io/feeds/atom.xml"
+<link href="http://mandaris.github.io/feeds/atom.xml"
       type="application/atom+xml"
       rel="alternate" title="Mandaris Moore ALL Atom Feed" />
 
@@ -32,7 +32,7 @@
 <!-- OpenGraph Info -->
 <meta property="og:title" content="Questing for json feeds" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://mandaris.github.io/drafts/questing-for-json-feeds.html" />
+<meta property="og:url" content="http://mandaris.github.io/drafts/questing-for-json-feeds.html" />
 <meta property="og:description" content="Time for another epic quest to get something working in a way that I want it to1. This time, it&#39;s an adventure to get the json feed to work with my blog. I had tried about 2 months ago, but I gave up thinking that it had something to …" />
 <meta property="og:locale" content="en_US" />
 <meta property="og:site_name" content="Mandaris Moore" />
@@ -54,26 +54,27 @@
 </head>
 
 <body itemscope itemtype="https://schema.org/Blog">
-<meta itemprop="description" content="The personal website for Mandaris Moore." />
+<meta itemprop="description" content="The Pelican website for Mandaris Moore." />
 <header role="banner">
-<h1 class="websitetitle"><a href="https://mandaris.github.io">Mandaris Moore</a></h1>
+<h1 class="websitetitle"><a href="..">Mandaris Moore</a></h1>
 <nav itemscope itemtype="https://schema.org/SiteNavigationElement"
     class="navmenu" id="navmenu" >
 <ul>
   <li>
-    <a class="navitemlink" href="https://mandaris.github.io/archives.html">Archive</a>
+    <a class="navitemlink" href="../archives.html">Archive</a>
   </li>
   <li>
-    <a class="navitemlink" href="https://mandaris.github.io/pages/about.html">About</a>
+    <a class="navitemlink" href="../pages/about.html">About</a>
   </li>
   <li>
-    <a class="navitemlink" href="https://mandaris.github.io/pages/projects.html">Projects</a>
+    <a class="navitemlink" href="../pages/projects.html">Projects</a>
   </li>
 </ul>
 </nav>
+<hr />
 </header>
 
-<hr />
+
 <article
   class="hentry h-entry post main-content"
   itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
@@ -81,7 +82,7 @@
 
 <header class="post-header">
   <h2
-    itemprop="headline title p-name name"
+    itemprop="headline name"
     class="title p-name post-title">
     <a
       rel="bookmark"
@@ -93,59 +94,55 @@
     </a>
   </h2>
 </header>  <div class="arcticle-body e-content" itemprop="articleBody">
-    <p>Time for another epic quest to get something working in a way that I want it to<sup id="fnref-working"><a class="footnote-ref" href="#fn-working">1</a></sup>.</p>
+    <p>Time for another epic quest to get something working in a way that I want it to<sup id="fnref:working"><a class="footnote-ref" href="#fn:working">1</a></sup>.</p>
 <p>This time, it's an adventure to get the json feed to work with my blog. I had tried about 2 months ago, but I gave up thinking that it had something to do with the different plugs that I had or an incompatibility between the version of pelican that I was running and the plugin.</p>
 <h3 id="pelican-version-4">Pelican version 4!</h3>
 <p>Well, a <a href="https://github.com/getpelican/pelican/releases/tag/4.0.0">never version</a> of pelican is out now. It's ot a whole bunch of <a href="https://github.com/getpelican/pelican/milestone/12?closed=1">changes</a> and I'm going to use this as a jump off to see if I could get this working.</p>
 <h3 id="setup">Setup</h3>
-<p>The first thing that I had to do was get a new environment working with virtualenv and using the <a href="https://github.com/mandaris/Pelican-Test-Content" title="Now with a .rst file for giggles">test content</a> that I've already put together<sup id="fnref-spinning"><a class="footnote-ref" href="#fn-spinning">2</a></sup>. </p>
+<p>The first thing that I had to do was get a new environment working with virtualenv and using the <a href="https://github.com/mandaris/Pelican-Test-Content" title="Now with a .rst file for giggles">test content</a> that I've already put together<sup id="fnref:spinning"><a class="footnote-ref" href="#fn:spinning">2</a></sup>. </p>
 <p>The next thing that I did was download the <a href="https://github.com/andrewheiss/pelican_json_feed" title="Pelican plugin to add a JSON Feed file to your site">pelican_json_feed</a> plugin and include it in a small pelican instance.</p>
 <h3 id="initial-problem-calling-the-right-plugin">Initial problem: calling the right plugin</h3>
 <p>The directions instruct that we should specify a the plugin as follows.</p>
-<div class="highlight"><pre><span></span>PLUGINS = [&#39;pelican_json_feed&#39;]
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>PLUGINS = [&#39;pelican_json_feed&#39;]
+</code></pre></div>
 
 <p>but this will result in the following error:</p>
-<div class="highlight"><pre><span></span><span class="n">ERROR</span><span class="o">:</span> <span class="n">Cannot</span> <span class="n">load</span> <span class="n">plugin</span> <span class="err">`</span><span class="n">pelican_json_feed</span><span class="err">`</span>
-  <span class="o">|</span> <span class="n">ImportError</span><span class="o">:</span> <span class="n">No</span> <span class="n">module</span> <span class="n">named</span> <span class="n">pelican_json_feed</span>
-</pre></div>
-
+<div class="highlight"><pre><span></span><code><span class="k">ERROR</span><span class="o">:</span> <span class="n">Cannot</span> <span class="k">load</span> <span class="k">plugin</span> <span class="n n-Quoted">`pelican_json_feed`</span>
+  <span class="o">|</span> <span class="n">ImportError</span><span class="o">:</span> <span class="k">No</span> <span class="n">module</span> <span class="n">named</span> <span class="n">pelican_json_feed</span>
+</code></pre></div>
 
 <p>This is easily fixed by changing the plugin we call to</p>
-<div class="highlight"><pre><span></span>PLUGINS = [&#39;json_feed&#39;]
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>PLUGINS = [&#39;json_feed&#39;]
+</code></pre></div>
 
 <h3 id="second-problem-stripping">Second problem: Stripping</h3>
-<p>After selecting the correct plugin, I ran into the next problem<sup id="fnref-stacktrace"><a class="footnote-ref" href="#fn-stacktrace">3</a></sup>.</p>
-<div class="highlight"><pre><span></span><span class="n">CRITICAL</span><span class="o">:</span> <span class="n">TypeError</span><span class="o">:</span> <span class="n">unbound</span> <span class="n">method</span> <span class="n">striptags</span><span class="o">()</span> <span class="n">must</span> <span class="n">be</span> <span class="n">called</span> <span class="k">with</span> <span class="n">Markup</span> <span class="n">instance</span> <span class="k">as</span> <span class="n">first</span> <span class="n">argument</span> <span class="o">(</span><span class="n">got</span> <span class="n">unicode</span> <span class="n">instance</span> <span class="n">instead</span><span class="o">)</span>
-<span class="n">Traceback</span> <span class="o">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="o">):</span>
-  <span class="n">File</span> <span class="s2">&quot;/Users/mandaris/Virtualenvs/pelican-json/bin/pelican&quot;</span><span class="o">,</span> <span class="n">line</span> <span class="mi">11</span><span class="o">,</span> <span class="k">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-    <span class="n">sys</span><span class="o">.</span><span class="na">exit</span><span class="o">(</span><span class="n">main</span><span class="o">())</span>
-  <span class="n">File</span> <span class="s2">&quot;/Users/mandaris/Virtualenvs/pelican-json/lib/python2.7/site-packages/pelican/__init__.py&quot;</span><span class="o">,</span> <span class="n">line</span> <span class="mi">623</span><span class="o">,</span> <span class="k">in</span> <span class="n">main</span>
-    <span class="n">pelican</span><span class="o">.</span><span class="na">run</span><span class="o">()</span>
-  <span class="n">File</span> <span class="s2">&quot;/Users/mandaris/Virtualenvs/pelican-json/lib/python2.7/site-packages/pelican/__init__.py&quot;</span><span class="o">,</span> <span class="n">line</span> <span class="mi">190</span><span class="o">,</span> <span class="k">in</span> <span class="n">run</span>
-    <span class="n">p</span><span class="o">.</span><span class="na">generate_output</span><span class="o">(</span><span class="n">writer</span><span class="o">)</span>
-  <span class="n">File</span> <span class="s2">&quot;/Users/mandaris/Projects/Components/pelican_json_feed/json_feed.py&quot;</span><span class="o">,</span> <span class="n">line</span> <span class="mi">109</span><span class="o">,</span> <span class="k">in</span> <span class="n">generate_output</span>
-    <span class="n">self</span><span class="o">.</span><span class="na">generate_feeds</span><span class="o">(</span><span class="n">writer</span><span class="o">)</span>
-  <span class="n">File</span> <span class="s2">&quot;/Users/mandaris/Projects/Components/pelican_json_feed/json_feed.py&quot;</span><span class="o">,</span> <span class="n">line</span> <span class="mi">73</span><span class="o">,</span> <span class="k">in</span> <span class="n">generate_feeds</span>
-    <span class="n">self</span><span class="o">.</span><span class="na">settings</span><span class="o">[</span><span class="s1">&#39;FEED_ALL_JSON&#39;</span><span class="o">],</span> <span class="n">feed_type</span><span class="o">=</span><span class="s1">&#39;json&#39;</span><span class="o">)</span>
-  <span class="n">File</span> <span class="s2">&quot;/Users/mandaris/Virtualenvs/pelican-json/lib/python2.7/site-packages/pelican/writers.py&quot;</span><span class="o">,</span> <span class="n">line</span> <span class="mi">133</span><span class="o">,</span> <span class="k">in</span> <span class="n">write_feed</span>
-    <span class="n">self</span><span class="o">.</span><span class="na">_add_item_to_the_feed</span><span class="o">(</span><span class="n">feed</span><span class="o">,</span> <span class="n">elements</span><span class="o">[</span><span class="n">i</span><span class="o">])</span>
-  <span class="n">File</span> <span class="s2">&quot;/Users/mandaris/Virtualenvs/pelican-json/lib/python2.7/site-packages/pelican/writers.py&quot;</span><span class="o">,</span> <span class="n">line</span> <span class="mi">75</span><span class="o">,</span> <span class="k">in</span> <span class="n">_add_item_to_the_feed</span>
-    <span class="o">)</span> <span class="k">if</span> <span class="n">hasattr</span><span class="o">(</span><span class="n">item</span><span class="o">,</span> <span class="s1">&#39;modified&#39;</span><span class="o">)</span> <span class="k">else</span> <span class="n">None</span><span class="o">)</span>
-  <span class="n">File</span> <span class="s2">&quot;/Users/mandaris/Projects/Components/pelican_json_feed/json_feed.py&quot;</span><span class="o">,</span> <span class="n">line</span> <span class="mi">50</span><span class="o">,</span> <span class="k">in</span> <span class="n">add_item</span>
-    <span class="n">self</span><span class="o">.</span><span class="na">_enrich_dict</span><span class="o">(</span><span class="n">item</span><span class="o">,</span> <span class="n">self</span><span class="o">.</span><span class="na">ITEMS_TRANS</span><span class="o">,</span> <span class="n">kwargs</span><span class="o">)</span>
-  <span class="n">File</span> <span class="s2">&quot;/Users/mandaris/Projects/Components/pelican_json_feed/json_feed.py&quot;</span><span class="o">,</span> <span class="n">line</span> <span class="mi">45</span><span class="o">,</span> <span class="k">in</span> <span class="n">_enrich_dict</span>
-    <span class="n">value</span> <span class="o">=</span> <span class="n">json_feed_spec</span><span class="o">[</span><span class="s1">&#39;tr&#39;</span><span class="o">](</span><span class="n">value</span><span class="o">)</span>
-<span class="n">TypeError</span><span class="o">:</span> <span class="n">unbound</span> <span class="n">method</span> <span class="n">striptags</span><span class="o">()</span> <span class="n">must</span> <span class="n">be</span> <span class="n">called</span> <span class="k">with</span> <span class="n">Markup</span> <span class="n">instance</span> <span class="k">as</span> <span class="n">first</span> <span class="n">argument</span> <span class="o">(</span><span class="n">got</span> <span class="n">unicode</span> <span class="n">instance</span> <span class="n">instead</span><span class="o">)</span>
-</pre></div>
-
+<p>After selecting the correct plugin, I ran into the next problem<sup id="fnref:stacktrace"><a class="footnote-ref" href="#fn:stacktrace">3</a></sup>.</p>
+<div class="highlight"><pre><span></span><code><span class="nl">CRITICAL</span><span class="p">:</span><span class="w"> </span><span class="nl">TypeError</span><span class="p">:</span><span class="w"> </span><span class="n">unbound</span><span class="w"> </span><span class="k">method</span><span class="w"> </span><span class="n">striptags</span><span class="p">()</span><span class="w"> </span><span class="n">must</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="k">called</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="n">Markup</span><span class="w"> </span><span class="n">instance</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="k">first</span><span class="w"> </span><span class="n">argument</span><span class="w"> </span><span class="p">(</span><span class="n">got</span><span class="w"> </span><span class="nf">unicode</span><span class="w"> </span><span class="n">instance</span><span class="w"> </span><span class="n">instead</span><span class="p">)</span><span class="w"></span>
+<span class="n">Traceback</span><span class="w"> </span><span class="p">(</span><span class="n">most</span><span class="w"> </span><span class="n">recent</span><span class="w"> </span><span class="k">call</span><span class="w"> </span><span class="k">last</span><span class="p">)</span><span class="err">:</span><span class="w"></span>
+<span class="w">  </span><span class="k">File</span><span class="w"> </span><span class="ss">&quot;/Users/mandaris/Virtualenvs/pelican-json/bin/pelican&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">line</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="o">&lt;</span><span class="k">module</span><span class="o">&gt;</span><span class="w"></span>
+<span class="w">    </span><span class="n">sys</span><span class="p">.</span><span class="k">exit</span><span class="p">(</span><span class="n">main</span><span class="p">())</span><span class="w"></span>
+<span class="w">  </span><span class="k">File</span><span class="w"> </span><span class="ss">&quot;/Users/mandaris/Virtualenvs/pelican-json/lib/python2.7/site-packages/pelican/__init__.py&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">line</span><span class="w"> </span><span class="mi">623</span><span class="p">,</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">main</span><span class="w"></span>
+<span class="w">    </span><span class="n">pelican</span><span class="p">.</span><span class="n">run</span><span class="p">()</span><span class="w"></span>
+<span class="w">  </span><span class="k">File</span><span class="w"> </span><span class="ss">&quot;/Users/mandaris/Virtualenvs/pelican-json/lib/python2.7/site-packages/pelican/__init__.py&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">line</span><span class="w"> </span><span class="mi">190</span><span class="p">,</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">run</span><span class="w"></span>
+<span class="w">    </span><span class="n">p</span><span class="p">.</span><span class="n">generate_output</span><span class="p">(</span><span class="n">writer</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="k">File</span><span class="w"> </span><span class="ss">&quot;/Users/mandaris/Projects/Components/pelican_json_feed/json_feed.py&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">line</span><span class="w"> </span><span class="mi">109</span><span class="p">,</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">generate_output</span><span class="w"></span>
+<span class="w">    </span><span class="n">self</span><span class="p">.</span><span class="n">generate_feeds</span><span class="p">(</span><span class="n">writer</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="k">File</span><span class="w"> </span><span class="ss">&quot;/Users/mandaris/Projects/Components/pelican_json_feed/json_feed.py&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">line</span><span class="w"> </span><span class="mi">73</span><span class="p">,</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">generate_feeds</span><span class="w"></span>
+<span class="w">    </span><span class="n">self</span><span class="p">.</span><span class="n">settings</span><span class="o">[</span><span class="n">&#39;FEED_ALL_JSON&#39;</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="n">feed_type</span><span class="o">=</span><span class="s1">&#39;json&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="k">File</span><span class="w"> </span><span class="ss">&quot;/Users/mandaris/Virtualenvs/pelican-json/lib/python2.7/site-packages/pelican/writers.py&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">line</span><span class="w"> </span><span class="mi">133</span><span class="p">,</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">write_feed</span><span class="w"></span>
+<span class="w">    </span><span class="n">self</span><span class="p">.</span><span class="n">_add_item_to_the_feed</span><span class="p">(</span><span class="n">feed</span><span class="p">,</span><span class="w"> </span><span class="n">elements</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="k">File</span><span class="w"> </span><span class="ss">&quot;/Users/mandaris/Virtualenvs/pelican-json/lib/python2.7/site-packages/pelican/writers.py&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">line</span><span class="w"> </span><span class="mi">75</span><span class="p">,</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">_add_item_to_the_feed</span><span class="w"></span>
+<span class="w">    </span><span class="p">)</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">hasattr</span><span class="p">(</span><span class="n">item</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;modified&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">None</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="k">File</span><span class="w"> </span><span class="ss">&quot;/Users/mandaris/Projects/Components/pelican_json_feed/json_feed.py&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">line</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">add_item</span><span class="w"></span>
+<span class="w">    </span><span class="n">self</span><span class="p">.</span><span class="n">_enrich_dict</span><span class="p">(</span><span class="n">item</span><span class="p">,</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">ITEMS_TRANS</span><span class="p">,</span><span class="w"> </span><span class="n">kwargs</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="k">File</span><span class="w"> </span><span class="ss">&quot;/Users/mandaris/Projects/Components/pelican_json_feed/json_feed.py&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">line</span><span class="w"> </span><span class="mi">45</span><span class="p">,</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">_enrich_dict</span><span class="w"></span>
+<span class="w">    </span><span class="k">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">json_feed_spec</span><span class="o">[</span><span class="n">&#39;tr&#39;</span><span class="o">]</span><span class="p">(</span><span class="k">value</span><span class="p">)</span><span class="w"></span>
+<span class="nl">TypeError</span><span class="p">:</span><span class="w"> </span><span class="n">unbound</span><span class="w"> </span><span class="k">method</span><span class="w"> </span><span class="n">striptags</span><span class="p">()</span><span class="w"> </span><span class="n">must</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="k">called</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="n">Markup</span><span class="w"> </span><span class="n">instance</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="k">first</span><span class="w"> </span><span class="n">argument</span><span class="w"> </span><span class="p">(</span><span class="n">got</span><span class="w"> </span><span class="nf">unicode</span><span class="w"> </span><span class="n">instance</span><span class="w"> </span><span class="n">instead</span><span class="p">)</span><span class="w"></span>
+</code></pre></div>
 
 <h4 id="what-does-that-mean">What does that mean?</h4>
 <p>Well, it looks like part of the implimentation is to create a dictionary and that would include a <code>key</code> and <code>tr</code> for different strings.</p>
-<div class="highlight"><pre><span></span>    <span class="n">ITEMS_TRANS</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;link&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="s1">&#39;url&#39;</span><span class="p">},</span>
+<div class="highlight"><pre><span></span><code>    <span class="n">ITEMS_TRANS</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;link&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="s1">&#39;url&#39;</span><span class="p">},</span>
             <span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="s1">&#39;title&#39;</span><span class="p">},</span>
             <span class="s1">&#39;content&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="s1">&#39;content_html&#39;</span><span class="p">},</span>
             <span class="s1">&#39;description&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="s1">&#39;description&#39;</span><span class="p">,</span> <span class="s1">&#39;tr&#39;</span><span class="p">:</span> <span class="n">Markup</span><span class="o">.</span><span class="n">striptags</span><span class="p">},</span>
@@ -153,61 +150,76 @@
             <span class="s1">&#39;updateddate&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="s1">&#39;date_modified&#39;</span><span class="p">,</span> <span class="s1">&#39;str&#39;</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">isoformat</span><span class="p">},</span>
             <span class="s1">&#39;tags&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="s1">&#39;tags&#39;</span><span class="p">,</span> <span class="s1">&#39;tr&#39;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">c</span><span class="p">:</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">c</span><span class="p">]},</span>
             <span class="s1">&#39;author&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="s1">&#39;author&#39;</span><span class="p">,</span> <span class="s1">&#39;tr&#39;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">n</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">)}}}</span>
-</pre></div>
-
+</code></pre></div>
 
 <p>Unfortunately, this doesn't work on a base installation of pelican. This sent me into a weird spot where I've been meaning to get this working and I'm just now about to make my findings public the first thing to do is move this post from draft to published and then push the code.</p>
 <div class="footnote">
 <hr>
 <ol>
-<li id="fn-working">
-<p>I will admit that some of the things I deal with are 10 - 15% user error and 80% me just insisting that something follow the way that I'm expecting to work.&#160;<a class="footnote-backref" href="#fnref-working" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<li id="fn:working">
+<p>I will admit that some of the things I deal with are 10 - 15% user error and 80% me just insisting that something follow the way that I'm expecting to work.&#160;<a class="footnote-backref" href="#fnref:working" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
-<li id="fn-spinning">
-<p>I have a tendency to go through a lot of little rabbit holes when I'm working through a quest like this and found myself updating my test content to include a reStructureText file. I don't write with that format, but I think it someone else might like the option.&#160;<a class="footnote-backref" href="#fnref-spinning" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+<li id="fn:spinning">
+<p>I have a tendency to go through a lot of little rabbit holes when I'm working through a quest like this and found myself updating my test content to include a reStructureText file. I don't write with that format, but I think it someone else might like the option.&#160;<a class="footnote-backref" href="#fnref:spinning" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
-<li id="fn-stacktrace">
-<p>I'm including the output from <code>pelican -D</code> so that others may find this information if they need it.&#160;<a class="footnote-backref" href="#fnref-stacktrace" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+<li id="fn:stacktrace">
+<p>I'm including the output from <code>pelican -D</code> so that others may find this information if they need it.&#160;<a class="footnote-backref" href="#fnref:stacktrace" title="Jump back to footnote 3 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
   </div>
 <p class="articleFooterP">Category:
-	<a class="p-category" href="https://mandaris.github.io/category/blogging.html">
+	<a class="p-category" href="../category/blogging.html">
     <span itemprop="articleSection">blogging</span>
   </a>
   <span class="rightside">
     <time
       class="dt-published"
       datetime="2019-07-06T18:23:12-07:00"
-      itemprop="dateCreated datePublished pubdate">
-        Sat 06 July 2019
+      itemprop="dateCreated datePublished">
+        July 06, 2019
     </time>
   </span>
   <br />  <span itemprop="keywords">
       <a
         class="tag"
         rel="category tag"
-        href="https://mandaris.github.io/tag/pelican.html">
+        href="../tag/pelican.html">
           pelican
       </a>
       <a
         class="tag"
         rel="category tag"
-        href="https://mandaris.github.io/tag/json.html">
+        href="../tag/json.html">
           json
       </a>
   </span>
 </p>
+
+<details itemprop="author" itemscope itemtype="https://schema.org/Person" class="p-author h-card hidden">
+  <summary itemprop="name" class="p-name">Mandaris</summary>  <img itemprop="image" class="u-photo"
+    src="https://secure.gravatar.com/avatar/03fb367dd4c7aea56f77dfa496db3725"
+    alt="Author's Profile." />
+  <p class="p-note">Mandaris is someone who strives to make himself into a better person</p>
+  <p><a itemprop="url" class="u-url u-uid"
+    rel="me" href="https://mandarismoore.com"
+    title="Author Website.">
+    Mandaris</a></p>
+
+
+</details>
+
 </article>
+
 
 <footer itemscope itemtype="https://schema.org/WPFooter"
     role="contentinfo" class="baseFooter">
+  <hr />
   <p>All works created by
     <span itemprop="author" itemscope itemtype=https://schema.org/Person>
-    <span class="p-author h-card" itemprop="name">Mandaris</span></span>.
-  </p>
-  <p>Powered by <a href="http://pelican.readthedocs.org">Pelican</a></p>
+    <span class="p-author h-card p-name" itemprop="name">Mandaris</span></span>.
+
+  <span class="rightside">Powered by <a href="http://pelican.readthedocs.org">Pelican</a>.</span></p>
 </footer>
 </body>
 </html>

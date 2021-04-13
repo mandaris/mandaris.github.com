@@ -12,19 +12,19 @@
 <meta name="author" class="p-author h-card" content="Mandaris" />
 <meta property="site_name" content="Mandaris Moore" />
 <meta name="description" content="Today, I thought I'd document something simple like how I created an alias to render the blog and then port it to my website. I'm writing it out in hopes that something will pop up and say "There is an easier way of doing it!" The first thing I do …" />
-<base href="https://mandaris.github.io" />
+<base href="../.." />
 <meta name="generator" content="Pelican" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="theme-color" content="#1b5a53" />
-<link rel="stylesheet" type="text/css" href="/theme/css/main.css" />
+<link rel="stylesheet" type="text/css" href="../../theme/css/main.css" />
 <link rel="shortcut icon" href="/favicon.ico" />
 <link rel="icon" type="image/png" href="/favicon.png" />
 <link rel="apple-touch-icon-precomposed"
       href="/apple-touch-icon-precomposed.png" />
 
 <!-- Feed information -->
-<link href="https://mandaris.github.io/feeds/atom.xml"
+<link href="http://mandaris.github.io/feeds/atom.xml"
       type="application/atom+xml"
       rel="alternate" title="Mandaris Moore ALL Atom Feed" />
 
@@ -32,8 +32,8 @@
 <!-- OpenGraph Info -->
 <meta property="og:title" content="A simple alias" />
 <meta property="og:type" content="article" />
-<meta property="og:image" content="https://mandaris.github.io/../../images/textexpander_window_header_for_post.png" />
-<meta property="og:url" content="https://mandaris.github.io/2016/12/a-simple-alias.html" />
+<meta property="og:image" content="http://mandaris.github.io/../../images/textexpander_window_header_for_post.png" />
+<meta property="og:url" content="http://mandaris.github.io/2016/12/a-simple-alias.html" />
 <meta property="og:description" content="Today, I thought I&#39;d document something simple like how I created an alias to render the blog and then port it to my website. I&#39;m writing it out in hopes that something will pop up and say &#34;There is an easier way of doing it!&#34; The first thing I do …" />
 <meta property="og:locale" content="en_US" />
 <meta property="og:site_name" content="Mandaris Moore" />
@@ -55,26 +55,27 @@
 </head>
 
 <body itemscope itemtype="https://schema.org/Blog">
-<meta itemprop="description" content="The personal website for Mandaris Moore." />
+<meta itemprop="description" content="The Pelican website for Mandaris Moore." />
 <header role="banner">
-<h1 class="websitetitle"><a href="https://mandaris.github.io">Mandaris Moore</a></h1>
+<h1 class="websitetitle"><a href="../..">Mandaris Moore</a></h1>
 <nav itemscope itemtype="https://schema.org/SiteNavigationElement"
     class="navmenu" id="navmenu" >
 <ul>
   <li>
-    <a class="navitemlink" href="https://mandaris.github.io/archives.html">Archive</a>
+    <a class="navitemlink" href="../../archives.html">Archive</a>
   </li>
   <li>
-    <a class="navitemlink" href="https://mandaris.github.io/pages/about.html">About</a>
+    <a class="navitemlink" href="../../pages/about.html">About</a>
   </li>
   <li>
-    <a class="navitemlink" href="https://mandaris.github.io/pages/projects.html">Projects</a>
+    <a class="navitemlink" href="../../pages/projects.html">Projects</a>
   </li>
 </ul>
 </nav>
+<hr />
 </header>
 
-<hr />
+
 <article
   class="hentry h-entry post main-content"
   itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
@@ -82,7 +83,7 @@
 
 <header class="post-header">
   <h2
-    itemprop="headline title p-name name"
+    itemprop="headline name"
     class="title p-name post-title">
     <a
       rel="bookmark"
@@ -95,74 +96,86 @@
   </h2>
 </header>  <div class="arcticle-body e-content" itemprop="articleBody">
     <p>Today, I thought I'd document something simple like how I created an alias to render the blog and then port it to my website. I'm writing it out in hopes that something will pop up and say "There is an easier way of doing it!"</p>
-<p>The first thing I do for most posts is I open up Byword to write the words that you are seeing before you. If it's something a little more complicated, I might start off in MindNode<sup id="fnref-MindNode"><a class="footnote-ref" href="#fn-MindNode">1</a></sup> and export to Markdown. </p>
+<p>The first thing I do for most posts is I open up Byword to write the words that you are seeing before you. If it's something a little more complicated, I might start off in MindNode<sup id="fnref:MindNode"><a class="footnote-ref" href="#fn:MindNode">1</a></sup> and export to Markdown. </p>
 <p>I use a TextExpander snippet to set the header and then just start writing and save the file in dropbox.</p>
-<figure><img alt="The popup window for the TextExpander header for my website." src="../../images/textexpander_window_header_for_post.png"><figcaption>The popup window for the TextExpander header for my website.</figcaption>
-</figure>
-<p>The part that I feel needs improvement is finishing the draft. I have a virtual environment set up for pelican that has all the templates and plugins that I've been tweaking to make the site look and behave in the way that I want. This means that any extra syntax or themes don't show up unless I process the markdown<sup id="fnref-marked"><a class="footnote-ref" href="#fn-marked">2</a></sup>.</p>
-<p>To solve this, I've set up a hazel rule<sup id="fnref-rule"><a class="footnote-ref" href="#fn-rule">3</a></sup> to copy over all the files. </p>
-<figure><img alt="Hazel rule to clone over all the posts and images for the blog" src="../../images/hazel_rule_to_clone_posts.png"><figcaption>Hazel rule to clone over all the posts and images for the blog</figcaption>
-</figure>
+<p><img alt="The popup window for the TextExpander header for my website." src="../../images/textexpander_window_header_for_post.png"></p>
+<p>The part that I feel needs improvement is finishing the draft. I have a virtual environment set up for pelican that has all the templates and plugins that I've been tweaking to make the site look and behave in the way that I want. This means that any extra syntax or themes don't show up unless I process the markdown<sup id="fnref:marked"><a class="footnote-ref" href="#fn:marked">2</a></sup>.</p>
+<p>To solve this, I've set up a hazel rule<sup id="fnref:rule"><a class="footnote-ref" href="#fn:rule">3</a></sup> to copy over all the files. </p>
+<p><img alt="Hazel rule to clone over all the posts and images for the blog" src="../../images/hazel_rule_to_clone_posts.png"></p>
 <p>After that, I can run a local server to see what the post looks like after being processed.</p>
-<figure><img alt="An iTerm window with the commands that I use to run the development server" src="../../images/running_local_server.png"><figcaption>An iTerm window with the commands that I use to run the development server</figcaption>
-</figure>
+<p><img alt="An iTerm window with the commands that I use to run the development server" src="../../images/running_local_server.png"></p>
 <p>Which leads us to the thing that I created. An alias in my environment to rsync the finished website and push it to github to host.</p>
-<div class="highlight"><pre><span></span>alias pub=&quot;pelican; rsync -r /Users/mandaris/Projects/quotidian/output/* ~/Projects/mandaris.github.com&quot;
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>alias pub=&quot;pelican; rsync -r /Users/mandaris/Projects/quotidian/output/* ~/Projects/mandaris.github.com&quot;
+</code></pre></div>
 
 <p>Well, that was a longer explanation that I was thinking it would be. </p>
 <div class="footnote">
 <hr>
 <ol>
-<li id="fn-MindNode">
-<p>I do have iThoughts as well, but MindNode is better looking.&#160;<a class="footnote-backref" href="#fnref-MindNode" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<li id="fn:MindNode">
+<p>I do have iThoughts as well, but MindNode is better looking.&#160;<a class="footnote-backref" href="#fnref:MindNode" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
-<li id="fn-marked">
-<p>Although, I do use Marked.app to look at the post as I'm writing it. I haven't commited myself to making the my theme and processors work in the appplication.&#160;<a class="footnote-backref" href="#fnref-marked" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+<li id="fn:marked">
+<p>Although, I do use Marked.app to look at the post as I'm writing it. I haven't commited myself to making the my theme and processors work in the appplication.&#160;<a class="footnote-backref" href="#fnref:marked" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
-<li id="fn-rule">
-<p>To be honest, this hasn't been working like I want it to. I have to manually run the rule. I'll make it a OmniFocus project to get the rules to work properly. I tried using rsync, but got some weird errors when I attempted to put the configuration into github.&#160;<a class="footnote-backref" href="#fnref-rule" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+<li id="fn:rule">
+<p>To be honest, this hasn't been working like I want it to. I have to manually run the rule. I'll make it a OmniFocus project to get the rules to work properly. I tried using rsync, but got some weird errors when I attempted to put the configuration into github.&#160;<a class="footnote-backref" href="#fnref:rule" title="Jump back to footnote 3 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
   </div>
 <p class="articleFooterP">Category:
-	<a class="p-category" href="https://mandaris.github.io/category/tech.html">
+	<a class="p-category" href="../../category/tech.html">
     <span itemprop="articleSection">tech</span>
   </a>
   <span class="rightside">
     <time
       class="dt-published"
       datetime="2016-12-08T17:08:11-08:00"
-      itemprop="dateCreated datePublished pubdate">
-        Thu 08 December 2016
+      itemprop="dateCreated datePublished">
+        December 08, 2016
     </time>
   </span>
   <br />  <span itemprop="keywords">
       <a
         class="tag"
         rel="category tag"
-        href="https://mandaris.github.io/tag/unix.html">
+        href="../../tag/unix.html">
           unix
       </a>
       <a
         class="tag"
         rel="category tag"
-        href="https://mandaris.github.io/tag/creative-challenge.html">
+        href="../../tag/creative-challenge.html">
           creative challenge
       </a>
   </span>
 </p>
+
+<details itemprop="author" itemscope itemtype="https://schema.org/Person" class="p-author h-card hidden">
+  <summary itemprop="name" class="p-name">Mandaris</summary>  <img itemprop="image" class="u-photo"
+    src="https://secure.gravatar.com/avatar/03fb367dd4c7aea56f77dfa496db3725"
+    alt="Author's Profile." />
+  <p class="p-note">Mandaris is someone who strives to make himself into a better person</p>
+  <p><a itemprop="url" class="u-url u-uid"
+    rel="me" href="https://mandarismoore.com"
+    title="Author Website.">
+    Mandaris</a></p>
+
+
+</details>
+
 </article>
+
 
 <footer itemscope itemtype="https://schema.org/WPFooter"
     role="contentinfo" class="baseFooter">
+  <hr />
   <p>All works created by
     <span itemprop="author" itemscope itemtype=https://schema.org/Person>
-    <span class="p-author h-card" itemprop="name">Mandaris</span></span>.
-  </p>
-  <p>Powered by <a href="http://pelican.readthedocs.org">Pelican</a></p>
+    <span class="p-author h-card p-name" itemprop="name">Mandaris</span></span>.
+
+  <span class="rightside">Powered by <a href="http://pelican.readthedocs.org">Pelican</a>.</span></p>
 </footer>
 </body>
 </html>

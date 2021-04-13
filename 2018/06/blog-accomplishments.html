@@ -12,19 +12,19 @@
 <meta name="author" class="p-author h-card" content="Mandaris" />
 <meta property="site_name" content="Mandaris Moore" />
 <meta name="description" content="I think I'm ready to mark my second pelican theme 1.0 as "Feature Complete" today! I started off with -what I thought- a simple premise of having a site site took a lot longer than I expected but I'm pretty happy with the site for now. But before I …" />
-<base href="https://mandaris.github.io" />
+<base href="../.." />
 <meta name="generator" content="Pelican" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="theme-color" content="#1b5a53" />
-<link rel="stylesheet" type="text/css" href="/theme/css/main.css" />
+<link rel="stylesheet" type="text/css" href="../../theme/css/main.css" />
 <link rel="shortcut icon" href="/favicon.ico" />
 <link rel="icon" type="image/png" href="/favicon.png" />
 <link rel="apple-touch-icon-precomposed"
       href="/apple-touch-icon-precomposed.png" />
 
 <!-- Feed information -->
-<link href="https://mandaris.github.io/feeds/atom.xml"
+<link href="http://mandaris.github.io/feeds/atom.xml"
       type="application/atom+xml"
       rel="alternate" title="Mandaris Moore ALL Atom Feed" />
 
@@ -32,8 +32,8 @@
 <!-- OpenGraph Info -->
 <meta property="og:title" content="Blog Accomplishments" />
 <meta property="og:type" content="article" />
-<meta property="og:image" content="https://mandaris.github.io//images/blog-accomplishments.png" />
-<meta property="og:url" content="https://mandaris.github.io/2018/06/blog-accomplishments.html" />
+<meta property="og:image" content="http://mandaris.github.io//images/blog-accomplishments.png" />
+<meta property="og:url" content="http://mandaris.github.io/2018/06/blog-accomplishments.html" />
 <meta property="og:description" content="I think I&#39;m ready to mark my second pelican theme 1.0 as &#34;Feature Complete&#34; today! I started off with -what I thought- a simple premise of having a site site took a lot longer than I expected but I&#39;m pretty happy with the site for now. But before I …" />
 <meta property="og:locale" content="en_US" />
 <meta property="og:site_name" content="Mandaris Moore" />
@@ -57,26 +57,27 @@
 </head>
 
 <body itemscope itemtype="https://schema.org/Blog">
-<meta itemprop="description" content="The personal website for Mandaris Moore." />
+<meta itemprop="description" content="The Pelican website for Mandaris Moore." />
 <header role="banner">
-<h1 class="websitetitle"><a href="https://mandaris.github.io">Mandaris Moore</a></h1>
+<h1 class="websitetitle"><a href="../..">Mandaris Moore</a></h1>
 <nav itemscope itemtype="https://schema.org/SiteNavigationElement"
     class="navmenu" id="navmenu" >
 <ul>
   <li>
-    <a class="navitemlink" href="https://mandaris.github.io/archives.html">Archive</a>
+    <a class="navitemlink" href="../../archives.html">Archive</a>
   </li>
   <li>
-    <a class="navitemlink" href="https://mandaris.github.io/pages/about.html">About</a>
+    <a class="navitemlink" href="../../pages/about.html">About</a>
   </li>
   <li>
-    <a class="navitemlink" href="https://mandaris.github.io/pages/projects.html">Projects</a>
+    <a class="navitemlink" href="../../pages/projects.html">Projects</a>
   </li>
 </ul>
 </nav>
+<hr />
 </header>
 
-<hr />
+
 <article
   class="hentry h-entry post main-content"
   itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
@@ -84,7 +85,7 @@
 
 <header class="post-header">
   <h2
-    itemprop="headline title p-name name"
+    itemprop="headline name"
     class="title p-name post-title">
     <a
       rel="bookmark"
@@ -97,26 +98,22 @@
   </h2>
 </header>  <div class="arcticle-body e-content" itemprop="articleBody">
     <p>I think I'm ready to mark my second pelican theme 1.0 as "Feature Complete" today! I started off with -what I thought- a simple premise of having a site site took a lot longer than I expected but I'm pretty happy with the site for now.  But before I tag it and start working on 2.0, I want to go over what I've done so far.</p>
-<figure><img alt="Visualization of what I've accomplished with the blog." src="/images/blog-accomplishments.png"> <figcaption>Visualization of what I've accomplished with the blog.</figcaption>
-</figure>
+<p><img alt="Visualization of what I've accomplished with the blog." src="/images/blog-accomplishments.png"> </p>
 <h3 id="parsable">Parsable</h3>
 <p>The first thing I started researching was how to make the site parsable by webcrawlers. Although it's a personal blog, I wanted people to be able to find the content easily.</p>
 <h4 id="opengraph">OpenGraph</h4>
-<p>OpenGraph was the first thing that I came across and appealed to me the most because it's the preferred way of parsing data for Twitter<sup id="fnref-twitter"><a class="footnote-ref" href="#fn-twitter">1</a></sup>.</p>
+<p>OpenGraph was the first thing that I came across and appealed to me the most because it's the preferred way of parsing data for Twitter<sup id="fnref:twitter"><a class="footnote-ref" href="#fn:twitter">1</a></sup>.</p>
 <p>I found it especially rewarding that the tags are also parsed by facebook and my new favorite social network <a href="https://slack.com">slack</a>. </p>
 <p>One of the technical difficulties that I ran into when adding OpenGraph tags was adding the images. The specification for OpenGraph states that images to be used need to be added as meta data in the head of the html. This can be a pain as the other data like title and date can be pulled from the article itself and I didn't want to go through all my old posts to add image meta data.</p>
 <p>Luckily, the  github user WhiskyEchoBravo had a <a href="https://github.com/whiskyechobravo/pelican-open_graph">project that searched the content of the post for images</a> and added the first to the list of tags. I'm a little proud that I helped with issues with <a href="https://github.com/whiskyechobravo/pelican-open_graph/commit/61248d805588245a9fc1dc4eda56cff1f5a9d8fa">pages</a>. </p>
 <p>Afterwards, I did run into some frustration when the images that I added to posts wouldn't be as big as I expected.</p>
-<figure><img alt="Post in slack with a small image." src="images/slack-small-image.png"><figcaption>Post in slack with a small image.</figcaption>
-</figure>
+<p><img alt="Post in slack with a small image." src="images/slack-small-image.png"></p>
 <p>Ultimately, I think it's because of the mixing and matching of having OpenGraph and twitter specific tags and was solved it by making sure I used the following for my twitter card.</p>
-<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;twitter:card&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;summary_large_image&quot;</span> <span class="p">/&gt;</span>
-</pre></div>
-
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;twitter:card&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;summary_large_image&quot;</span> <span class="p">/&gt;</span>
+</code></pre></div>
 
 <p>And now I get the post to unfurl nicely.</p>
-<figure><img alt="Post in slack with a large image." src="images/slack-large-image.png"><figcaption>Post in slack with a large image.</figcaption>
-</figure>
+<p><img alt="Post in slack with a large image." src="images/slack-large-image.png"></p>
 <h4 id="schemaorg">Schema.org</h4>
 <p>This is the styling used by both Bing and Google. I put this in as a challenge to myself to make it work in both instances. I leaned a lot from the example on <a href="https://orbitingweb.com/blog/schema-org-microdata-guide/" title="Complete Schema.Org and Microdata Tutorial for beginners">OrbitingWeb</a> and refined what I was working with using <a href="https://github.com/philwareham/schema-microdata-examples/blob/master/blog.html" title="Schema.org microdata examples">another example</a> that I found on github.</p>
 <h3 id="valid-semantic-tags">Valid Semantic Tags</h3>
@@ -124,11 +121,11 @@
 <p>I'm willing to just attribute it to my desire to have my own style or maybe just inexperience, but I'm happy to report that the site passes html validation except for the OpenGraph definitions found in the header.</p>
 <h4 id="figure-it-out">figure it out</h4>
 <p>One technical hurdle I ran into was that I wanted my images to be wrapped in the <code>&lt;figure&gt;</code> tag and also have a <code>&lt;figcaption&gt;</code> tag that would have the alternative text. </p>
-<p>I searched for a plugin for pelican<sup id="fnref-figure-ref"><a class="footnote-ref" href="#fn-figure-ref">2</a></sup>, but the closest thing I could find was <a href="https://github.com/getpelican/pelican-plugins/tree/master/liquid_tags">liquid tags</a> at the time<sup id="fnref-liquid"><a class="footnote-ref" href="#fn-liquid">3</a></sup>.  </p>
+<p>I searched for a plugin for pelican<sup id="fnref:figure-ref"><a class="footnote-ref" href="#fn:figure-ref">2</a></sup>, but the closest thing I could find was <a href="https://github.com/getpelican/pelican-plugins/tree/master/liquid_tags">liquid tags</a> at the time<sup id="fnref:liquid"><a class="footnote-ref" href="#fn:liquid">3</a></sup>.  </p>
 <p>I did find jdittrich <a href="https://github.com/jdittrich/figureAltCaption">figureAltCaption</a> project on github which was a extension for the <a href="https://python-markdown.github.io/">python-markdown</a>  that pelican uses. I even submitted a <a href="https://github.com/jdittrich/figureAltCaption/pull/3" title="Still wait to be pulled into the main branch">pull request</a>  to allow it to do reference links!</p>
 <p>There was a little confusion on getting it to work because pelican has been changing since some of these plugins were created.</p>
 <p>Long story short, I had to add the following to my <code>pelicanconfig.py</code> to get it to work.</p>
-<div class="highlight"><pre><span></span>   <span class="c1"># Markdown Plugins</span>
+<div class="highlight"><pre><span></span><code>   <span class="c1"># Markdown Plugins</span>
 <span class="n">MARKDOWN</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">&#39;extension_configs&#39;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s1">&#39;markdown.extensions.codehilite&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;css_class&#39;</span><span class="p">:</span> <span class="s1">&#39;highlight&#39;</span><span class="p">},</span>
@@ -138,15 +135,13 @@
 </span>    <span class="p">},</span>
     <span class="s1">&#39;output_format&#39;</span><span class="p">:</span> <span class="s1">&#39;html5&#39;</span><span class="p">,</span>
 <span class="p">}</span>
-</pre></div>
-
+</code></pre></div>
 
 <h3 id="easy-to-share">Easy to share</h3>
 <p>I wrote down that I wanted the site to be easy to share and it is when you look at the amount of tags and metadata that is in every page. </p>
 <p>At one point, I wanted to add share buttons, but -with the rise in concerns about privacy- I wanted the users of the site to be the ones who would share it.</p>
 <p>Also, I'm still working on color schemes so the buttons might clash with whatever I end up with.</p>
-<figure><img alt="Clash of the social buttons!" src="images/supported-social-networks.jpg" title="The number of ways to share an article is too dang high!"><figcaption>Clash of the social buttons!</figcaption>
-</figure>
+<p><img alt="Clash of the social buttons!" src="images/supported-social-networks.jpg" title="The number of ways to share an article is too dang high!"></p>
 <h3 id="accessible">Accessible</h3>
 <p>One of the underlining principles of this site design is that I wanted it to be accessible to as many people as possible. It's part of the reason that I've worked so hard on making sure that I included so many semantic tags. I didn't think that this was particularly hard to do when you understand what needs to happen before you begin. </p>
 <p>The theme doesn't have any errors at this point, but does loose some points because of the way that markdown headers are handled and the fact that I picked a low contrast color for my links. I'll fix it soon.</p>
@@ -164,47 +159,47 @@
 <div class="footnote">
 <hr>
 <ol>
-<li id="fn-twitter">
-<p>Twitter is still my social network of choice and -despite it's flaws- is not as creepy as facebook.&#160;<a class="footnote-backref" href="#fnref-twitter" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<li id="fn:twitter">
+<p>Twitter is still my social network of choice and -despite it's flaws- is not as creepy as facebook.&#160;<a class="footnote-backref" href="#fnref:twitter" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
-<li id="fn-figure-ref">
-<p>Seriously didn't see Chris MacMackin's <a href="https://github.com/cmacmackin/figure-ref" title="A Pelican plugin providing a referencing-system for figures, like that in LaTeX.">figure-ref</a> until I was writing this article. I'll have to look into it for my next version.&#160;<a class="footnote-backref" href="#fnref-figure-ref" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+<li id="fn:figure-ref">
+<p>Seriously didn't see Chris MacMackin's <a href="https://github.com/cmacmackin/figure-ref" title="A Pelican plugin providing a referencing-system for figures, like that in LaTeX.">figure-ref</a> until I was writing this article. I'll have to look into it for my next version.&#160;<a class="footnote-backref" href="#fnref:figure-ref" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
-<li id="fn-liquid">
-<p>I used this to make my previous theme <a href="https://github.com/mandaris/TuftePelican" title="Abandoned themes that still haunt me">Tufte</a> and did not want to go down that road twice. It is very specific to pelican and I didn't want to dive into more regular expressions when I <em>knew</em> there had to be a solution already created.&#160;<a class="footnote-backref" href="#fnref-liquid" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+<li id="fn:liquid">
+<p>I used this to make my previous theme <a href="https://github.com/mandaris/TuftePelican" title="Abandoned themes that still haunt me">Tufte</a> and did not want to go down that road twice. It is very specific to pelican and I didn't want to dive into more regular expressions when I <em>knew</em> there had to be a solution already created.&#160;<a class="footnote-backref" href="#fnref:liquid" title="Jump back to footnote 3 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
   </div>
 <p class="articleFooterP">Category:
-	<a class="p-category" href="https://mandaris.github.io/category/blogging.html">
+	<a class="p-category" href="../../category/blogging.html">
     <span itemprop="articleSection">blogging</span>
   </a>
   <span class="rightside">
     <time
       class="dt-published"
       datetime="2018-06-26T19:16:06-07:00"
-      itemprop="dateCreated datePublished pubdate">
-        Tue 26 June 2018
+      itemprop="dateCreated datePublished">
+        June 26, 2018
     </time>
   </span>
   <br />  <span itemprop="keywords">
       <a
         class="tag"
         rel="category tag"
-        href="https://mandaris.github.io/tag/accomplishments.html">
+        href="../../tag/accomplishments.html">
           accomplishments
       </a>
       <a
         class="tag"
         rel="category tag"
-        href="https://mandaris.github.io/tag/python.html">
+        href="../../tag/python.html">
           python
       </a>
       <a
         class="tag"
         rel="category tag"
-        href="https://mandaris.github.io/tag/html.html">
+        href="../../tag/html.html">
           html
       </a>
   </span>
@@ -213,19 +208,35 @@
       class="dt-updated"
   	  datetime="2019-05-29T22:02:30-07:00"
   	  itemprop="dateModified">
-        Wed 29 May 2019
+        June 26, 2018
       </time>
   </span>
 </p>
+
+<details itemprop="author" itemscope itemtype="https://schema.org/Person" class="p-author h-card hidden">
+  <summary itemprop="name" class="p-name">Mandaris</summary>  <img itemprop="image" class="u-photo"
+    src="https://secure.gravatar.com/avatar/03fb367dd4c7aea56f77dfa496db3725"
+    alt="Author's Profile." />
+  <p class="p-note">Mandaris is someone who strives to make himself into a better person</p>
+  <p><a itemprop="url" class="u-url u-uid"
+    rel="me" href="https://mandarismoore.com"
+    title="Author Website.">
+    Mandaris</a></p>
+
+
+</details>
+
 </article>
+
 
 <footer itemscope itemtype="https://schema.org/WPFooter"
     role="contentinfo" class="baseFooter">
+  <hr />
   <p>All works created by
     <span itemprop="author" itemscope itemtype=https://schema.org/Person>
-    <span class="p-author h-card" itemprop="name">Mandaris</span></span>.
-  </p>
-  <p>Powered by <a href="http://pelican.readthedocs.org">Pelican</a></p>
+    <span class="p-author h-card p-name" itemprop="name">Mandaris</span></span>.
+
+  <span class="rightside">Powered by <a href="http://pelican.readthedocs.org">Pelican</a>.</span></p>
 </footer>
 </body>
 </html>

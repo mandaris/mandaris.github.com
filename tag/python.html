@@ -11,20 +11,20 @@
 <title>python - Mandaris Moore</title>
 <meta name="author" class="p-author h-card" content="Mandaris" />
 <meta property="site_name" content="Mandaris Moore" />
-<meta name="description" content="The personal website for Mandaris Moore." />
-<base href="https://mandaris.github.io" />
+<meta name="description" content="The Pelican website for Mandaris Moore." />
+<base href=".." />
 <meta name="generator" content="Pelican" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="theme-color" content="#1b5a53" />
-<link rel="stylesheet" type="text/css" href="/theme/css/main.css" />
+<link rel="stylesheet" type="text/css" href="../theme/css/main.css" />
 <link rel="shortcut icon" href="/favicon.ico" />
 <link rel="icon" type="image/png" href="/favicon.png" />
 <link rel="apple-touch-icon-precomposed"
       href="/apple-touch-icon-precomposed.png" />
 
 <!-- Feed information -->
-<link href="https://mandaris.github.io/feeds/atom.xml"
+<link href="http://mandaris.github.io/feeds/atom.xml"
       type="application/atom+xml"
       rel="alternate" title="Mandaris Moore ALL Atom Feed" />
 
@@ -32,10 +32,10 @@
 <!-- OpenGraph Info -->
 <meta property="og:title" content="Mandaris Moore" />
 <meta property="og:type" content="website" />
-<meta property="og:description" content="The personal website for Mandaris Moore."/>
-<meta property="og:url" content="https://mandaris.github.io" />
+<meta property="og:description" content="The Pelican website for Mandaris Moore."/>
+<meta property="og:url" content=".." />
 <meta property="og:locale" content="en-us" />
-<meta property="og:image" content="https://mandaris.github.io/favicon.png" />
+<meta property="og:image" content="../favicon.png" />
 <meta property="og:image:alt" content="A person in a gear." />
 <!-- Micro.blog User Name -->
 <link href="https://micro.blog/mandaris" rel="me" />
@@ -51,34 +51,38 @@
 </head>
 
 <body itemscope itemtype="https://schema.org/Blog">
-<meta itemprop="description" content="The personal website for Mandaris Moore." />
+<meta itemprop="description" content="The Pelican website for Mandaris Moore." />
 <header role="banner">
-<h1 class="websitetitle"><a href="https://mandaris.github.io">Mandaris Moore</a></h1>
+<h1 class="websitetitle"><a href="..">Mandaris Moore</a></h1>
 <nav itemscope itemtype="https://schema.org/SiteNavigationElement"
     class="navmenu" id="navmenu" >
 <ul>
   <li>
-    <a class="navitemlink" href="https://mandaris.github.io/archives.html">Archive</a>
+    <a class="navitemlink" href="../archives.html">Archive</a>
   </li>
   <li>
-    <a class="navitemlink" href="https://mandaris.github.io/pages/about.html">About</a>
+    <a class="navitemlink" href="../pages/about.html">About</a>
   </li>
   <li>
-    <a class="navitemlink" href="https://mandaris.github.io/pages/projects.html">Projects</a>
+    <a class="navitemlink" href="../pages/projects.html">Projects</a>
   </li>
 </ul>
 </nav>
+<hr />
 </header>
 
-<hr />
-<main class="articlelisting container">
+
+<main class="articlelisting content">
+
+
+
 <article
-  class="post hentry h-entry content"
+  class="post hentry h-entry"
   itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
 
 <header class="post-header">
   <h2
-    itemprop="headline title p-name name"
+    itemprop="headline name"
     class="title p-name post-title">
     <a
       rel="bookmark"
@@ -92,68 +96,53 @@
 </header><div class="e-content post-body" itemprop="articleBody">
 <p>I thought I'd document what I've learned about setting up Sublime Text 3 to work with a python virtual environment so that I don't have to look this up multiple times. Hopefully someone else will find this information helpful as well.</p>
 <h4 id="set-up-the-project-area">Set up the project area</h4>
-<figure><img alt="All projects start in a project folder that I set up." src="/images/setting-up-python-and-sublime/set-up-the-project-area.png" title="Set up the project area."><figcaption></figcaption>
-</figure>
+<p><img alt="All projects start in a project folder that I set up." src="/images/setting-up-python-and-sublime/set-up-the-project-area.png" title="Set up the project area."></p>
 <p>I like to keep all my projects in a parent folder. This way applications like Timing can track that I'm being productive in my chosen terminal application.</p>
 <h4 id="creating-the-virtual-environment">Creating the virtual environment</h4>
-<figure><img alt="Using the mkvirtualenv command to create a new environment." src="/images/setting-up-python-and-sublime/creating-the-virtual-environment.png" title="Creating the virtual environment."><figcaption></figcaption>
-</figure>
-<p>I use the <a href="https://virtualenvwrapper.readthedocs.io/en/latest/#">mkvirtualenv</a> wrapper scripts to make the virtual environment. All the projects that I'm currently working with are using virtualenv because they are supporting python 2<sup id="fnref-python2"><a class="footnote-ref" href="#fn-python2">1</a></sup>.</p>
+<p><img alt="Using the mkvirtualenv command to create a new environment." src="/images/setting-up-python-and-sublime/creating-the-virtual-environment.png" title="Creating the virtual environment."></p>
+<p>I use the <a href="https://virtualenvwrapper.readthedocs.io/en/latest/#">mkvirtualenv</a> wrapper scripts to make the virtual environment. All the projects that I'm currently working with are using virtualenv because they are supporting python 2<sup id="fnref:python2"><a class="footnote-ref" href="#fn:python2">1</a></sup>.</p>
 <h4 id="make-sure-that-the-environment-is-set-up-without-errors">Make sure that the environment is set up without errors</h4>
-<figure><img alt="Verifying no errors in environment creation." src="/images/setting-up-python-and-sublime/make-sure-that-the-environment-is-set-up-without-errors.png" title="No errors during creation."><figcaption></figcaption>
-</figure>
+<p><img alt="Verifying no errors in environment creation." src="/images/setting-up-python-and-sublime/make-sure-that-the-environment-is-set-up-without-errors.png" title="No errors during creation."></p>
 <p>I like to make sure that it's setting up my expected version of python during this step.</p>
 <h4 id="make-the-activate-script-executable">Make the activate script executable</h4>
-<figure><img alt="Make sure that the environment comes up correctly." src="/images/setting-up-python-and-sublime/make-the-activate-script-executable.png" title="Make the activate script executable."><figcaption></figcaption>
-</figure>
+<p><img alt="Make sure that the environment comes up correctly." src="/images/setting-up-python-and-sublime/make-the-activate-script-executable.png" title="Make the activate script executable."></p>
 <p>I currently see a problem where this script doesn't execute properly. I make sure that it can run. While I'm in that directory I check the versions of pip and python as well.</p>
 <p>Note: My Virtualenv isn't in a hidden directory. </p>
 <h4 id="test-that-the-activate-really-works">Test that the activate really works</h4>
-<figure><img alt="Test that the activate script is executable." src="/images/setting-up-python-and-sublime/test-that-the-activate-really-works.png" title="Source the activate script"><figcaption></figcaption>
-</figure>
+<p><img alt="Test that the activate script is executable." src="/images/setting-up-python-and-sublime/test-that-the-activate-really-works.png" title="Source the activate script"></p>
 <p>60% of the time it works all the time. I don't understand the convention of having a script without the file extension.</p>
 <h4 id="create-a-directory-for-this-specific-project">Create a directory for this specific project.</h4>
-<figure><img alt="Create a directory for this specific project." src="/images/setting-up-python-and-sublime/create-a-directory-for-this-specific-project.png" title="Making a directory and switching to it."><figcaption></figcaption>
-</figure>
+<p><img alt="Create a directory for this specific project." src="/images/setting-up-python-and-sublime/create-a-directory-for-this-specific-project.png" title="Making a directory and switching to it."></p>
 <p>Once again, I place this in my home project directory. I like to make sure that I have everything in it's own place so I don't have to think about where stuff is.</p>
 <h4 id="edit-the-postactivate-for-the-virtualenv">Edit the postactivate for the virtualenv</h4>
-<figure><img alt="Using vi to edit postactivate for the virtualenv." src="/images/setting-up-python-and-sublime/edit-the-the-postactivate-for-the-virtualenv.png" title="For simple edits, I prefer vi versus opening a text editor."><figcaption></figcaption>
-</figure>
+<p><img alt="Using vi to edit postactivate for the virtualenv." src="/images/setting-up-python-and-sublime/edit-the-the-postactivate-for-the-virtualenv.png" title="For simple edits, I prefer vi versus opening a text editor."></p>
 <p>I like to read over it and it acts as a double check that it was generated correctly.</p>
 <h4 id="add-a-command-to-the-postactivate">Add a command to the postactivate</h4>
-<figure><img alt="Adding a command to the postactivate script." src="/images/setting-up-python-and-sublime/add-a-command-to-the-postactivate.png" title="Change directories to the project on activate."><figcaption></figcaption>
-</figure>
+<p><img alt="Adding a command to the postactivate script." src="/images/setting-up-python-and-sublime/add-a-command-to-the-postactivate.png" title="Change directories to the project on activate."></p>
 <p>I make my virtual environments switch to the project directory that I'm working in when activated. This is just a convinence for me, but I've seen tutorials on how to make it so the virtual environment is brought up when you switch to the directory.</p>
 <h4 id="check-that-the-environment-is-pointing-to-the-correct-version-of-python">Check that the environment is pointing to the correct version of python</h4>
-<figure><img alt="Check that it is _not_ using the systems version of python." src="/images/setting-up-python-and-sublime/check-that-the-environment-is-pointing-to-the-correct-version-of-python.png" title="I want to make sure that I'm pointing to the correct version."><figcaption></figcaption>
-</figure>
+<p><img alt="Check that it is _not_ using the systems version of python." src="/images/setting-up-python-and-sublime/check-that-the-environment-is-pointing-to-the-correct-version-of-python.png" title="I want to make sure that I'm pointing to the correct version."></p>
 <p>You want to make absolutely sure that this is using the virtual env's python and not your system's. I think this is pretty important as <a href="https://www.python.org/dev/peps/pep-0373/" title="Python 2.7 Release Schedule">python 2 is moving to end of life</a>. </p>
 <h4 id="run-pip-to-install-any-needed-libraries">Run pip to install any needed libraries.</h4>
-<figure><img alt="Call python to run the pip module to install." src="/images/setting-up-python-and-sublime/run-pip-to-install-any-needed-libraries.png" title="Have python call the pip module."><figcaption></figcaption>
-</figure>
+<p><img alt="Call python to run the pip module to install." src="/images/setting-up-python-and-sublime/run-pip-to-install-any-needed-libraries.png" title="Have python call the pip module."></p>
 <p>I <a href="https://snarky.ca/why-you-should-use-python-m-pip/">read about it done this way</a> because it forces the environment to place the needed libraries within the correct site-packages folder.</p>
 <h4 id="checking-that-the-installation-worked">Checking that the installation worked</h4>
-<figure><img alt="Review the installation output." src="/images/setting-up-python-and-sublime/checking-that-the-installation-worked.png" title="Check the output for errors"><figcaption></figcaption>
-</figure>
+<p><img alt="Review the installation output." src="/images/setting-up-python-and-sublime/checking-that-the-installation-worked.png" title="Check the output for errors"></p>
 <p>Hopefully everything installed cleanly or at least gave an error on why it didn't work.</p>
 <h4 id="clone-the-project-into-the-directory">Clone the project into the directory</h4>
-<figure><img alt="Place whatever project that I'm working on in the directory." src="/images/setting-up-python-and-sublime/clone-the-project-into-the-directory.png" title="The directory and environment should be able to handle any project at this point."><figcaption></figcaption>
-</figure>
+<p><img alt="Place whatever project that I'm working on in the directory." src="/images/setting-up-python-and-sublime/clone-the-project-into-the-directory.png" title="The directory and environment should be able to handle any project at this point."></p>
 <p>In this case, I've got a new python project that I created on github. I create the project on github so that I could use there basic python template and <a href="https://help.github.com/en/actions">github actions</a>. </p>
 <p>Once again, I do this so that I can differentiate multiple projects and versions. We all have projects that aren't finished and this helps me by eliminating wondering what versions things are at.</p>
 <h4 id="check-that-all-the-files-are-there">Check that all the files are there</h4>
-<figure><img alt="Your project folder is going to be different." src="/images/setting-up-python-and-sublime/check-that-all-the-files-are-there.png" title="This was the beginning of a new project"><figcaption></figcaption>
-</figure>
+<p><img alt="Your project folder is going to be different." src="/images/setting-up-python-and-sublime/check-that-all-the-files-are-there.png" title="This was the beginning of a new project"></p>
 <p>It's all part of "trust-but-verify". I've seen a lot of misspellings.</p>
 <h4 id="open-the-folder-in-sublime-text">Open the folder in Sublime Text</h4>
-<figure><img alt="Opening the project in Sublime Text from the command line." src="/images/setting-up-python-and-sublime/open-the-folder-in-sublime-text.png" title="I prefer Sublime Text."><figcaption></figcaption>
-</figure>
+<p><img alt="Opening the project in Sublime Text from the command line." src="/images/setting-up-python-and-sublime/open-the-folder-in-sublime-text.png" title="I prefer Sublime Text."></p>
 <p>I've set my mac up to use Sublime Text from the <a href="https://www.sublimetext.com/docs/3/osx_command_line.html">command line</a>.</p>
 <h4 id="set-up-the-sublime-text-project">Set up the Sublime Text project</h4>
-<figure><img alt="Sublime Text showing the build system." src="/images/setting-up-python-and-sublime/set-up-the-sublime-text-project.png" title="Sublime Text build system for this project"><figcaption></figcaption>
-</figure>
+<p><img alt="Sublime Text showing the build system." src="/images/setting-up-python-and-sublime/set-up-the-sublime-text-project.png" title="Sublime Text build system for this project"></p>
 <p>When you create a new Sublime Text project, you can specify how it handles builds and tests. This allows me to specify the exact version of python without having to go to the command line. </p>
-<div class="highlight"><pre><span></span>{
+<div class="highlight"><pre><span></span><code>{
     &quot;build_systems&quot;:
     [
         {
@@ -176,8 +165,7 @@
         &quot;test_command&quot;: &quot;~/Virtualenvs/MK-Img2fig/bin/python -m unittest discover&quot;
     }
 }
-</pre></div>
-
+</code></pre></div>
 
 <p>After this, I can iterate with my code knowing that everything is set up properly.</p>
 <h3 id="conclusion">Conclusion</h3>
@@ -185,8 +173,8 @@
 <div class="footnote">
 <hr>
 <ol>
-<li id="fn-python2">
-<p>This might change after January 1st according to <a href="https://www.python.org/dev/peps/pep-0373/" title="https://www.python.org/dev/peps/pep-0373/">PEP 373</a>.&#160;<a class="footnote-backref" href="#fnref-python2" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<li id="fn:python2">
+<p>This might change after January 1st according to <a href="https://www.python.org/dev/peps/pep-0373/" title="https://www.python.org/dev/peps/pep-0373/">PEP 373</a>.&#160;<a class="footnote-backref" href="#fnref:python2" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
@@ -202,42 +190,55 @@
 </p>
 <footer>
 <p class="articleFooterP">Category:
-	<a class="p-category" href="https://mandaris.github.io/category/coding.html">
+	<a class="p-category" href="../category/coding.html">
     <span itemprop="articleSection">coding</span>
   </a>
   <span class="rightside">
     <time
       class="dt-published"
       datetime="2019-12-29T14:18:59-08:00"
-      itemprop="dateCreated datePublished pubdate">
-        Sun 29 December 2019
+      itemprop="dateCreated datePublished">
+        December 29, 2019
     </time>
   </span>
   <br />  <span itemprop="keywords">
       <a
         class="tag"
         rel="category tag"
-        href="https://mandaris.github.io/tag/python.html">
+        href="../tag/python.html">
           python
       </a>
       <a
         class="tag"
         rel="category tag"
-        href="https://mandaris.github.io/tag/sublime-text.html">
+        href="../tag/sublime-text.html">
           sublime text
       </a>
   </span>
 </p>
+
+<details itemprop="author" itemscope itemtype="https://schema.org/Person" class="p-author h-card hidden">
+  <summary itemprop="name" class="p-name">Mandaris</summary>  <img itemprop="image" class="u-photo"
+    src="https://secure.gravatar.com/avatar/03fb367dd4c7aea56f77dfa496db3725"
+    alt="Author's Profile." />
+  <p class="p-note">Mandaris is someone who strives to make himself into a better person</p>
+  <p><a itemprop="url" class="u-url u-uid"
+    rel="me" href="https://mandarismoore.com"
+    title="Author Website.">
+    Mandaris</a></p>
+
+
+</details>
 </footer>
 </article>
 <hr />
 <article
-  class="post hentry h-entry content"
+  class="post hentry h-entry"
   itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
 
 <header class="post-header">
   <h2
-    itemprop="headline title p-name name"
+    itemprop="headline name"
     class="title p-name post-title">
     <a
       rel="bookmark"
@@ -250,22 +251,20 @@
   </h2>
 </header><div class="e-content post-body" itemprop="articleBody">
 <p>In my <a href="/2018/06/blog-accomplishments.html" title="Blog Accomplishments «Mandaris Moore»">last post</a>, I left off with a list of things that I wanted to work on for the next release of the design of the blog. I'm still changing the header at the top of the page and I've been working on improving the contrast of the colors you see for links to make it easier to read. Something you can't spot just by looking is the fact that <code>&lt;h1&gt; - &lt;h3&gt;</code> tags don't correspond to the breakdown of the syntax of the rest of the site.</p>
-<figure><img alt="A small sample of the code that was being generated." src="images/sample-of-previous-syntax.png" title="Generated HTML in Sublime looks cool!"><figcaption>A small sample of the code that was being generated.</figcaption>
-</figure>
+<p><img alt="A small sample of the code that was being generated." src="images/sample-of-previous-syntax.png" title="Generated HTML in Sublime looks cool!"></p>
 <h3 id="what-do-i-see-on-the-internet">What do I see on the internet</h3>
 <p>I feel that a lot of the sites that are on the internet only use the <code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code>, <code>&lt;h3&gt;</code> tags and looking at some of the templates that I've come across for pelican use css classes to differentiate them in the design. </p>
-<p>I don't have a problem with that, but I felt that it doesn't help those that might be using some kind of screen reader or parsing system<sup id="fnref-seo"><a class="footnote-ref" href="#fn-seo">1</a></sup>.</p>
+<p>I don't have a problem with that, but I felt that it doesn't help those that might be using some kind of screen reader or parsing system<sup id="fnref:seo"><a class="footnote-ref" href="#fn:seo">1</a></sup>.</p>
 <h3 id="searching-for-a-solution">Searching for a solution</h3>
 <p>Once again, I started looking for a place where this had already been fixed and quickly found one that would make sure that the html that <a href="http://docs.getpelican.com/en/stable/index.html">python-markdown</a> would give me would match what I was expecting to give to my <a href="https://github.com/mandaris/modest" title="A very simple template for pelican">template</a>.</p>
 <p><a href="https://github.com/cprieto">Christian Prieto</a> had already come up with this <a href="https://github.com/cprieto/mdx_downheader" title="Python Markdown Down Header Extension">handy solution</a> in 2016 and had put some tests and an example of how to incorporate it into pelican.</p>
 <h3 id="but-there-are-further-complications">But there are further complications</h3>
 <p>Unfortunately, pelican has changed since the original and I wasn't able to get the solution to work. The readme says to add the following:</p>
-<div class="highlight"><pre><span></span><span class="n">MD_EXTENSIONS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;downheader&#39;</span><span class="p">]</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">MD_EXTENSIONS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;downheader&#39;</span><span class="p">]</span>
+</code></pre></div>
 
-
-<p>But the latest documentation found <a href="http://docs.getpelican.com/en/stable/settings.html" title="Pelican Settings">here</a>, have the markdown default to be defined as a dictionary and not an array<sup id="fnref-doc"><a class="footnote-ref" href="#fn-doc">2</a></sup>. The simplest way to get it to work is to change your <code>pelicanconfig.py</code> to have the following code.</p>
-<div class="highlight"><pre><span></span><span class="c1"># Markdown Plugins</span>
+<p>But the latest documentation found <a href="http://docs.getpelican.com/en/stable/settings.html" title="Pelican Settings">here</a>, have the markdown default to be defined as a dictionary and not an array<sup id="fnref:doc"><a class="footnote-ref" href="#fn:doc">2</a></sup>. The simplest way to get it to work is to change your <code>pelicanconfig.py</code> to have the following code.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Markdown Plugins</span>
 <span class="n">MARKDOWN</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">&#39;extension_configs&#39;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s1">&#39;markdown.extensions.codehilite&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;css_class&#39;</span><span class="p">:</span> <span class="s1">&#39;highlight&#39;</span><span class="p">},</span>
@@ -275,11 +274,10 @@
 </span>    <span class="p">},</span>
     <span class="s1">&#39;output_format&#39;</span><span class="p">:</span> <span class="s1">&#39;html5&#39;</span><span class="p">,</span>
 <span class="p">}</span>
-</pre></div>
-
+</code></pre></div>
 
 <p>For me, I had to specify a value because the title of my site is in a <code>&lt;h1&gt;</code> tag and the article headers are in <code>&lt;h2&gt;</code>.</p>
-<div class="highlight"><pre><span></span><span class="c1"># Markdown Plugins</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Markdown Plugins</span>
 <span class="n">MARKDOWN</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">&#39;extension_configs&#39;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s1">&#39;markdown.extensions.codehilite&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;css_class&#39;</span><span class="p">:</span> <span class="s1">&#39;highlight&#39;</span><span class="p">},</span>
@@ -289,8 +287,7 @@
 </span>    <span class="p">},</span>
     <span class="s1">&#39;output_format&#39;</span><span class="p">:</span> <span class="s1">&#39;html5&#39;</span><span class="p">,</span>
 <span class="p">}</span>
-</pre></div>
-
+</code></pre></div>
 
 <p>I've since made a <a href="https://github.com/cprieto/mdx_downheader/pull/5">pull request</a> so that others can get around this as well.</p>
 <h3 id="conclusion">Conclusion</h3>
@@ -299,11 +296,11 @@
 <div class="footnote">
 <hr>
 <ol>
-<li id="fn-seo">
-<p>From what I've seen a lot of webcrawlers use the headers of a page to determine whether a site was worth putting in search results.&#160;<a class="footnote-backref" href="#fnref-seo" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<li id="fn:seo">
+<p>From what I've seen a lot of webcrawlers use the headers of a page to determine whether a site was worth putting in search results.&#160;<a class="footnote-backref" href="#fnref:seo" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
-<li id="fn-doc">
-<p>This isn't the only place that has this, but I've been having trouble just getting the projects that I am using up to date. Heck, my <a href="https://github.com/mandaris/Modest/blob/master/README.md">readme is one line</a> at this point!&#160;<a class="footnote-backref" href="#fnref-doc" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+<li id="fn:doc">
+<p>This isn't the only place that has this, but I've been having trouble just getting the projects that I am using up to date. Heck, my <a href="https://github.com/mandaris/Modest/blob/master/README.md">readme is one line</a> at this point!&#160;<a class="footnote-backref" href="#fnref:doc" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
@@ -319,54 +316,67 @@
 </p>
 <footer>
 <p class="articleFooterP">Category:
-	<a class="p-category" href="https://mandaris.github.io/category/blogging.html">
+	<a class="p-category" href="../category/blogging.html">
     <span itemprop="articleSection">blogging</span>
   </a>
   <span class="rightside">
     <time
       class="dt-published"
       datetime="2018-07-03T22:38:02-07:00"
-      itemprop="dateCreated datePublished pubdate">
-        Tue 03 July 2018
+      itemprop="dateCreated datePublished">
+        July 03, 2018
     </time>
   </span>
   <br />  <span itemprop="keywords">
       <a
         class="tag"
         rel="category tag"
-        href="https://mandaris.github.io/tag/programming.html">
+        href="../tag/programming.html">
           programming
       </a>
       <a
         class="tag"
         rel="category tag"
-        href="https://mandaris.github.io/tag/open-source.html">
+        href="../tag/open-source.html">
           open source
       </a>
       <a
         class="tag"
         rel="category tag"
-        href="https://mandaris.github.io/tag/python.html">
+        href="../tag/python.html">
           python
       </a>
       <a
         class="tag"
         rel="category tag"
-        href="https://mandaris.github.io/tag/pelican.html">
+        href="../tag/pelican.html">
           pelican
       </a>
   </span>
 </p>
+
+<details itemprop="author" itemscope itemtype="https://schema.org/Person" class="p-author h-card hidden">
+  <summary itemprop="name" class="p-name">Mandaris</summary>  <img itemprop="image" class="u-photo"
+    src="https://secure.gravatar.com/avatar/03fb367dd4c7aea56f77dfa496db3725"
+    alt="Author's Profile." />
+  <p class="p-note">Mandaris is someone who strives to make himself into a better person</p>
+  <p><a itemprop="url" class="u-url u-uid"
+    rel="me" href="https://mandarismoore.com"
+    title="Author Website.">
+    Mandaris</a></p>
+
+
+</details>
 </footer>
 </article>
 <hr />
 <article
-  class="post hentry h-entry content"
+  class="post hentry h-entry"
   itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
 
 <header class="post-header">
   <h2
-    itemprop="headline title p-name name"
+    itemprop="headline name"
     class="title p-name post-title">
     <a
       rel="bookmark"
@@ -379,26 +389,22 @@
   </h2>
 </header><div class="e-content post-body" itemprop="articleBody">
 <p>I think I'm ready to mark my second pelican theme 1.0 as "Feature Complete" today! I started off with -what I thought- a simple premise of having a site site took a lot longer than I expected but I'm pretty happy with the site for now.  But before I tag it and start working on 2.0, I want to go over what I've done so far.</p>
-<figure><img alt="Visualization of what I've accomplished with the blog." src="/images/blog-accomplishments.png"> <figcaption>Visualization of what I've accomplished with the blog.</figcaption>
-</figure>
+<p><img alt="Visualization of what I've accomplished with the blog." src="/images/blog-accomplishments.png"> </p>
 <h3 id="parsable">Parsable</h3>
 <p>The first thing I started researching was how to make the site parsable by webcrawlers. Although it's a personal blog, I wanted people to be able to find the content easily.</p>
 <h4 id="opengraph">OpenGraph</h4>
-<p>OpenGraph was the first thing that I came across and appealed to me the most because it's the preferred way of parsing data for Twitter<sup id="fnref-twitter"><a class="footnote-ref" href="#fn-twitter">1</a></sup>.</p>
+<p>OpenGraph was the first thing that I came across and appealed to me the most because it's the preferred way of parsing data for Twitter<sup id="fnref:twitter"><a class="footnote-ref" href="#fn:twitter">1</a></sup>.</p>
 <p>I found it especially rewarding that the tags are also parsed by facebook and my new favorite social network <a href="https://slack.com">slack</a>. </p>
 <p>One of the technical difficulties that I ran into when adding OpenGraph tags was adding the images. The specification for OpenGraph states that images to be used need to be added as meta data in the head of the html. This can be a pain as the other data like title and date can be pulled from the article itself and I didn't want to go through all my old posts to add image meta data.</p>
 <p>Luckily, the  github user WhiskyEchoBravo had a <a href="https://github.com/whiskyechobravo/pelican-open_graph">project that searched the content of the post for images</a> and added the first to the list of tags. I'm a little proud that I helped with issues with <a href="https://github.com/whiskyechobravo/pelican-open_graph/commit/61248d805588245a9fc1dc4eda56cff1f5a9d8fa">pages</a>. </p>
 <p>Afterwards, I did run into some frustration when the images that I added to posts wouldn't be as big as I expected.</p>
-<figure><img alt="Post in slack with a small image." src="images/slack-small-image.png"><figcaption>Post in slack with a small image.</figcaption>
-</figure>
+<p><img alt="Post in slack with a small image." src="images/slack-small-image.png"></p>
 <p>Ultimately, I think it's because of the mixing and matching of having OpenGraph and twitter specific tags and was solved it by making sure I used the following for my twitter card.</p>
-<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;twitter:card&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;summary_large_image&quot;</span> <span class="p">/&gt;</span>
-</pre></div>
-
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;twitter:card&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;summary_large_image&quot;</span> <span class="p">/&gt;</span>
+</code></pre></div>
 
 <p>And now I get the post to unfurl nicely.</p>
-<figure><img alt="Post in slack with a large image." src="images/slack-large-image.png"><figcaption>Post in slack with a large image.</figcaption>
-</figure>
+<p><img alt="Post in slack with a large image." src="images/slack-large-image.png"></p>
 <h4 id="schemaorg">Schema.org</h4>
 <p>This is the styling used by both Bing and Google. I put this in as a challenge to myself to make it work in both instances. I leaned a lot from the example on <a href="https://orbitingweb.com/blog/schema-org-microdata-guide/" title="Complete Schema.Org and Microdata Tutorial for beginners">OrbitingWeb</a> and refined what I was working with using <a href="https://github.com/philwareham/schema-microdata-examples/blob/master/blog.html" title="Schema.org microdata examples">another example</a> that I found on github.</p>
 <h3 id="valid-semantic-tags">Valid Semantic Tags</h3>
@@ -406,11 +412,11 @@
 <p>I'm willing to just attribute it to my desire to have my own style or maybe just inexperience, but I'm happy to report that the site passes html validation except for the OpenGraph definitions found in the header.</p>
 <h4 id="figure-it-out">figure it out</h4>
 <p>One technical hurdle I ran into was that I wanted my images to be wrapped in the <code>&lt;figure&gt;</code> tag and also have a <code>&lt;figcaption&gt;</code> tag that would have the alternative text. </p>
-<p>I searched for a plugin for pelican<sup id="fnref-figure-ref"><a class="footnote-ref" href="#fn-figure-ref">2</a></sup>, but the closest thing I could find was <a href="https://github.com/getpelican/pelican-plugins/tree/master/liquid_tags">liquid tags</a> at the time<sup id="fnref-liquid"><a class="footnote-ref" href="#fn-liquid">3</a></sup>.  </p>
+<p>I searched for a plugin for pelican<sup id="fnref:figure-ref"><a class="footnote-ref" href="#fn:figure-ref">2</a></sup>, but the closest thing I could find was <a href="https://github.com/getpelican/pelican-plugins/tree/master/liquid_tags">liquid tags</a> at the time<sup id="fnref:liquid"><a class="footnote-ref" href="#fn:liquid">3</a></sup>.  </p>
 <p>I did find jdittrich <a href="https://github.com/jdittrich/figureAltCaption">figureAltCaption</a> project on github which was a extension for the <a href="https://python-markdown.github.io/">python-markdown</a>  that pelican uses. I even submitted a <a href="https://github.com/jdittrich/figureAltCaption/pull/3" title="Still wait to be pulled into the main branch">pull request</a>  to allow it to do reference links!</p>
 <p>There was a little confusion on getting it to work because pelican has been changing since some of these plugins were created.</p>
 <p>Long story short, I had to add the following to my <code>pelicanconfig.py</code> to get it to work.</p>
-<div class="highlight"><pre><span></span>   <span class="c1"># Markdown Plugins</span>
+<div class="highlight"><pre><span></span><code>   <span class="c1"># Markdown Plugins</span>
 <span class="n">MARKDOWN</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">&#39;extension_configs&#39;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s1">&#39;markdown.extensions.codehilite&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;css_class&#39;</span><span class="p">:</span> <span class="s1">&#39;highlight&#39;</span><span class="p">},</span>
@@ -420,15 +426,13 @@
 </span>    <span class="p">},</span>
     <span class="s1">&#39;output_format&#39;</span><span class="p">:</span> <span class="s1">&#39;html5&#39;</span><span class="p">,</span>
 <span class="p">}</span>
-</pre></div>
-
+</code></pre></div>
 
 <h3 id="easy-to-share">Easy to share</h3>
 <p>I wrote down that I wanted the site to be easy to share and it is when you look at the amount of tags and metadata that is in every page. </p>
 <p>At one point, I wanted to add share buttons, but -with the rise in concerns about privacy- I wanted the users of the site to be the ones who would share it.</p>
 <p>Also, I'm still working on color schemes so the buttons might clash with whatever I end up with.</p>
-<figure><img alt="Clash of the social buttons!" src="images/supported-social-networks.jpg" title="The number of ways to share an article is too dang high!"><figcaption>Clash of the social buttons!</figcaption>
-</figure>
+<p><img alt="Clash of the social buttons!" src="images/supported-social-networks.jpg" title="The number of ways to share an article is too dang high!"></p>
 <h3 id="accessible">Accessible</h3>
 <p>One of the underlining principles of this site design is that I wanted it to be accessible to as many people as possible. It's part of the reason that I've worked so hard on making sure that I included so many semantic tags. I didn't think that this was particularly hard to do when you understand what needs to happen before you begin. </p>
 <p>The theme doesn't have any errors at this point, but does loose some points because of the way that markdown headers are handled and the fact that I picked a low contrast color for my links. I'll fix it soon.</p>
@@ -446,14 +450,14 @@
 <div class="footnote">
 <hr>
 <ol>
-<li id="fn-twitter">
-<p>Twitter is still my social network of choice and -despite it's flaws- is not as creepy as facebook.&#160;<a class="footnote-backref" href="#fnref-twitter" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<li id="fn:twitter">
+<p>Twitter is still my social network of choice and -despite it's flaws- is not as creepy as facebook.&#160;<a class="footnote-backref" href="#fnref:twitter" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
-<li id="fn-figure-ref">
-<p>Seriously didn't see Chris MacMackin's <a href="https://github.com/cmacmackin/figure-ref" title="A Pelican plugin providing a referencing-system for figures, like that in LaTeX.">figure-ref</a> until I was writing this article. I'll have to look into it for my next version.&#160;<a class="footnote-backref" href="#fnref-figure-ref" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+<li id="fn:figure-ref">
+<p>Seriously didn't see Chris MacMackin's <a href="https://github.com/cmacmackin/figure-ref" title="A Pelican plugin providing a referencing-system for figures, like that in LaTeX.">figure-ref</a> until I was writing this article. I'll have to look into it for my next version.&#160;<a class="footnote-backref" href="#fnref:figure-ref" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
-<li id="fn-liquid">
-<p>I used this to make my previous theme <a href="https://github.com/mandaris/TuftePelican" title="Abandoned themes that still haunt me">Tufte</a> and did not want to go down that road twice. It is very specific to pelican and I didn't want to dive into more regular expressions when I <em>knew</em> there had to be a solution already created.&#160;<a class="footnote-backref" href="#fnref-liquid" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+<li id="fn:liquid">
+<p>I used this to make my previous theme <a href="https://github.com/mandaris/TuftePelican" title="Abandoned themes that still haunt me">Tufte</a> and did not want to go down that road twice. It is very specific to pelican and I didn't want to dive into more regular expressions when I <em>knew</em> there had to be a solution already created.&#160;<a class="footnote-backref" href="#fnref:liquid" title="Jump back to footnote 3 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
@@ -469,34 +473,34 @@
 </p>
 <footer>
 <p class="articleFooterP">Category:
-	<a class="p-category" href="https://mandaris.github.io/category/blogging.html">
+	<a class="p-category" href="../category/blogging.html">
     <span itemprop="articleSection">blogging</span>
   </a>
   <span class="rightside">
     <time
       class="dt-published"
       datetime="2018-06-26T19:16:06-07:00"
-      itemprop="dateCreated datePublished pubdate">
-        Tue 26 June 2018
+      itemprop="dateCreated datePublished">
+        June 26, 2018
     </time>
   </span>
   <br />  <span itemprop="keywords">
       <a
         class="tag"
         rel="category tag"
-        href="https://mandaris.github.io/tag/accomplishments.html">
+        href="../tag/accomplishments.html">
           accomplishments
       </a>
       <a
         class="tag"
         rel="category tag"
-        href="https://mandaris.github.io/tag/python.html">
+        href="../tag/python.html">
           python
       </a>
       <a
         class="tag"
         rel="category tag"
-        href="https://mandaris.github.io/tag/html.html">
+        href="../tag/html.html">
           html
       </a>
   </span>
@@ -505,20 +509,33 @@
       class="dt-updated"
   	  datetime="2019-05-29T22:02:30-07:00"
   	  itemprop="dateModified">
-        Wed 29 May 2019
+        June 26, 2018
       </time>
   </span>
 </p>
+
+<details itemprop="author" itemscope itemtype="https://schema.org/Person" class="p-author h-card hidden">
+  <summary itemprop="name" class="p-name">Mandaris</summary>  <img itemprop="image" class="u-photo"
+    src="https://secure.gravatar.com/avatar/03fb367dd4c7aea56f77dfa496db3725"
+    alt="Author's Profile." />
+  <p class="p-note">Mandaris is someone who strives to make himself into a better person</p>
+  <p><a itemprop="url" class="u-url u-uid"
+    rel="me" href="https://mandarismoore.com"
+    title="Author Website.">
+    Mandaris</a></p>
+
+
+</details>
 </footer>
 </article>
 <hr />
 <article
-  class="post hentry h-entry content"
+  class="post hentry h-entry"
   itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
 
 <header class="post-header">
   <h2
-    itemprop="headline title p-name name"
+    itemprop="headline name"
     class="title p-name post-title">
     <a
       rel="bookmark"
@@ -533,8 +550,7 @@
 <p>The power went out this morning and left the house in darkness except for my laptop. I took this time to get some work done with my plugin for <a href="http://www.getpelican.com">Pelican</a> but I found myself at a stand still because I wanted to get some information on how regular expressions parse results into a dictionary.</p>
 <p>With the internet not working, I decided that I'd try seeing what is available with the REPL in python and I found it to be fairly helpful in the fact that I had access to the documentation in the same interface as the code that I was writing.</p>
 <p>In my case, I wanted to find out what methods are part of the match class. Sure, I ran into a minor bump of not knowing how to get help to show me the documentation of match directory, but I quickly got around that by run help on the match object that I created.</p>
-<figure><img alt="Exploring python in the terminal" src="../../images/Exploring_Python_in_terminal.png"><figcaption>Exploring python in the terminal</figcaption>
-</figure>
+<p><img alt="Exploring python in the terminal" src="../../images/Exploring_Python_in_terminal.png"></p>
 <p>Honestly, this gives me a little more confidence in myself that I can find things out on my own without having to turn to the internet and finding myself getting side tracked by all the destractions that someone can find. </p>
 </div>
 
@@ -548,28 +564,28 @@
 </p>
 <footer>
 <p class="articleFooterP">Category:
-	<a class="p-category" href="https://mandaris.github.io/category/programming.html">
+	<a class="p-category" href="../category/programming.html">
     <span itemprop="articleSection">programming</span>
   </a>
   <span class="rightside">
     <time
       class="dt-published"
       datetime="2015-12-13T09:56:05-08:00"
-      itemprop="dateCreated datePublished pubdate">
-        Sun 13 December 2015
+      itemprop="dateCreated datePublished">
+        December 13, 2015
     </time>
   </span>
   <br />  <span itemprop="keywords">
       <a
         class="tag"
         rel="category tag"
-        href="https://mandaris.github.io/tag/python.html">
+        href="../tag/python.html">
           python
       </a>
       <a
         class="tag"
         rel="category tag"
-        href="https://mandaris.github.io/tag/terminal.html">
+        href="../tag/terminal.html">
           terminal
       </a>
   </span>
@@ -578,27 +594,54 @@
       class="dt-updated"
   	  datetime="2015-12-13T09:56:05-08:00"
   	  itemprop="dateModified">
-        Sun 13 December 2015
+        December 13, 2015
       </time>
   </span>
 </p>
+
+<details itemprop="author" itemscope itemtype="https://schema.org/Person" class="p-author h-card hidden">
+  <summary itemprop="name" class="p-name">Mandaris</summary>  <img itemprop="image" class="u-photo"
+    src="https://secure.gravatar.com/avatar/03fb367dd4c7aea56f77dfa496db3725"
+    alt="Author's Profile." />
+  <p class="p-note">Mandaris is someone who strives to make himself into a better person</p>
+  <p><a itemprop="url" class="u-url u-uid"
+    rel="me" href="https://mandarismoore.com"
+    title="Author Website.">
+    Mandaris</a></p>
+
+
+</details>
 </footer>
 </article>
 <hr />
+
+
+
 </main>
-  <nav id="pagination">    <span id="first_page" class="a inactive">&#60;&#60;</span>
-    <span id="previous_page" class="a inactive">&#60;</span>
-    <span class="a active">1</span>
-    <span id="next_page" class="a inactive">&#62;</span>
-    <span id="last_page" class="a inactive">&#62;&#62;</span>
-</nav>
+
+
+<aside class="sidebar">
+<h2>
+<a
+  rel="external"
+  href="https://micro.blog/mandaris"
+  title="Micro.blog for mandaris"
+  class="u-url"
+  itemprop="url">
+Micro.blog posts
+</a>
+</h2>
+<script type="text/javascript" src="https://micro.blog/sidebar.js?username=mandaris"></script>
+</aside>
+
 <footer itemscope itemtype="https://schema.org/WPFooter"
     role="contentinfo" class="baseFooter">
+  <hr />
   <p>All works created by
     <span itemprop="author" itemscope itemtype=https://schema.org/Person>
-    <span class="p-author h-card" itemprop="name">Mandaris</span></span>.
-  </p>
-  <p>Powered by <a href="http://pelican.readthedocs.org">Pelican</a></p>
+    <span class="p-author h-card p-name" itemprop="name">Mandaris</span></span>.
+
+  <span class="rightside">Powered by <a href="http://pelican.readthedocs.org">Pelican</a>.</span></p>
 </footer>
 </body>
 </html>

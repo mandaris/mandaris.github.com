@@ -12,19 +12,19 @@
 <meta name="author" class="p-author h-card" content="Mandaris" />
 <meta property="site_name" content="Mandaris Moore" />
 <meta name="description" content="I thought I'd document what I've learned about setting up Sublime Text 3 to work with a python virtual environment so that I don't have to look this up multiple times. Hopefully someone else will find this information helpful as well. Set up the project area I like to keep …" />
-<base href="https://mandaris.github.io" />
+<base href="../.." />
 <meta name="generator" content="Pelican" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="theme-color" content="#1b5a53" />
-<link rel="stylesheet" type="text/css" href="/theme/css/main.css" />
+<link rel="stylesheet" type="text/css" href="../../theme/css/main.css" />
 <link rel="shortcut icon" href="/favicon.ico" />
 <link rel="icon" type="image/png" href="/favicon.png" />
 <link rel="apple-touch-icon-precomposed"
       href="/apple-touch-icon-precomposed.png" />
 
 <!-- Feed information -->
-<link href="https://mandaris.github.io/feeds/atom.xml"
+<link href="http://mandaris.github.io/feeds/atom.xml"
       type="application/atom+xml"
       rel="alternate" title="Mandaris Moore ALL Atom Feed" />
 
@@ -32,8 +32,8 @@
 <!-- OpenGraph Info -->
 <meta property="og:title" content="Setting up Sublime Text and Python Virtualenv" />
 <meta property="og:type" content="article" />
-<meta property="og:image" content="https://mandaris.github.io//images/setting-up-python-and-sublime/set-up-the-project-area.png" />
-<meta property="og:url" content="https://mandaris.github.io/2019/12/setting-up-sublime-text-and-python-virtualenv.html" />
+<meta property="og:image" content="http://mandaris.github.io//images/setting-up-python-and-sublime/set-up-the-project-area.png" />
+<meta property="og:url" content="http://mandaris.github.io/2019/12/setting-up-sublime-text-and-python-virtualenv.html" />
 <meta property="og:description" content="I thought I&#39;d document what I&#39;ve learned about setting up Sublime Text 3 to work with a python virtual environment so that I don&#39;t have to look this up multiple times. Hopefully someone else will find this information helpful as well. Set up the project area I like to keep …" />
 <meta property="og:locale" content="en_US" />
 <meta property="og:site_name" content="Mandaris Moore" />
@@ -55,26 +55,27 @@
 </head>
 
 <body itemscope itemtype="https://schema.org/Blog">
-<meta itemprop="description" content="The personal website for Mandaris Moore." />
+<meta itemprop="description" content="The Pelican website for Mandaris Moore." />
 <header role="banner">
-<h1 class="websitetitle"><a href="https://mandaris.github.io">Mandaris Moore</a></h1>
+<h1 class="websitetitle"><a href="../..">Mandaris Moore</a></h1>
 <nav itemscope itemtype="https://schema.org/SiteNavigationElement"
     class="navmenu" id="navmenu" >
 <ul>
   <li>
-    <a class="navitemlink" href="https://mandaris.github.io/archives.html">Archive</a>
+    <a class="navitemlink" href="../../archives.html">Archive</a>
   </li>
   <li>
-    <a class="navitemlink" href="https://mandaris.github.io/pages/about.html">About</a>
+    <a class="navitemlink" href="../../pages/about.html">About</a>
   </li>
   <li>
-    <a class="navitemlink" href="https://mandaris.github.io/pages/projects.html">Projects</a>
+    <a class="navitemlink" href="../../pages/projects.html">Projects</a>
   </li>
 </ul>
 </nav>
+<hr />
 </header>
 
-<hr />
+
 <article
   class="hentry h-entry post main-content"
   itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
@@ -82,7 +83,7 @@
 
 <header class="post-header">
   <h2
-    itemprop="headline title p-name name"
+    itemprop="headline name"
     class="title p-name post-title">
     <a
       rel="bookmark"
@@ -96,68 +97,53 @@
 </header>  <div class="arcticle-body e-content" itemprop="articleBody">
     <p>I thought I'd document what I've learned about setting up Sublime Text 3 to work with a python virtual environment so that I don't have to look this up multiple times. Hopefully someone else will find this information helpful as well.</p>
 <h4 id="set-up-the-project-area">Set up the project area</h4>
-<figure><img alt="All projects start in a project folder that I set up." src="/images/setting-up-python-and-sublime/set-up-the-project-area.png" title="Set up the project area."><figcaption></figcaption>
-</figure>
+<p><img alt="All projects start in a project folder that I set up." src="/images/setting-up-python-and-sublime/set-up-the-project-area.png" title="Set up the project area."></p>
 <p>I like to keep all my projects in a parent folder. This way applications like Timing can track that I'm being productive in my chosen terminal application.</p>
 <h4 id="creating-the-virtual-environment">Creating the virtual environment</h4>
-<figure><img alt="Using the mkvirtualenv command to create a new environment." src="/images/setting-up-python-and-sublime/creating-the-virtual-environment.png" title="Creating the virtual environment."><figcaption></figcaption>
-</figure>
-<p>I use the <a href="https://virtualenvwrapper.readthedocs.io/en/latest/#">mkvirtualenv</a> wrapper scripts to make the virtual environment. All the projects that I'm currently working with are using virtualenv because they are supporting python 2<sup id="fnref-python2"><a class="footnote-ref" href="#fn-python2">1</a></sup>.</p>
+<p><img alt="Using the mkvirtualenv command to create a new environment." src="/images/setting-up-python-and-sublime/creating-the-virtual-environment.png" title="Creating the virtual environment."></p>
+<p>I use the <a href="https://virtualenvwrapper.readthedocs.io/en/latest/#">mkvirtualenv</a> wrapper scripts to make the virtual environment. All the projects that I'm currently working with are using virtualenv because they are supporting python 2<sup id="fnref:python2"><a class="footnote-ref" href="#fn:python2">1</a></sup>.</p>
 <h4 id="make-sure-that-the-environment-is-set-up-without-errors">Make sure that the environment is set up without errors</h4>
-<figure><img alt="Verifying no errors in environment creation." src="/images/setting-up-python-and-sublime/make-sure-that-the-environment-is-set-up-without-errors.png" title="No errors during creation."><figcaption></figcaption>
-</figure>
+<p><img alt="Verifying no errors in environment creation." src="/images/setting-up-python-and-sublime/make-sure-that-the-environment-is-set-up-without-errors.png" title="No errors during creation."></p>
 <p>I like to make sure that it's setting up my expected version of python during this step.</p>
 <h4 id="make-the-activate-script-executable">Make the activate script executable</h4>
-<figure><img alt="Make sure that the environment comes up correctly." src="/images/setting-up-python-and-sublime/make-the-activate-script-executable.png" title="Make the activate script executable."><figcaption></figcaption>
-</figure>
+<p><img alt="Make sure that the environment comes up correctly." src="/images/setting-up-python-and-sublime/make-the-activate-script-executable.png" title="Make the activate script executable."></p>
 <p>I currently see a problem where this script doesn't execute properly. I make sure that it can run. While I'm in that directory I check the versions of pip and python as well.</p>
 <p>Note: My Virtualenv isn't in a hidden directory. </p>
 <h4 id="test-that-the-activate-really-works">Test that the activate really works</h4>
-<figure><img alt="Test that the activate script is executable." src="/images/setting-up-python-and-sublime/test-that-the-activate-really-works.png" title="Source the activate script"><figcaption></figcaption>
-</figure>
+<p><img alt="Test that the activate script is executable." src="/images/setting-up-python-and-sublime/test-that-the-activate-really-works.png" title="Source the activate script"></p>
 <p>60% of the time it works all the time. I don't understand the convention of having a script without the file extension.</p>
 <h4 id="create-a-directory-for-this-specific-project">Create a directory for this specific project.</h4>
-<figure><img alt="Create a directory for this specific project." src="/images/setting-up-python-and-sublime/create-a-directory-for-this-specific-project.png" title="Making a directory and switching to it."><figcaption></figcaption>
-</figure>
+<p><img alt="Create a directory for this specific project." src="/images/setting-up-python-and-sublime/create-a-directory-for-this-specific-project.png" title="Making a directory and switching to it."></p>
 <p>Once again, I place this in my home project directory. I like to make sure that I have everything in it's own place so I don't have to think about where stuff is.</p>
 <h4 id="edit-the-postactivate-for-the-virtualenv">Edit the postactivate for the virtualenv</h4>
-<figure><img alt="Using vi to edit postactivate for the virtualenv." src="/images/setting-up-python-and-sublime/edit-the-the-postactivate-for-the-virtualenv.png" title="For simple edits, I prefer vi versus opening a text editor."><figcaption></figcaption>
-</figure>
+<p><img alt="Using vi to edit postactivate for the virtualenv." src="/images/setting-up-python-and-sublime/edit-the-the-postactivate-for-the-virtualenv.png" title="For simple edits, I prefer vi versus opening a text editor."></p>
 <p>I like to read over it and it acts as a double check that it was generated correctly.</p>
 <h4 id="add-a-command-to-the-postactivate">Add a command to the postactivate</h4>
-<figure><img alt="Adding a command to the postactivate script." src="/images/setting-up-python-and-sublime/add-a-command-to-the-postactivate.png" title="Change directories to the project on activate."><figcaption></figcaption>
-</figure>
+<p><img alt="Adding a command to the postactivate script." src="/images/setting-up-python-and-sublime/add-a-command-to-the-postactivate.png" title="Change directories to the project on activate."></p>
 <p>I make my virtual environments switch to the project directory that I'm working in when activated. This is just a convinence for me, but I've seen tutorials on how to make it so the virtual environment is brought up when you switch to the directory.</p>
 <h4 id="check-that-the-environment-is-pointing-to-the-correct-version-of-python">Check that the environment is pointing to the correct version of python</h4>
-<figure><img alt="Check that it is _not_ using the systems version of python." src="/images/setting-up-python-and-sublime/check-that-the-environment-is-pointing-to-the-correct-version-of-python.png" title="I want to make sure that I'm pointing to the correct version."><figcaption></figcaption>
-</figure>
+<p><img alt="Check that it is _not_ using the systems version of python." src="/images/setting-up-python-and-sublime/check-that-the-environment-is-pointing-to-the-correct-version-of-python.png" title="I want to make sure that I'm pointing to the correct version."></p>
 <p>You want to make absolutely sure that this is using the virtual env's python and not your system's. I think this is pretty important as <a href="https://www.python.org/dev/peps/pep-0373/" title="Python 2.7 Release Schedule">python 2 is moving to end of life</a>. </p>
 <h4 id="run-pip-to-install-any-needed-libraries">Run pip to install any needed libraries.</h4>
-<figure><img alt="Call python to run the pip module to install." src="/images/setting-up-python-and-sublime/run-pip-to-install-any-needed-libraries.png" title="Have python call the pip module."><figcaption></figcaption>
-</figure>
+<p><img alt="Call python to run the pip module to install." src="/images/setting-up-python-and-sublime/run-pip-to-install-any-needed-libraries.png" title="Have python call the pip module."></p>
 <p>I <a href="https://snarky.ca/why-you-should-use-python-m-pip/">read about it done this way</a> because it forces the environment to place the needed libraries within the correct site-packages folder.</p>
 <h4 id="checking-that-the-installation-worked">Checking that the installation worked</h4>
-<figure><img alt="Review the installation output." src="/images/setting-up-python-and-sublime/checking-that-the-installation-worked.png" title="Check the output for errors"><figcaption></figcaption>
-</figure>
+<p><img alt="Review the installation output." src="/images/setting-up-python-and-sublime/checking-that-the-installation-worked.png" title="Check the output for errors"></p>
 <p>Hopefully everything installed cleanly or at least gave an error on why it didn't work.</p>
 <h4 id="clone-the-project-into-the-directory">Clone the project into the directory</h4>
-<figure><img alt="Place whatever project that I'm working on in the directory." src="/images/setting-up-python-and-sublime/clone-the-project-into-the-directory.png" title="The directory and environment should be able to handle any project at this point."><figcaption></figcaption>
-</figure>
+<p><img alt="Place whatever project that I'm working on in the directory." src="/images/setting-up-python-and-sublime/clone-the-project-into-the-directory.png" title="The directory and environment should be able to handle any project at this point."></p>
 <p>In this case, I've got a new python project that I created on github. I create the project on github so that I could use there basic python template and <a href="https://help.github.com/en/actions">github actions</a>. </p>
 <p>Once again, I do this so that I can differentiate multiple projects and versions. We all have projects that aren't finished and this helps me by eliminating wondering what versions things are at.</p>
 <h4 id="check-that-all-the-files-are-there">Check that all the files are there</h4>
-<figure><img alt="Your project folder is going to be different." src="/images/setting-up-python-and-sublime/check-that-all-the-files-are-there.png" title="This was the beginning of a new project"><figcaption></figcaption>
-</figure>
+<p><img alt="Your project folder is going to be different." src="/images/setting-up-python-and-sublime/check-that-all-the-files-are-there.png" title="This was the beginning of a new project"></p>
 <p>It's all part of "trust-but-verify". I've seen a lot of misspellings.</p>
 <h4 id="open-the-folder-in-sublime-text">Open the folder in Sublime Text</h4>
-<figure><img alt="Opening the project in Sublime Text from the command line." src="/images/setting-up-python-and-sublime/open-the-folder-in-sublime-text.png" title="I prefer Sublime Text."><figcaption></figcaption>
-</figure>
+<p><img alt="Opening the project in Sublime Text from the command line." src="/images/setting-up-python-and-sublime/open-the-folder-in-sublime-text.png" title="I prefer Sublime Text."></p>
 <p>I've set my mac up to use Sublime Text from the <a href="https://www.sublimetext.com/docs/3/osx_command_line.html">command line</a>.</p>
 <h4 id="set-up-the-sublime-text-project">Set up the Sublime Text project</h4>
-<figure><img alt="Sublime Text showing the build system." src="/images/setting-up-python-and-sublime/set-up-the-sublime-text-project.png" title="Sublime Text build system for this project"><figcaption></figcaption>
-</figure>
+<p><img alt="Sublime Text showing the build system." src="/images/setting-up-python-and-sublime/set-up-the-sublime-text-project.png" title="Sublime Text build system for this project"></p>
 <p>When you create a new Sublime Text project, you can specify how it handles builds and tests. This allows me to specify the exact version of python without having to go to the command line. </p>
-<div class="highlight"><pre><span></span>{
+<div class="highlight"><pre><span></span><code>{
     &quot;build_systems&quot;:
     [
         {
@@ -180,8 +166,7 @@
         &quot;test_command&quot;: &quot;~/Virtualenvs/MK-Img2fig/bin/python -m unittest discover&quot;
     }
 }
-</pre></div>
-
+</code></pre></div>
 
 <p>After this, I can iterate with my code knowing that everything is set up properly.</p>
 <h3 id="conclusion">Conclusion</h3>
@@ -189,48 +174,64 @@
 <div class="footnote">
 <hr>
 <ol>
-<li id="fn-python2">
-<p>This might change after January 1st according to <a href="https://www.python.org/dev/peps/pep-0373/" title="https://www.python.org/dev/peps/pep-0373/">PEP 373</a>.&#160;<a class="footnote-backref" href="#fnref-python2" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<li id="fn:python2">
+<p>This might change after January 1st according to <a href="https://www.python.org/dev/peps/pep-0373/" title="https://www.python.org/dev/peps/pep-0373/">PEP 373</a>.&#160;<a class="footnote-backref" href="#fnref:python2" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
   </div>
 <p class="articleFooterP">Category:
-	<a class="p-category" href="https://mandaris.github.io/category/coding.html">
+	<a class="p-category" href="../../category/coding.html">
     <span itemprop="articleSection">coding</span>
   </a>
   <span class="rightside">
     <time
       class="dt-published"
       datetime="2019-12-29T14:18:59-08:00"
-      itemprop="dateCreated datePublished pubdate">
-        Sun 29 December 2019
+      itemprop="dateCreated datePublished">
+        December 29, 2019
     </time>
   </span>
   <br />  <span itemprop="keywords">
       <a
         class="tag"
         rel="category tag"
-        href="https://mandaris.github.io/tag/python.html">
+        href="../../tag/python.html">
           python
       </a>
       <a
         class="tag"
         rel="category tag"
-        href="https://mandaris.github.io/tag/sublime-text.html">
+        href="../../tag/sublime-text.html">
           sublime text
       </a>
   </span>
 </p>
+
+<details itemprop="author" itemscope itemtype="https://schema.org/Person" class="p-author h-card hidden">
+  <summary itemprop="name" class="p-name">Mandaris</summary>  <img itemprop="image" class="u-photo"
+    src="https://secure.gravatar.com/avatar/03fb367dd4c7aea56f77dfa496db3725"
+    alt="Author's Profile." />
+  <p class="p-note">Mandaris is someone who strives to make himself into a better person</p>
+  <p><a itemprop="url" class="u-url u-uid"
+    rel="me" href="https://mandarismoore.com"
+    title="Author Website.">
+    Mandaris</a></p>
+
+
+</details>
+
 </article>
+
 
 <footer itemscope itemtype="https://schema.org/WPFooter"
     role="contentinfo" class="baseFooter">
+  <hr />
   <p>All works created by
     <span itemprop="author" itemscope itemtype=https://schema.org/Person>
-    <span class="p-author h-card" itemprop="name">Mandaris</span></span>.
-  </p>
-  <p>Powered by <a href="http://pelican.readthedocs.org">Pelican</a></p>
+    <span class="p-author h-card p-name" itemprop="name">Mandaris</span></span>.
+
+  <span class="rightside">Powered by <a href="http://pelican.readthedocs.org">Pelican</a>.</span></p>
 </footer>
 </body>
 </html>

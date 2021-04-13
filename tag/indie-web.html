@@ -11,20 +11,20 @@
 <title>indie web - Mandaris Moore</title>
 <meta name="author" class="p-author h-card" content="Mandaris" />
 <meta property="site_name" content="Mandaris Moore" />
-<meta name="description" content="The personal website for Mandaris Moore." />
-<base href="https://mandaris.github.io" />
+<meta name="description" content="The Pelican website for Mandaris Moore." />
+<base href=".." />
 <meta name="generator" content="Pelican" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="theme-color" content="#1b5a53" />
-<link rel="stylesheet" type="text/css" href="/theme/css/main.css" />
+<link rel="stylesheet" type="text/css" href="../theme/css/main.css" />
 <link rel="shortcut icon" href="/favicon.ico" />
 <link rel="icon" type="image/png" href="/favicon.png" />
 <link rel="apple-touch-icon-precomposed"
       href="/apple-touch-icon-precomposed.png" />
 
 <!-- Feed information -->
-<link href="https://mandaris.github.io/feeds/atom.xml"
+<link href="http://mandaris.github.io/feeds/atom.xml"
       type="application/atom+xml"
       rel="alternate" title="Mandaris Moore ALL Atom Feed" />
 
@@ -32,10 +32,10 @@
 <!-- OpenGraph Info -->
 <meta property="og:title" content="Mandaris Moore" />
 <meta property="og:type" content="website" />
-<meta property="og:description" content="The personal website for Mandaris Moore."/>
-<meta property="og:url" content="https://mandaris.github.io" />
+<meta property="og:description" content="The Pelican website for Mandaris Moore."/>
+<meta property="og:url" content=".." />
 <meta property="og:locale" content="en-us" />
-<meta property="og:image" content="https://mandaris.github.io/favicon.png" />
+<meta property="og:image" content="../favicon.png" />
 <meta property="og:image:alt" content="A person in a gear." />
 <!-- Micro.blog User Name -->
 <link href="https://micro.blog/mandaris" rel="me" />
@@ -51,34 +51,38 @@
 </head>
 
 <body itemscope itemtype="https://schema.org/Blog">
-<meta itemprop="description" content="The personal website for Mandaris Moore." />
+<meta itemprop="description" content="The Pelican website for Mandaris Moore." />
 <header role="banner">
-<h1 class="websitetitle"><a href="https://mandaris.github.io">Mandaris Moore</a></h1>
+<h1 class="websitetitle"><a href="..">Mandaris Moore</a></h1>
 <nav itemscope itemtype="https://schema.org/SiteNavigationElement"
     class="navmenu" id="navmenu" >
 <ul>
   <li>
-    <a class="navitemlink" href="https://mandaris.github.io/archives.html">Archive</a>
+    <a class="navitemlink" href="../archives.html">Archive</a>
   </li>
   <li>
-    <a class="navitemlink" href="https://mandaris.github.io/pages/about.html">About</a>
+    <a class="navitemlink" href="../pages/about.html">About</a>
   </li>
   <li>
-    <a class="navitemlink" href="https://mandaris.github.io/pages/projects.html">Projects</a>
+    <a class="navitemlink" href="../pages/projects.html">Projects</a>
   </li>
 </ul>
 </nav>
+<hr />
 </header>
 
-<hr />
-<main class="articlelisting container">
+
+<main class="articlelisting content">
+
+
+
 <article
-  class="post hentry h-entry content"
+  class="post hentry h-entry"
   itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
 
 <header class="post-header">
   <h2
-    itemprop="headline title p-name name"
+    itemprop="headline name"
     class="title p-name post-title">
     <a
       rel="bookmark"
@@ -90,41 +94,37 @@
     </a>
   </h2>
 </header><div class="e-content post-body" itemprop="articleBody">
-<figure><img alt="Two puzzle pieces coming together via pexels.com" src="images/pexels-photo-164531.jpeg" title="Trying to put all the pieces together to get this working!"><figcaption>Two puzzle pieces coming together via pexels.com</figcaption>
-</figure>
+<p><img alt="Two puzzle pieces coming together via pexels.com" src="images/pexels-photo-164531.jpeg" title="Trying to put all the pieces together to get this working!"></p>
 <p>The more that I dive into the quest of having my own spot on the internet, the more that I find that I have things that I want to do with it. Which means more research, experiments and late nights. </p>
-<p>Currently, I'm on a mission to get webmentions and pingback working on my site. It's been pretty slow going because I want to incorporate it into my current blogging workflow. A workflow that is currently not flowing at all<sup id="fnref-flow"><a class="footnote-ref" href="#fn-flow">1</a></sup>.</p>
+<p>Currently, I'm on a mission to get webmentions and pingback working on my site. It's been pretty slow going because I want to incorporate it into my current blogging workflow. A workflow that is currently not flowing at all<sup id="fnref:flow"><a class="footnote-ref" href="#fn:flow">1</a></sup>.</p>
 <p>Anyway, I thought I'd focus on making some changes so that I can make it fit better with all the new stuff that is coming out for the <a href="https://indieweb.org" title="The IndieWeb is a people-focused alternative to the &quot;corporate web&quot;.">indieweb</a>.</p>
 <h3 id="setting-up-sign-in">Setting up sign in</h3>
 <p>The first thing to do is make some changes to my template to allow for sign up according to the <a href="https://indieweb.org/How_to_set_up_web_sign-in_on_your_own_domain" title="How to setup web sign-in on your own domain.">web directions</a></p>
-<p>I thought the easiest ways of doing this was to use github<sup id="fnref-github"><a class="footnote-ref" href="#fn-github">2</a></sup> or twitter<sup id="fnref-twitter"><a class="footnote-ref" href="#fn-twitter">3</a></sup>. I pushed the github login near the top of the page so that it would look for it first.</p>
-<div class="highlight"><pre><span></span><span class="cp">{%</span> <span class="k">if</span> <span class="nv">GITHUB_USERNAME</span> <span class="cp">%}</span><span class="x"></span>
+<p>I thought the easiest ways of doing this was to use github<sup id="fnref:github"><a class="footnote-ref" href="#fn:github">2</a></sup> or twitter<sup id="fnref:twitter"><a class="footnote-ref" href="#fn:twitter">3</a></sup>. I pushed the github login near the top of the page so that it would look for it first.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">{%</span> <span class="k">if</span> <span class="nv">GITHUB_USERNAME</span> <span class="cp">%}</span><span class="x"></span>
 <span class="x">&lt;!-- IndieWeb sign-in --&gt;</span>
 <span class="x">&lt;link rel=&quot;me&quot; href=&quot;https://github.com/</span><span class="cp">{{</span> <span class="nv">GITHUB_USERNAME</span><span class="cp">}}</span><span class="x">&quot; /&gt;</span>
 <span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span><span class="x"></span>
-</pre></div>
-
+</code></pre></div>
 
 <p>I then included the twitter login information with the rest of the twitter information.</p>
-<div class="highlight"><pre><span></span><span class="cp">{%</span> <span class="k">if</span> <span class="nv">TWITTER_USERNAME</span> <span class="cp">%}</span><span class="x"></span>
+<div class="highlight"><pre><span></span><code><span class="cp">{%</span> <span class="k">if</span> <span class="nv">TWITTER_USERNAME</span> <span class="cp">%}</span><span class="x"></span>
 <span class="x">&lt;!-- Twitter Specific Info --&gt;</span>
 <span class="x">&lt;meta name=&quot;twitter:site&quot; content=&quot;@</span><span class="cp">{{</span> <span class="nv">TWITTER_USERNAME</span> <span class="cp">}}</span><span class="x">&quot; /&gt;</span>
 <span class="x">&lt;meta name=&quot;twitter:creator&quot; content=&quot;@</span><span class="cp">{{</span> <span class="nv">TWITTER_USERNAME</span> <span class="cp">}}</span><span class="x">&quot; /&gt;</span>
 <span class="x">&lt;meta name=&quot;twitter:card&quot; content=&quot;summary_large_image&quot; /&gt;</span>
 <span class="hll"><span class="x">&lt;link rel=&quot;me&quot; href=&quot;https://twitter.com/</span><span class="cp">{{</span> <span class="nv">TWITTER_USERNAME</span><span class="cp">}}</span><span class="x">&quot; /&gt;</span>
 </span><span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span><span class="x"></span>
-</pre></div>
-
+</code></pre></div>
 
 <h3 id="setting-up-webmentions">Setting up webmentions</h3>
 <p>After the login was set up, I added this to enable webmentions that are specific to any website that uses the template.</p>
-<div class="highlight"><pre><span></span><span class="cp">{%</span> <span class="k">if</span> <span class="nv">WEBMENTIONS</span> <span class="cp">%}</span><span class="x"></span>
+<div class="highlight"><pre><span></span><code><span class="cp">{%</span> <span class="k">if</span> <span class="nv">WEBMENTIONS</span> <span class="cp">%}</span><span class="x"></span>
 <span class="x">&lt;!-- Enabling webmention functionality --&gt;</span>
 <span class="x">&lt;link rel=&quot;pingback&quot; href=&quot;https://webmention.io/</span><span class="cp">{{</span> <span class="nv">WEBMENTIONS</span> <span class="cp">}}</span><span class="x">/xmlrpc&quot; /&gt;</span>
 <span class="x">&lt;link rel=&quot;webmention&quot; href=&quot;https://webmention.io/</span><span class="cp">{{</span> <span class="nv">WEBMENTIONS</span> <span class="cp">}}</span><span class="x">/webmention&quot; /&gt;</span>
 <span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span><span class="x"></span>
-</pre></div>
-
+</code></pre></div>
 
 <p>Unfortunately, I still need to test it and get it in front of other people to use. I'm going to lay the foundation down and do some research so that I can get ping backs to work properly.</p>
 <h3 id="more-meta-data">More meta data</h3>
@@ -136,14 +136,14 @@
 <div class="footnote">
 <hr>
 <ol>
-<li id="fn-flow">
-<p>I've got three places that I can sit down and make a blog post. My iPhone, my iMac, and my laptop. Currently, my favorite is my laptop but I don't take it everywhere or use it as much. My mind is having trouble just feeling comfortable writing recently. Add the complication of where the files should be saved and how to update previous posts and I start feeling like throwing my hands up.&#160;<a class="footnote-backref" href="#fnref-flow" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<li id="fn:flow">
+<p>I've got three places that I can sit down and make a blog post. My iPhone, my iMac, and my laptop. Currently, my favorite is my laptop but I don't take it everywhere or use it as much. My mind is having trouble just feeling comfortable writing recently. Add the complication of where the files should be saved and how to update previous posts and I start feeling like throwing my hands up.&#160;<a class="footnote-backref" href="#fnref:flow" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
-<li id="fn-github">
-<p>Which was just bought by Microsoft a couple month ago. I don't know if it's the new Microsoft which is pro open source.&#160;<a class="footnote-backref" href="#fnref-github" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+<li id="fn:github">
+<p>Which was just bought by Microsoft a couple month ago. I don't know if it's the new Microsoft which is pro open source.&#160;<a class="footnote-backref" href="#fnref:github" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
-<li id="fn-twitter">
-<p>A dumpster fire of deplorables.&#160;<a class="footnote-backref" href="#fnref-twitter" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+<li id="fn:twitter">
+<p>A dumpster fire of deplorables.&#160;<a class="footnote-backref" href="#fnref:twitter" title="Jump back to footnote 3 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
@@ -159,55 +159,82 @@
 </p>
 <footer>
 <p class="articleFooterP">Category:
-	<a class="p-category" href="https://mandaris.github.io/category/blogging.html">
+	<a class="p-category" href="../category/blogging.html">
     <span itemprop="articleSection">blogging</span>
   </a>
   <span class="rightside">
     <time
       class="dt-published"
       datetime="2018-09-03T20:38:48-07:00"
-      itemprop="dateCreated datePublished pubdate">
-        Mon 03 September 2018
+      itemprop="dateCreated datePublished">
+        September 03, 2018
     </time>
   </span>
   <br />  <span itemprop="keywords">
       <a
         class="tag"
         rel="category tag"
-        href="https://mandaris.github.io/tag/pelican.html">
+        href="../tag/pelican.html">
           pelican
       </a>
       <a
         class="tag"
         rel="category tag"
-        href="https://mandaris.github.io/tag/indie-web.html">
+        href="../tag/indie-web.html">
           indie web
       </a>
       <a
         class="tag"
         rel="category tag"
-        href="https://mandaris.github.io/tag/programming.html">
+        href="../tag/programming.html">
           programming
       </a>
   </span>
 </p>
+
+<details itemprop="author" itemscope itemtype="https://schema.org/Person" class="p-author h-card hidden">
+  <summary itemprop="name" class="p-name">Mandaris</summary>  <img itemprop="image" class="u-photo"
+    src="https://secure.gravatar.com/avatar/03fb367dd4c7aea56f77dfa496db3725"
+    alt="Author's Profile." />
+  <p class="p-note">Mandaris is someone who strives to make himself into a better person</p>
+  <p><a itemprop="url" class="u-url u-uid"
+    rel="me" href="https://mandarismoore.com"
+    title="Author Website.">
+    Mandaris</a></p>
+
+
+</details>
 </footer>
 </article>
 <hr />
+
+
+
 </main>
-  <nav id="pagination">    <span id="first_page" class="a inactive">&#60;&#60;</span>
-    <span id="previous_page" class="a inactive">&#60;</span>
-    <span class="a active">1</span>
-    <span id="next_page" class="a inactive">&#62;</span>
-    <span id="last_page" class="a inactive">&#62;&#62;</span>
-</nav>
+
+
+<aside class="sidebar">
+<h2>
+<a
+  rel="external"
+  href="https://micro.blog/mandaris"
+  title="Micro.blog for mandaris"
+  class="u-url"
+  itemprop="url">
+Micro.blog posts
+</a>
+</h2>
+<script type="text/javascript" src="https://micro.blog/sidebar.js?username=mandaris"></script>
+</aside>
+
 <footer itemscope itemtype="https://schema.org/WPFooter"
     role="contentinfo" class="baseFooter">
+  <hr />
   <p>All works created by
     <span itemprop="author" itemscope itemtype=https://schema.org/Person>
-    <span class="p-author h-card" itemprop="name">Mandaris</span></span>.
-  </p>
-  <p>Powered by <a href="http://pelican.readthedocs.org">Pelican</a></p>
+    <span class="p-author h-card p-name" itemprop="name">Mandaris</span></span>.
+
+  <span class="rightside">Powered by <a href="http://pelican.readthedocs.org">Pelican</a>.</span></p>
 </footer>
 </body>
 </html>

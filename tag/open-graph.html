@@ -11,20 +11,20 @@
 <title>open graph - Mandaris Moore</title>
 <meta name="author" class="p-author h-card" content="Mandaris" />
 <meta property="site_name" content="Mandaris Moore" />
-<meta name="description" content="The personal website for Mandaris Moore." />
-<base href="https://mandaris.github.io" />
+<meta name="description" content="The Pelican website for Mandaris Moore." />
+<base href=".." />
 <meta name="generator" content="Pelican" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="theme-color" content="#1b5a53" />
-<link rel="stylesheet" type="text/css" href="/theme/css/main.css" />
+<link rel="stylesheet" type="text/css" href="../theme/css/main.css" />
 <link rel="shortcut icon" href="/favicon.ico" />
 <link rel="icon" type="image/png" href="/favicon.png" />
 <link rel="apple-touch-icon-precomposed"
       href="/apple-touch-icon-precomposed.png" />
 
 <!-- Feed information -->
-<link href="https://mandaris.github.io/feeds/atom.xml"
+<link href="http://mandaris.github.io/feeds/atom.xml"
       type="application/atom+xml"
       rel="alternate" title="Mandaris Moore ALL Atom Feed" />
 
@@ -32,10 +32,10 @@
 <!-- OpenGraph Info -->
 <meta property="og:title" content="Mandaris Moore" />
 <meta property="og:type" content="website" />
-<meta property="og:description" content="The personal website for Mandaris Moore."/>
-<meta property="og:url" content="https://mandaris.github.io" />
+<meta property="og:description" content="The Pelican website for Mandaris Moore."/>
+<meta property="og:url" content=".." />
 <meta property="og:locale" content="en-us" />
-<meta property="og:image" content="https://mandaris.github.io/favicon.png" />
+<meta property="og:image" content="../favicon.png" />
 <meta property="og:image:alt" content="A person in a gear." />
 <!-- Micro.blog User Name -->
 <link href="https://micro.blog/mandaris" rel="me" />
@@ -51,34 +51,38 @@
 </head>
 
 <body itemscope itemtype="https://schema.org/Blog">
-<meta itemprop="description" content="The personal website for Mandaris Moore." />
+<meta itemprop="description" content="The Pelican website for Mandaris Moore." />
 <header role="banner">
-<h1 class="websitetitle"><a href="https://mandaris.github.io">Mandaris Moore</a></h1>
+<h1 class="websitetitle"><a href="..">Mandaris Moore</a></h1>
 <nav itemscope itemtype="https://schema.org/SiteNavigationElement"
     class="navmenu" id="navmenu" >
 <ul>
   <li>
-    <a class="navitemlink" href="https://mandaris.github.io/archives.html">Archive</a>
+    <a class="navitemlink" href="../archives.html">Archive</a>
   </li>
   <li>
-    <a class="navitemlink" href="https://mandaris.github.io/pages/about.html">About</a>
+    <a class="navitemlink" href="../pages/about.html">About</a>
   </li>
   <li>
-    <a class="navitemlink" href="https://mandaris.github.io/pages/projects.html">Projects</a>
+    <a class="navitemlink" href="../pages/projects.html">Projects</a>
   </li>
 </ul>
 </nav>
+<hr />
 </header>
 
-<hr />
-<main class="articlelisting container">
+
+<main class="articlelisting content">
+
+
+
 <article
-  class="post hentry h-entry content"
+  class="post hentry h-entry"
   itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
 
 <header class="post-header">
   <h2
-    itemprop="headline title p-name name"
+    itemprop="headline name"
     class="title p-name post-title">
     <a
       rel="bookmark"
@@ -91,14 +95,13 @@
   </h2>
 </header><div class="e-content post-body" itemprop="articleBody">
 <p>So,  I spent about 3 hours working on getting Open Graph tags to work in the theme that I created. I've got mixed feeling about it because I started off by adding the tags to the base html template using an if statement and it seemed a little clunky.</p>
-<div class="highlight"><pre><span></span><span class="cp">{%</span> <span class="k">if</span> <span class="nv">OPEN_GRAPH</span> <span class="cp">%}</span><span class="x"></span>
+<div class="highlight"><pre><span></span><code><span class="cp">{%</span> <span class="k">if</span> <span class="nv">OPEN_GRAPH</span> <span class="cp">%}</span><span class="x"></span>
 <span class="x">&lt;meta property=&quot;og:title&quot; content=&quot;</span><span class="cp">{{</span> <span class="nv">SITENAME</span> <span class="cp">}}</span><span class="x">&quot;/&gt;</span>
 <span class="x">&lt;meta property=&quot;og:type&quot; content=&quot;website&quot;/&gt;</span>
 <span class="x">&lt;meta property=&quot;og:description&quot; content=&quot;</span><span class="cp">{{</span> <span class="nv">SITE_DESCRIPTION</span> <span class="cp">}}</span><span class="x">&quot;/&gt;</span>
 <span class="x">&lt;meta property=&quot;og:url&quot; content=&quot;</span><span class="cp">{%</span> <span class="k">SITE_URL</span> <span class="cp">%}</span><span class="x">&quot;/&gt;</span>
 <span class="cp">{%</span> <span class="k">endif</span> <span class="nv">OPEN_GRAPH</span> <span class="cp">%}</span><span class="x"></span>
-</pre></div>
-
+</code></pre></div>
 
 <p>This worked for the site in general but doesn't translate to all the articles and this caused me to go into a some what deep dive into how Pelican and Jinja parses blocks and if statements. I started off with putting all the tags into the base and then doing individual changes to tags that need to be changed for. </p>
 <p><strong>BAH!!!</strong></p>
@@ -106,31 +109,29 @@
 <h4 id="it-doesnt-account-for-when-someone-does-not-have-a-modified-date-on-their-articles">It doesn't  account for when someone does <em>not</em> have a modified date on their articles.</h4>
 <p><a href="https://github.com/AntoineVe/pelican-open_graph">Luckily, someone had put a solution up</a>. The change was forked about 7 months ago today and it looks like whoever created the open graph plugin has taken a break to work on other things.</p>
 <h4 id="its-a-year-old-and-hasnt-made-the-changes-for-pelican-regarding-summaries-of-articles">It's a year old and hasn't made the changes for pelican regarding summaries of articles.</h4>
-<p>So, I had to do some debugging to find out that the code needed to be changed in the following way<sup id="fnref-payitforward"><a class="footnote-ref" href="#fn-payitforward">1</a></sup>.</p>
-<div class="highlight"><pre><span></span><span class="n">ogtags</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s1">&#39;og:description&#39;</span><span class="p">,</span> <span class="n">instance</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;og_description&#39;</span><span class="p">,</span>
+<p>So, I had to do some debugging to find out that the code needed to be changed in the following way<sup id="fnref:payitforward"><a class="footnote-ref" href="#fn:payitforward">1</a></sup>.</p>
+<div class="highlight"><pre><span></span><code><span class="n">ogtags</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s1">&#39;og:description&#39;</span><span class="p">,</span> <span class="n">instance</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;og_description&#39;</span><span class="p">,</span>
                                                            <span class="n">instance</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;summary&#39;</span><span class="p">,</span>
                                                                                  <span class="n">instance</span><span class="o">.</span><span class="n">summary</span><span class="p">))))</span>
-</pre></div>
-
+</code></pre></div>
 
 <h4 id="it-also-assumed-that-every-article-has-some-kind-of-tag">It also assumed that every article has some kind of tag.</h4>
 <p>I've decided to just punt this problem and add the tags to the 6 articles that don't have them, but than I took a second look at the problem because the perfectionist in me doesn't like to leave problems unsolved and I didn't want to track down what the particular articles were.</p>
 <p>So, I just wrapped the code in a try block to make sure that I got this particular exception.</p>
-<div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+<div class="highlight"><pre><span></span><code><span class="k">try</span><span class="p">:</span>
         <span class="k">for</span> <span class="n">tag</span> <span class="ow">in</span> <span class="n">instance</span><span class="o">.</span><span class="n">tags</span><span class="p">:</span>
             <span class="n">ogtags</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s1">&#39;article:tag&#39;</span><span class="p">,</span> <span class="n">tag</span><span class="o">.</span><span class="n">name</span><span class="p">))</span>
     <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
             <span class="n">ogtags</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s1">&#39;article:tag&#39;</span><span class="p">,</span> <span class="s1">&#39;untagged&#39;</span><span class="p">))</span>
-</pre></div>
-
+</code></pre></div>
 
 <h4 id="results">Results</h4>
 <p>Ultimately, I got to learn a little bit more about using pelican and knocked off a major milestone on getting this blog to where I'd like it to be.</p>
 <div class="footnote">
 <hr>
 <ol>
-<li id="fn-payitforward">
-<p>I've got to branch and push this fix. I don't know how many other people are using pelican or this plugin but if I can save them or future me some time...&#160;<a class="footnote-backref" href="#fnref-payitforward" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<li id="fn:payitforward">
+<p>I've got to branch and push this fix. I don't know how many other people are using pelican or this plugin but if I can save them or future me some time...&#160;<a class="footnote-backref" href="#fnref:payitforward" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
@@ -146,40 +147,40 @@
 </p>
 <footer>
 <p class="articleFooterP">Category:
-	<a class="p-category" href="https://mandaris.github.io/category/tech.html">
+	<a class="p-category" href="../category/tech.html">
     <span itemprop="articleSection">tech</span>
   </a>
   <span class="rightside">
     <time
       class="dt-published"
       datetime="2016-03-06T13:16:22-08:00"
-      itemprop="dateCreated datePublished pubdate">
-        Sun 06 March 2016
+      itemprop="dateCreated datePublished">
+        March 06, 2016
     </time>
   </span>
   <br />  <span itemprop="keywords">
       <a
         class="tag"
         rel="category tag"
-        href="https://mandaris.github.io/tag/blog.html">
+        href="../tag/blog.html">
           blog
       </a>
       <a
         class="tag"
         rel="category tag"
-        href="https://mandaris.github.io/tag/open-graph.html">
+        href="../tag/open-graph.html">
           open graph
       </a>
       <a
         class="tag"
         rel="category tag"
-        href="https://mandaris.github.io/tag/coding.html">
+        href="../tag/coding.html">
           coding
       </a>
       <a
         class="tag"
         rel="category tag"
-        href="https://mandaris.github.io/tag/pelican.html">
+        href="../tag/pelican.html">
           pelican
       </a>
   </span>
@@ -188,27 +189,54 @@
       class="dt-updated"
   	  datetime="2019-06-18T21:34:08-07:00"
   	  itemprop="dateModified">
-        Tue 18 June 2019
+        March 06, 2016
       </time>
   </span>
 </p>
+
+<details itemprop="author" itemscope itemtype="https://schema.org/Person" class="p-author h-card hidden">
+  <summary itemprop="name" class="p-name">Mandaris</summary>  <img itemprop="image" class="u-photo"
+    src="https://secure.gravatar.com/avatar/03fb367dd4c7aea56f77dfa496db3725"
+    alt="Author's Profile." />
+  <p class="p-note">Mandaris is someone who strives to make himself into a better person</p>
+  <p><a itemprop="url" class="u-url u-uid"
+    rel="me" href="https://mandarismoore.com"
+    title="Author Website.">
+    Mandaris</a></p>
+
+
+</details>
 </footer>
 </article>
 <hr />
+
+
+
 </main>
-  <nav id="pagination">    <span id="first_page" class="a inactive">&#60;&#60;</span>
-    <span id="previous_page" class="a inactive">&#60;</span>
-    <span class="a active">1</span>
-    <span id="next_page" class="a inactive">&#62;</span>
-    <span id="last_page" class="a inactive">&#62;&#62;</span>
-</nav>
+
+
+<aside class="sidebar">
+<h2>
+<a
+  rel="external"
+  href="https://micro.blog/mandaris"
+  title="Micro.blog for mandaris"
+  class="u-url"
+  itemprop="url">
+Micro.blog posts
+</a>
+</h2>
+<script type="text/javascript" src="https://micro.blog/sidebar.js?username=mandaris"></script>
+</aside>
+
 <footer itemscope itemtype="https://schema.org/WPFooter"
     role="contentinfo" class="baseFooter">
+  <hr />
   <p>All works created by
     <span itemprop="author" itemscope itemtype=https://schema.org/Person>
-    <span class="p-author h-card" itemprop="name">Mandaris</span></span>.
-  </p>
-  <p>Powered by <a href="http://pelican.readthedocs.org">Pelican</a></p>
+    <span class="p-author h-card p-name" itemprop="name">Mandaris</span></span>.
+
+  <span class="rightside">Powered by <a href="http://pelican.readthedocs.org">Pelican</a>.</span></p>
 </footer>
 </body>
 </html>
